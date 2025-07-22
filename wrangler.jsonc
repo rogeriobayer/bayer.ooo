@@ -1,7 +1,8 @@
 {
   "name": "bayerooo",
   "compatibility_date": "2025-01-19",
-  "assets": {
-    "directory": "./build"
-  }
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "pages_build_output_dir": ".vercel/output/static"
 } 
