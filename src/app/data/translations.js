@@ -99,7 +99,7 @@ export const translations = {
   
   fr: {
     // Apresentation
-    "apresentation.greeting": "Salut, je suis Rogério !",
+    "apresentation.greeting": "Bonjour, je m'appelle Rogerio!",
     "apresentation.subtitle": "Développeur Full-Stack passionné par la création de solutions innovantes et d'expériences numériques exceptionnelles",
     
     // Summary

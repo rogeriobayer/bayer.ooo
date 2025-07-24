@@ -61,7 +61,7 @@ export const Apresentation = () => {
       
       <div className="flex justify-between relative z-10">
         <div className="flex justify-center flex-col ml-10 max-w-[50%]">
-          <h1 className="text-3xl font-bold leading-tight text-gray-900 sm:truncate sm:text-4xl sm:tracking-tight">
+          <h1 className="text-3xl font-bold sm:leading-[1.5] text-gray-900 sm:truncate sm:text-4xl sm:tracking-tight">
             {t("apresentation.greeting")}
           </h1>
           <p className="text-lg font-light leading-relaxed mt-6 text-gray-600 sm:tracking-tight">

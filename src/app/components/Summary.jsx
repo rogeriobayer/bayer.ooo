@@ -25,7 +25,7 @@ export const Summary = () => {
         <h2 className="text-2xl font-bold leading-7 text-center mt-4 text-gray-900 sm:tracking-tight mb-12">
           {t("summary.title")}
         </h2>
-        <div className="flex flex-wrap justify-evenly gap-8 items-center lg:gap-4">
+        <div className="flex flex-wrap justify-center md:justify-evenly gap-8 items-center lg:gap-4">
           <div className="flex flex-col items-start justify-center col-span-2 order-2 lg:order-1 space-y-6">
             <div>
               <p className="text-base font-light leading-7 text-gray-600 sm:tracking-tight mb-1">
@@ -59,7 +59,7 @@ export const Summary = () => {
               <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-400/10 to-purple-400/10"></div>
             </div>
           </div>
-          <div className="flex flex-col justify-center col-span-2 order-3 xl:mr-10"> <p className="text-base font-medium leading-7 mt-3 text-gray-900 sm:tracking-tight mb-2">
+          <div className="flex flex-col justify-center col-span-2 order-3 mr-12"> <p className="text-base font-medium leading-7 mt-3 text-gray-900 sm:tracking-tight mb-2">
               {t(career.position.nameKey)}
             </p>
             <p className="text-base font-light leading-7 text-gray-600 sm:tracking-tight mb-2">

@@ -57,7 +57,7 @@ export const SkillsSummary = () => {
               >
                 <div className="flex items-start gap-6">
                   <div className="w-[25%] flex-shrink-0">
-                    <span className="text-sm font-medium text-gray-500 bg-gray-50 px-3 py-1.5 rounded-full">
+                    <span className="text-sm font-medium text-gray-500 xl:bg-gray-50 xl:px-3 xl:py-1.5 rounded-full">
                       {getDateText(experience.startDate, experience.endDate)}
                     </span>
                   </div>
