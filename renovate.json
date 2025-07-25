@@ -1,0 +1,65 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    "schedule:weekends"
+  ],
+  "dependencyDashboard": true,
+  "dependencyDashboardTitle": "📋 Dependency Dashboard",
+  "commitMessagePrefix": "chore:",
+  "commitMessageAction": "update",
+  "commitMessageTopic": "{{depName}}",
+  "commitMessageExtra": "to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}}",
+  "prTitleTemplate": "{{commitMessagePrefix}} {{commitMessageAction}} {{commitMessageTopic}} {{commitMessageExtra}}",
+  "packageRules": [
+    {
+      "description": "Automerge non-major updates",
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true,
+      "automergeType": "pr",
+      "automergeStrategy": "squash"
+    },
+    {
+      "description": "Group Next.js related packages",
+      "matchPackageNames": ["next", "eslint-config-next"],
+      "groupName": "Next.js"
+    },
+    {
+      "description": "Group React packages",
+      "matchPackageNames": ["react", "react-dom"],
+      "groupName": "React"
+    },
+    {
+      "description": "Group testing packages",
+      "matchPackageNames": [
+        "@testing-library/jest-dom",
+        "@testing-library/react", 
+        "@testing-library/user-event",
+        "@vitest/coverage-v8",
+        "@vitest/ui",
+        "vitest",
+        "jsdom"
+      ],
+      "groupName": "Testing"
+    },
+    {
+      "description": "Group CSS/Styling packages",
+      "matchPackageNames": ["tailwindcss", "autoprefixer", "postcss"],
+      "groupName": "CSS/Styling"
+    },
+    {
+      "description": "Pin major versions for major frameworks",
+      "matchPackageNames": ["react", "react-dom", "next"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    }
+  ],
+  "prConcurrentLimit": 10,
+  "rebaseWhen": "conflicted",
+  "labels": ["dependencies"],
+  "reviewersFromCodeOwners": true,
+  "statusCheckVerify": true,
+  "requiredStatusChecks": ["test", "security"],
+  "semanticCommits": "enabled",
+  "separateMinorPatch": true
+} 

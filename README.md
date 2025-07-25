@@ -1,5 +1,8 @@
 # Portfolio - Rogério Bayer
 
+[![Tests](https://github.com/rogeriobayer/bayer.ooo/actions/workflows/tests.yml/badge.svg)](https://github.com/rogeriobayer/bayer.ooo/actions/workflows/tests.yml)
+[![CI](https://github.com/rogeriobayer/bayer.ooo/actions/workflows/ci.yml/badge.svg)](https://github.com/rogeriobayer/bayer.ooo/actions/workflows/ci.yml)
+
 Portfolio pessoal desenvolvido em Next.js com suporte a múltiplos idiomas (Português, Inglês e Francês).
 
 ## 🚀 Tecnologias Utilizadas

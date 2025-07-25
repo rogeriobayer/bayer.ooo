@@ -9,4 +9,4 @@ vi.mock('framer-motion', () => ({
     section: ({ children, ...props }) => React.createElement('section', props, children),
   },
   AnimatePresence: ({ children }) => children,
-})) 
+})); 
