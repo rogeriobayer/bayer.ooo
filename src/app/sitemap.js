@@ -1,19 +1,21 @@
 export default function sitemap() {
-  const baseUrl = 'https://bayer.ooo';
-  
-  return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 1,
-      alternates: {
-        languages: {
-          pt: baseUrl,
-          en: `${baseUrl}`,
-          fr: `${baseUrl}`,
-        },
+  const sites = [
+    { url: 'https://bayer.ooo' },
+    { url: 'https://palmeiras.bayer.ooo' },
+    { url: 'https://noronha.bayer.ooo' },
+  ];
+
+  return sites.map(({ url }) => ({
+    url,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 1,
+    alternates: {
+      languages: {
+        pt: url,
+        en: url,
+        fr: url,
       },
     },
-  ];
-} 
+  }));
+}
