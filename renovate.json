@@ -14,26 +14,35 @@
   "packageRules": [
     {
       "description": "Automerge non-major updates",
-      "matchUpdateTypes": ["minor", "patch"],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
       "automerge": true,
       "automergeType": "pr",
       "automergeStrategy": "squash"
     },
     {
       "description": "Group Next.js related packages",
-      "matchPackageNames": ["next", "eslint-config-next"],
+      "matchPackageNames": [
+        "next",
+        "eslint-config-next"
+      ],
       "groupName": "Next.js"
     },
     {
       "description": "Group React packages",
-      "matchPackageNames": ["react", "react-dom"],
+      "matchPackageNames": [
+        "react",
+        "react-dom"
+      ],
       "groupName": "React"
     },
     {
       "description": "Group testing packages",
       "matchPackageNames": [
         "@testing-library/jest-dom",
-        "@testing-library/react", 
+        "@testing-library/react",
         "@testing-library/user-event",
         "@vitest/coverage-v8",
         "@vitest/ui",
@@ -44,22 +53,32 @@
     },
     {
       "description": "Group CSS/Styling packages",
-      "matchPackageNames": ["tailwindcss", "autoprefixer", "postcss"],
+      "matchPackageNames": [
+        "tailwindcss",
+        "autoprefixer",
+        "postcss"
+      ],
       "groupName": "CSS/Styling"
     },
     {
       "description": "Pin major versions for major frameworks",
-      "matchPackageNames": ["react", "react-dom", "next"],
-      "matchUpdateTypes": ["major"],
+      "matchPackageNames": [
+        "react",
+        "react-dom",
+        "next"
+      ],
+      "matchUpdateTypes": [
+        "major"
+      ],
       "enabled": false
     }
   ],
   "prConcurrentLimit": 10,
   "rebaseWhen": "conflicted",
-  "labels": ["dependencies"],
+  "labels": [
+    "dependencies"
+  ],
   "reviewersFromCodeOwners": true,
-  "statusCheckVerify": true,
-  "requiredStatusChecks": ["test", "security"],
   "semanticCommits": "enabled",
   "separateMinorPatch": true
-} 
+}
