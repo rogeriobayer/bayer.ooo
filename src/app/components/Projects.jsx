@@ -63,7 +63,7 @@ export const Projects = () => {
 
       <div className="flex flex-col justify-center items-center relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-2xl font-bold leading-7 text-center my-8 text-gray-900 sm:tracking-tight">
+          <h2 className="text-2xl font-medium leading-7 text-center my-8 text-gray-900 sm:tracking-tight font-heading">
             {t("projects.title")}
           </h2>
         </div>
@@ -85,7 +85,7 @@ export const Projects = () => {
                 </div>
                 
                 <div className="w-[85%] space-y-3">
-                  <h3 className="font-bold text-lg text-gray-900 leading-tight">
+                  <h3 className="font-medium text-lg text-gray-900 leading-tight font-heading">
                     {t(project.nameKey)}
                   </h3>
                   

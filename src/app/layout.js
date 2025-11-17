@@ -1,8 +1,9 @@
-import { Inter } from "next/font/google";
+import "@fontsource/stack-sans-notch";
+import "@fontsource/stack-sans-notch/500.css";
+import "@fontsource/stack-sans-text";
+import "@fontsource/stack-sans-text/200.css";
 import "./globals.css";
 import { LanguageProvider } from "./contexts/LanguageContext";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   metadataBase: new URL('https://bayer.ooo'),
@@ -107,7 +108,7 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className={inter.className}>
+      <body className="">
         <LanguageProvider>
           {children}
         </LanguageProvider>

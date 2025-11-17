@@ -12,7 +12,7 @@ export const SkillsSummary = () => {
     <div className="mx-auto w-full max-w-7xl mt-16 px-6">
       <div className="flex flex-wrap flex-col justify-evenly gap-8">
         <div className="flex flex-col justify-center items-center">
-          <h3 className="text-lg font-bold leading-7 text-center my-6 text-gray-900 sm:tracking-tight">
+          <h3 className="text-lg font-normal leading-7 text-center my-6 text-gray-900 sm:tracking-tight">
             {t("skills.languages")}
           </h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-4xl">
@@ -28,7 +28,7 @@ export const SkillsSummary = () => {
         </div>
 
         <div className="flex flex-col justify-center items-center">
-          <h3 className="text-lg font-bold leading-7 text-center my-6 text-gray-900 sm:tracking-tight">
+          <h3 className="text-lg font-normal leading-7 text-center my-6 text-gray-900 sm:tracking-tight">
             {t("skills.frameworks")}
           </h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-4xl">
@@ -44,7 +44,7 @@ export const SkillsSummary = () => {
         </div>
 
         <div className="flex flex-col justify-center items-center">
-          <h3 className="text-lg font-bold leading-7 text-center my-6 text-gray-900 sm:tracking-tight">
+          <h3 className="text-lg font-normal leading-7 text-center my-6 text-gray-900 sm:tracking-tight">
             {t("skills.tools")}
           </h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-4xl">

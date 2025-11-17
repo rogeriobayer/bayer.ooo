@@ -46,7 +46,7 @@ export const SkillsSummary = () => {
 
       <div className="flex flex-wrap flex-col justify-evenly gap-4 relative z-10">
         <div className="flex flex-col justify-center items-center">
-          <h2 className="text-2xl font-bold leading-7 text-center my-8 text-gray-900 sm:tracking-tight">
+          <h2 className="text-2xl font-normal leading-7 text-center my-8 text-gray-900 sm:tracking-tight font-heading">
             {t("history.title")}
           </h2>
           <div className="flex flex-col items-center sm:w-[33rem] xl:w-full space-y-8">
@@ -63,7 +63,7 @@ export const SkillsSummary = () => {
                   </div>
 
                   <div className="w-[75%] space-y-4">
-                    <h3 className="font-bold text-lg text-gray-900 leading-tight">
+                    <h3 className="font-medium text-lg text-gray-900 leading-tight font-heading">
                       {t(experience.positionKey)}
                     </h3>
 

@@ -16,6 +16,8 @@
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
+    "@fontsource/stack-sans-notch": "^5.2.1",
+    "@fontsource/stack-sans-text": "^5.2.1",
     "framer-motion": "^11.18.2",
     "next": "^14.2.0",
     "react": "^18",
