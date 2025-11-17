@@ -37,10 +37,13 @@ export const translations = {
     
     // Projects
     "projects.title": "Principais Projetos",
+    "projects.access": "Acessar",
     "projects.powerbi.name": "Dashboard Analítico de Obras",
     "projects.powerbi.description": "Desenvolvi dashboards analíticos para uma empresa de saneamento básico, focados no controle eficiente de obras e na otimização de processos operacionais, proporcionando maior visibilidade dos indicadores e apoio estratégico à tomada de decisões.",
     "projects.farmaalg.name": "App Gamificado de Exercícios de Programação",
     "projects.farmaalg.description": "Desenvolvimento e modernização de uma plataforma educacional que permite a resolução de exercícios de programação online. O projeto incluiu a criação de aplicativos mobile e a atualização da versão web, incorporando gamificação (pontos, medalhas e rankings) para engajar estudantes e professores.",
+    "projects.focuspatrol.name": "Focus Patrol: Extensão de Foco e Produtividade",
+    "projects.focuspatrol.description": "Utiliza IA On-Device para classificar o conteúdo das páginas. O recurso central é o Contador de Foco em Tempo Real, que exibe a quantidade de sites acessados nas categorias Foco, Neutro e Distração. O sistema de Notificações é acionado de acordo com a tolerância de distrações e o tempo escolhido. É 100% privacy-first, processando todos os dados de navegação localmente.",
     
     // Footer
     "footer.quote": '"Construindo o futuro, uma linha de código por vez"',
@@ -86,10 +89,13 @@ export const translations = {
     
     // Projects
     "projects.title": "Main Projects",
+    "projects.access": "Access",
     "projects.powerbi.name": "Construction Analytics Dashboard",
     "projects.powerbi.description": "Developed analytical dashboards for a basic sanitation company, focused on efficient construction control and operational process optimization, providing greater visibility of indicators and strategic support for decision-making.",
     "projects.farmaalg.name": "Gamified Programming Exercises App",
     "projects.farmaalg.description": "Development and modernization of an educational platform that allows online programming exercise solving. The project included creating mobile applications and updating the web version, incorporating gamification (points, badges, and rankings) to engage students and teachers.",
+    "projects.focuspatrol.name": "Focus Patrol: Privacy-First Focus & Productivity Extension",
+    "projects.focuspatrol.description": "Utilizing On-Device AI to classify page content. Its core feature is the Real-Time Focus Counter, which displays the number of sites accessed in the Focus, Neutral, and Distraction categories. A Notifications system is triggered according to the distraction tolerance and the chosen time. It is 100% privacy-first, processing all browsing data locally.",
     
     // Footer
     "footer.quote": '"Building the future, one line of code at a time"',
@@ -135,10 +141,13 @@ export const translations = {
     
     // Projects
     "projects.title": "Projets Principaux",
+    "projects.access": "Accéder",
     "projects.powerbi.name": "Tableau de Bord Analytique de Construction",
     "projects.powerbi.description": "J'ai développé des tableaux de bord analytiques pour une entreprise d'assainissement, axés sur le contrôle efficace des constructions et l'optimisation des processus opérationnels, offrant une plus grande visibilité des indicateurs et un soutien stratégique à la prise de décision.",
     "projects.farmaalg.name": "App Gamifiée d'Exercices de Programmation",
     "projects.farmaalg.description": "Développement et modernisation d'une plateforme éducative permettant la résolution d'exercices de programmation en ligne. Le projet incluait la création d'applications mobiles et la mise à jour de la version web, incorporant la gamification (points, badges et classements) pour engager étudiants et professeurs.",
+    "projects.focuspatrol.name": "Focus Patrol : Extension de Concentration et Productivité",
+    "projects.focuspatrol.description": "Utilisant l'IA Embarquée pour classer le contenu des pages. Sa fonctionnalité centrale est le Compteur de Concentration en Temps Réel, qui affiche la quantité de sites accédés dans les catégories Concentration, Neutre et Distraction. Un système de Notifications est déclenché en fonction de la tolérance aux distractions et du temps choisi. Elle est 100% privacy-first, traitant toutes les données localement.",
     
     // Footer
     "footer.quote": '"Construisant l\'avenir, une ligne de code à la fois"',

@@ -91,7 +91,7 @@ export const Projects = () => {
                   
                   <div className="flex flex-wrap gap-2">
                     {project.frameworks.map((framework, fIndex) => (
-                      <div key={fIndex} className="opacity-80 hover:opacity-100 transition-opacity">
+                      <div key={fIndex} className="opacity-80 hover:opacity-100 transition-opacity flex">
                         <IconWithText value={framework} type="technology" showText={false} />
                       </div>
                     ))}
@@ -100,6 +100,22 @@ export const Projects = () => {
                   <p className="text-sm text-gray-600 leading-relaxed font-light">
                     {t(project.descriptionKey)}
                   </p>
+
+                  {project.link && project.link !== "#" && (
+                    <div className="flex justify-end">
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm font-medium flex items-center space-x-1 text-blue-500"
+                      >
+                        <span>{t("projects.access")}</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                        </svg>
+                      </a>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
