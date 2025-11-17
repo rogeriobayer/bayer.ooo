@@ -16,7 +16,7 @@ export const careerSummary = {
       "react-native",
       "expo",
     ],
-    tools: ["powerbi", "gcp", "git", "docker", "tailwind"],
+    tools: ["powerbi", "cloudflare", "gcp", "git", "docker", "tailwind"],
   },
   history: [
     {
