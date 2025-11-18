@@ -59,7 +59,7 @@ export const Summary = () => {
               <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-400/10 to-purple-400/10"></div>
             </div>
           </div>
-          <div className="flex flex-col justify-center order-3 items-start w-full md:w-auto"> <p className="text-base font-medium leading-7 mt-3 text-gray-900 sm:tracking-tight">
+          <div className="flex flex-col justify-center order-3 items-start w-full md:w-auto mr-0 lg:mr-12"> <p className="text-base font-medium leading-7 mt-3 text-gray-900 sm:tracking-tight">
             {t(career.position.nameKey)}
           </p>
             <p className="text-base font-light leading-7 text-gray-600 sm:tracking-tight mb-2">
