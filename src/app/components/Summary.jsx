@@ -26,7 +26,7 @@ export const Summary = () => {
           {t("summary.title")}
         </h2>
         <div className="flex flex-wrap justify-center md:justify-evenly gap-8 items-center lg:gap-4">
-          <div className="flex flex-col items-start justify-center col-span-2 order-2 lg:order-1 space-y-6">
+          <div className="flex flex-col items-start justify-center order-2 lg:order-1 space-y-6 w-full md:w-auto">
             <div>
               <p className="text-base font-light leading-7 text-gray-600 sm:tracking-tight">
                 {t("education.undergrad.title")}
@@ -46,7 +46,7 @@ export const Summary = () => {
               <IconWithText value="unyleya" type="company" />
             </div>
           </div>
-          
+
           <div className="flex justify-center mx-8 lg:mx-20 order-1 lg:order-2">
             <div className="relative">
               <Image
@@ -59,9 +59,9 @@ export const Summary = () => {
               <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-400/10 to-purple-400/10"></div>
             </div>
           </div>
-          <div className="flex flex-col justify-center col-span-2 order-3 mr-12"> <p className="text-base font-medium leading-7 mt-3 text-gray-900 sm:tracking-tight">
-              {t(career.position.nameKey)}
-            </p>
+          <div className="flex flex-col justify-center order-3 items-start w-full md:w-auto"> <p className="text-base font-medium leading-7 mt-3 text-gray-900 sm:tracking-tight">
+            {t(career.position.nameKey)}
+          </p>
             <p className="text-base font-light leading-7 text-gray-600 sm:tracking-tight mb-2">
               {t("summary.daysIn", { days: daysInCompany })}
             </p>
