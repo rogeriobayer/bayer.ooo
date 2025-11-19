@@ -4,6 +4,7 @@ import "@fontsource/stack-sans-text";
 import "@fontsource/stack-sans-text/200.css";
 import "./globals.css";
 import { LanguageProvider } from "./contexts/LanguageContext";
+import Script from "next/script";
 
 export const metadata = {
   metadataBase: new URL('https://bayer.ooo'),
@@ -109,6 +110,19 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-3JP1FZFB56"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-3JP1FZFB56');
+          `}
+        </Script>
         <LanguageProvider>
           {children}
         </LanguageProvider>
