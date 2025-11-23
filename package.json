@@ -18,7 +18,7 @@
   "dependencies": {
     "@fontsource/stack-sans-notch": "^5.2.1",
     "@fontsource/stack-sans-text": "^5.2.1",
-    "framer-motion": "^11.18.2",
+    "framer-motion": "^12.0.0",
     "next": "^14.2.0",
     "react": "^18",
     "react-dom": "^18"
