@@ -4,6 +4,7 @@ export default function sitemap() {
     { url: 'https://palmeiras.bayer.ooo' },
     { url: 'https://noronha.bayer.ooo' },
     { url: 'https://focuspatrol.bayer.ooo' },
+    { url: 'https://yoc.bayer.ooo'}
   ];
 
   return sites.map(({ url }) => ({
