@@ -151,4 +151,5 @@ export const technologiesList = [
   { name: "Tailwind", logo: "/tailwind.svg", code: "tailwind", color: "#38BDF8" },
   { name: "Cloudflare", logo: "/cloudflare.svg", code: "cloudflare", color: "#F38020" },
   { name: "Chrome", logo: "/chrome.svg", code: "chrome", color: "#4285F4" },
+  { name: "Nx", logo: "/nx.svg", code: "nx", color: "#012F55" },
 ];

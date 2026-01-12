@@ -11,6 +11,7 @@ export const careerSummary = {
       "vue",
       "nuxt",
       "react",
+      "nx",
       "nest",
       "next",
       "react-native",
@@ -27,6 +28,7 @@ export const careerSummary = {
       technologies: [
         "vue2",
         "react",
+        "nx",
         "typescript",
         "nest",
         "sass",

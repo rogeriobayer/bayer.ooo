@@ -79,11 +79,11 @@ export const SkillsSummary = () => {
                       {t(experience.descriptionKey)}
                     </p>
 
-                    <div className="flex flex-wrap gap-2 pt-2">
+                    <div className="flex flex-wrap gap-2 pt-2 items-center">
                       {experience.technologies.map((tech, techIndex) => (
                         <div
                           key={techIndex}
-                          className="opacity-80 hover:opacity-100 transition-opacity"
+                          className="opacity-80 hover:opacity-100 transition-opacity flex items-center"
                         >
                           <IconWithText
                             value={tech}
