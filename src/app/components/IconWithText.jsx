@@ -12,8 +12,14 @@ export const IconWithText = ({ value, type, showText = true }) => {
   }
 
   return (
-    <div className="flex gap-2">
-      <Image src={item?.logo} width={20} height={20} alt={`${type} logo`} />
+    <div className="flex gap-2 items-center justify-center">
+      <Image
+        src={item?.logo}
+        width={20}
+        height={20}
+        alt={`${type} logo`}
+        className="flex-shrink-0"
+      />
       {showText && (
         <p className="font-semibold" style={{ color: `${item.color}` }}>
           {item.name}
