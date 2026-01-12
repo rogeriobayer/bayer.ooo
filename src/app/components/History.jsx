@@ -9,7 +9,7 @@ import {
   counterRotationVariant,
 } from "@/app/utils/animationConfig";
 
-export const SkillsSummary = () => {
+export const History = () => {
   const career = careerSummary;
   const { t } = useTranslation();
 
@@ -104,4 +104,4 @@ export const SkillsSummary = () => {
   );
 };
 
-export default SkillsSummary;
+export default History;
