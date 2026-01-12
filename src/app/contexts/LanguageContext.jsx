@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
 const LanguageContext = createContext();
 
@@ -13,13 +13,14 @@ export const useLanguage = () => {
 };
 
 export const LanguageProvider = ({ children }) => {
-  const [currentLanguage, setCurrentLanguage] = useState('pt');
-
-  useEffect(() => {
-    const savedLanguage = localStorage.getItem('language') || 'pt';
-    setCurrentLanguage(savedLanguage);
-    document.documentElement.lang = savedLanguage;
-  }, []);
+  const [currentLanguage, setCurrentLanguage] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const savedLanguage = localStorage.getItem('language') || 'pt';
+      document.documentElement.lang = savedLanguage;
+      return savedLanguage;
+    }
+    return 'pt';
+  });
 
   const changeLanguage = (newLanguage) => {
     setCurrentLanguage(newLanguage);
