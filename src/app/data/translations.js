@@ -11,7 +11,7 @@ export const translations = {
     // Education
     "education.undergrad.title": "Tecnólogo em Análise e",
     "education.undergrad.subtitle": "Desenvolvimento de Sistemas",
-    "education.postgrad.title": "Pós-graduado em",
+    "education.postgrad.title": "MBA em",
     "education.postgrad.subtitle": "Desenvolvimento Full-Stack",
 
     // Skills
@@ -63,7 +63,7 @@ export const translations = {
     // Education
     "education.undergrad.title": "Technology Degree in Systems",
     "education.undergrad.subtitle": "Analysis and Development",
-    "education.postgrad.title": "Postgraduate in",
+    "education.postgrad.title": "MBA in",
     "education.postgrad.subtitle": "Full-Stack Development",
 
     // Skills
@@ -115,7 +115,7 @@ export const translations = {
     // Education
     "education.undergrad.title": "Diplôme de Technologie en",
     "education.undergrad.subtitle": "Analyse et Développement de Systèmes",
-    "education.postgrad.title": "Post-diplômé en",
+    "education.postgrad.title": "MBA en",
     "education.postgrad.subtitle": "Développement Full-Stack",
 
     // Skills
