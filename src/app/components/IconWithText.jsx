@@ -2,7 +2,7 @@ import Image from "next/image";
 import { companiesList } from "@/app/data/companies.server";
 import { technologiesList } from "@/app/data/technologies.server";
 
-export const IconWithText = ({ value, type, showText = true }) => {
+export const IconWithText = ({ value, type, showText = true, className = "" }) => {
   let item;
 
   if (type === "company") {
@@ -12,7 +12,7 @@ export const IconWithText = ({ value, type, showText = true }) => {
   }
 
   return (
-    <div className="flex gap-2 items-center justify-center">
+    <div className={`flex gap-2 items-center justify-start ${className}`}>
       <Image
         src={item?.logo}
         width={20}
