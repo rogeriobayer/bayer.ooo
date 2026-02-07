@@ -17,7 +17,7 @@ export const careerSummary = {
       "react-native",
       "expo",
     ],
-    tools: ["powerbi", "cloudflare", "gcp", "git", "docker", "tailwind"],
+    tools: ["powerbi", "cloudflare", "gcp", "git", "docker", "tailwind", "vuetify", "mui"],
   },
   history: [
     {
@@ -35,6 +35,8 @@ export const careerSummary = {
         "jest",
         "vitest",
         "gcp",
+        "vuetify",
+        "mui",
       ],
       descriptionKey: "career.gupy.description",
     },

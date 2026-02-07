@@ -1,4 +1,3 @@
-// Project modal details with multiple images, full tech descriptions, and impact metrics
 export const projectModalData = {
     powerbi: {
         id: 1,
@@ -43,7 +42,6 @@ export const projectModalData = {
     },
 };
 
-// Get modal data by project slug
 export const getProjectModalData = (slug) => {
     return projectModalData[slug] || null;
 };

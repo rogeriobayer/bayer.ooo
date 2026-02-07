@@ -36,7 +36,6 @@ export const IconWithText = ({
     </div>
   );
 
-  // Wrap with DaisyUI tooltip if showTooltip is true and text is hidden
   if (showTooltip && !showText) {
     return (
       <div className="tooltip tooltip-top" data-tip={item.name}>

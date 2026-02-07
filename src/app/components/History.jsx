@@ -29,7 +29,6 @@ export const History = () => {
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
     >
-      {/* Decorative circles with glass effect */}
       <div className="absolute -left-80 top-20 pointer-events-none hidden xl:block">
         <motion.img
           alt=""
@@ -59,7 +58,6 @@ export const History = () => {
           {t("history.title")}
         </h2>
 
-        {/* DaisyUI Timeline */}
         <motion.ul
           className="timeline timeline-snap-icon timeline-vertical max-md:timeline-compact"
           variants={staggerContainerVariant}
@@ -71,27 +69,21 @@ export const History = () => {
             <motion.li key={index} variants={staggerItemVariant}>
               {index > 0 && <hr className="bg-base-300" />}
 
-              {/* Timeline marker */}
               <div className="timeline-middle">
                 <div className="w-4 h-4 rounded-full bg-primary shadow-md"></div>
               </div>
 
-              {/* Alternating sides for desktop */}
               <div className={`timeline-${index % 2 === 0 ? 'start' : 'end'} mb-10 ${index % 2 === 0 ? 'md:text-end' : ''}`}>
-                {/* Date badge */}
                 <time className="badge badge-ghost badge-sm font-mono mb-2">
                   {getDateText(experience.startDate, experience.endDate)}
                 </time>
 
-                {/* Experience card */}
                 <div className="card bg-base-100/70 backdrop-blur-sm shadow-sm border border-base-300/50 hover:shadow-lg transition-shadow duration-300">
                   <div className="card-body p-5">
-                    {/* Position title */}
                     <h3 className="card-title text-lg font-heading text-base-content">
                       {t(experience.positionKey)}
                     </h3>
 
-                    {/* Company */}
                     <div className={`flex items-center gap-2 ${index % 2 === 0 ? 'md:justify-end' : ''}`}>
                       <IconWithText
                         value={experience.companyCode}
@@ -100,12 +92,10 @@ export const History = () => {
                       />
                     </div>
 
-                    {/* Description */}
                     <p className="text-sm text-gray-600 leading-relaxed font-light mt-2">
                       {t(experience.descriptionKey)}
                     </p>
 
-                    {/* Tech stack - styled like SkillsSummary badges */}
                     <div className={`flex flex-wrap gap-1.5 my-1 ${index % 2 === 0 ? 'md:justify-end' : ''}`}>
                       {experience.technologies.map((tech, techIndex) => (
                         <div

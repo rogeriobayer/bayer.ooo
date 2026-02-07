@@ -139,12 +139,12 @@ test.describe('Home Page', () => {
                 name: new RegExp(`^${escapeRegExp(positionText)}$`),
                 level: 3,
             });
-            const experienceCard = positionHeading.locator('xpath=ancestor::div[contains(@class,"rounded-xl")]');
+            const experienceContainer = positionHeading.locator('xpath=ancestor::li');
 
             await expect(positionHeading).toBeVisible();
-            await expect(experienceCard.getByText(companyName, { exact: true })).toBeVisible();
-            await expect(experienceCard.getByText(descriptionText)).toBeVisible();
-            await expect(experienceCard.getByText(dateText, { exact: true })).toBeVisible();
+            await expect(experienceContainer.getByText(companyName, { exact: true })).toBeVisible();
+            await expect(experienceContainer.getByText(descriptionText)).toBeVisible();
+            await expect(experienceContainer.getByText(dateText, { exact: true })).toBeVisible();
         }
     });
 
@@ -164,11 +164,21 @@ test.describe('Home Page', () => {
         await expect(projectLinks).toHaveCount(expectedLinks);
     });
 
-    test('should render footer', async ({ page }) => {
+    test('should render footer and social links', async ({ page }) => {
         // Footer Component
         const year = new Date().getFullYear();
         const footerText = t(defaultLanguage, 'footer.copyright').replace('{year}', `${year}`);
         await expect(page.getByText(footerText)).toBeVisible();
+
+        // Check social links and icons
+        const socialLinksContainer = page.locator('footer .flex.justify-center.gap-4');
+        await expect(socialLinksContainer).toBeVisible();
+
+        const expectedLinks = ['github', 'linkedin', 'email'];
+        for (const icon of expectedLinks) {
+            const link = socialLinksContainer.locator(`a[aria-label]`).filter({ has: page.locator(`img[src="/${icon}.svg"]`) });
+            await expect(link).toBeVisible();
+        }
     });
 });
 

@@ -70,7 +70,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="pt">
+    <html lang="pt" suppressHydrationWarning={true}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/rogeriobayer.png" />
