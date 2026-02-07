@@ -3,72 +3,73 @@
 [![Tests](https://github.com/rogeriobayer/bayer.ooo/actions/workflows/tests.yml/badge.svg)](https://github.com/rogeriobayer/bayer.ooo/actions/workflows/tests.yml)
 [![CI](https://github.com/rogeriobayer/bayer.ooo/actions/workflows/ci.yml/badge.svg)](https://github.com/rogeriobayer/bayer.ooo/actions/workflows/ci.yml)
 
-Portfolio pessoal desenvolvido em Next.js com suporte a múltiplos idiomas (Português, Inglês e Francês).
+Personal portfolio developed with Next.js featuring multi-language support (Portuguese, English, and French).
 
-## 🚀 Tecnologias Utilizadas
+## 🚀 Technologies Used
 
-- **Next.js** - Framework React para produção
-- **React** - Biblioteca JavaScript para interfaces
-- **Tailwind CSS** - Framework CSS utilitário
-- **Framer Motion** - Biblioteca para animações
+- **Next.js** - React framework for production
+- **React** - JavaScript library for user interfaces
+- **Tailwind CSS** - Utility-first CSS framework
+- **Framer Motion** - Animation library for React
+- **Lucide React** - Icon library (where applicable)
 
-## 📁 Estrutura do Projeto
+## 📁 Project Structure
 
 ```
 src/
 ├── app/
-│   ├── components/          # Componentes React
-│   ├── contexts/           # Contextos React (LanguageContext)
-│   ├── data/              # Dados e configurações
-│   ├── hooks/             # Hooks customizados
-│   ├── utils/             # Utilitários e configurações
-│   └── page.js            # Página principal
+│   ├── components/          # React components
+│   ├── contexts/           # React contexts (LanguageContext)
+│   ├── data/              # Data configurations and translations
+│   ├── hooks/             # Custom hooks
+│   ├── utils/             # Utilities and animation configs
+│   └── page.js            # Main page entry
 ```
 
-## 🌐 Funcionalidades
+## 🌐 Features
 
-### Componentes Principais
-- **Header** - Navegação e seletor de idioma
-- **Apresentation** - Apresentação pessoal
-- **Summary** - Resumo profissional
-- **SkillsSummary** - Resumo de habilidades
-- **History** - Histórico profissional
-- **Projects** - Projetos principais
-- **Footer** - Rodapé com informações
+### Main Components
+- **Header** - Navigation and language selector
+- **Apresentation** - Personal introduction and highlights
+- **Summary** - Professional overview
+- **SkillsSummary** - Core technical skills
+- **History** - Career timeline
+- **Projects** - Featured work with interactive modals
+- **Footer** - Social links and site info
 
-### Sistema de Idiomas
-- Troca dinâmica entre idiomas
-- Contexto React para gerenciamento de estado
-- Traduções organizadas por seções
+### Language System
+- Dynamic language switching
+- React context for state management
+- Organized translation files in `src/app/data/translations.js`
 
-### Animações
-- Animações suaves com Framer Motion
-- Configurações personalizadas em `animationConfig.js`
+### Animations
+- Smooth transitions and interactive elements using Framer Motion
+- Centralized animation configurations in `animationConfig.js`
 
-## 🚀 Como Executar
+## 🚀 Getting Started
 
-1. **Instalar dependências:**
+1. **Install dependencies:**
 ```bash
 npm install
 ```
 
-2. **Executar em desenvolvimento:**
+2. **Run in development mode:**
 ```bash
 npm run dev
 ```
 
-3. **Build para produção:**
+3. **Build for production:**
 ```bash
 npm run build
 npm start
 ```
 
-O projeto roda na porta **3001** por padrão.
+The project runs on port **3001** by default.
 
-## 📝 Scripts Disponíveis
+## 📝 Available Scripts
 
-- `npm run dev` - Servidor de desenvolvimento
-- `npm run build` - Build de produção
-- `npm run start` - Servidor de produção
-- `npm run lint` - Verificação de código
+- `npm run dev` - Starts development server
+- `npm run build` - Creates production build
+- `npm run start` - Starts production server
+- `npm run lint` - Runs ESLint code check
 

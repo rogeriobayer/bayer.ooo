@@ -44,7 +44,6 @@ export const Summary = () => {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        {/* Education cards - left column */}
         <motion.div
           className="flex flex-col items-center lg:items-end justify-center space-y-6 w-full max-w-sm"
           variants={staggerItemVariant}
@@ -74,7 +73,6 @@ export const Summary = () => {
           </div>
         </motion.div>
 
-        {/* Profile photo - center column */}
         <motion.div
           className="flex justify-center"
           variants={staggerItemVariant}
@@ -92,7 +90,6 @@ export const Summary = () => {
           </div>
         </motion.div>
 
-        {/* Current position - right column */}
         <motion.div
           className="flex flex-col justify-center items-center lg:items-start w-full max-w-sm"
           variants={staggerItemVariant}

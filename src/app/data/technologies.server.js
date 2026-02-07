@@ -24,6 +24,7 @@ export const technologiesList = [
     color: "#61dafb",
   },
   { name: "Vuetify", logo: "/vuetify.svg", code: "vuetify", color: "#1867C0" },
+  { name: "MUI", logo: "/mui.svg", code: "mui", color: "#007FFF" },
   {
     name: "Figma",
     logo: "/figma.svg",

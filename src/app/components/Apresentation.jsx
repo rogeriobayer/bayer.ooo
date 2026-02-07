@@ -19,7 +19,6 @@ export const Apresentation = () => {
 
   return (
     <div className="mx-auto w-full max-w-7xl flex-wrap items-center justify-between relative py-16 md:py-24">
-      {/* Left decorative circles with floating animation */}
       <div className="absolute -left-40 top-0 h-full w-80 pointer-events-none hidden lg:block">
         <motion.img
           alt=""
@@ -66,17 +65,14 @@ export const Apresentation = () => {
         animate="visible"
       >
         <div className="flex justify-center flex-col lg:ml-10 max-w-full lg:max-w-[55%]">
-          {/* Main heading - stronger typography */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-base-content tracking-tight font-heading">
             {t("apresentation.greeting")}
           </h1>
 
-          {/* Subtitle with better line-height and max-width */}
           <p className="text-lg md:text-xl font-light leading-relaxed mt-6 text-gray-600 max-w-lg">
             {t("apresentation.subtitle")}
           </p>
 
-          {/* CTA buttons */}
           <div className="flex flex-wrap gap-4 mt-8">
             <motion.button
               onClick={scrollToProjects}
@@ -109,7 +105,6 @@ export const Apresentation = () => {
           </div>
         </div>
 
-        {/* Right decorative circles */}
         <div className="relative flex justify-center lg:justify-end mt-12 lg:mt-0">
           <motion.img
             alt=""
