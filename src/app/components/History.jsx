@@ -5,8 +5,11 @@ import { careerSummary } from "@/app/data/career.server";
 import IconWithText from "@/app/components/IconWithText";
 import { useTranslation } from "../hooks/useTranslation";
 import {
-  slowRotationVariant,
-  counterRotationVariant,
+  floatingVariant,
+  floatingSlowVariant,
+  fadeInVariant,
+  staggerContainerVariant,
+  staggerItemVariant
 } from "@/app/utils/animationConfig";
 
 export const History = () => {
@@ -19,76 +22,101 @@ export const History = () => {
   };
 
   return (
-    <div className="mx-auto max-w-3xl w-full mt-10 relative">
-      <div className="absolute -left-96 top-20 pointer-events-none">
+    <motion.section
+      className="mx-auto max-w-4xl w-full mt-16 relative px-6"
+      variants={fadeInVariant}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+    >
+      {/* Decorative circles with glass effect */}
+      <div className="absolute -left-80 top-20 pointer-events-none hidden xl:block">
         <motion.img
-          alt="Left History Circle"
+          alt=""
           src="/circle2.svg"
-          width="300"
-          height="300"
-          variants={slowRotationVariant}
-          animate="rotate"
-          layout="position"
+          width="250"
+          height="250"
+          className="glass-ornament"
+          variants={floatingSlowVariant}
+          animate="float"
         />
       </div>
 
-      <div className="absolute md:-right-72 -right-60 top-80 pointer-events-none">
+      <div className="absolute -right-72 top-96 pointer-events-none hidden xl:block">
         <motion.img
-          alt="Right History Circle"
+          alt=""
           src="/circle1.svg"
-          width="300"
-          height="300"
-          variants={counterRotationVariant}
-          animate="rotate"
-          layout="position"
+          width="220"
+          height="220"
+          className="glass-ornament"
+          variants={floatingVariant}
+          animate="float"
         />
       </div>
 
-      <div className="flex flex-wrap flex-col justify-evenly gap-4 relative z-10">
-        <div className="flex flex-col justify-center items-center">
-          <h2 className="text-2xl font-normal leading-7 text-center my-8 text-gray-900 sm:tracking-tight font-heading">
-            {t("history.title")}
-          </h2>
-          <div className="flex flex-col items-center sm:w-[33rem] xl:w-full space-y-8">
-            {career.history.map((experience, index) => (
-              <div
-                key={index}
-                className="w-full bg-white/60 backdrop-blur-sm rounded-xl p-6 shadow-sm border border-gray-100/50 hover:shadow-md transition-all duration-300"
-              >
-                <div className="flex items-start gap-6">
-                  <div className="w-[25%] flex-shrink-0">
-                    <span className="text-sm font-medium text-gray-500 xl:bg-gray-50 xl:px-3 xl:py-1.5 rounded-full">
-                      {getDateText(experience.startDate, experience.endDate)}
-                    </span>
-                  </div>
+      <div className="relative z-10">
+        <h2 className="text-2xl md:text-3xl font-medium leading-7 text-center my-10 text-base-content tracking-tight font-heading">
+          {t("history.title")}
+        </h2>
 
-                  <div className="w-[75%] space-y-4">
-                    <h3 className="font-medium text-lg text-gray-900 leading-tight font-heading">
+        {/* DaisyUI Timeline */}
+        <motion.ul
+          className="timeline timeline-snap-icon timeline-vertical max-md:timeline-compact"
+          variants={staggerContainerVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {career.history.map((experience, index) => (
+            <motion.li key={index} variants={staggerItemVariant}>
+              {index > 0 && <hr className="bg-base-300" />}
+
+              {/* Timeline marker */}
+              <div className="timeline-middle">
+                <div className="w-4 h-4 rounded-full bg-primary shadow-md"></div>
+              </div>
+
+              {/* Alternating sides for desktop */}
+              <div className={`timeline-${index % 2 === 0 ? 'start' : 'end'} mb-10 ${index % 2 === 0 ? 'md:text-end' : ''}`}>
+                {/* Date badge */}
+                <time className="badge badge-ghost badge-sm font-mono mb-2">
+                  {getDateText(experience.startDate, experience.endDate)}
+                </time>
+
+                {/* Experience card */}
+                <div className="card bg-base-100/70 backdrop-blur-sm shadow-sm border border-base-300/50 hover:shadow-lg transition-shadow duration-300">
+                  <div className="card-body p-5">
+                    {/* Position title */}
+                    <h3 className="card-title text-lg font-heading text-base-content">
                       {t(experience.positionKey)}
                     </h3>
 
-                    <div className="flex items-center">
+                    {/* Company */}
+                    <div className={`flex items-center gap-2 ${index % 2 === 0 ? 'md:justify-end' : ''}`}>
                       <IconWithText
                         value={experience.companyCode}
                         type="company"
-                        className="text-base"
+                        className="text-sm"
                       />
                     </div>
 
-                    <p className="text-sm text-gray-600 leading-relaxed font-light">
+                    {/* Description */}
+                    <p className="text-sm text-gray-600 leading-relaxed font-light mt-2">
                       {t(experience.descriptionKey)}
                     </p>
 
-                    <div className="flex flex-wrap gap-2 pt-2 items-center">
+                    {/* Tech stack - styled like SkillsSummary badges */}
+                    <div className={`flex flex-wrap gap-1.5 my-1 ${index % 2 === 0 ? 'md:justify-end' : ''}`}>
                       {experience.technologies.map((tech, techIndex) => (
                         <div
                           key={techIndex}
-                          className="opacity-80 hover:opacity-100 transition-opacity flex items-center"
+                          className="badge badge-sm badge-ghost gap-1 px-2 py-2.5"
                         >
                           <IconWithText
                             value={tech}
                             type="technology"
                             showText={false}
+                            showTooltip
                           />
                         </div>
                       ))}
@@ -96,11 +124,13 @@ export const History = () => {
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
+
+              {index < career.history.length - 1 && <hr className="bg-base-300" />}
+            </motion.li>
+          ))}
+        </motion.ul>
       </div>
-    </div>
+    </motion.section>
   );
 };
 

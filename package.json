@@ -19,6 +19,7 @@
   "dependencies": {
     "@fontsource/stack-sans-notch": "^5.2.1",
     "@fontsource/stack-sans-text": "^5.2.1",
+    "daisyui": "^5.5.18",
     "framer-motion": "^12.25.0",
     "next": "^15.5.9",
     "react": "^19.2.3",
