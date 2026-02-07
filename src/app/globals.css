@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "daisyui";
 
 @theme {
   --font-sans: "Stack Sans Text", ui-sans-serif, system-ui, sans-serif;
@@ -29,12 +30,28 @@
     overflow-x: hidden;
     width: 100%;
   }
+
+  /* Accessibility: focus states */
+  a:focus-visible,
+  button:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid hsl(var(--p));
+    outline-offset: 2px;
+  }
 }
 
 @utility text-balance {
   text-wrap: balance;
 }
 
+/* Glass effect for ornaments */
+.glass-ornament {
+  opacity: 0.08;
+  filter: blur(1px);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+}
+
+/* Custom text utilities */
 .text-primary {
   color: rgb(23, 23, 23);
 }
@@ -49,4 +66,15 @@
 
 .text-subtle {
   color: rgb(156, 163, 175);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

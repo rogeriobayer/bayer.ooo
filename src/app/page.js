@@ -8,16 +8,16 @@ import Footer from "@/app/components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-stone-50">
-        <div className="flex min-h-screen flex-col">
-          <Header />
-          <Apresentation/>
-          <Summary />
-          <SkillsSummary />
-          <History />
-          <Projects />
-          <Footer />
-        </div>
+    <main className="min-h-screen bg-base-100" data-theme="portfolio">
+      <div className="flex min-h-screen flex-col">
+        <Header />
+        <Apresentation />
+        <Summary />
+        <SkillsSummary />
+        <History />
+        <Projects />
+        <Footer />
+      </div>
     </main>
   );
 }
