@@ -174,7 +174,7 @@ test.describe('Home Page', () => {
         const socialLinksContainer = page.locator('footer .flex.justify-center.gap-4');
         await expect(socialLinksContainer).toBeVisible();
 
-        const expectedLinks = ['github', 'linkedin', 'email'];
+        const expectedLinks = ['github', 'linkedin', 'behance', 'email'];
         for (const icon of expectedLinks) {
             const link = socialLinksContainer.locator(`a[aria-label]`).filter({ has: page.locator(`img[src="/${icon}.svg"]`) });
             await expect(link).toBeVisible();
