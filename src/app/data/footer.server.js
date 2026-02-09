@@ -10,6 +10,11 @@ export const socialLinks = [
         icon: "linkedin"
     },
     {
+        href: "https://behance.net/rogriobayer",
+        label: "Behance",
+        icon: "behance"
+    },
+    {
         href: "mailto:bayerrogerio@gmail.com",
         label: "Email",
         icon: "email"
