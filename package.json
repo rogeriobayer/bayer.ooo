@@ -46,5 +46,8 @@
     "tailwindcss": "^4.1.18",
     "vitest": "^4.0.16",
     "wrangler": "^4.58.0"
+  },
+  "overrides": {
+    "flatted": "3.4.2"
   }
 }
