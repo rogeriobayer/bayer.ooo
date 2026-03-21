@@ -26,10 +26,12 @@ export const translations = {
     "history.current": "Atual",
 
     "career.position.softwareEngineer": "Software Engineer",
+    "career.position.frontendUiUxDesigner": "Frontend UI/UX Designer",
     "career.position.fullstackDeveloper": "Desenvolvedor Full-stack",
     "career.position.frontendDeveloper": "Desenvolvedor Front-end",
     "career.position.frontendMobileDeveloper": "Desenvolvedor Front-end e Mobile",
 
+    "career.rubylabs.description": "Atuo no projeto Sagabox, uma plataforma de assinatura de livros. Projeto e desenvolvo interfaces escaláveis e de alta qualidade usando Next.js, React, TypeScript e Tailwind CSS. Crio e mantenho design systems, utilizando Figma para transformar ideias em experiências refinadas e centradas no usuário. Atuo em colaboração próxima com stakeholders para alinhar requisitos e converter estratégia de produto em soluções intuitivas, usando dados, pesquisa de UX e testes A/B para melhorar retenção e engajamento.",
     "career.gupy.description": "Atuo no desenvolvimento e evolução de um produto core utilizado por mais de 100 empresas, com foco em arquitetura de frontend, escalabilidade e qualidade. Trabalho com Vue.js e React, participando de reescritas com Nx e arquiteturas de microfrontends. Contribuo com o desenvolvimento de endpoints utilizando Nest.js. Também contribuo para Design Systems, migração Vue 2 → Vue 3, decisões arquiteturais e melhorias contínuas com foco em performance, observabilidade e sustentabilidade técnica.",
     "career.ticto.description": "Contribuí para o desenvolvimento e manutenção de plataformas internas, atuando em áreas de membros, checkouts, painéis administrativos e APIs. Também apoiei o desenvolvimento e arquitetura de APIs de rastreamento de pixels, otimizando a coleta e análise de dados.",
     "career.clientar.description": "Responsável pelo desenvolvimento front-end de um sistema CRM. Realizei a arquitetura e implementação de novas funcionalidades, incorporando testes automatizados com Jest e Cypress para testes end-to-end.",
@@ -93,10 +95,12 @@ export const translations = {
     "history.current": "Current",
 
     "career.position.softwareEngineer": "Software Engineer",
+    "career.position.frontendUiUxDesigner": "Frontend UI/UX Designer",
     "career.position.fullstackDeveloper": "Full-stack Developer",
     "career.position.frontendDeveloper": "Front-end Developer",
     "career.position.frontendMobileDeveloper": "Front-end and Mobile Developer",
 
+    "career.rubylabs.description": "Working at Sagabox, a subscription-based books platform. I design and build scalable, high-quality interfaces using Next.js, React, TypeScript, and Tailwind CSS. I create and maintain design systems, leveraging Figma to translate ideas into polished, user-centered experiences. I work closely with stakeholders to align requirements, turning product strategy into intuitive solutions, while using data, UX research, and A/B testing to improve retention and engagement.",
     "career.gupy.description": "I work on the development and evolution of a core product used by over 100 companies, focusing on frontend architecture, scalability, and quality. I work with Vue.js and React, participating in rewrites using Nx and microfrontend architectures. I also contribute to the development of endpoints using Nest.js. I also contribute to Design Systems, Vue 2 → Vue 3 migration, architectural decisions, and continuous improvements focused on performance, observability, and technical sustainability.",
     "career.ticto.description": "Contributed to the development and maintenance of internal platforms, working on member areas, checkouts, administrative panels, and APIs. Also supported the development and architecture of pixel tracking APIs, optimizing data collection and analysis.",
     "career.clientar.description": "Responsible for front-end development of a CRM system. Performed architecture and implementation of new features, incorporating automated testing with Jest and Cypress for end-to-end testing.",
@@ -160,10 +164,12 @@ export const translations = {
     "history.current": "Actuel",
 
     "career.position.softwareEngineer": "Ingénieur Logiciel",
+    "career.position.frontendUiUxDesigner": "Frontend UI/UX Designer",
     "career.position.fullstackDeveloper": "Développeur Full-stack",
     "career.position.frontendDeveloper": "Développeur Front-end",
     "career.position.frontendMobileDeveloper": "Développeur Front-end et Mobile",
 
+    "career.rubylabs.description": "Je travaille sur Sagabox, une plateforme de livres par abonnement. Je conçois et développe des interfaces scalables et de haute qualité avec Next.js, React, TypeScript et Tailwind CSS. Je crée et maintiens des design systems, en utilisant Figma pour transformer des idées en expériences soignées et centrées sur l'utilisateur. Je collabore étroitement avec les parties prenantes pour aligner les besoins et transformer la stratégie produit en solutions intuitives, tout en m'appuyant sur les données, la recherche UX et les tests A/B pour améliorer la rétention et l'engagement.",
     "career.gupy.description": "Je travaille sur le développement et l'évolution d'un produit core utilisé par plus de 100 entreprises, avec un focus sur l'architecture frontend, la scalabilité et la qualité. Je travaille avec Vue.js et React, participant aux réécritures avec Nx et aux architectures de microfrontends. Je contribue également au développement de endpoints avec Nest.js. Je contribue également aux Design Systems, à la migration Vue 2 → Vue 3, aux décisions architecturales et aux améliorations continues axées sur la performance, l'observabilité et la durabilité technique.",
     "career.ticto.description": "J'ai contribué au développement et à la maintenance de plateformes internes, travaillant sur les espaces membres, checkouts, panneaux administratifs et APIs. J'ai aussi supporté le développement et l'architecture d'APIs de tracking de pixels, optimisant la collecte et l'analyse de données.",
     "career.clientar.description": "Responsable du développement front-end d'un système CRM. J'ai réalisé l'architecture et l'implémentation de nouvelles fonctionnalités, incorporant des tests automatisés avec Jest et Cypress pour les tests end-to-end.",
