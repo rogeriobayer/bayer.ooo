@@ -35,7 +35,7 @@ export const Projects = () => {
     <>
       <motion.section
         id="projects"
-        className="mx-auto max-w-4xl w-full mt-20 mb-20 relative px-6"
+        className="mx-auto max-w-4xl w-full mt-10 mb-10 relative px-6"
         variants={fadeInVariant}
         initial="hidden"
         whileInView="visible"

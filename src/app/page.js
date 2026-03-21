@@ -4,6 +4,7 @@ import Summary from "@/app/components/Summary";
 import SkillsSummary from "@/app/components/SkillsSummary";
 import History from "@/app/components/History";
 import Projects from "@/app/components/Projects";
+import CurrentLocation from "@/app/components/CurrentLocation";
 import Footer from "@/app/components/Footer";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
         <SkillsSummary />
         <History />
         <Projects />
+        <CurrentLocation />
         <Footer />
       </div>
     </main>
