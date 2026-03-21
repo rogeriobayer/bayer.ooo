@@ -27,7 +27,7 @@ export const Summary = () => {
 
   return (
     <motion.section
-      className="mx-auto w-full max-w-7xl mt-20 px-6"
+      className="mx-auto w-full max-w-7xl mt-10 px-6"
       variants={fadeInVariant}
       initial="hidden"
       whileInView="visible"

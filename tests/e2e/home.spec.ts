@@ -164,6 +164,22 @@ test.describe('Home Page', () => {
         await expect(projectLinks).toHaveCount(expectedLinks);
     });
 
+    test('should render current location section', async ({ page }) => {
+        const locationEyebrow = page.getByText(t(defaultLanguage, 'location.eyebrow'), {
+            exact: true,
+        });
+        const locationParts = t(defaultLanguage, 'location.city')
+            .split(',')
+            .map((part) => part.trim())
+            .filter(Boolean);
+
+        await expect(locationEyebrow).toBeVisible();
+
+        for (const part of locationParts) {
+            await expect(page.getByText(new RegExp(escapeRegExp(part)))).toBeVisible();
+        }
+    });
+
     test('should render footer and social links', async ({ page }) => {
         // Footer Component
         const year = new Date().getFullYear();

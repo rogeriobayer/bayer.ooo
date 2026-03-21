@@ -17,7 +17,7 @@ const Footer = () => {
 
     return (
         <motion.footer
-            className="mt-32 mb-16 relative"
+            className="mt-10 mb-16 relative"
             variants={fadeInVariant}
             initial="hidden"
             whileInView="visible"

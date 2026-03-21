@@ -25,6 +25,11 @@ export const translations = {
     "history.title": "Experiência",
     "history.current": "Atual",
 
+    "location.eyebrow": "Onde estou agora?",
+    "location.title": "Atualmente localizado em",
+    "location.description": "Uma base criativa no sul do Brasil para desenhar, testar e construir experiências digitais com atenção a detalhe, performance e produto.",
+    "location.city": "Curitiba, Parana, Brazil",
+
     "career.position.softwareEngineer": "Software Engineer",
     "career.position.frontendUiUxDesigner": "Frontend UI/UX Designer",
     "career.position.fullstackDeveloper": "Desenvolvedor Full-stack",
@@ -94,6 +99,11 @@ export const translations = {
     "history.title": "Experience",
     "history.current": "Current",
 
+    "location.eyebrow": "Where am I now?",
+    "location.title": "Currently located in",
+    "location.description": "A creative base in southern Brazil for designing, testing, and building digital experiences with a strong focus on detail, performance, and product thinking.",
+    "location.city": "Curitiba, Parana, Brazil",
+
     "career.position.softwareEngineer": "Software Engineer",
     "career.position.frontendUiUxDesigner": "Frontend UI/UX Designer",
     "career.position.fullstackDeveloper": "Full-stack Developer",
@@ -162,6 +172,11 @@ export const translations = {
 
     "history.title": "Expérience",
     "history.current": "Actuel",
+
+    "location.eyebrow": "Ou suis-je en ce moment ?",
+    "location.title": "Actuellement situé à",
+    "location.description": "Une base créative dans le sud du Brésil pour concevoir, tester et construire des expériences numériques avec un fort souci du détail, de la performance et du produit.",
+    "location.city": "Curitiba, Parana, Brazil",
 
     "career.position.softwareEngineer": "Ingénieur Logiciel",
     "career.position.frontendUiUxDesigner": "Frontend UI/UX Designer",
