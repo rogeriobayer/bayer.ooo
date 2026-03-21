@@ -1,5 +1,14 @@
 export const companiesList = [
   {
+    name: "Ruby Labs",
+    logo: "/rubylabs.svg",
+    url: "",
+    description:
+      "Ruby Labs is the company behind Sagabox, a subscription-based books platform.",
+    code: "rubylabs",
+    color: "#111827",
+  },
+  {
     name: "Gupy",
     logo: "/gupy.svg",
     url: "https://www.gupy.io/",

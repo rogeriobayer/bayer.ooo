@@ -1,9 +1,9 @@
 export const careerSummary = {
   position: {
-    nameKey: "career.position.softwareEngineer",
-    companyCode: "gupy",
-    startDate: "2022-10-31",
-    framework: "typescript",
+    nameKey: "career.position.frontendUiUxDesigner",
+    companyCode: "rubylabs",
+    startDate: "2026-03-03",
+    framework: "next",
   },
   skills: {
     languages: ["javascript", "typescript", "html", "css", "sass"],
@@ -11,20 +11,28 @@ export const careerSummary = {
       "vue",
       "nuxt",
       "react",
-      "nx",
+      "react-native",
       "nest",
       "next",
-      "react-native",
       "expo",
+      "nx"
     ],
     tools: ["powerbi", "cloudflare", "gcp", "git", "docker", "tailwind", "vuetify", "mui"],
   },
   history: [
     {
+      positionKey: "career.position.frontendUiUxDesigner",
+      companyCode: "rubylabs",
+      startDate: "03/2026",
+      endDate: null,
+      technologies: ["react", "typescript", "next", "vercel", "figma",],
+      descriptionKey: "career.rubylabs.description",
+    },
+    {
       positionKey: "career.position.softwareEngineer",
       companyCode: "gupy",
       startDate: "10/2022",
-      endDate: null,
+      endDate: "03/2026",
       technologies: [
         "vue2",
         "react",

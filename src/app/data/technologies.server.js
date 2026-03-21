@@ -149,6 +149,7 @@ export const technologiesList = [
   { name: "Nest.js", logo: "/nest.svg", code: "nest", color: "#E0234E" },
   { name: "Vitest", logo: "/vitest.svg", code: "vitest", color: "#FFD700" },
   { name: "GCP", logo: "/gcp.svg", code: "gcp", color: "#4285F4" },
+  { name: "Vercel", logo: "/vercel.svg", code: "vercel", color: "#000000" },
   { name: "Tailwind", logo: "/tailwind.svg", code: "tailwind", color: "#38BDF8" },
   { name: "Cloudflare", logo: "/cloudflare.svg", code: "cloudflare", color: "#F38020" },
   { name: "Chrome", logo: "/chrome.svg", code: "chrome", color: "#4285F4" },
