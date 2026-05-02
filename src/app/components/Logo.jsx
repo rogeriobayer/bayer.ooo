@@ -8,7 +8,7 @@ export const Logo = () => {
     <Image
         alt="Blog Logo"
         src="/rogeriobayer.svg"
-        className="block w-[150px]"
+        className="block w-[120px] md:w-[150px]"
         width="150"
         height="50"
       />
