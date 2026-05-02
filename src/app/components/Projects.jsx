@@ -136,7 +136,7 @@ export const Projects = () => {
                     </div>
 
                     {/* Description */}
-                    <p className="text-sm text-gray-600 leading-relaxed font-light line-clamp-3">
+                    <p className="text-sm text-secondary leading-relaxed font-light line-clamp-3">
                       {t(project.descriptionKey)}
                     </p>
 

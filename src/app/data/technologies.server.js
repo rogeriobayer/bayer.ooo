@@ -42,6 +42,7 @@ export const technologiesList = [
     logo: "/next.svg",
     code: "next",
     color: "#000000",
+    darkInvert: true,
   },
   {
     name: "Nuxt",
@@ -49,7 +50,7 @@ export const technologiesList = [
     code: "nuxt",
     color: "#00C58E",
   },
-  { name: "Expo", logo: "/expo.svg", code: "expo", color: "#000020" },
+  { name: "Expo", logo: "/expo.svg", code: "expo", color: "#000020", darkInvert: true },
   {
     name: "Javascript",
     logo: "/javascript.svg",
@@ -83,6 +84,7 @@ export const technologiesList = [
     logo: "/express.svg",
     code: "express",
     color: "#000000",
+    darkInvert: true,
   },
   {
     name: "MongoDB",
@@ -119,6 +121,7 @@ export const technologiesList = [
     logo: "/github.svg",
     code: "github",
     color: "#181717",
+    darkInvert: true,
   },
   {
     name: "GitLab",
@@ -143,15 +146,16 @@ export const technologiesList = [
     logo: "/cypress.svg",
     code: "cypress",
     color: "#17202C",
+    darkInvert: true,
   },
   { name: "PowerBI", logo: "/powerbi.svg", code: "powerbi", color: "#F2C811" },
   { name: "SpringBoot", logo: "/springboot.svg", code: "springboot", color: "#6DB33F" },
   { name: "Nest.js", logo: "/nest.svg", code: "nest", color: "#E0234E" },
   { name: "Vitest", logo: "/vitest.svg", code: "vitest", color: "#FFD700" },
   { name: "GCP", logo: "/gcp.svg", code: "gcp", color: "#4285F4" },
-  { name: "Vercel", logo: "/vercel.svg", code: "vercel", color: "#000000" },
+  { name: "Vercel", logo: "/vercel.svg", code: "vercel", color: "#000000", darkInvert: true },
   { name: "Tailwind", logo: "/tailwind.svg", code: "tailwind", color: "#38BDF8" },
   { name: "Cloudflare", logo: "/cloudflare.svg", code: "cloudflare", color: "#F38020" },
   { name: "Chrome", logo: "/chrome.svg", code: "chrome", color: "#4285F4" },
-  { name: "Nx", logo: "/nx.svg", code: "nx", color: "#012F55" },
+  { name: "Nx", logo: "/nx.svg", code: "nx", color: "#012F55", darkInvert: true },
 ];

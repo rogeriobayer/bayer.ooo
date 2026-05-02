@@ -7,6 +7,7 @@ export const companiesList = [
       "Ruby Labs is the company behind Sagabox, a subscription-based books platform.",
     code: "rubylabs",
     color: "#111827",
+    darkInvert: true,
   },
   {
     name: "Gupy",
@@ -16,6 +17,7 @@ export const companiesList = [
       "Gupy is a Brazilian leading startup that provides a recruitment platform for companies.",
     code: "gupy",
     color: "#010b21",
+    darkInvert: true,
   },
   {
     name: "Ticto",
@@ -25,6 +27,7 @@ export const companiesList = [
       "Ticto is a Brazilian company that provides a platform for online courses.",
     code: "ticto",
     color: "#000",
+    darkInvert: true,
   },
   {
     name: "Clientar CRM",

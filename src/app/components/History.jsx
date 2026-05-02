@@ -92,7 +92,7 @@ export const History = () => {
                       />
                     </div>
 
-                    <p className="text-sm text-gray-600 leading-relaxed font-light mt-2">
+                    <p className="text-sm text-secondary leading-relaxed font-light mt-2">
                       {t(experience.descriptionKey)}
                     </p>
 

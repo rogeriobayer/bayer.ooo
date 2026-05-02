@@ -69,7 +69,7 @@ export const Apresentation = () => {
             {t("apresentation.greeting")}
           </h1>
 
-          <p className="text-lg md:text-xl font-light leading-relaxed mt-6 text-gray-600 max-w-lg">
+          <p className="text-lg md:text-xl font-light leading-relaxed mt-6 text-secondary max-w-lg">
             {t("apresentation.subtitle")}
           </p>
 
@@ -91,7 +91,7 @@ export const Apresentation = () => {
               href="https://linkedin.com/in/rogerio-bayer"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-outline border-blue-600 text-blue-600 hover:bg-blue-600 hover:border-blue-600 hover:text-white"
+              className="btn btn-outline border-blue-600 text-blue-600 hover:bg-blue-600 hover:border-blue-600 hover:text-white dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-400 dark:hover:border-blue-400 dark:hover:text-base-100"
               variants={buttonHoverVariant}
               initial="rest"
               whileHover="hover"
@@ -127,7 +127,7 @@ export const Apresentation = () => {
           <motion.img
             alt=""
             src="/circle1.svg"
-            className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 opacity-70"
+            className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 opacity-70 hero-ornament"
             variants={floatingFastVariant}
             animate="float"
           />
