@@ -4,11 +4,41 @@ import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 
 export const metadata = {
-  title: "Blog",
+  title: "Blog | Rogério Bayer",
   description: "Artigos, tutoriais e reflexões sobre desenvolvimento de software, tecnologia e design.",
+  keywords: ["blog", "desenvolvimento", "software", "tecnologia", "nextjs", "react", "frontend"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  alternates: {
+    canonical: "https://bayer.ooo/blog",
+  },
   openGraph: {
     title: "Blog | Rogério Bayer",
     description: "Artigos, tutoriais e reflexões sobre desenvolvimento de software, tecnologia e design.",
+    url: "https://bayer.ooo/blog",
+    type: "website",
+    siteName: "Rogério Bayer",
+    locale: "pt_BR",
+    images: [
+      {
+        url: "https://bayer.ooo/rogeriobayer.png",
+        width: 1200,
+        height: 630,
+        alt: "Blog | Rogério Bayer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog | Rogério Bayer",
+    description: "Artigos, tutoriais e reflexões sobre desenvolvimento de software, tecnologia e design.",
+    images: ["https://bayer.ooo/rogeriobayer.png"],
   },
 };
 

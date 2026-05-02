@@ -23,9 +23,19 @@ export default function BlogCard({ post }) {
           initial="rest"
           whileHover="hover"
           whileTap="tap"
-          className="card bg-base-200/50 border border-base-300/30 rounded-xl p-6 transition-colors hover:bg-base-200"
+          className="card bg-base-200/50 border border-base-300/30 rounded-xl overflow-hidden transition-colors hover:bg-base-200"
         >
-          <div className="flex flex-col gap-3">
+          {translation.cover && (
+            <div className="relative w-full h-48 overflow-hidden">
+              <img
+                src={translation.cover}
+                alt={translation.title}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+          )}
+          <div className="p-6 flex flex-col gap-3">
             <div className="flex items-center gap-3 text-xs text-muted">
               <time dateTime={translation.date}>
                 {formatDate(translation.date, currentLanguage)}
