@@ -5,6 +5,7 @@ date: "2025-05-02T10:00:00.000Z"
 lang: "pt"
 excerpt: "Primeiro post do blog. Bem-vindo ao meu espaço de ideias, aprendizados e reflexões sobre desenvolvimento e tecnologia."
 tags: ["introdução", "nextjs"]
+cover: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&q=80"
 author: "Rogério Bayer"
 ---
 
