@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Logo from "./Logo";
 import LanguageSelector from "./LanguageSelector";
 import ThemeToggle from "./ThemeToggle";
@@ -7,15 +6,7 @@ export const Header = () => {
   return (
     <header className="sticky top-0 z-50 flex w-full items-center justify-between bg-base-100/90 backdrop-blur-md px-6 md:px-12 py-4 font-sans font-normal uppercase text-base-content border-b border-base-300/30">
       <div className="w-full max-w-7xl mx-auto flex items-center justify-between">
-        <div className="flex items-center gap-6">
-          <Logo />
-          <Link
-            href="/blog"
-            className="text-sm text-muted hover:text-base-content transition-colors hidden sm:block"
-          >
-            Blog
-          </Link>
-        </div>
+        <Logo />
         <div className="flex items-center gap-1">
           <ThemeToggle />
           <div className="h-6 w-px bg-primary/40 mx-1" />

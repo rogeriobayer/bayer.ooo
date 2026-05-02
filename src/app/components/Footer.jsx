@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 import { useTranslation } from "../hooks/useTranslation";
 import {
     floatingVariant,
@@ -13,7 +14,9 @@ import { socialLinks } from "../data/footer.server";
 
 const Footer = () => {
     const { t } = useTranslation();
+    const pathname = usePathname();
     const currentYear = new Date().getFullYear();
+    const isBlogPage = pathname?.startsWith('/blog');
 
     return (
         <motion.footer
@@ -55,18 +58,20 @@ const Footer = () => {
                     <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
                 </div>
 
-                <div className="flex justify-center mb-6">
-                    <motion.a
-                        href="/blog"
-                        className="text-sm text-muted hover:text-base-content transition-colors underline underline-offset-4"
-                        variants={buttonHoverVariant}
-                        initial="rest"
-                        whileHover="hover"
-                        whileTap="tap"
-                    >
-                        {t("footer.blogLink")}
-                    </motion.a>
-                </div>
+                {!isBlogPage && (
+                    <div className="flex justify-center mb-6">
+                        <motion.a
+                            href="/blog"
+                            className="text-sm text-muted hover:text-base-content transition-colors underline underline-offset-4"
+                            variants={buttonHoverVariant}
+                            initial="rest"
+                            whileHover="hover"
+                            whileTap="tap"
+                        >
+                            {t("footer.blogLink")}
+                        </motion.a>
+                    </div>
+                )}
 
                 <div className="flex justify-center gap-4 mb-10">
                     {socialLinks.map((link, index) => (
