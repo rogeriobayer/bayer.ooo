@@ -166,15 +166,15 @@ export default function BlogPost({ post }) {
             ))}
           </div>
         )}
-      </header>
 
-      {translation.cover && (
-        <img
-          src={translation.cover}
-          alt={translation.title}
-          className="rounded-xl w-full mb-10 border border-base-300/30"
-        />
-      )}
+        {translation.cover && (
+          <img
+            src={translation.cover}
+            alt={translation.title}
+            className="rounded-xl w-full mt-8 border border-base-300/30"
+          />
+        )}
+      </header>
 
       <div className="prose-custom">
         <ReactMarkdown remarkPlugins={[remarkGfm]} components={MarkdownComponents}>
