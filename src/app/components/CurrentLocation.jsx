@@ -60,7 +60,7 @@ export const CurrentLocation = () => {
           variants={staggerItemVariant}
         >
           <motion.p
-            className="text-sm md:text-base text-gray-500"
+            className="text-sm md:text-base text-muted"
             variants={staggerItemVariant}
           >
             {t("location.eyebrow")}

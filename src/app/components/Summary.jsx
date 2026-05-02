@@ -50,10 +50,10 @@ export const Summary = () => {
         >
           <div className="card bg-base-100/60 backdrop-blur-sm shadow-sm border border-base-300/50 p-5 w-full">
             <div className="card-body p-0">
-              <p className="text-base font-light leading-7 text-gray-600">
+              <p className="text-base font-light leading-7 text-secondary">
                 {t("education.undergrad.title")}
               </p>
-              <p className="text-base font-light leading-7 text-gray-600 mb-3">
+              <p className="text-base font-light leading-7 text-secondary mb-3">
                 {t("education.undergrad.subtitle")}
               </p>
               <IconWithText value="ufpr" type="company" />
@@ -62,10 +62,10 @@ export const Summary = () => {
 
           <div className="card bg-base-100/60 backdrop-blur-sm shadow-sm border border-base-300/50 p-5 w-full">
             <div className="card-body p-0">
-              <p className="text-base font-light leading-7 text-gray-600">
+              <p className="text-base font-light leading-7 text-secondary">
                 {t("education.postgrad.title")}
               </p>
-              <p className="text-base font-light leading-7 text-gray-600 mb-3">
+              <p className="text-base font-light leading-7 text-secondary mb-3">
                 {t("education.postgrad.subtitle")}
               </p>
               <IconWithText value="unyleya" type="company" />
@@ -99,7 +99,7 @@ export const Summary = () => {
               <p className="text-base font-medium leading-7 text-base-content">
                 {t(career.position.nameKey)}
               </p>
-              <p className="text-base font-light leading-7 text-gray-600 mb-2">
+              <p className="text-base font-light leading-7 text-secondary mb-2">
                 {t("summary.daysIn", { days: daysInCompany })}
               </p>
               <IconWithText value={career.position.companyCode} type="company" />

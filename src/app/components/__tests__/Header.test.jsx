@@ -10,6 +10,10 @@ vi.mock('../LanguageSelector', () => ({
   default: () => <div>Language Selector</div>
 }));
 
+vi.mock('../ThemeToggle', () => ({
+  default: () => <div>Theme Toggle</div>
+}));
+
 describe('Header Component', () => {
   it('renders header element with correct styling', () => {
     render(<Header />);

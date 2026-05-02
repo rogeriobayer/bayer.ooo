@@ -112,7 +112,7 @@ export const ProjectModal = ({ project, isOpen, onClose }) => {
                             </div>
 
                             {/* Description */}
-                            <p className="text-gray-600 leading-relaxed mb-6">
+                            <p className="text-secondary leading-relaxed mb-6">
                                 {t(project.descriptionKey)}
                             </p>
 
@@ -131,7 +131,7 @@ export const ProjectModal = ({ project, isOpen, onClose }) => {
                                                     <p className="font-medium text-sm" style={{ color: techDetails?.color }}>
                                                         {techDetails?.name}
                                                     </p>
-                                                    <p className="text-xs text-gray-500">{tech.role}</p>
+                                                    <p className="text-xs text-muted">{tech.role}</p>
                                                 </div>
                                             </div>
                                         );
@@ -149,7 +149,7 @@ export const ProjectModal = ({ project, isOpen, onClose }) => {
                                         {modalData.impact.map((metric, idx) => (
                                             <div key={idx} className="text-center p-4 bg-base-200/50 rounded-lg">
                                                 <p className="text-2xl font-bold text-primary">{metric.value}</p>
-                                                <p className="text-xs text-gray-500 mt-1">{t(metric.labelKey)}</p>
+                                                <p className="text-xs text-muted mt-1">{t(metric.labelKey)}</p>
                                             </div>
                                         ))}
                                     </div>

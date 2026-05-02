@@ -26,10 +26,10 @@ export const IconWithText = ({
         width={20}
         height={20}
         alt={item.name}
-        className="flex-shrink-0"
+        className={`flex-shrink-0 ${item.darkInvert ? 'icon-dark-invert' : ''}`}
       />
       {showText && (
-        <p className="font-semibold" style={{ color: item.color }}>
+        <p className={`font-semibold ${item.darkInvert ? 'text-dark-invert' : ''}`} style={{ color: item.color }}>
           {item.name}
         </p>
       )}

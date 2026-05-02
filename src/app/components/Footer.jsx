@@ -49,7 +49,7 @@ const Footer = () => {
 
             <div className="max-w-2xl mx-auto px-6 text-center relative z-10">
                 <div className="mb-10">
-                    <p className="text-xl md:text-2xl font-light text-gray-700 leading-relaxed mb-5 italic">
+                    <p className="text-xl md:text-2xl font-light text-secondary leading-relaxed mb-5 italic">
                         {t("footer.quote")}
                     </p>
                     <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
@@ -60,7 +60,7 @@ const Footer = () => {
                         <motion.a
                             key={index}
                             href={link.href}
-                            className="btn btn-ghost btn-circle text-gray-500 hover:text-base-content hover:bg-base-200"
+                            className="btn btn-ghost btn-circle text-muted hover:text-base-content hover:bg-base-200"
                             target={link.href.startsWith('mailto') ? undefined : "_blank"}
                             rel={link.href.startsWith('mailto') ? undefined : "noopener noreferrer"}
                             aria-label={link.label}
@@ -69,16 +69,16 @@ const Footer = () => {
                             whileHover="hover"
                             whileTap="tap"
                         >
-                            <img src={`/${link.icon}.svg`} alt={link.label} className="w-5 h-5 opacity-70 hover:opacity-100 transition-opacity" />
+                            <img src={`/${link.icon}.svg`} alt={link.label} className={`w-5 h-5 opacity-70 hover:opacity-100 transition-opacity ${['github', 'behance', 'email'].includes(link.icon) ? 'icon-dark-invert' : ''}`} />
                         </motion.a>
                     ))}
                 </div>
 
                 <div className="space-y-1">
-                    <p className="text-sm text-gray-500">
+                    <p className="text-sm text-muted">
                         {t("footer.copyright", { year: currentYear })}
                     </p>
-                    <p className="text-xs text-gray-400">
+                    <p className="text-xs text-subtle">
                         {t("footer.madeWith")}
                     </p>
                 </div>

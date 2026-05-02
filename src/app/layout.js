@@ -7,6 +7,7 @@ import "@fontsource/stack-sans-text/600.css";
 import "@fontsource/stack-sans-text/700.css";
 import "./globals.css";
 import { LanguageProvider } from "./contexts/LanguageContext";
+import { ThemeProvider } from "./contexts/ThemeContext";
 import Script from "next/script";
 
 export const metadata = {
@@ -75,6 +76,23 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/rogeriobayer.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#fafaf9" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#0f0f0f" media="(prefers-color-scheme: dark)" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                var theme = 'portfolio';
+                try {
+                  var saved = localStorage.getItem('theme');
+                  if (saved) theme = saved;
+                  else if (window.matchMedia('(prefers-color-scheme: dark)').matches) theme = 'portfolio-dark';
+                } catch (e) {}
+                document.documentElement.setAttribute('data-theme', theme);
+              })();
+            `
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -126,9 +144,11 @@ export default function RootLayout({ children }) {
             gtag('config', 'G-3JP1FZFB56');
           `}
         </Script>
-        <LanguageProvider>
-          {children}
-        </LanguageProvider>
+        <ThemeProvider>
+          <LanguageProvider>
+            {children}
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

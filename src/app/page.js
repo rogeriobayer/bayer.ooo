@@ -9,7 +9,7 @@ import Footer from "@/app/components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-base-100" data-theme="portfolio">
+    <main className="min-h-screen bg-base-100">
       <div className="flex min-h-screen flex-col">
         <Header />
         <Apresentation />
