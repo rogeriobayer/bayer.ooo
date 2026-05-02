@@ -51,12 +51,14 @@ const Footer = () => {
             </div>
 
             <div className="max-w-2xl mx-auto px-6 text-center relative z-10">
-                <div className="mb-10">
-                    <p className="text-xl md:text-2xl font-light text-secondary leading-relaxed mb-5 italic">
-                        {t("footer.quote")}
-                    </p>
-                    <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
-                </div>
+                {!isBlogPage && (
+                    <div className="mb-10">
+                        <p className="text-xl md:text-2xl font-light text-secondary leading-relaxed mb-5 italic">
+                            {t("footer.quote")}
+                        </p>
+                        <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+                    </div>
+                )}
 
                 {!isBlogPage && (
                     <div className="flex justify-center mb-6">
