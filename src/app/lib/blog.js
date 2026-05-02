@@ -6,79 +6,14 @@ export { formatDate } from './date';
 
 const BLOG_DIR = path.join(process.cwd(), 'content', 'blog');
 
-/**
- * Get all posts for a given language
- * @param {string} lang - Language code (pt, en, fr)
- * @returns {Array} Array of post objects sorted by date desc
- */
-export function getPostsByLanguage(lang) {
-  const langDir = path.join(BLOG_DIR, lang);
-  
-  if (!fs.existsSync(langDir)) {
-    return [];
-  }
-
-  const files = fs.readdirSync(langDir).filter((file) => file.endsWith('.md'));
-
-  const posts = files.map((file) => {
-    const filePath = path.join(langDir, file);
-    const fileContents = fs.readFileSync(filePath, 'utf8');
-    const { data, content } = matter(fileContents);
-
-    return {
-      slug: data.slug || file.replace('.md', ''),
-      title: data.title || '',
-      date: data.date || '',
-      lang: data.lang || lang,
-      excerpt: data.excerpt || '',
-      tags: data.tags || [],
-      cover: data.cover || null,
-      author: data.author || 'Rogério Bayer',
-      content,
-      readingTime: calculateReadingTime(content),
-    };
-  });
-
-  return posts.sort((a, b) => new Date(b.date) - new Date(a.date));
-}
-
-/**
- * Get all posts across all languages
- * @returns {Array} Array of all posts sorted by date desc
- */
-export function getAllPosts() {
-  const languages = ['pt', 'en', 'fr'];
-  let allPosts = [];
-
-  for (const lang of languages) {
-    const posts = getPostsByLanguage(lang);
-    allPosts = allPosts.concat(posts);
-  }
-
-  return allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
-}
-
-/**
- * Get a single post by language and slug
- * @param {string} lang
- * @param {string} slug
- * @returns {object|null}
- */
-export function getPostBySlug(lang, slug) {
-  const filePath = path.join(BLOG_DIR, lang, `${slug}.md`);
-
-  if (!fs.existsSync(filePath)) {
-    return null;
-  }
-
+function readPostFile(filePath) {
   const fileContents = fs.readFileSync(filePath, 'utf8');
   const { data, content } = matter(fileContents);
-
   return {
-    slug: data.slug || slug,
+    slug: data.slug || path.basename(filePath).replace(/\.\w+\.md$/, ''),
     title: data.title || '',
     date: data.date || '',
-    lang: data.lang || lang,
+    lang: data.lang || 'pt',
     excerpt: data.excerpt || '',
     tags: data.tags || [],
     cover: data.cover || null,
@@ -89,25 +24,80 @@ export function getPostBySlug(lang, slug) {
 }
 
 /**
- * Get all post slugs for static generation
- * @returns {Array} Array of { lang, slug } params
+ * Get all unique post slugs with their translations
+ * @returns {Array} Array of { slug, translations: { pt: post, en: post, fr: post } }
  */
-export function getAllPostSlugs() {
-  const languages = ['pt', 'en', 'fr'];
-  let slugs = [];
+export function getAllPosts() {
+  if (!fs.existsSync(BLOG_DIR)) {
+    return [];
+  }
 
-  for (const lang of languages) {
-    const langDir = path.join(BLOG_DIR, lang);
-    if (!fs.existsSync(langDir)) continue;
+  const files = fs.readdirSync(BLOG_DIR).filter((file) => file.endsWith('.md'));
+  const postsBySlug = {};
 
-    const files = fs.readdirSync(langDir).filter((file) => file.endsWith('.md'));
-    for (const file of files) {
-      const slug = file.replace('.md', '');
-      slugs.push({ lang, slug });
+  for (const file of files) {
+    const match = file.match(/^(.+)\.(pt|en|fr)\.md$/);
+    if (!match) continue;
+
+    const [, slug, lang] = match;
+    const post = readPostFile(path.join(BLOG_DIR, file));
+
+    if (!postsBySlug[slug]) {
+      postsBySlug[slug] = { slug, translations: {} };
+    }
+    postsBySlug[slug].translations[lang] = post;
+  }
+
+  return Object.values(postsBySlug).sort((a, b) => {
+    const dateA = new Date(a.translations.pt?.date || 0);
+    const dateB = new Date(b.translations.pt?.date || 0);
+    return dateB - dateA;
+  });
+}
+
+/**
+ * Get a single post with all translations by slug
+ * @param {string} slug
+ * @returns {object|null} { slug, translations: { pt, en, fr } }
+ */
+export function getPostBySlug(slug) {
+  const langs = ['pt', 'en', 'fr'];
+  const translations = {};
+
+  for (const lang of langs) {
+    const filePath = path.join(BLOG_DIR, `${slug}.${lang}.md`);
+    if (fs.existsSync(filePath)) {
+      translations[lang] = readPostFile(filePath);
     }
   }
 
-  return slugs;
+  if (Object.keys(translations).length === 0) {
+    return null;
+  }
+
+  return { slug, translations };
+}
+
+/**
+ * Get all post slugs for static generation
+ * @returns {Array} Array of { slug }
+ */
+export function getAllPostSlugs() {
+  if (!fs.existsSync(BLOG_DIR)) {
+    return [];
+  }
+
+  const files = fs.readdirSync(BLOG_DIR).filter((file) => file.endsWith('.md'));
+  const slugs = new Set();
+
+  for (const file of files) {
+    const match = file.match(/^(.+)\.(pt|en|fr)\.md$/);
+    if (match) {
+      slugs.add(match[1]);
+    }
+  }
+
+  return Array.from(slugs).map((slug) => ({ slug }));
 }
 
 /**
@@ -120,5 +110,3 @@ function calculateReadingTime(content) {
   const words = content.trim().split(/\s+/).length;
   return Math.ceil(words / wordsPerMinute);
 }
-
-

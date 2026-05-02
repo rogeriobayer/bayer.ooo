@@ -6,20 +6,25 @@ backend:
 media_folder: public/images/blog
 public_folder: /images/blog
 
+i18n:
+  structure: multiple_files
+  locales: [pt, en, fr]
+  default_locale: pt
+
 collections:
   - name: "blog"
     label: "Blog"
     folder: "content/blog"
     create: true
-    slug: "{{fields.lang}}/{{fields.slug}}"
-    path: "{{fields.lang}}/{{fields.slug}}"
+    slug: "{{fields.slug}}"
+    i18n: true
     fields:
-      - { label: "Título", name: "title", widget: "string" }
-      - { label: "Slug", name: "slug", widget: "string" }
-      - { label: "Data", name: "date", widget: "datetime" }
-      - { label: "Idioma", name: "lang", widget: "select", options: ["pt", "en", "fr"] }
-      - { label: "Resumo", name: "excerpt", widget: "text" }
-      - { label: "Tags", name: "tags", widget: "list" }
-      - { label: "Capa", name: "cover", widget: "image", required: false }
-      - { label: "Autor", name: "author", widget: "string", default: "Rogério Bayer" }
-      - { label: "Corpo", name: "body", widget: "markdown" }
+      - { label: "Título", name: "title", widget: "string", i18n: true }
+      - { label: "Slug", name: "slug", widget: "string", i18n: duplicate }
+      - { label: "Data", name: "date", widget: "datetime", i18n: duplicate }
+      - { label: "Idioma", name: "lang", widget: "select", options: ["pt", "en", "fr"], i18n: duplicate }
+      - { label: "Resumo", name: "excerpt", widget: "text", i18n: true }
+      - { label: "Tags", name: "tags", widget: "list", i18n: true }
+      - { label: "Capa", name: "cover", widget: "image", required: false, i18n: duplicate }
+      - { label: "Autor", name: "author", widget: "string", default: "Rogério Bayer", i18n: duplicate }
+      - { label: "Corpo", name: "body", widget: "markdown", i18n: true }

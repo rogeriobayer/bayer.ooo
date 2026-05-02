@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { staggerContainerVariant } from "@/app/utils/animationConfig";
 import BlogCard from "./BlogCard";
 
-export default function BlogList({ posts, lang }) {
+export default function BlogList({ posts }) {
   if (posts.length === 0) {
     return (
       <div className="text-center py-20">
@@ -24,7 +24,7 @@ export default function BlogList({ posts, lang }) {
       className="grid gap-6"
     >
       {posts.map((post) => (
-        <BlogCard key={`${post.lang}-${post.slug}`} post={post} lang={lang} />
+        <BlogCard key={post.slug} post={post} />
       ))}
     </motion.div>
   );

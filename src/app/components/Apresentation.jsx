@@ -127,7 +127,7 @@ export const Apresentation = () => {
           <motion.img
             alt=""
             src="/circle1.svg"
-            className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 opacity-70 hero-ornament"
+            className="hidden md:block w-80 h-80 lg:w-96 lg:h-96 opacity-70 hero-ornament"
             variants={floatingFastVariant}
             animate="float"
           />

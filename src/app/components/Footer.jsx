@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 import { useTranslation } from "../hooks/useTranslation";
 import {
     floatingVariant,
@@ -13,7 +14,9 @@ import { socialLinks } from "../data/footer.server";
 
 const Footer = () => {
     const { t } = useTranslation();
+    const pathname = usePathname();
     const currentYear = new Date().getFullYear();
+    const isBlogPage = pathname?.startsWith('/blog');
 
     return (
         <motion.footer
@@ -48,25 +51,29 @@ const Footer = () => {
             </div>
 
             <div className="max-w-2xl mx-auto px-6 text-center relative z-10">
-                <div className="mb-10">
-                    <p className="text-xl md:text-2xl font-light text-secondary leading-relaxed mb-5 italic">
-                        {t("footer.quote")}
-                    </p>
-                    <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
-                </div>
+                {!isBlogPage && (
+                    <div className="mb-10">
+                        <p className="text-xl md:text-2xl font-light text-secondary leading-relaxed mb-5 italic">
+                            {t("footer.quote")}
+                        </p>
+                        <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+                    </div>
+                )}
 
-                <div className="flex justify-center mb-6">
-                    <motion.a
-                        href="/blog"
-                        className="text-sm text-muted hover:text-base-content transition-colors underline underline-offset-4"
-                        variants={buttonHoverVariant}
-                        initial="rest"
-                        whileHover="hover"
-                        whileTap="tap"
-                    >
-                        {t("footer.blogLink")}
-                    </motion.a>
-                </div>
+                {!isBlogPage && (
+                    <div className="flex justify-center mb-6">
+                        <motion.a
+                            href="/blog"
+                            className="text-sm text-muted hover:text-base-content transition-colors underline underline-offset-4"
+                            variants={buttonHoverVariant}
+                            initial="rest"
+                            whileHover="hover"
+                            whileTap="tap"
+                        >
+                            {t("footer.blogLink")}
+                        </motion.a>
+                    </div>
+                )}
 
                 <div className="flex justify-center gap-4 mb-10">
                     {socialLinks.map((link, index) => (
@@ -82,7 +89,7 @@ const Footer = () => {
                             whileHover="hover"
                             whileTap="tap"
                         >
-                            <img src={`/${link.icon}.svg`} alt={link.label} className={`w-5 h-5 opacity-70 hover:opacity-100 transition-opacity ${['github', 'behance', 'email'].includes(link.icon) ? 'icon-dark-invert' : ''}`} />
+                            <img src={`/${link.icon}.svg`} alt={link.label} className={`w-5 h-5 opacity-70 hover:opacity-100 transition-opacity ${['github', 'behance', 'email', 'linkedin'].includes(link.icon) ? 'icon-dark-invert' : ''}`} />
                         </motion.a>
                     ))}
                 </div>

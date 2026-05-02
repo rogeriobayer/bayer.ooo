@@ -1,10 +1,11 @@
 ---
 title: "Hello, World!"
-slug: "hello-world"
+slug: "ola-mundo"
 date: "2025-05-02T10:00:00.000Z"
 lang: "en"
 excerpt: "First blog post. Welcome to my space for ideas, learnings, and reflections on development and technology."
 tags: ["introduction", "nextjs"]
+cover: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&q=80"
 author: "Rogério Bayer"
 ---
 
