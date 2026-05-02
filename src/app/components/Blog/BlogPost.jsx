@@ -132,6 +132,8 @@ export default function BlogPost({ post, lang }) {
 
       <header className="mb-10">
         <div className="flex items-center gap-3 text-sm text-muted mb-4">
+          <span className="font-medium text-base-content">{post.author}</span>
+          <span>·</span>
           <time dateTime={post.date}>
             {formatDate(post.date, lang)}
           </time>
@@ -178,10 +180,7 @@ export default function BlogPost({ post, lang }) {
       </div>
 
       <div className="mt-12 pt-8 border-t border-base-300/30">
-        <div className="flex items-center justify-between">
-          <span className="text-sm text-muted">
-            {t("blog.writtenBy")} <strong className="text-base-content">{post.author}</strong>
-          </span>
+        <div className="flex items-center justify-end">
           <Link
             href="/blog"
             className="inline-flex items-center gap-2 text-sm text-primary hover:text-secondary transition-colors"

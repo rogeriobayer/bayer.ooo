@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import { getPostBySlug, getAllPostSlugs, formatDate } from "@/app/lib/blog";
 import BlogPost from "@/app/components/Blog/BlogPost";
+import Header from "@/app/components/Header";
+import Footer from "@/app/components/Footer";
 
 export async function generateStaticParams() {
   return getAllPostSlugs();
@@ -49,8 +51,12 @@ export default function BlogPostPage({ params }) {
   }
 
   return (
-    <main className="min-h-screen bg-base-100 pt-20 pb-20">
-      <BlogPost post={post} lang={lang} />
-    </main>
+    <div className="min-h-screen bg-base-100 flex flex-col">
+      <Header />
+      <main className="flex-1 pt-20 pb-20">
+        <BlogPost post={post} lang={lang} />
+      </main>
+      <Footer />
+    </div>
   );
 }
