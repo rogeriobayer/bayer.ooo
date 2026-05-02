@@ -68,9 +68,17 @@ export const translations = {
     "projects.modal.impact": "Impacto",
     "projects.modal.close": "Fechar",
 
+    "blog.title": "Blog",
+    "blog.readMore": "Ler mais",
+    "blog.publishedOn": "Publicado em",
+    "blog.minRead": "min de leitura",
+    "blog.backToBlog": "← Voltar ao blog",
+    "blog.noPosts": "Nenhum post publicado ainda. Volte em breve!",
+    "blog.writtenBy": "Escrito por",
     "footer.quote": '"Construindo o futuro, uma linha de código por vez"',
     "footer.copyright": "© {year} Rogério Bayer",
     "footer.madeWith": "Feito com ☕",
+    "footer.blogLink": "Blog",
   },
 
   en: {
@@ -142,9 +150,17 @@ export const translations = {
     "projects.modal.impact": "Impact",
     "projects.modal.close": "Close",
 
+    "blog.title": "Blog",
+    "blog.readMore": "Read more",
+    "blog.publishedOn": "Published on",
+    "blog.minRead": "min read",
+    "blog.backToBlog": "← Back to blog",
+    "blog.noPosts": "No posts published yet. Check back soon!",
+    "blog.writtenBy": "Written by",
     "footer.quote": '"Building the future, one line of code at a time"',
     "footer.copyright": "© {year} Rogério Bayer",
     "footer.madeWith": "Made with ☕ and lots of code",
+    "footer.blogLink": "Blog",
   },
 
   fr: {
@@ -216,8 +232,16 @@ export const translations = {
     "projects.modal.impact": "Impact",
     "projects.modal.close": "Fermer",
 
+    "blog.title": "Blog",
+    "blog.readMore": "Lire la suite",
+    "blog.publishedOn": "Publié le",
+    "blog.minRead": "min de lecture",
+    "blog.backToBlog": "← Retour au blog",
+    "blog.noPosts": "Aucun article publié pour l'instant. Revenez bientôt !",
+    "blog.writtenBy": "Écrit par",
     "footer.quote": '"Construisant l\'avenir, une ligne de code à la fois"',
     "footer.copyright": "© {year} Rogério Bayer",
     "footer.madeWith": "Fait avec ☕ et beaucoup de code",
+    "footer.blogLink": "Blog",
   }
 };

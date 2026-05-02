@@ -1,0 +1,25 @@
+backend:
+  name: github
+  repo: rogeriobayer/bayer.ooo
+  branch: main
+
+media_folder: public/images/blog
+public_folder: /images/blog
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
+    create: true
+    slug: "{{fields.lang}}/{{fields.slug}}"
+    path: "{{fields.lang}}/{{fields.slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Idioma", name: "lang", widget: "select", options: ["pt", "en", "fr"] }
+      - { label: "Resumo", name: "excerpt", widget: "text" }
+      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Capa", name: "cover", widget: "image", required: false }
+      - { label: "Autor", name: "author", widget: "string", default: "Rogério Bayer" }
+      - { label: "Corpo", name: "body", widget: "markdown" }

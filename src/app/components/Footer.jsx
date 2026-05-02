@@ -55,6 +55,19 @@ const Footer = () => {
                     <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
                 </div>
 
+                <div className="flex justify-center mb-6">
+                    <motion.a
+                        href="/blog"
+                        className="text-sm text-muted hover:text-base-content transition-colors underline underline-offset-4"
+                        variants={buttonHoverVariant}
+                        initial="rest"
+                        whileHover="hover"
+                        whileTap="tap"
+                    >
+                        {t("footer.blogLink")}
+                    </motion.a>
+                </div>
+
                 <div className="flex justify-center gap-4 mb-10">
                     {socialLinks.map((link, index) => (
                         <motion.a
