@@ -89,7 +89,7 @@ const Footer = () => {
                             whileHover="hover"
                             whileTap="tap"
                         >
-                            <img src={`/${link.icon}.svg`} alt={link.label} className={`w-5 h-5 opacity-70 hover:opacity-100 transition-opacity ${['github', 'behance', 'email'].includes(link.icon) ? 'icon-dark-invert' : ''}`} />
+                            <img src={`/${link.icon}.svg`} alt={link.label} className={`w-5 h-5 opacity-70 hover:opacity-100 transition-opacity ${['github', 'behance', 'email', 'linkedin'].includes(link.icon) ? 'icon-dark-invert' : ''}`} />
                         </motion.a>
                     ))}
                 </div>
