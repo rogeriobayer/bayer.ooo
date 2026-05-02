@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { fadeInVariant } from "@/app/utils/animationConfig";
 import { formatDate } from "@/app/lib/date";
+import { useLanguage } from "@/app/contexts/LanguageContext";
 import { useTranslation } from "@/app/hooks/useTranslation";
 
 const MarkdownComponents = {
@@ -111,8 +112,13 @@ const MarkdownComponents = {
   ),
 };
 
-export default function BlogPost({ post, lang }) {
+export default function BlogPost({ post }) {
   const { t } = useTranslation();
+  const { currentLanguage } = useLanguage();
+  const translation = post.translations[currentLanguage] || post.translations.pt || Object.values(post.translations)[0];
+
+  if (!translation) return null;
+
   return (
     <motion.article
       variants={fadeInVariant}
@@ -132,28 +138,28 @@ export default function BlogPost({ post, lang }) {
 
       <header className="mb-10">
         <div className="flex items-center gap-3 text-sm text-muted mb-4">
-          <span className="font-medium text-base-content">{post.author}</span>
+          <span className="font-medium text-base-content">{translation.author}</span>
           <span>·</span>
-          <time dateTime={post.date}>
-            {formatDate(post.date, lang)}
+          <time dateTime={translation.date}>
+            {formatDate(translation.date, currentLanguage)}
           </time>
           <span>·</span>
-          <span>{post.readingTime} min</span>
+          <span>{translation.readingTime} min</span>
         </div>
 
         <h1 className="text-3xl md:text-4xl font-heading font-bold text-base-content leading-tight mb-4">
-          {post.title}
+          {translation.title}
         </h1>
 
-        {post.excerpt && (
+        {translation.excerpt && (
           <p className="text-lg text-secondary leading-relaxed">
-            {post.excerpt}
+            {translation.excerpt}
           </p>
         )}
 
-        {post.tags && post.tags.length > 0 && (
+        {translation.tags && translation.tags.length > 0 && (
           <div className="flex flex-wrap gap-2 mt-4">
-            {post.tags.map((tag) => (
+            {translation.tags.map((tag) => (
               <span
                 key={tag}
                 className="px-3 py-1 text-sm rounded-full bg-base-200 text-muted border border-base-300/30"
@@ -165,17 +171,17 @@ export default function BlogPost({ post, lang }) {
         )}
       </header>
 
-      {post.cover && (
+      {translation.cover && (
         <img
-          src={post.cover}
-          alt={post.title}
+          src={translation.cover}
+          alt={translation.title}
           className="rounded-xl w-full mb-10 border border-base-300/30"
         />
       )}
 
       <div className="prose-custom">
         <ReactMarkdown remarkPlugins={[remarkGfm]} components={MarkdownComponents}>
-          {post.content}
+          {translation.content}
         </ReactMarkdown>
       </div>
 

@@ -1,6 +1,6 @@
 ---
 title: "Bonjour, le Monde !"
-slug: "bonjour-le-monde"
+slug: "ola-mundo"
 date: "2025-05-02T10:00:00.000Z"
 lang: "fr"
 excerpt: "Premier article du blog. Bienvenue dans mon espace d'idées, d'apprentissages et de réflexions sur le développement et la technologie."

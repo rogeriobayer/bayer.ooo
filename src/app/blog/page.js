@@ -1,5 +1,5 @@
 import { getAllPosts } from "@/app/lib/blog";
-import BlogCard from "@/app/components/Blog/BlogCard";
+import BlogList from "@/app/components/Blog/BlogList";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 
@@ -29,19 +29,7 @@ export default function BlogPage() {
             </p>
           </div>
 
-          {posts.length === 0 ? (
-            <div className="text-center py-20">
-              <p className="text-muted text-lg">
-                Nenhum post publicado ainda. Volte em breve!
-              </p>
-            </div>
-          ) : (
-            <div className="grid gap-6">
-              {posts.map((post) => (
-                <BlogCard key={`${post.lang}-${post.slug}`} post={post} lang={post.lang} />
-              ))}
-            </div>
-          )}
+          <BlogList posts={posts} />
         </div>
       </main>
       <Footer />
