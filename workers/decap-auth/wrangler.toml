@@ -1,0 +1,13 @@
+name = "bayerooo-decap-auth"
+main = "index.js"
+compatibility_date = "2025-01-19"
+
+# Para usar um domínio customizado (ex: auth.bayer.ooo), descomente e configure:
+# route = { pattern = "auth.bayer.ooo", custom_domain = true }
+
+# Para desabilitar o domínio workers.dev padrão quando usar domínio customizado:
+# workers_dev = false
+
+[vars]
+# Defina como "1" se o repositório for privado
+GITHUB_REPO_PRIVATE = "0"

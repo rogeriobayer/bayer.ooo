@@ -3,6 +3,8 @@ import BlogList from "@/app/components/Blog/BlogList";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 
+export const dynamic = "force-static";
+
 export const metadata = {
   title: "Blog | Rogério Bayer",
   description: "Artigos, tutoriais e reflexões sobre desenvolvimento de software, tecnologia e design.",
