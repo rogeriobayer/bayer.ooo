@@ -12,10 +12,16 @@
 ┌─────────────────┐      ┌─────────────────┐      ┌─────────────────┐
 │   Decap CMS     │      │   Next.js 15    │      │   Cloudflare    │
 │  /admin/index   │─────▶│  Static Gen     │─────▶│   Pages (SSG)   │
-│  (GitHub OAuth) │      │  App Router     │      │                 │
 └─────────────────┘      └─────────────────┘      └─────────────────┘
-         │                        │
-         ▼                        ▼
+         │                                                    ▲
+         │ OAuth (GitHub)                                     │
+         ▼                                                    │
+┌─────────────────────────────────────────┐                   │
+│  Cloudflare Worker: bayerooo-decap-auth │───────────────────┘
+│  /auth  →  GitHub  →  /callback         │  (commit → rebuild)
+└─────────────────────────────────────────┘
+         │
+         ▼
 ┌─────────────────┐      ┌─────────────────┐
 │  content/blog/  │      │  public/admin/  │
 │  pt/en/fr/*.md  │      │  config.yml     │
@@ -156,9 +162,11 @@ collections:
 
 ## 9. Backend / Auth
 
-- GitHub OAuth via DecapCMS default Netlify auth service (free, works with any host)
-- No additional OAuth proxy needed for initial setup
-- User must create a GitHub OAuth App if they want custom auth later
+- **GitHub OAuth via Cloudflare Worker proxy** (`workers/decap-auth/`)
+- O serviço padrão da Netlify (`api.netlify.com/auth`) **não funciona** para sites hospedados fora da Netlify (ex: Cloudflare Pages)
+- Foi implementado um **OAuth Proxy próprio** como Cloudflare Worker que faz o intermédio entre o DecapCMS e o GitHub
+- O worker troca o `code` do GitHub por `access_token` e retorna ao DecapCMS via `postMessage`
+- O `config.yml` usa `base_url` apontando para a URL do worker deployado
 
 ---
 
@@ -179,21 +187,62 @@ collections:
 
 ## 12. Configurations Needed by User
 
-1. **GitHub OAuth App** (optional but recommended for production):
-   - Go to https://github.com/settings/developers
-   - Create OAuth App with:
-     - Homepage URL: `https://bayer.ooo`
-     - Authorization callback: `https://api.netlify.com/auth/done`
-   - Update `public/admin/config.yml` with `base_url` if using custom auth
+### 1. Criar GitHub OAuth App
 
-2. **Cloudflare Pages Build Settings** (should already be configured):
-   - Build command: `npm run build`
-   - Output directory: `.open-next/assets` (handled by OpenNext)
+1. Acesse https://github.com/settings/developers
+2. Clique em **"New OAuth App"**
+3. Preencha:
+   - **Application name**: `Decap CMS - bayer.ooo`
+   - **Homepage URL**: URL do seu worker (veja passo 3 abaixo). Pode ser o workers.dev ou domínio customizado.
+   - **Authorization callback URL**: URL do worker + `/callback`
+     - Exemplo: `https://bayerooo-decap-auth.seu-account.workers.dev/callback`
+4. Salve o **Client ID** e gere o **Client Secret**
 
-3. **DecapCMS Access**:
-   - Navigate to `https://bayer.ooo/admin`
-   - Authorize with GitHub
-   - Start creating posts
+### 2. Deploy do OAuth Proxy (Cloudflare Worker)
+
+```bash
+cd workers/decap-auth
+
+# Configure as secrets do worker
+npx wrangler secret put GITHUB_OAUTH_ID
+# (cole o Client ID do GitHub)
+
+npx wrangler secret put GITHUB_OAUTH_SECRET
+# (cole o Client Secret do GitHub)
+
+# Faça o deploy
+npx wrangler deploy
+```
+
+> **Opcional - Domínio customizado**: Edite `wrangler.toml` e descomente a linha `route` apontando para um subdomínio seu (ex: `auth.bayer.ooo`).
+
+### 3. Atualizar config.yml do DecapCMS
+
+Edite `public/admin/config.yml` e atualize o `base_url` para a URL do worker deployado:
+
+```yaml
+backend:
+  name: github
+  repo: rogeriobayer/bayer.ooo
+  branch: main
+  base_url: https://bayerooo-decap-auth.seu-account.workers.dev  # <- sua URL aqui
+  auth_endpoint: /auth
+```
+
+Commit e push para que a mudança vá para produção.
+
+### 4. Cloudflare Pages Build Settings
+
+Já devem estar configurados:
+- Build command: `npm run build`
+- Output directory: `.open-next/assets`
+
+### 5. Acessar o DecapCMS
+
+1. Navegue para `https://bayer.ooo/admin`
+2. Clique em "Login with GitHub"
+3. Autorize o aplicativo
+4. Pronto para criar posts!
 
 ---
 
