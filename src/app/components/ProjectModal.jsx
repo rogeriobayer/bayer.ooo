@@ -70,7 +70,6 @@ export const ProjectModal = ({ project, isOpen, onClose }) => {
                         onClick={(e) => e.stopPropagation()}
                     >
                         <div className="card-body p-6 md:p-8">
-                            {/* Header */}
                             <div className="flex justify-between items-start mb-4">
                                 <h2 id="modal-title" className="card-title text-xl md:text-2xl font-heading">
                                     {t(project.nameKey)}
@@ -86,7 +85,6 @@ export const ProjectModal = ({ project, isOpen, onClose }) => {
                                 </button>
                             </div>
 
-                            {/* Image carousel */}
                             <div className="mb-6">
                                 <div className="relative rounded-lg overflow-hidden bg-base-200 aspect-video">
                                     <Image
@@ -111,12 +109,10 @@ export const ProjectModal = ({ project, isOpen, onClose }) => {
                                 )}
                             </div>
 
-                            {/* Description */}
                             <p className="text-secondary leading-relaxed mb-6">
                                 {t(project.descriptionKey)}
                             </p>
 
-                            {/* Technologies section */}
                             <div className="mb-6">
                                 <h3 className="font-medium text-base-content mb-3">
                                     {t("projects.modal.technologies")}
@@ -139,7 +135,6 @@ export const ProjectModal = ({ project, isOpen, onClose }) => {
                                 </div>
                             </div>
 
-                            {/* Impact metrics */}
                             {modalData.impact && modalData.impact.length > 0 && (
                                 <div className="mb-6">
                                     <h3 className="font-medium text-base-content mb-3">
@@ -156,7 +151,6 @@ export const ProjectModal = ({ project, isOpen, onClose }) => {
                                 </div>
                             )}
 
-                            {/* Footer actions */}
                             <div className="card-actions justify-end">
                                 {project.link && (
                                     <a

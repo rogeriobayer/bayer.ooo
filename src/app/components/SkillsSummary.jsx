@@ -43,7 +43,6 @@ export const SkillsSummary = () => {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        {/* Languages */}
         <motion.div
           className="flex flex-col justify-center items-center"
           variants={staggerItemVariant}
@@ -54,7 +53,6 @@ export const SkillsSummary = () => {
           {renderSkillBadges(career.skills.languages)}
         </motion.div>
 
-        {/* Frameworks */}
         <motion.div
           className="flex flex-col justify-center items-center"
           variants={staggerItemVariant}
@@ -65,7 +63,6 @@ export const SkillsSummary = () => {
           {renderSkillBadges(career.skills.frameworks)}
         </motion.div>
 
-        {/* Tools */}
         <motion.div
           className="flex flex-col justify-center items-center"
           variants={staggerItemVariant}
