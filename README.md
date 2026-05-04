@@ -11,7 +11,6 @@ Personal portfolio developed with Next.js featuring multi-language support (Port
 - **React** - JavaScript library for user interfaces
 - **Tailwind CSS** - Utility-first CSS framework
 - **Framer Motion** - Animation library for React
-- **Lucide React** - Icon library (where applicable)
 
 ## 📁 Project Structure
 

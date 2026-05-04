@@ -214,7 +214,7 @@ npx wrangler secret put GITHUB_OAUTH_SECRET
 npx wrangler deploy
 ```
 
-> **Opcional - Domínio customizado**: Edite `wrangler.toml` e descomente a linha `route` apontando para um subdomínio seu (ex: `auth.bayer.ooo`).
+> **Opcional - Domínio customizado**: Edite `wrangler.jsonc` e descomente a linha `route` apontando para um subdomínio seu (ex: `auth.bayer.ooo`).
 
 ### 3. Atualizar config.yml do DecapCMS
 

@@ -2,9 +2,6 @@ backend:
   name: github
   repo: rogeriobayer/bayer.ooo
   branch: main
-  # IMPORTANTE: Substitua pela URL do seu worker deployado (passo 3 abaixo)
-  # Exemplo com workers.dev: https://bayerooo-decap-auth.seu-account.workers.dev
-  # Exemplo com domínio customizado: https://auth.bayer.ooo
   base_url: https://bayerooo-decap-auth.tomatebg.workers.dev
   auth_endpoint: /auth
 

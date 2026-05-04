@@ -41,7 +41,6 @@ export const Projects = () => {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
       >
-        {/* Decorative circles */}
         <div className="absolute -left-20 top-0 h-full w-full pointer-events-none hidden lg:block">
           <motion.img
             alt=""
@@ -105,9 +104,8 @@ export const Projects = () => {
                   initial="rest"
                   whileHover="hover"
                   whileTap="tap"
-                >
-                  {/* Project thumbnail */}
-                  <figure className="w-24 md:w-32 flex-shrink-0 bg-base-200/50 p-3 flex items-center justify-center">
+                  >
+                    <figure className="w-24 md:w-32 flex-shrink-0 bg-base-200/50 p-3 flex items-center justify-center">
                     <Image
                       src={project.image}
                       alt={`${t(project.nameKey)} logo`}
@@ -118,12 +116,10 @@ export const Projects = () => {
                   </figure>
 
                   <div className="card-body p-4 md:p-5">
-                    {/* Project title */}
                     <h3 className="card-title text-lg font-heading text-base-content">
                       {t(project.nameKey)}
                     </h3>
 
-                    {/* Tech stack badges */}
                     <div className="flex flex-wrap gap-1.5 my-1">
                       {project.frameworks.map((framework, fIndex) => (
                         <div
@@ -135,12 +131,10 @@ export const Projects = () => {
                       ))}
                     </div>
 
-                    {/* Description */}
                     <p className="text-sm text-secondary leading-relaxed font-light line-clamp-3">
                       {t(project.descriptionKey)}
                     </p>
 
-                    {/* Action buttons */}
                     <div className="card-actions justify-end mt-3">
                       {project.link && (
                         <motion.a
@@ -178,7 +172,6 @@ export const Projects = () => {
         </div>
       </motion.section>
 
-      {/* Project Modal */}
       <ProjectModal
         project={selectedProject}
         isOpen={!!selectedProject}
