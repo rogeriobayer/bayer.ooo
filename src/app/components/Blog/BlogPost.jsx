@@ -65,17 +65,20 @@ const MarkdownComponents = {
   em: ({ children }) => (
     <em className="italic text-secondary">{children}</em>
   ),
-  code: ({ children, inline }) => (
-    inline ? (
-      <code className="px-1.5 py-0.5 text-sm bg-base-300/50 text-primary rounded font-mono">
+  code: ({ node, className, children, ...props }) => {
+    const match = /language-(\w+)/.exec(className || '');
+    return match ? (
+      <pre className="bg-base-200 border border-base-300/30 rounded-lg p-4 overflow-x-auto mb-5">
+        <code className={className} {...props}>
+          {children}
+        </code>
+      </pre>
+    ) : (
+      <code className="px-1.5 py-0.5 text-sm bg-base-300/50 text-primary rounded font-mono" {...props}>
         {children}
       </code>
-    ) : (
-      <pre className="bg-base-200 border border-base-300/30 rounded-lg p-4 overflow-x-auto mb-5">
-        <code className="text-sm font-mono text-secondary">{children}</code>
-      </pre>
-    )
-  ),
+    );
+  },
   img: ({ src, alt }) => (
     <img
       src={src}
