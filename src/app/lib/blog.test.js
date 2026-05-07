@@ -12,11 +12,11 @@ describe('Blog helpers', () => {
   });
 
   it('getPostBySlug returns a post with all translations', () => {
-    const post = getPostBySlug('ola-mundo');
+    const post = getPostBySlug('watch-vs-watch-effect');
     expect(post).not.toBeNull();
-    expect(post.slug).toBe('ola-mundo');
+    expect(post.slug).toBe('watch-vs-watch-effect');
     expect(post.translations).toHaveProperty('pt');
-    expect(post.translations.pt.title).toBe('Olá, Mundo!');
+    expect(post.translations.pt.title).toBe('Vue 3: watch vs watchEffect — Qual usar na Composition API?');
   });
 
   it('getPostBySlug returns null for non-existent post', () => {
