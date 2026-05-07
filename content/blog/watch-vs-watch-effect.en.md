@@ -5,7 +5,7 @@ date: "2026-05-07T10:00:00.000Z"
 lang: "en"
 excerpt: "Discover the practical differences between watch and watchEffect in Vue 3's Composition API, and learn exactly when to use each one to avoid bugs and improve performance."
 tags: ["vue", "javascript", "composition-api"]
-cover: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80"
+cover: "/blog/vue-effect.png"
 author: "Rogério Bayer"
 ---
 
