@@ -49,8 +49,8 @@ describe('Build Validation Tests', () => {
     expect(jsConfig.compilerOptions.paths).toHaveProperty('@/*');
   });
 
-  it('should validate SEO files exist', () => {
-    expect(() => import('../../app/sitemap.js')).not.toThrow();
+  it('should validate SEO files exist', async () => {
+    await expect(import('../../app/sitemap.js')).resolves.toBeDefined();
   });
 
   it('should validate environment is properly configured for testing', () => {
