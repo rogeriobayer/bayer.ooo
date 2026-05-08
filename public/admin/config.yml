@@ -36,3 +36,116 @@ collections:
       - { label: "Capa", name: "cover", widget: "image", required: false, i18n: duplicate }
       - { label: "Autor", name: "author", widget: "string", default: "Rogério Bayer", i18n: duplicate }
       - { label: "Corpo", name: "body", widget: "markdown", i18n: true }
+
+  - name: "projects"
+    label: "Projetos"
+    folder: "content/projects"
+    format: "json"
+    create: false
+    slug: "projects"
+    fields:
+      - name: "projects"
+        label: "Projetos"
+        widget: "list"
+        fields:
+          - { name: "id", label: "ID", widget: "number" }
+          - { name: "slug", label: "Slug", widget: "string" }
+          - name: "name"
+            label: "Nome"
+            widget: "object"
+            fields:
+              - { name: "pt", label: "Português", widget: "string" }
+              - { name: "en", label: "English", widget: "string" }
+              - { name: "fr", label: "Français", widget: "string" }
+          - { name: "image", label: "Imagem", widget: "image", required: false }
+          - { name: "frameworks", label: "Frameworks", widget: "list" }
+          - name: "description"
+            label: "Descrição"
+            widget: "object"
+            fields:
+              - { name: "pt", label: "Português", widget: "text" }
+              - { name: "en", label: "English", widget: "text" }
+              - { name: "fr", label: "Français", widget: "text" }
+          - { name: "link", label: "Link", widget: "string", required: false }
+          - name: "modal"
+            label: "Modal"
+            widget: "object"
+            fields:
+              - { name: "images", label: "Imagens", widget: "list", required: false }
+              - name: "technologies"
+                label: "Tecnologias"
+                widget: "list"
+                required: false
+                fields:
+                  - { name: "code", label: "Código", widget: "string" }
+                  - name: "role"
+                    label: "Função"
+                    widget: "object"
+                    fields:
+                      - { name: "pt", label: "Português", widget: "string" }
+                      - { name: "en", label: "English", widget: "string" }
+                      - { name: "fr", label: "Français", widget: "string" }
+              - name: "impact"
+                label: "Impacto"
+                widget: "list"
+                required: false
+                fields:
+                  - { name: "value", label: "Valor", widget: "string" }
+                  - name: "label"
+                    label: "Label"
+                    widget: "object"
+                    fields:
+                      - { name: "pt", label: "Português", widget: "string" }
+                      - { name: "en", label: "English", widget: "string" }
+                      - { name: "fr", label: "Français", widget: "string" }
+
+  - name: "career"
+    label: "Carreira"
+    folder: "content/career"
+    format: "json"
+    create: false
+    slug: "career"
+    fields:
+      - name: "position"
+        label: "Posição Atual"
+        widget: "object"
+        fields:
+          - name: "name"
+            label: "Cargo"
+            widget: "object"
+            fields:
+              - { name: "pt", label: "Português", widget: "string" }
+              - { name: "en", label: "English", widget: "string" }
+              - { name: "fr", label: "Français", widget: "string" }
+          - { name: "companyCode", label: "Código da Empresa", widget: "string" }
+          - { name: "startDate", label: "Data de Início", widget: "date" }
+          - { name: "framework", label: "Framework", widget: "string" }
+      - name: "skills"
+        label: "Skills"
+        widget: "object"
+        fields:
+          - { name: "languages", label: "Linguagens", widget: "list" }
+          - { name: "frameworks", label: "Frameworks", widget: "list" }
+          - { name: "tools", label: "Ferramentas", widget: "list" }
+      - name: "history"
+        label: "Histórico"
+        widget: "list"
+        fields:
+          - name: "position"
+            label: "Cargo"
+            widget: "object"
+            fields:
+              - { name: "pt", label: "Português", widget: "string" }
+              - { name: "en", label: "English", widget: "string" }
+              - { name: "fr", label: "Français", widget: "string" }
+          - { name: "companyCode", label: "Código da Empresa", widget: "string" }
+          - { name: "startDate", label: "Data Início", widget: "string" }
+          - { name: "endDate", label: "Data Fim", widget: "string", required: false }
+          - { name: "technologies", label: "Tecnologias", widget: "list" }
+          - name: "description"
+            label: "Descrição"
+            widget: "object"
+            fields:
+              - { name: "pt", label: "Português", widget: "text" }
+              - { name: "en", label: "English", widget: "text" }
+              - { name: "fr", label: "Français", widget: "text" }

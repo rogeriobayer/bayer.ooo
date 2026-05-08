@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { careerSummary } from "@/app/data/career.server";
+import { careerData } from "@/app/lib/career-data";
 import IconWithText from "@/app/components/IconWithText";
 import { useTranslation } from "../hooks/useTranslation";
 import {
@@ -13,8 +13,8 @@ import {
 } from "@/app/utils/animationConfig";
 
 export const History = () => {
-  const career = careerSummary;
-  const { t } = useTranslation();
+  const { t, currentLanguage } = useTranslation();
+  const career = careerData[currentLanguage] || careerData.pt;
 
   const getDateText = (startDate, endDate) => {
     const endText = endDate ? `${endDate}` : t("history.current");
@@ -81,7 +81,7 @@ export const History = () => {
                 <div className="card bg-base-100/70 backdrop-blur-sm shadow-sm border border-base-300/50 hover:shadow-lg transition-shadow duration-300">
                   <div className="card-body p-5">
                     <h3 className="card-title text-lg font-heading text-base-content">
-                      {t(experience.positionKey)}
+                      {experience.position}
                     </h3>
 
                     <div className={`flex items-center gap-2 ${index % 2 === 0 ? 'md:justify-end' : ''}`}>
@@ -93,7 +93,7 @@ export const History = () => {
                     </div>
 
                     <p className="text-sm text-secondary leading-relaxed font-light mt-2">
-                      {t(experience.descriptionKey)}
+                      {experience.description}
                     </p>
 
                     <div className={`flex flex-wrap gap-1.5 my-1 ${index % 2 === 0 ? 'md:justify-end' : ''}`}>

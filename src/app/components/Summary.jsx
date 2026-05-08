@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { careerSummary } from "@/app/data/career.server";
+import { careerData } from "@/app/lib/career-data";
 import IconWithText from "@/app/components/IconWithText";
 import { useTranslation } from "../hooks/useTranslation";
 import Image from "next/image";
@@ -12,8 +12,8 @@ import {
 } from "@/app/utils/animationConfig";
 
 export const Summary = () => {
-  const career = careerSummary;
-  const { t } = useTranslation();
+  const { t, currentLanguage } = useTranslation();
+  const career = careerData[currentLanguage] || careerData.pt;
 
   function calcDaysInCompany() {
     const oneDay = 24 * 60 * 60 * 1000;
@@ -97,7 +97,7 @@ export const Summary = () => {
           <div className="card bg-base-100/60 backdrop-blur-sm shadow-sm border border-base-300/50 p-5 w-full">
             <div className="card-body p-0">
               <p className="text-base font-medium leading-7 text-base-content">
-                {t(career.position.nameKey)}
+                {career.position.name}
               </p>
               <p className="text-base font-light leading-7 text-secondary mb-2">
                 {t("summary.daysIn", { days: daysInCompany })}
