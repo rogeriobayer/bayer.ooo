@@ -1,12 +1,17 @@
 ---
 title: "Vue 3 : watch vs watchEffect — Lequel utiliser dans la Composition API ?"
-slug: "watch-vs-watch-effect"
-date: "2026-05-07T10:00:00.000Z"
-lang: "fr"
-excerpt: "Découvrez les différences pratiques entre watch et watchEffect dans la Composition API de Vue 3, et apprenez exactement quand utiliser chacun pour éviter les bugs et améliorer les performances."
-tags: ["vue", "javascript", "composition-api"]
-cover: "/blog/vue-effect.png"
-author: "Rogério Bayer"
+slug: watch-vs-watch-effect
+date: 2026-05-07T10:00:00.000Z
+lang: fr
+excerpt: Découvrez les différences pratiques entre watch et watchEffect dans la
+  Composition API de Vue 3, et apprenez exactement quand utiliser chacun pour
+  éviter les bugs et améliorer les performances.
+tags:
+  - vue
+  - javascript
+  - composition-api
+cover: /blog/vue-effect.png
+author: Rogério Bayer
 ---
 
 Si vous avez commencé à explorer la **Composition API** de Vue 3, vous avez sûrement croisé le chemin de ces deux fonctions. À première vue, `watch` et `watchEffect` semblent faire la même chose : elles observent un changement et y réagissent.
