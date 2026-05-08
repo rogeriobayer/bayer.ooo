@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { careerSummary } from "@/app/data/career.server";
+import { careerData } from "@/app/lib/career-data";
 import IconWithText from "@/app/components/IconWithText";
 import { useTranslation } from "../hooks/useTranslation";
 import {
@@ -11,8 +11,8 @@ import {
 } from "@/app/utils/animationConfig";
 
 export const SkillsSummary = () => {
-  const career = careerSummary;
-  const { t } = useTranslation();
+  const { t, currentLanguage } = useTranslation();
+  const career = careerData[currentLanguage] || careerData.pt;
 
   const renderSkillBadges = (skills) => (
     <div className="flex flex-wrap gap-3 justify-center items-center">

@@ -1,0 +1,154 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "slug": "powerbi",
+      "name": {
+        "pt": "Dashboard Analítico de Obras",
+        "en": "Construction Analytics Dashboard",
+        "fr": "Tableau de Bord Analytique de Construction"
+      },
+      "image": "/images/projects/powerbi-project.png",
+      "frameworks": ["powerbi"],
+      "description": {
+        "pt": "Desenvolvi dashboards analíticos para uma empresa de saneamento básico, focados no controle eficiente de obras e na otimização de processos operacionais, proporcionando maior visibilidade dos indicadores e apoio estratégico à tomada de decisões.",
+        "en": "Developed analytical dashboards for a basic sanitation company, focused on efficient construction control and operational process optimization, providing greater visibility of indicators and strategic support for decision-making.",
+        "fr": "J'ai développé des tableaux de bord analytiques pour une entreprise d'assainissement, axés sur le contrôle efficace des constructions et l'optimisation des processus opérationnels, offrant une plus grande visibilité des indicateurs et un soutien stratégique à la prise de décision."
+      },
+      "link": null,
+      "modal": {
+        "images": ["/images/projects/powerbi-project.png"],
+        "technologies": [
+          {
+            "code": "powerbi",
+            "role": {
+              "pt": "Visualização e dashboards interativos",
+              "en": "Visualization and interactive dashboards",
+              "fr": "Visualisation et tableaux de bord interactifs"
+            }
+          }
+        ],
+        "impact": []
+      }
+    },
+    {
+      "id": 2,
+      "slug": "farmaalg",
+      "name": {
+        "pt": "App Gamificado de Exercícios de Programação",
+        "en": "Gamified Programming Exercises App",
+        "fr": "App Gamifiée d'Exercices de Programmation"
+      },
+      "image": "/images/projects/farmaalg-project.png",
+      "frameworks": ["react-native", "expo", "springboot"],
+      "description": {
+        "pt": "Desenvolvimento e modernização de uma plataforma educacional que permite a resolução de exercícios de programação online. O projeto incluiu a criação de aplicativos mobile e a atualização da versão web, incorporando gamificação (pontos, medalhas e rankings) para engajar estudantes e professores.",
+        "en": "Development and modernization of an educational platform that allows online programming exercise solving. The project included creating mobile applications and updating the web version, incorporating gamification (points, badges, and rankings) to engage students and teachers.",
+        "fr": "Développement et modernisation d'une plateforme éducative permettant la résolution d'exercices de programmation en ligne. Le projet incluait la création d'applications mobiles et la mise à jour de la version web, incorporant la gamification (points, badges et classements) pour engager étudiants et professeurs."
+      },
+      "link": null,
+      "modal": {
+        "images": ["/images/projects/farmaalg-project.png"],
+        "technologies": [
+          {
+            "code": "react-native",
+            "role": {
+              "pt": "App mobile multiplataforma",
+              "en": "Cross-platform mobile app",
+              "fr": "App mobile multiplateforme"
+            }
+          },
+          {
+            "code": "expo",
+            "role": {
+              "pt": "Build e deploy simplificado",
+              "en": "Simplified build and deploy",
+              "fr": "Build et déploiement simplifiés"
+            }
+          },
+          {
+            "code": "springboot",
+            "role": {
+              "pt": "API backend robusta",
+              "en": "Robust backend API",
+              "fr": "API backend robuste"
+            }
+          }
+        ],
+        "impact": []
+      }
+    },
+    {
+      "id": 3,
+      "slug": "focuspatrol",
+      "name": {
+        "pt": "Focus Patrol: Extensão de Foco e Produtividade",
+        "en": "Focus Patrol: Privacy-First Focus & Productivity Extension",
+        "fr": "Focus Patrol : Extension de Concentration et Productivité"
+      },
+      "image": "/images/projects/focus-patrol-project.png",
+      "frameworks": ["javascript", "cloudflare", "chrome"],
+      "description": {
+        "pt": "Utiliza IA On-Device para classificar o conteúdo das páginas. O recurso central é o Contador de Foco em Tempo Real, que exibe a quantidade de sites acessados nas categorias Foco, Neutro e Distração. O sistema de Notificações é acionado de acordo com a tolerância de distrações e o tempo escolhido. É 100% privacy-first, processando todos os dados de navegação localmente.",
+        "en": "Utilizing On-Device AI to classify page content. Its core feature is the Real-Time Focus Counter, which displays the number of sites accessed in the Focus, Neutral, and Distraction categories. A Notifications system is triggered according to the distraction tolerance and the chosen time. It is 100% privacy-first, processing all browsing data locally.",
+        "fr": "Utilisant l'IA Embarquée pour classer le contenu des pages. Sa fonctionnalité centrale est le Compteur de Concentration en Temps Réel, qui affiche la quantité de sites accédés dans les catégories Concentration, Neutre et Distraction. Un système de Notifications est déclenché en fonction de la tolérance aux distractions et du temps choisi. Elle est 100% privacy-first, traitant toutes les données localement."
+      },
+      "link": "https://focuspatrol.bayer.ooo/",
+      "modal": {
+        "images": ["/images/projects/focus-patrol-project.png"],
+        "technologies": [
+          {
+            "code": "javascript",
+            "role": {
+              "pt": "Lógica principal da extensão",
+              "en": "Core extension logic",
+              "fr": "Logique principale de l'extension"
+            }
+          },
+          {
+            "code": "cloudflare",
+            "role": {
+              "pt": "Landing page e analytics",
+              "en": "Landing page and analytics",
+              "fr": "Landing page et analytics"
+            }
+          },
+          {
+            "code": "chrome",
+            "role": {
+              "pt": "APIs de extensão do navegador",
+              "en": "Browser extension APIs",
+              "fr": "APIs d'extension du navigateur"
+            }
+          }
+        ],
+        "impact": [
+          {
+            "value": "5.0 ★",
+            "label": {
+              "pt": "Web Store",
+              "en": "Web Store",
+              "fr": "Web Store"
+            }
+          },
+          {
+            "value": "#20",
+            "label": {
+              "pt": "Product Hunt",
+              "en": "Product Hunt",
+              "fr": "Product Hunt"
+            }
+          },
+          {
+            "value": "+15",
+            "label": {
+              "pt": "Países",
+              "en": "Countries",
+              "fr": "Pays"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

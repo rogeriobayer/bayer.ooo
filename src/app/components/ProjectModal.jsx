@@ -3,7 +3,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
-import { getProjectModalData } from "@/app/data/projectsModal.server";
 import { technologiesList } from "@/app/data/technologies.server";
 import { useTranslation } from "../hooks/useTranslation";
 import IconWithText from "./IconWithText";
@@ -35,7 +34,7 @@ export const ProjectModal = ({ project, isOpen, onClose }) => {
 
     if (!project) return null;
 
-    const modalData = getProjectModalData(project.slug);
+    const modalData = project.modal;
     if (!modalData) return null;
 
     const getTechDetails = (code) => {
@@ -71,9 +70,9 @@ export const ProjectModal = ({ project, isOpen, onClose }) => {
                     >
                         <div className="card-body p-6 md:p-8">
                             <div className="flex justify-between items-start mb-4">
-                                <h2 id="modal-title" className="card-title text-xl md:text-2xl font-heading">
-                                    {t(project.nameKey)}
-                                </h2>
+                                    <h2 id="modal-title" className="card-title text-xl md:text-2xl font-heading">
+                                        {project.name}
+                                    </h2>
                                 <button
                                     onClick={onClose}
                                     className="btn btn-ghost btn-sm btn-circle"
@@ -89,7 +88,7 @@ export const ProjectModal = ({ project, isOpen, onClose }) => {
                                 <div className="relative rounded-lg overflow-hidden bg-base-200 aspect-video">
                                     <Image
                                         src={modalData.images[activeImage]}
-                                        alt={`${t(project.nameKey)} screenshot ${activeImage + 1}`}
+                                        alt={`${project.name} screenshot ${activeImage + 1}`}
                                         fill
                                         className="object-contain"
                                     />
@@ -110,7 +109,7 @@ export const ProjectModal = ({ project, isOpen, onClose }) => {
                             </div>
 
                             <p className="text-secondary leading-relaxed mb-6">
-                                {t(project.descriptionKey)}
+                                {project.description}
                             </p>
 
                             <div className="mb-6">
@@ -144,7 +143,7 @@ export const ProjectModal = ({ project, isOpen, onClose }) => {
                                         {modalData.impact.map((metric, idx) => (
                                             <div key={idx} className="text-center p-4 bg-base-200/50 rounded-lg">
                                                 <p className="text-2xl font-bold text-primary">{metric.value}</p>
-                                                <p className="text-xs text-muted mt-1">{t(metric.labelKey)}</p>
+                                                <p className="text-xs text-muted mt-1">{metric.label}</p>
                                             </div>
                                         ))}
                                     </div>

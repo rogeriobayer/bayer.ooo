@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { projectsData } from "@/app/data/projects.server";
+import { projectsData } from "@/app/lib/projects-data";
 import IconWithText from "@/app/components/IconWithText";
 import ProjectModal from "@/app/components/ProjectModal";
 import Image from "next/image";
@@ -19,8 +19,8 @@ import {
 } from "@/app/utils/animationConfig";
 
 export const Projects = () => {
-  const projects = projectsData.projects;
-  const { t } = useTranslation();
+  const { t, currentLanguage } = useTranslation();
+  const projects = projectsData[currentLanguage]?.projects || projectsData.pt.projects;
   const [selectedProject, setSelectedProject] = useState(null);
 
   const openModal = (project) => {
@@ -108,7 +108,7 @@ export const Projects = () => {
                     <figure className="w-24 md:w-32 flex-shrink-0 bg-base-200/50 p-3 flex items-center justify-center">
                     <Image
                       src={project.image}
-                      alt={`${t(project.nameKey)} logo`}
+                      alt={`${project.name} logo`}
                       className="object-contain rounded-lg"
                       width={80}
                       height={80}
@@ -117,7 +117,7 @@ export const Projects = () => {
 
                   <div className="card-body p-4 md:p-5">
                     <h3 className="card-title text-lg font-heading text-base-content">
-                      {t(project.nameKey)}
+                      {project.name}
                     </h3>
 
                     <div className="flex flex-wrap gap-1.5 my-1">
@@ -132,7 +132,7 @@ export const Projects = () => {
                     </div>
 
                     <p className="text-sm text-secondary leading-relaxed font-light line-clamp-3">
-                      {t(project.descriptionKey)}
+                      {project.description}
                     </p>
 
                     <div className="card-actions justify-end mt-3">
