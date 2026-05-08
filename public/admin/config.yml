@@ -4,6 +4,12 @@ backend:
   branch: main
   base_url: https://bayerooo-decap-auth.tomatebg.workers.dev
   auth_endpoint: /auth
+  commit_messages:
+    create: "feat(blog): create {{collection}} '{{slug}}'"
+    update: "feat(blog): update {{collection}} '{{slug}}'"
+    delete: "feat(blog): delete {{collection}} '{{slug}}'"
+    uploadMedia: "feat(blog): upload image '{{path}}'"
+    deleteMedia: "feat(blog): delete image '{{path}}'"
 
 media_folder: public/images/blog
 public_folder: /images/blog
