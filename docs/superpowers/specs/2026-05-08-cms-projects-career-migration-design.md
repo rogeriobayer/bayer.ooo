@@ -33,14 +33,10 @@ Additionally, project images are hardcoded references (`/powerbi-project.png`, `
 ┌──────────────────────────────────────────────────────────┐  │
 │  content/                                                │  │
 │  ├── blog/        (existente)                            │  │
-│  ├── projects/    (novo — JSON por idioma)               │  │
-│  │   ├── projects.pt.json                                │  │
-│  │   ├── projects.en.json                                │  │
-│  │   └── projects.fr.json                                │  │
-│  └── career/      (novo — JSON por idioma)               │  │
-│      ├── career.pt.json                                  │  │
-│      ├── career.en.json                                  │  │
-│      └── career.fr.json                                  │  │
+│  ├── projects/    (novo — JSON único com i18n inline)    │  │
+│  │   └── projects.json                                   │  │
+│  └── career/      (novo — JSON único com i18n inline)    │  │
+│      └── career.json                                     │  │
 └──────────────────────────────────────────────────────────┘  │
          │                                                    │
          ▼                                                    │
@@ -67,13 +63,9 @@ Additionally, project images are hardcoded references (`/powerbi-project.png`, `
 content/
 ├── blog/                  (existente)
 ├── projects/
-│   ├── projects.pt.json
-│   ├── projects.en.json
-│   └── projects.fr.json
+│   └── projects.json      (único arquivo com traduções inline)
 └── career/
-    ├── career.pt.json
-    ├── career.en.json
-    └── career.fr.json
+    └── career.json        (único arquivo com traduções inline)
 ```
 
 ### New generated files
@@ -107,7 +99,7 @@ src/app/lib/
 
 ### 4.1 Projects JSON Schema
 
-**File:** `content/projects/projects.{locale}.json`
+**File:** `content/projects/projects.json` (single file with inline i18n)
 
 ```json
 {
@@ -154,7 +146,7 @@ src/app/lib/
 
 ### 4.2 Career JSON Schema
 
-**File:** `content/career/career.{locale}.json`
+**File:** `content/career/career.json` (single file with inline i18n)
 
 ```json
 {
@@ -214,9 +206,7 @@ collections:
     folder: "content/projects"
     format: "json"
     create: false
-    i18n: true
     slug: "projects"
-    path: "{{slug}}.{{locale}}"
     fields:
       - name: "projects"
         label: "Projetos"
@@ -224,45 +214,73 @@ collections:
         fields:
           - { name: "id", label: "ID", widget: "number" }
           - { name: "slug", label: "Slug", widget: "string" }
-          - { name: "name", label: "Nome", widget: "string", i18n: true }
-          - { name: "image", label: "Imagem", widget: "image", required: false, i18n: duplicate }
-          - { name: "frameworks", label: "Frameworks", widget: "list", i18n: true }
-          - { name: "description", label: "Descrição", widget: "text", i18n: true }
-          - { name: "link", label: "Link", widget: "string", required: false }
-          - name: "modal"
-            label: "Detalhes do Modal"
+          - name: "name"
+            label: "Nome"
             widget: "object"
             fields:
-              - { name: "images", label: "Imagens do Modal", widget: "list", required: false }
+              - { name: "pt", label: "Português", widget: "string" }
+              - { name: "en", label: "English", widget: "string" }
+              - { name: "fr", label: "Français", widget: "string" }
+          - { name: "image", label: "Imagem", widget: "image", required: false }
+          - { name: "frameworks", label: "Frameworks", widget: "list" }
+          - name: "description"
+            label: "Descrição"
+            widget: "object"
+            fields:
+              - { name: "pt", label: "Português", widget: "text" }
+              - { name: "en", label: "English", widget: "text" }
+              - { name: "fr", label: "Français", widget: "text" }
+          - { name: "link", label: "Link", widget: "string", required: false }
+          - name: "modal"
+            label: "Modal"
+            widget: "object"
+            fields:
+              - { name: "images", label: "Imagens", widget: "list", required: false }
               - name: "technologies"
                 label: "Tecnologias"
                 widget: "list"
                 required: false
                 fields:
                   - { name: "code", label: "Código", widget: "string" }
-                  - { name: "role", label: "Função", widget: "string", i18n: true }
+                  - name: "role"
+                    label: "Função"
+                    widget: "object"
+                    fields:
+                      - { name: "pt", label: "Português", widget: "string" }
+                      - { name: "en", label: "English", widget: "string" }
+                      - { name: "fr", label: "Français", widget: "string" }
               - name: "impact"
                 label: "Impacto"
                 widget: "list"
                 required: false
                 fields:
                   - { name: "value", label: "Valor", widget: "string" }
-                  - { name: "label", label: "Label", widget: "string", i18n: true }
+                  - name: "label"
+                    label: "Label"
+                    widget: "object"
+                    fields:
+                      - { name: "pt", label: "Português", widget: "string" }
+                      - { name: "en", label: "English", widget: "string" }
+                      - { name: "fr", label: "Français", widget: "string" }
 
   - name: "career"
     label: "Carreira"
     folder: "content/career"
     format: "json"
     create: false
-    i18n: true
     slug: "career"
-    path: "{{slug}}.{{locale}}"
     fields:
       - name: "position"
         label: "Posição Atual"
         widget: "object"
         fields:
-          - { name: "name", label: "Cargo", widget: "string", i18n: true }
+          - name: "name"
+            label: "Cargo"
+            widget: "object"
+            fields:
+              - { name: "pt", label: "Português", widget: "string" }
+              - { name: "en", label: "English", widget: "string" }
+              - { name: "fr", label: "Français", widget: "string" }
           - { name: "companyCode", label: "Código da Empresa", widget: "string" }
           - { name: "startDate", label: "Data de Início", widget: "date" }
           - { name: "framework", label: "Framework", widget: "string" }
@@ -277,15 +295,27 @@ collections:
         label: "Histórico"
         widget: "list"
         fields:
-          - { name: "position", label: "Cargo", widget: "string", i18n: true }
+          - name: "position"
+            label: "Cargo"
+            widget: "object"
+            fields:
+              - { name: "pt", label: "Português", widget: "string" }
+              - { name: "en", label: "English", widget: "string" }
+              - { name: "fr", label: "Français", widget: "string" }
           - { name: "companyCode", label: "Código da Empresa", widget: "string" }
           - { name: "startDate", label: "Data Início", widget: "string" }
           - { name: "endDate", label: "Data Fim", widget: "string", required: false }
           - { name: "technologies", label: "Tecnologias", widget: "list" }
-          - { name: "description", label: "Descrição", widget: "markdown", i18n: true }
+          - name: "description"
+            label: "Descrição"
+            widget: "object"
+            fields:
+              - { name: "pt", label: "Português", widget: "text" }
+              - { name: "en", label: "English", widget: "text" }
+              - { name: "fr", label: "Français", widget: "text" }
 ```
 
-**Nota:** `create: false` para ambos porque cada idioma tem apenas um arquivo (não múltiplos posts como no blog).
+**Nota:** Usamos widgets `object` com campos `pt`/`en`/`fr` para i18n inline ao invés do i18n nativo do DecapCMS. Isso permite ver e editar todas as traduções lado a lado em um único arquivo.
 
 ---
 
@@ -293,15 +323,16 @@ collections:
 
 Novo script que:
 
-1. Lê `content/projects/projects.{pt,en,fr}.json`
-2. Lê `content/career/career.{pt,en,fr}.json`
-3. Valida estrutura básica:
+1. Lê `content/projects/projects.json` (único arquivo com i18n inline)
+2. Lê `content/career/career.json` (único arquivo com i18n inline)
+3. Para cada idioma (pt, en, fr), resolve os objetos i18n inline recursivamente
+4. Valida estrutura básica:
    - Projetos: `id` e `slug` são obrigatórios, ids únicos
    - Career: `position`, `skills`, `history` presentes
-4. Gera:
+5. Gera:
    - `src/app/lib/projects-data.js` — exporta `projectsData` com estrutura `{ pt: {...}, en: {...}, fr: {...} }`
    - `src/app/lib/career-data.js` — exporta `careerData` com estrutura similar
-5. Se um idioma não existir, usa fallback para `pt`
+6. Fallback automático para `pt` quando uma tradução está ausente
 
 **Output format (projects-data.js):**
 ```javascript
@@ -517,7 +548,7 @@ Or create a single script that builds all data:
 
 ### Phase 1: Setup
 - [ ] Create `content/projects/` and `content/career/` directories
-- [ ] Create initial JSON files for all 3 locales (migrated from existing JS data)
+- [ ] Create initial JSON files with inline i18n (single file per collection)
 - [ ] Move project images to `public/images/projects/`
 
 ### Phase 2: Build System
