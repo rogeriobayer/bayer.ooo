@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1584, height=396">
+  <title>LinkedIn Cover — Rogério Bayer</title>
+  <style>
+    @font-face {
+      font-family: 'StackSansNotch';
+      src: url('./fonts/stack-sans-notch-latin-700-normal.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'StackSansText';
+      src: url('./fonts/stack-sans-text-latin-300-normal.woff2') format('woff2');
+      font-weight: 300;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'StackSansText';
+      src: url('./fonts/stack-sans-text-latin-500-normal.woff2') format('woff2');
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 1584px;
+      height: 396px;
+      background: #fafaf9;
+      position: relative;
+      overflow: hidden;
+      font-family: 'StackSansText', ui-sans-serif, system-ui, sans-serif;
+    }
+
+    /* subtle background gradient like the site */
+    .bg-gradient {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 80% 20%, rgba(59,130,246,0.06) 0%, transparent 50%),
+                  radial-gradient(ellipse at 20% 80%, rgba(139,92,246,0.05) 0%, transparent 50%),
+                  radial-gradient(ellipse at 50% 50%, rgba(6,182,212,0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* Ornaments */
+    .ornament {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0.10;
+    }
+
+    .ornament-1 {
+      top: -60px;
+      left: -40px;
+      width: 240px;
+      height: 240px;
+    }
+
+    .ornament-2 {
+      top: 40px;
+      right: 60px;
+      width: 320px;
+      height: 320px;
+      opacity: 0.08;
+    }
+
+    .ornament-3 {
+      bottom: -70px;
+      left: 42%;
+      width: 260px;
+      height: 260px;
+      opacity: 0.09;
+    }
+
+    .ornament-4 {
+      top: 120px;
+      left: 100px;
+      width: 120px;
+      height: 120px;
+      opacity: 0.07;
+    }
+
+    .ornament-5 {
+      bottom: 30px;
+      right: 340px;
+      width: 160px;
+      height: 160px;
+      opacity: 0.08;
+    }
+
+    .ornament-6 {
+      top: -20px;
+      right: 35%;
+      width: 180px;
+      height: 180px;
+      opacity: 0.06;
+    }
+
+    /* Main content area — safe zone avoiding LinkedIn profile photo */
+    .content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1584px;
+      height: 396px;
+      padding: 56px 96px 48px 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .name-block {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .name {
+      font-family: 'StackSansNotch', ui-sans-serif, system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 72px;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: #171717;
+    }
+
+    .title {
+      font-family: 'StackSansText', ui-sans-serif, system-ui, sans-serif;
+      font-weight: 300;
+      font-size: 22px;
+      line-height: 1.4;
+      color: #44403c;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+    }
+
+    .accent-line {
+      width: 140px;
+      height: 3px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+      margin-top: 4px;
+    }
+
+    .tech-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 40px;
+      padding-bottom: 8px;
+    }
+
+    .tech-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tech-icon-wrap {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 6px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    }
+
+    .tech-icon-wrap img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .tech-item span {
+      font-family: 'StackSansText', ui-sans-serif, system-ui, sans-serif;
+      font-weight: 500;
+      font-size: 11px;
+      color: #78716c;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .url {
+      position: absolute;
+      bottom: 22px;
+      left: 300px;
+      font-family: 'StackSansText', ui-sans-serif, system-ui, sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      color: #a8a29e;
+      letter-spacing: 0.06em;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-gradient"></div>
+
+  <!-- Ornaments -->
+  <img src="./icons/circle1.svg" class="ornament ornament-1" alt="">
+  <img src="./icons/circle2.svg" class="ornament ornament-2" alt="">
+  <img src="./icons/circle3.svg" class="ornament ornament-3" alt="">
+  <img src="./icons/circle1.svg" class="ornament ornament-4" alt="">
+  <img src="./icons/circle2.svg" class="ornament ornament-5" alt="">
+  <img src="./icons/circle3.svg" class="ornament ornament-6" alt="">
+
+  <div class="content">
+    <div class="name-block">
+      <h1 class="name">Rogério Bayer</h1>
+      <div class="accent-line"></div>
+      <p class="title">Full-Stack Developer</p>
+    </div>
+
+    <div class="tech-row">
+      <div class="tech-item">
+        <div class="tech-icon-wrap"><img src="./icons/react.svg" alt="React"></div>
+        <span>React</span>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon-wrap"><img src="./icons/vue.svg" alt="Vue"></div>
+        <span>Vue</span>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon-wrap"><img src="./icons/typescript.svg" alt="TypeScript"></div>
+        <span>TypeScript</span>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon-wrap"><img src="./icons/javascript.svg" alt="JavaScript"></div>
+        <span>JavaScript</span>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon-wrap"><img src="./icons/node.svg" alt="Node"></div>
+        <span>Node.js</span>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon-wrap"><img src="./icons/next.svg" alt="Next"></div>
+        <span>Next.js</span>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon-wrap"><img src="./icons/tailwind.svg" alt="Tailwind"></div>
+        <span>Tailwind</span>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon-wrap"><img src="./icons/docker.svg" alt="Docker"></div>
+        <span>Docker</span>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon-wrap"><img src="./icons/git.svg" alt="Git"></div>
+        <span>Git</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="url">bayer.ooo</div>
+</body>
+</html>
