@@ -61,6 +61,14 @@ export const translations = {
     "footer.copyright": "© {year} Rogério Bayer",
     "footer.madeWith": "Feito com ☕",
     "footer.blogLink": "Blog",
+    "extensions.title": "Extensões",
+    "extensions.description": "Extensões de navegador que desenvolvi para produtividade e foco.",
+    "extensions.install": "Instalar",
+    "extensions.moreInfo": "Mais informações",
+    "extensions.downloads": "downloads",
+    "extensions.releaseDate": "Lançado em",
+    "extensions.modal.details": "Detalhes",
+    "extensions.modal.releaseDate": "Data de lançamento",
   },
 
   en: {
@@ -125,6 +133,14 @@ export const translations = {
     "footer.copyright": "© {year} Rogério Bayer",
     "footer.madeWith": "Made with ☕ and lots of code",
     "footer.blogLink": "Blog",
+    "extensions.title": "Extensions",
+    "extensions.description": "Browser extensions I built for productivity and focus.",
+    "extensions.install": "Install",
+    "extensions.moreInfo": "More info",
+    "extensions.downloads": "downloads",
+    "extensions.releaseDate": "Released on",
+    "extensions.modal.details": "Details",
+    "extensions.modal.releaseDate": "Release date",
   },
 
   fr: {
@@ -189,5 +205,13 @@ export const translations = {
     "footer.copyright": "© {year} Rogério Bayer",
     "footer.madeWith": "Fait avec ☕ et beaucoup de code",
     "footer.blogLink": "Blog",
+    "extensions.title": "Extensions",
+    "extensions.description": "Extensions de navigateur que j'ai développées pour la productivité et la concentration.",
+    "extensions.install": "Installer",
+    "extensions.moreInfo": "Plus d'infos",
+    "extensions.downloads": "téléchargements",
+    "extensions.releaseDate": "Publié le",
+    "extensions.modal.details": "Détails",
+    "extensions.modal.releaseDate": "Date de publication",
   }
 };
