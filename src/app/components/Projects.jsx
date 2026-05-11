@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { projectsData } from "@/app/lib/projects-data";
+import { extensionsData } from "@/app/lib/extensions-data";
+import { formatDate } from "@/app/lib/date";
 import IconWithText from "@/app/components/IconWithText";
 import ProjectModal from "@/app/components/ProjectModal";
 import Image from "next/image";
@@ -18,9 +20,10 @@ import {
   buttonHoverVariant
 } from "@/app/utils/animationConfig";
 
-export const Projects = () => {
+export const Projects = ({ type = "projects" }) => {
   const { t, currentLanguage } = useTranslation();
-  const projects = projectsData[currentLanguage]?.projects || projectsData.pt.projects;
+  const data = type === "extensions" ? extensionsData : projectsData;
+  const projects = data[currentLanguage]?.[type === "extensions" ? "extensions" : "projects"] || data.pt[type === "extensions" ? "extensions" : "projects"];
   const [selectedProject, setSelectedProject] = useState(null);
 
   const openModal = (project) => {
@@ -34,7 +37,7 @@ export const Projects = () => {
   return (
     <>
       <motion.section
-        id="projects"
+        id={type}
         className="mx-auto max-w-4xl w-full mt-10 mb-10 relative px-6"
         variants={fadeInVariant}
         initial="hidden"
@@ -82,7 +85,7 @@ export const Projects = () => {
 
         <div className="flex flex-col justify-center items-center relative z-10">
           <h2 className="text-2xl md:text-3xl font-medium leading-7 text-center my-10 text-base-content tracking-tight font-heading">
-            {t("projects.title")}
+            {t(`${type}.title`)}
           </h2>
 
           <motion.div
@@ -135,6 +138,24 @@ export const Projects = () => {
                       {project.description}
                     </p>
 
+                    {(project.downloads || project.releaseDate) && (
+                      <div className="flex items-center gap-3 text-xs text-muted mt-2">
+                        {project.downloads && (
+                          <span className="flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-3.5 h-3.5">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                            </svg>
+                            {project.downloads} {t("extensions.downloads")}
+                          </span>
+                        )}
+                        {project.releaseDate && (
+                          <span>
+                            {t("extensions.releaseDate")} {formatDate(project.releaseDate, currentLanguage)}
+                          </span>
+                        )}
+                      </div>
+                    )}
+
                     <div className="card-actions justify-end mt-3">
                       {project.link && (
                         <motion.a
@@ -147,7 +168,7 @@ export const Projects = () => {
                           whileHover="hover"
                           whileTap="tap"
                         >
-                          {t("projects.access")}
+                          {type === "extensions" ? t("extensions.install") : t("projects.access")}
                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
                           </svg>
@@ -161,7 +182,7 @@ export const Projects = () => {
                         whileHover="hover"
                         whileTap="tap"
                       >
-                        {t("projects.details")}
+                        {type === "extensions" ? t("extensions.moreInfo") : t("projects.details")}
                       </motion.button>
                     </div>
                   </div>
@@ -176,6 +197,7 @@ export const Projects = () => {
         project={selectedProject}
         isOpen={!!selectedProject}
         onClose={closeModal}
+        type={type}
       />
     </>
   );
