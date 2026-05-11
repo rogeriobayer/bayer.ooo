@@ -110,7 +110,7 @@ export const Projects = ({ type = "projects" }) => {
                   >
                     <figure className="w-24 md:w-32 flex-shrink-0 bg-base-200/50 p-3 flex items-center justify-center">
                     <Image
-                      src={project.image}
+                      src={project.image || project.icon}
                       alt={`${project.name} logo`}
                       className="object-contain rounded-lg"
                       width={80}
