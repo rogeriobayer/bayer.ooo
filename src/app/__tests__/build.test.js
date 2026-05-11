@@ -69,5 +69,19 @@ describe('Build Validation Tests', () => {
     expect(ptKeys.length).toBeGreaterThan(0);
   });
 
+  it('should validate extensions data file exists and is valid', async () => {
+    const fs = require('fs');
+    const path = require('path');
+    
+    const extensionsDataPath = path.join(process.cwd(), 'src', 'app', 'lib', 'extensions-data.js');
+    expect(fs.existsSync(extensionsDataPath)).toBe(true);
+    
+    const { extensionsData } = await import('../../app/lib/extensions-data.js');
+    expect(extensionsData).toBeDefined();
+    expect(extensionsData.pt).toBeDefined();
+    expect(extensionsData.pt.extensions).toBeDefined();
+    expect(Array.isArray(extensionsData.pt.extensions)).toBe(true);
+  });
+
 
   });
