@@ -1,1 +1,69 @@
-[]
+{
+  "extensions": [
+    {
+      "id": 1,
+      "slug": "focus-patrol",
+      "name": {
+        "pt": "Focus Patrol",
+        "en": "Focus Patrol",
+        "fr": "Focus Patrol"
+      },
+      "icon": "/images/projects/focus-patrol-project.png",
+      "description": {
+        "pt": "Utiliza IA On-Device para classificar o conteúdo das páginas. O recurso central é o Contador de Foco em Tempo Real, que exibe a quantidade de sites acessados nas categorias Foco, Neutro e Distração.",
+        "en": "Uses On-Device AI to classify page content. The core feature is the Real-Time Focus Counter, displaying the number of sites accessed in Focus, Neutral, and Distraction categories.",
+        "fr": "Utilise l'IA embarquée pour classifier le contenu des pages. La fonctionnalité centrale est le Compteur de Concentration en Temps Réel."
+      },
+      "link": "https://focuspatrol.bayer.ooo/",
+      "downloads": "12.5K",
+      "releaseDate": "2025-03-15",
+      "frameworks": ["javascript", "chrome"],
+      "modal": {
+        "images": [
+          "/images/projects/focus-patrol-project.png"
+        ],
+        "technologies": [
+          {
+            "code": "javascript",
+            "role": {
+              "pt": "Lógica principal da extensão",
+              "en": "Core extension logic",
+              "fr": "Logique principale de l'extension"
+            }
+          },
+          {
+            "code": "chrome",
+            "role": {
+              "pt": "APIs de extensão do navegador",
+              "en": "Browser extension APIs",
+              "fr": "APIs d'extension du navigateur"
+            }
+          }
+        ],
+        "impact": [
+          {
+            "value": "5.0 ★",
+            "label": {
+              "pt": "Web Store",
+              "en": "Web Store",
+              "fr": "Web Store"
+            }
+          },
+          {
+            "value": "#20",
+            "label": {
+              "pt": "Product Hunt",
+              "en": "Product Hunt",
+              "fr": "Product Hunt"
+            }
+          }
+        ],
+        "details": {
+          "pt": "Focus Patrol é uma extensão 100% privacy-first que processa todos os dados de navegação localmente. O sistema de Notificações é acionado de acordo com a tolerância de distrações e o tempo escolhido pelo usuário. Desenvolvida com JavaScript puro e APIs do Chrome, não requer nenhum servidor externo para funcionar.",
+          "en": "Focus Patrol is a 100% privacy-first extension that processes all browsing data locally. The Notifications system is triggered according to distraction tolerance and user-chosen time. Built with pure JavaScript and Chrome APIs, it requires no external server.",
+          "fr": "Focus Patrol est une extension 100% privacy-first qui traite toutes les données de navigation localement. Le système de notifications est déclenché selon la tolérance aux distractions et le temps choisi par l'utilisateur."
+        }
+      }
+    }
+  ]
+}
