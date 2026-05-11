@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { technologiesList } from "@/app/data/technologies.server";
 import { useTranslation } from "../hooks/useTranslation";
+import { formatDate } from "../lib/date";
 import IconWithText from "./IconWithText";
 
 const overlayVariants = {
@@ -28,8 +29,8 @@ const modalVariants = {
     },
 };
 
-export const ProjectModal = ({ project, isOpen, onClose }) => {
-    const { t } = useTranslation();
+export const ProjectModal = ({ project, isOpen, onClose, type = "projects" }) => {
+    const { t, currentLanguage } = useTranslation();
     const [activeImage, setActiveImage] = useState(0);
 
     if (!project) return null;
@@ -70,9 +71,16 @@ export const ProjectModal = ({ project, isOpen, onClose }) => {
                     >
                         <div className="card-body p-6 md:p-8">
                             <div className="flex justify-between items-start mb-4">
+                                <div>
                                     <h2 id="modal-title" className="card-title text-xl md:text-2xl font-heading">
                                         {project.name}
                                     </h2>
+                                    {project.releaseDate && (
+                                        <p className="text-sm text-muted mt-1">
+                                            {t("extensions.modal.releaseDate")}: {formatDate(project.releaseDate, currentLanguage)}
+                                        </p>
+                                    )}
+                                </div>
                                 <button
                                     onClick={onClose}
                                     className="btn btn-ghost btn-sm btn-circle"
@@ -134,6 +142,17 @@ export const ProjectModal = ({ project, isOpen, onClose }) => {
                                 </div>
                             </div>
 
+                            {modalData.details && (
+                                <div className="mb-6">
+                                    <h3 className="font-medium text-base-content mb-3">
+                                        {t("extensions.modal.details")}
+                                    </h3>
+                                    <p className="text-secondary leading-relaxed whitespace-pre-line">
+                                        {modalData.details}
+                                    </p>
+                                </div>
+                            )}
+
                             {modalData.impact && modalData.impact.length > 0 && (
                                 <div className="mb-6">
                                     <h3 className="font-medium text-base-content mb-3">
@@ -158,7 +177,7 @@ export const ProjectModal = ({ project, isOpen, onClose }) => {
                                         rel="noopener noreferrer"
                                         className="btn btn-primary"
                                     >
-                                        {t("projects.access")}
+                                        {type === "extensions" ? t("extensions.install") : t("projects.access")}
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
                                         </svg>
