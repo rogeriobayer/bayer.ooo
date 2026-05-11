@@ -16,7 +16,7 @@ const Footer = () => {
     const { t } = useTranslation();
     const pathname = usePathname();
     const currentYear = new Date().getFullYear();
-    const isBlogPage = pathname?.startsWith('/blog');
+    const isBlogPage = pathname?.startsWith('/blog') || pathname?.startsWith('/extensions');
 
     return (
         <motion.footer
