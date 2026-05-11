@@ -76,6 +76,12 @@ function main() {
       'careerData'
     );
 
+    buildDataFile(
+      path.join(CONTENT_DIR, 'extensions', 'extensions.json'),
+      path.join(LIB_DIR, 'extensions-data.js'),
+      'extensionsData'
+    );
+
     console.log('\n🎉 All CMS data files built successfully!');
   } catch (error) {
     console.error('\n❌ Error building CMS data files:', error.message);
