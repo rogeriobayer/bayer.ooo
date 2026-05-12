@@ -118,7 +118,7 @@ export const projectsData = {
           "cloudflare"
         ],
         "description": "Aplicação web para encontrar os melhores preços de combustível ao longo de uma rota ou nas proximidades de um local. Integra dados públicos dos programas de Nota Fiscal do Paraná (PR) e de Pernambuco (PE) com geocodificação via OpenStreetMap e roteamento via OSRM.",
-        "link": null,
+        "link": "https://combustivel.bayer.ooo",
         "modal": {
           "images": [
             "/images/projects/combustivel-na-rota-project.png"
@@ -271,7 +271,7 @@ export const projectsData = {
           "cloudflare"
         ],
         "description": "Web application to find the best fuel prices along a route or near a location. Integrates public data from Paraná (PR) and Pernambuco (PE) fiscal note programs with geocoding via OpenStreetMap and routing via OSRM.",
-        "link": null,
+        "link": "https://combustivel.bayer.ooo",
         "modal": {
           "images": [
             "/images/projects/combustivel-na-rota-project.png"
@@ -424,7 +424,7 @@ export const projectsData = {
           "cloudflare"
         ],
         "description": "Application web pour trouver les meilleurs prix de carburant le long d'un itinéraire ou près d'un lieu. Intègre des données publiques des programmes de notes fiscales du Paraná (PR) et du Pernambuco (PE) avec géocodage via OpenStreetMap et routage via OSRM.",
-        "link": null,
+        "link": "https://combustivel.bayer.ooo",
         "modal": {
           "images": [
             "/images/projects/combustivel-na-rota-project.png"
