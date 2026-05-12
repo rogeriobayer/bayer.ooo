@@ -219,6 +219,42 @@ export const extensionsData = {
           ],
           "details": "Extensão Chrome Manifest V3 para monitoramento de hardware via APIs privadas do Chrome (system.cpu e system.memory). A arquitetura foi projetada para ser leve, privada e extensível.\n\nComponentes técnicos:\n- Service Worker como orquestrador de coleta: utiliza chrome.alarms para agendamento periódico de amostragem de CPU e memória\n- Badge dinâmico: atualiza em tempo real com porcentagem de uso, usando código de cores (verde/amarelo/vermelho) para indicar carga\n- Popup com informações detalhadas: uso atual, média móvel, pico histórico e especificações do processador\n- Offscreen Document para gráficos históricos: isolamento de renderização Canvas em documento separado (padrão MV3 para trabalho pesado)\n- Sistema de armazenamento local com limitação circular: mantém apenas os últimos N registros para evitar crescimento indefinido do storage\n\nFeatures PRO:\n- Gráficos históricos interativos com zoom e pan\n- Exportação para PNG (captura de gráfico) e CSV (dados brutos para análise externa)\n- Notificações inteligentes com thresholds configuráveis (50-95%) e duração mínima de disparo\n\nPrivacidade: todos os dados ficam no dispositivo. Nenhuma telemetria, analytics ou comunicação externa."
         }
+      },
+      {
+        "id": 7,
+        "slug": "focus-patrol",
+        "name": "Focus Patrol",
+        "icon": "/images/extensions/focus-patrol-icon.webp",
+        "description": "Extensão Chrome MV3 que usa IA on-device (Gemini Nano) para classificar sites em Foco, Neutro e Distração. 100% privacy-first com processamento local.",
+        "link": "https://focuspatrol.bayer.ooo/",
+        "downloads": "7",
+        "releaseDate": "2025-10-14",
+        "frameworks": [
+          "javascript",
+          "chrome"
+        ],
+        "modal": {
+          "images": [
+            "/images/extensions/focus-patrol-1.png"
+          ],
+          "technologies": [
+            {
+              "code": "javascript",
+              "role": "Classificação por IA, contador de foco e lógica de notificações"
+            },
+            {
+              "code": "chrome",
+              "role": "MV3 APIs: tabs, scripting, storage, alarms e AI (Gemini Nano)"
+            }
+          ],
+          "impact": [
+            {
+              "value": "5.0 ★",
+              "label": "Web Store"
+            }
+          ],
+          "details": "Extensão Chrome Manifest V3 que utiliza IA on-device (Gemini Nano via Chrome Built-in AI API) para classificar o conteúdo das páginas web em tempo real, sem enviar dados de navegação para a nuvem.\n\nArquitetura técnica:\n- Classificação local via Prompt API do Chrome: o modelo Gemini Nano roda diretamente no navegador, classificando cada página em 'Foco', 'Neutro' ou 'Distração'\n- Service Worker como motor de análise: intercepta navegação via chrome.tabs.onUpdated, extrai conteúdo textual da página via scripting e envia para o modelo local\n- Sistema de contador em tempo real: mantém contagem de sites visitados por categoria durante a sessão, exibindo no popup\n- Motor de notificações com tolerância configurável: alertas disparam apenas quando o usuário excede seu limite personalizado de distrações\n- Gamificação com sequência de foco (Focus Streak): registra dias consecutivos de produtividade\n- Modo Silencioso: usa apenas o badge colorido do ícone da extensão, sem notificações intrusivas\n\nPrivacidade:\n- Zero dados na nuvem: toda a classificação acontece localmente via modelo Gemini Nano embutido no Chrome\n- Sem backend, sem analytics, sem tracking de terceiros\n- O conteúdo das páginas nunca sai do dispositivo\n\nA extensão demonstra o uso prático de IA generativa embarcada no navegador, um campo emergente com potencial para aplicações de produtividade e bem-estar digital."
+        }
       }
     ]
   },
@@ -439,6 +475,42 @@ export const extensionsData = {
           ],
           "details": "Chrome Manifest V3 extension for hardware monitoring via Chrome's private APIs (system.cpu and system.memory). The architecture was designed to be lightweight, private and extensible.\n\nTechnical components:\n- Service Worker as collection orchestrator: uses chrome.alarms for periodic sampling scheduling of CPU and memory\n- Dynamic badge: updates in real-time with usage percentage, using color codes (green/yellow/red) to indicate load\n- Popup with detailed information: current usage, moving average, historical peak and processor specifications\n- Offscreen Document for historical graphs: Canvas rendering isolation in separate document (MV3 pattern for heavy work)\n- Local storage system with circular limitation: keeps only the last N records to prevent indefinite storage growth\n\nPRO features:\n- Interactive historical graphs with zoom and pan\n- Export to PNG (graph capture) and CSV (raw data for external analysis)\n- Smart notifications with configurable thresholds (50-95%) and minimum trigger duration\n\nPrivacy: all data stays on the device. No telemetry, analytics or external communication."
         }
+      },
+      {
+        "id": 7,
+        "slug": "focus-patrol",
+        "name": "Focus Patrol",
+        "icon": "/images/extensions/focus-patrol-icon.webp",
+        "description": "Chrome MV3 extension that uses on-device AI (Gemini Nano) to classify sites as Focus, Neutral and Distraction. 100% privacy-first with local processing.",
+        "link": "https://focuspatrol.bayer.ooo/",
+        "downloads": "7",
+        "releaseDate": "2025-10-14",
+        "frameworks": [
+          "javascript",
+          "chrome"
+        ],
+        "modal": {
+          "images": [
+            "/images/extensions/focus-patrol-1.png"
+          ],
+          "technologies": [
+            {
+              "code": "javascript",
+              "role": "AI classification, focus counter and notification logic"
+            },
+            {
+              "code": "chrome",
+              "role": "MV3 APIs: tabs, scripting, storage, alarms and AI (Gemini Nano)"
+            }
+          ],
+          "impact": [
+            {
+              "value": "5.0 ★",
+              "label": "Web Store"
+            }
+          ],
+          "details": "Chrome Manifest V3 extension that uses on-device AI (Gemini Nano via Chrome Built-in AI API) to classify web page content in real-time, without sending browsing data to the cloud.\n\nTechnical architecture:\n- Local classification via Chrome Prompt API: the Gemini Nano model runs directly in the browser, classifying each page as 'Focus', 'Neutral' or 'Distraction'\n- Service Worker as analysis engine: intercepts navigation via chrome.tabs.onUpdated, extracts textual page content via scripting and sends it to the local model\n- Real-time counter system: keeps count of sites visited by category during the session, displayed in the popup\n- Notification engine with configurable tolerance: alerts only trigger when the user exceeds their personalized distraction limit\n- Gamification with Focus Streak: records consecutive productive days\n- Quiet Mode: uses only the colored badge of the extension icon, without intrusive notifications\n\nPrivacy:\n- Zero data in the cloud: all classification happens locally via the Gemini Nano model embedded in Chrome\n- No backend, no analytics, no third-party tracking\n- Page content never leaves the device\n\nThe extension demonstrates the practical use of generative AI embedded in the browser, an emerging field with potential for productivity and digital well-being applications."
+        }
       }
     ]
   },
@@ -658,6 +730,42 @@ export const extensionsData = {
             }
           ],
           "details": "Extension Chrome Manifest V3 pour surveillance matérielle via les APIs privées de Chrome (system.cpu et system.memory). L'architecture a été conçue pour être légère, privée et extensible.\n\nComposants techniques :\n- Service Worker comme orchestrateur de collecte : utilise chrome.alarms pour planification d'échantillonnage périodique du CPU et de la mémoire\n- Badge dynamique : met à jour en temps réel avec le pourcentage d'utilisation, utilisant des codes couleur (vert/jaune/rouge) pour indiquer la charge\n- Popup avec informations détaillées : utilisation actuelle, moyenne mobile, pic historique et spécifications du processeur\n- Offscreen Document pour graphiques historiques : isolation de rendu Canvas dans document séparé (pattern MV3 pour travail lourd)\n- Système de stockage local avec limitation circulaire : conserve uniquement les N derniers enregistrements pour éviter la croissance indéfinie du storage\n\nFonctionnalités PRO :\n- Graphiques historiques interactifs avec zoom et pan\n- Exportation vers PNG (capture de graphique) et CSV (données brutes pour analyse externe)\n- Notifications intelligentes avec seuils configurables (50-95%) et durée minimale de déclenchement\n\nConfidentialité : toutes les données restent sur l'appareil. Pas de télémétrie, analytics ou communication externe."
+        }
+      },
+      {
+        "id": 7,
+        "slug": "focus-patrol",
+        "name": "Focus Patrol",
+        "icon": "/images/extensions/focus-patrol-icon.webp",
+        "description": "Extension Chrome MV3 utilisant l'IA embarquée (Gemini Nano) pour classer les sites en Concentration, Neutre et Distraction. 100% privacy-first avec traitement local.",
+        "link": "https://focuspatrol.bayer.ooo/",
+        "downloads": "7",
+        "releaseDate": "2025-10-14",
+        "frameworks": [
+          "javascript",
+          "chrome"
+        ],
+        "modal": {
+          "images": [
+            "/images/extensions/focus-patrol-1.png"
+          ],
+          "technologies": [
+            {
+              "code": "javascript",
+              "role": "Classification IA, compteur de concentration et logique de notifications"
+            },
+            {
+              "code": "chrome",
+              "role": "APIs MV3 : tabs, scripting, storage, alarms et IA (Gemini Nano)"
+            }
+          ],
+          "impact": [
+            {
+              "value": "5.0 ★",
+              "label": "Web Store"
+            }
+          ],
+          "details": "Extension Chrome Manifest V3 utilisant l'IA embarquée (Gemini Nano via Chrome Built-in AI API) pour classifier le contenu des pages web en temps réel, sans envoyer de données de navigation vers le cloud.\n\nArchitecture technique :\n- Classification locale via Prompt API de Chrome : le modèle Gemini Nano s'exécute directement dans le navigateur, classifiant chaque page en 'Concentration', 'Neutre' ou 'Distraction'\n- Service Worker comme moteur d'analyse : intercepte la navigation via chrome.tabs.onUpdated, extrait le contenu textuel de la page via scripting et l'envoie au modèle local\n- Système de compteur en temps réel : maintient le compte des sites visités par catégorie pendant la session, affiché dans le popup\n- Moteur de notifications avec tolérance configurable : les alertes ne se déclenchent que quand l'utilisateur dépasse sa limite personnalisée de distractions\n- Gamification avec Série de Concentration : enregistre les jours productifs consécutifs\n- Mode Silencieux : utilise uniquement le badge coloré de l'icône de l'extension, sans notifications intrusives\n\nConfidentialité :\n- Zéro donnée dans le cloud : toute la classification se fait localement via le modèle Gemini Nano intégré à Chrome\n- Pas de backend, pas d'analytics, pas de tracking tiers\n- Le contenu des pages ne quitte jamais l'appareil\n\nL'extension démontre l'utilisation pratique de l'IA générative embarquée dans le navigateur, un domaine émergent avec potentiel pour les applications de productivité et de bien-être digital."
         }
       }
     ]
