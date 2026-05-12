@@ -153,7 +153,7 @@ export const ProjectModal = ({ project, isOpen, onClose, type = "projects" }) =>
                                 </div>
                             )}
 
-                            {modalData.impact && modalData.impact.length > 0 && (
+                            {type !== "extensions" && modalData.impact && modalData.impact.length > 0 && (
                                 <div className="mb-6">
                                     <h3 className="font-medium text-base-content mb-3">
                                         {t("projects.modal.impact")}
