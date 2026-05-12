@@ -149,6 +149,78 @@
           }
         ]
       }
+    },
+    {
+      "id": 4,
+      "slug": "combustivel-na-rota",
+      "name": {
+        "pt": "Combustível na Rota",
+        "en": "Fuel on Route",
+        "fr": "Carburant sur la Route"
+      },
+      "image": "/images/projects/combustivel-na-rota-project.png",
+      "frameworks": ["react", "typescript", "tailwind", "cloudflare"],
+      "description": {
+        "pt": "Aplicação web para encontrar os melhores preços de combustível ao longo de uma rota ou nas proximidades de um local. Integra dados públicos dos programas de Nota Fiscal do Paraná (PR) e de Pernambuco (PE) com geocodificação via OpenStreetMap e roteamento via OSRM.",
+        "en": "Web application to find the best fuel prices along a route or near a location. Integrates public data from Paraná (PR) and Pernambuco (PE) fiscal note programs with geocoding via OpenStreetMap and routing via OSRM.",
+        "fr": "Application web pour trouver les meilleurs prix de carburant le long d'un itinéraire ou près d'un lieu. Intègre des données publiques des programmes de notes fiscales du Paraná (PR) et du Pernambuco (PE) avec géocodage via OpenStreetMap et routage via OSRM."
+      },
+      "link": null,
+      "modal": {
+        "images": ["/images/projects/combustivel-na-rota-project.png"],
+        "technologies": [
+          {
+            "code": "react",
+            "role": {
+              "pt": "Interface e gerenciamento de estado com React 19 + Vite 6",
+              "en": "UI and state management with React 19 + Vite 6",
+              "fr": "Interface et gestion d'état avec React 19 + Vite 6"
+            }
+          },
+          {
+            "code": "typescript",
+            "role": {
+              "pt": "Tipagem estática e segurança de código",
+              "en": "Static typing and code safety",
+              "fr": "Typage statique et sécurité du code"
+            }
+          },
+          {
+            "code": "tailwind",
+            "role": {
+              "pt": "Estilização com Tailwind CSS + DaisyUI",
+              "en": "Styling with Tailwind CSS + DaisyUI",
+              "fr": "Stylisation avec Tailwind CSS + DaisyUI"
+            }
+          },
+          {
+            "code": "cloudflare",
+            "role": {
+              "pt": "Deploy frontend + proxy de APIs via Cloudflare Workers",
+              "en": "Frontend deploy + API proxy via Cloudflare Workers",
+              "fr": "Déploiement frontend + proxy d'APIs via Cloudflare Workers"
+            }
+          }
+        ],
+        "impact": [
+          {
+            "value": "PR + PE",
+            "label": {
+              "pt": "Estados cobertos",
+              "en": "States covered",
+              "fr": "États couverts"
+            }
+          },
+          {
+            "value": "20 km",
+            "label": {
+              "pt": "Raio de busca",
+              "en": "Search radius",
+              "fr": "Rayon de recherche"
+            }
+          }
+        ]
+      }
     }
   ]
 }
