@@ -138,21 +138,16 @@ export const Projects = ({ type = "projects" }) => {
                       {project.description}
                     </p>
 
-                    {(project.downloads || project.releaseDate) && (
+                    {project.releaseDate && (
                       <div className="flex items-center gap-3 text-xs text-muted mt-2">
-                        {project.downloads && (
-                          <span className="flex items-center gap-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-3.5 h-3.5">
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                            </svg>
-                            {project.downloads} {t("extensions.downloads")}
+                        {project.slug === "usa-radios-lite" && (
+                          <span className="badge badge-xs badge-primary">
+                            {t("extensions.mostDownloaded")}
                           </span>
                         )}
-                        {project.releaseDate && (
-                          <span>
-                            {t("extensions.releaseDate")} {formatDate(project.releaseDate, currentLanguage)}
-                          </span>
-                        )}
+                        <span>
+                          {t("extensions.releaseDate")} {formatDate(project.releaseDate, currentLanguage)}
+                        </span>
                       </div>
                     )}
 

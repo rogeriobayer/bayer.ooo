@@ -67,6 +67,7 @@ export const translations = {
     "extensions.moreInfo": "Mais informações",
     "extensions.downloads": "downloads",
     "extensions.releaseDate": "Lançado em",
+    "extensions.mostDownloaded": "Mais baixado",
     "extensions.modal.details": "Detalhes",
     "extensions.modal.releaseDate": "Data de lançamento",
   },
@@ -139,6 +140,7 @@ export const translations = {
     "extensions.moreInfo": "More info",
     "extensions.downloads": "downloads",
     "extensions.releaseDate": "Released on",
+    "extensions.mostDownloaded": "Most downloaded",
     "extensions.modal.details": "Details",
     "extensions.modal.releaseDate": "Release date",
   },
@@ -211,6 +213,7 @@ export const translations = {
     "extensions.moreInfo": "Plus d'infos",
     "extensions.downloads": "téléchargements",
     "extensions.releaseDate": "Publié le",
+    "extensions.mostDownloaded": "Le plus téléchargé",
     "extensions.modal.details": "Détails",
     "extensions.modal.releaseDate": "Date de publication",
   }
