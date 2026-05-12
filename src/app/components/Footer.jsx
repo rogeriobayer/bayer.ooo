@@ -61,7 +61,7 @@ const Footer = () => {
                 )}
 
                 {!isBlogPage && (
-                    <div className="flex justify-center mb-6">
+                    <div className="flex justify-center gap-4 mb-6">
                         <motion.a
                             href="/blog"
                             className="text-sm text-muted hover:text-base-content transition-colors underline underline-offset-4"
@@ -71,6 +71,16 @@ const Footer = () => {
                             whileTap="tap"
                         >
                             {t("footer.blogLink")}
+                        </motion.a>
+                        <motion.a
+                            href="/extensions"
+                            className="text-sm text-muted hover:text-base-content transition-colors underline underline-offset-4"
+                            variants={buttonHoverVariant}
+                            initial="rest"
+                            whileHover="hover"
+                            whileTap="tap"
+                        >
+                            {t("extensions.title")}
                         </motion.a>
                     </div>
                 )}
