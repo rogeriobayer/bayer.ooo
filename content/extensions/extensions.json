@@ -8,7 +8,7 @@
         "en": "Brasil Radios Lite",
         "fr": "Brasil Radios Lite"
       },
-      "icon": "/images/extensions/brasil-radios-lite-icon.png",
+      "icon": "/images/extensions/brasil-radios-lite-icon.webp",
       "description": {
         "pt": "Transforme seu Chrome em um rádio FM completo. Mais de 250 rádios brasileiras com reprodução em segundo plano, busca por cidade ou gênero e favoritos salvos localmente.",
         "en": "Turn your Chrome into a full FM radio. Over 250 Brazilian stations with background playback, search by city or genre, and locally saved favorites.",
@@ -71,7 +71,7 @@
         "en": "Mexico Radios Lite",
         "fr": "Mexico Radios Lite"
       },
-      "icon": "/images/extensions/mexico-radios-lite-icon.png",
+      "icon": "/images/extensions/mexico-radios-lite-icon.webp",
       "description": {
         "pt": "Converte seu Chrome em uma rádio FM completa. Mais de 150 rádios do México com reprodução em segundo plano, busca por cidade ou gênero e favoritos salvos localmente.",
         "en": "Turn your Chrome into a full FM radio. Over 150 Mexican stations with background playback, search by city or genre, and locally saved favorites.",
@@ -134,7 +134,7 @@
         "en": "USA Radios Lite",
         "fr": "USA Radios Lite"
       },
-      "icon": "/images/extensions/usa-radios-lite-icon.png",
+      "icon": "/images/extensions/usa-radios-lite-icon.webp",
       "description": {
         "pt": "Ouça mais de 1300 estações de rádio americanas diretamente do Chrome. Interface leve, reprodução em segundo plano e filtros por gênero para encontrar música, notícias e talk radio.",
         "en": "Listen to over 1300 American radio stations directly from Chrome. Lightweight interface, background playback, and genre filters to find music, news, and talk radio.",
@@ -197,7 +197,7 @@
         "en": "Canada Radios Lite",
         "fr": "Canada Radios Lite"
       },
-      "icon": "/images/extensions/canada-radios-lite-icon.png",
+      "icon": "/images/extensions/canada-radios-lite-icon.webp",
       "description": {
         "pt": "Ouça mais de 500 estações de rádio canadenses diretamente do Chrome. Interface leve, reprodução em segundo plano e filtros por gênero para encontrar música, notícias e talk radio.",
         "en": "Listen to over 500 Canadian radio stations directly from Chrome. Lightweight interface, background playback, and genre filters to find music, news, and talk radio.",
@@ -260,7 +260,7 @@
         "en": "Your QR Code Generator",
         "fr": "Your QR Code Generator"
       },
-      "icon": "/images/extensions/your-qr-code-generator-icon.png",
+      "icon": "/images/extensions/your-qr-code-generator-icon.webp",
       "description": {
         "pt": "Gere QR codes instantaneamente diretamente do navegador. 100% offline, sem rastreamento. Suporta URLs, texto, e-mails, telefones, contatos e WhatsApp.",
         "en": "Generate QR codes instantly directly from your browser. 100% offline, no tracking. Supports URLs, text, emails, phones, contacts, and WhatsApp.",
@@ -323,7 +323,7 @@
         "en": "Your System Monitor",
         "fr": "Your System Monitor"
       },
-      "icon": "/images/extensions/your-system-monitor-icon.png",
+      "icon": "/images/extensions/your-system-monitor-icon.webp",
       "description": {
         "pt": "Monitoramento leve e focado em privacidade para CPU e memória diretamente na barra de ferramentas do Chrome. Dados salvos localmente, sem conta necessária.",
         "en": "Lightweight, privacy-focused CPU and memory monitoring right in your Chrome toolbar. Data saved locally, no account required.",
@@ -386,7 +386,7 @@
         "en": "Focus Patrol",
         "fr": "Focus Patrol"
       },
-      "icon": "/images/extensions/focus-patrol-icon.png",
+      "icon": "/images/extensions/focus-patrol-icon.webp",
       "description": {
         "pt": "Extensão de foco e produtividade que usa IA on-device para classificar sites em Foco, Neutro e Distração. 100% privacy-first, sem dados na nuvem.",
         "en": "Focus and productivity extension using on-device AI to classify sites as Focus, Neutral, and Distraction. 100% privacy-first, no cloud data.",
