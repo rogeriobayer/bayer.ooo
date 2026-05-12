@@ -105,6 +105,53 @@ export const projectsData = {
             }
           ]
         }
+      },
+      {
+        "id": 4,
+        "slug": "combustivel-na-rota",
+        "name": "Combustível na Rota",
+        "image": "/images/projects/combustivel-na-rota-project.png",
+        "frameworks": [
+          "react",
+          "typescript",
+          "tailwind",
+          "cloudflare"
+        ],
+        "description": "Aplicação web para encontrar os melhores preços de combustível ao longo de uma rota ou nas proximidades de um local. Integra dados públicos dos programas de Nota Fiscal do Paraná (PR) e de Pernambuco (PE) com geocodificação via OpenStreetMap e roteamento via OSRM.",
+        "link": null,
+        "modal": {
+          "images": [
+            "/images/projects/combustivel-na-rota-project.png"
+          ],
+          "technologies": [
+            {
+              "code": "react",
+              "role": "Interface e gerenciamento de estado com React 19 + Vite 6"
+            },
+            {
+              "code": "typescript",
+              "role": "Tipagem estática e segurança de código"
+            },
+            {
+              "code": "tailwind",
+              "role": "Estilização com Tailwind CSS + DaisyUI"
+            },
+            {
+              "code": "cloudflare",
+              "role": "Deploy frontend + proxy de APIs via Cloudflare Workers"
+            }
+          ],
+          "impact": [
+            {
+              "value": "PR + PE",
+              "label": "Estados cobertos"
+            },
+            {
+              "value": "20 km",
+              "label": "Raio de busca"
+            }
+          ]
+        }
       }
     ]
   },
@@ -211,6 +258,53 @@ export const projectsData = {
             }
           ]
         }
+      },
+      {
+        "id": 4,
+        "slug": "combustivel-na-rota",
+        "name": "Fuel on Route",
+        "image": "/images/projects/combustivel-na-rota-project.png",
+        "frameworks": [
+          "react",
+          "typescript",
+          "tailwind",
+          "cloudflare"
+        ],
+        "description": "Web application to find the best fuel prices along a route or near a location. Integrates public data from Paraná (PR) and Pernambuco (PE) fiscal note programs with geocoding via OpenStreetMap and routing via OSRM.",
+        "link": null,
+        "modal": {
+          "images": [
+            "/images/projects/combustivel-na-rota-project.png"
+          ],
+          "technologies": [
+            {
+              "code": "react",
+              "role": "UI and state management with React 19 + Vite 6"
+            },
+            {
+              "code": "typescript",
+              "role": "Static typing and code safety"
+            },
+            {
+              "code": "tailwind",
+              "role": "Styling with Tailwind CSS + DaisyUI"
+            },
+            {
+              "code": "cloudflare",
+              "role": "Frontend deploy + API proxy via Cloudflare Workers"
+            }
+          ],
+          "impact": [
+            {
+              "value": "PR + PE",
+              "label": "States covered"
+            },
+            {
+              "value": "20 km",
+              "label": "Search radius"
+            }
+          ]
+        }
       }
     ]
   },
@@ -314,6 +408,53 @@ export const projectsData = {
             {
               "value": "+15",
               "label": "Pays"
+            }
+          ]
+        }
+      },
+      {
+        "id": 4,
+        "slug": "combustivel-na-rota",
+        "name": "Carburant sur la Route",
+        "image": "/images/projects/combustivel-na-rota-project.png",
+        "frameworks": [
+          "react",
+          "typescript",
+          "tailwind",
+          "cloudflare"
+        ],
+        "description": "Application web pour trouver les meilleurs prix de carburant le long d'un itinéraire ou près d'un lieu. Intègre des données publiques des programmes de notes fiscales du Paraná (PR) et du Pernambuco (PE) avec géocodage via OpenStreetMap et routage via OSRM.",
+        "link": null,
+        "modal": {
+          "images": [
+            "/images/projects/combustivel-na-rota-project.png"
+          ],
+          "technologies": [
+            {
+              "code": "react",
+              "role": "Interface et gestion d'état avec React 19 + Vite 6"
+            },
+            {
+              "code": "typescript",
+              "role": "Typage statique et sécurité du code"
+            },
+            {
+              "code": "tailwind",
+              "role": "Stylisation avec Tailwind CSS + DaisyUI"
+            },
+            {
+              "code": "cloudflare",
+              "role": "Déploiement frontend + proxy d'APIs via Cloudflare Workers"
+            }
+          ],
+          "impact": [
+            {
+              "value": "PR + PE",
+              "label": "États couverts"
+            },
+            {
+              "value": "20 km",
+              "label": "Rayon de recherche"
             }
           ]
         }
