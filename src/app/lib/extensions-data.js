@@ -9,7 +9,7 @@ export const extensionsData = {
         "slug": "brasil-radios-lite",
         "name": "Brasil Radios Lite",
         "icon": "/images/extensions/brasil-radios-lite-icon.webp",
-        "description": "Transforme seu Chrome em um rádio FM completo. Mais de 250 rádios brasileiras com reprodução em segundo plano, busca por cidade ou gênero e favoritos salvos localmente.",
+        "description": "Extensão Chrome MV3 para streaming de rádio. Arquitetura baseada em service worker, offscreen document para áudio persistente e monorepo com core compartilhado entre variantes de país.",
         "link": "https://chromewebstore.google.com/detail/brasil-radios-lite/",
         "downloads": "32",
         "releaseDate": "2026-03-06",
@@ -24,24 +24,20 @@ export const extensionsData = {
           "technologies": [
             {
               "code": "javascript",
-              "role": "Lógica principal e reprodução de áudio"
+              "role": "Lógica principal, state management e comunicação entre contexts"
             },
             {
               "code": "chrome",
-              "role": "APIs de extensão e reprodução em segundo plano"
+              "role": "MV3 APIs: offscreen, alarms, storage e action popup"
             }
           ],
           "impact": [
             {
               "value": "250+",
               "label": "Rádios"
-            },
-            {
-              "value": "32",
-              "label": "Usuários"
             }
           ],
-          "details": "Transforme seu Chrome em um rádio FM completo.\n\nCom o Brasil Radios Lite, você encontra e ouve emissoras do Brasil em segundos, com uma experiência simples, rápida e feita para uso diário. São mais de 250 rádios em um catálogo completo, com foco em estabilidade e praticidade.\n\n- Reprodução contínua em segundo plano\n- Busca por nome, cidade ou rede\n- Filtro por gênero para achar o estilo certo mais rápido\n- Aba de favoritos para voltar às rádios que você mais ouve\n- Controle de player com play/pause, volume e tempo de reprodução\n- Canal direto para reportar rádio fora do ar e solicitar novas emissoras\n\nPrivacidade e simplicidade:\n- Sem login obrigatório\n- Favoritos e preferências salvos localmente no navegador\n- Sem anúncios!"
+          "details": "Arquitetura de extensão Chrome Manifest V3 com reprodução de áudio contínua via Offscreen Document, solução necessária porque o MV3 removeu o suporte a áudio em background pages.\n\nA estrutura é organizada como monorepo (pnpm workspaces) com um pacote core compartilhado entre variantes de país. O core contém o service worker, popup, settings, offscreen player e utilitários comuns. Cada variante (Brasil, México, USA, Canadá) aplica overrides apenas de configuração, catálogo de estações e i18n.\n\nTecnologias e patterns:\n- Offscreen Document API para áudio persistente sem background page\n- Service Worker como orquestrador de estado e comunicação entre contexts\n- Sistema de override em build time para customização por país sem duplicação de código\n- Hot reload em desenvolvimento com sincronização automática core → app\n- i18n nativa do Chrome (_locales) com fallback por idioma\n- Armazenamento local (chrome.storage) para favoritos, volume e preferências\n- Catálogo de estações em JSON com metadados e múltiplos streams por rádio\n\nO pipeline de release gera bundles individuais por país com versionamento automático e validação de workspace."
         }
       },
       {
@@ -49,7 +45,7 @@ export const extensionsData = {
         "slug": "mexico-radios-lite",
         "name": "Mexico Radios Lite",
         "icon": "/images/extensions/mexico-radios-lite-icon.webp",
-        "description": "Converte seu Chrome em uma rádio FM completa. Mais de 150 rádios do México com reprodução em segundo plano, busca por cidade ou gênero e favoritos salvos localmente.",
+        "description": "Variante do monorepo Radios Lite para o México. Compartilha 100% do core técnico, diferenciando apenas catálogo de 151 estações e localização.",
         "link": "https://chromewebstore.google.com/detail/mexico-radios-lite/",
         "downloads": "7",
         "releaseDate": "2026-03-11",
@@ -64,24 +60,20 @@ export const extensionsData = {
           "technologies": [
             {
               "code": "javascript",
-              "role": "Lógica principal e reprodução de áudio"
+              "role": "Lógica principal, state management e comunicação entre contexts"
             },
             {
               "code": "chrome",
-              "role": "APIs de extensão e reprodução em segundo plano"
+              "role": "MV3 APIs: offscreen, alarms, storage e action popup"
             }
           ],
           "impact": [
             {
-              "value": "150+",
+              "value": "151",
               "label": "Rádios"
-            },
-            {
-              "value": "7",
-              "label": "Usuários"
             }
           ],
-          "details": "Converte seu Chrome em uma rádio FM completa.\n\nCom o Mexico Radios Lite, você encontra e ouve emissoras do México em segundos, com uma experiência simples, rápida e pensada para o uso diário. São 151 rádios em um catálogo curado, com foco em estabilidade e praticidade.\n\n- Reprodução contínua em segundo plano\n- Busca por nome, cidade ou rede\n- Filtro por gênero para achar o estilo certo mais rápido\n- Aba de favoritos para voltar às rádios que você mais ouve\n- Controle de player com play/pause, volume e tempo de reprodução\n- Canal direto para reportar rádio fora do ar e solicitar novas emissoras\n\nPrivacidade e simplicidade:\n- Sem login obrigatório\n- Favoritos e preferências salvos localmente no navegador\n- Sem anúncios!"
+          "details": "Variante do monorepo Radios Lite, compartilhando o mesmo core técnico das demais extensões de rádio. A arquitetura permite que múltiplos países reutilizem o mesmo código base, aplicando apenas overrides de configuração.\n\nPara o México, o override inclui:\n- Catálogo curado de 151 estações de rádio mexicanas\n- Textos e labels em espanhol via sistema de configuração unificado\n- Comportamento de busca e filtros adaptado ao mercado local\n\nTodas as funcionalidades técnicas (player offscreen, service worker, i18n, storage) são idênticas às demais variantes, demonstrando a escalabilidade da arquitetura de monorepo com core compartilhado."
         }
       },
       {
@@ -89,7 +81,7 @@ export const extensionsData = {
         "slug": "usa-radios-lite",
         "name": "USA Radios Lite",
         "icon": "/images/extensions/usa-radios-lite-icon.webp",
-        "description": "Ouça mais de 1300 estações de rádio americanas diretamente do Chrome. Interface leve, reprodução em segundo plano e filtros por gênero para encontrar música, notícias e talk radio.",
+        "description": "Variante do monorepo Radios Lite para os EUA. Arquitetura MV3 com offscreen audio, service worker e catálogo de 1300+ estações americanas.",
         "link": "https://chromewebstore.google.com/detail/usa-radios-lite/",
         "downloads": "50",
         "releaseDate": "2026-03-26",
@@ -104,24 +96,20 @@ export const extensionsData = {
           "technologies": [
             {
               "code": "javascript",
-              "role": "Lógica principal e reprodução de áudio"
+              "role": "Lógica principal, state management e comunicação entre contexts"
             },
             {
               "code": "chrome",
-              "role": "APIs de extensão e reprodução em segundo plano"
+              "role": "MV3 APIs: offscreen, alarms, storage e action popup"
             }
           ],
           "impact": [
             {
               "value": "1300+",
               "label": "Rádios"
-            },
-            {
-              "value": "50",
-              "label": "Usuários"
             }
           ],
-          "details": "Ouça estações de rádio americanas diretamente do Chrome.\n\nO USA Radios Lite permite descobrir e transmitir mais de 1300 estações de rádio de todo os Estados Unidos. Com uma interface leve e carregamento rápido, é projetado para pessoas que querem ouvir música, notícias e talk radio todos os dias sem distrações.\n\nNavegue por um catálogo crescente de estações FM e online americanas, organizado para ajudar você a encontrar o que deseja em segundos.\n\n- Reprodução em segundo plano – continue ouvindo enquanto navega em outras abas\n- Busca fácil de estações – encontre rádios por nome, cidade ou rede\n- Filtros por gênero – música, talk radio, notícias, esportes e mais\n- Aba de favoritos – salve e acesse suas estações mais ouvidas rapidamente\n- Controles simples do player – play, pause, volume e timer de reprodução\n- Reporte estações offline – ajude a manter o catálogo preciso\n- Solicite novas estações – sugira rádios que gostaria de ver adicionadas\n\n- Sem conta necessária\n- Sem anúncios\n- Design rápido e minimalista\n\nSe você procura por rádio FM americano local, estações de música, talk shows ou notícias, o USA Radios Lite mantém tudo a um clique de distância."
+          "details": "Maior variante do monorepo Radios Lite, com catálogo de mais de 1300 estações de rádio dos Estados Unidos. A arquitetura técnica é idêntica às demais variantes, provando a escalabilidade do core compartilhado mesmo com volumes grandes de dados.\n\nDestaques técnicos da variante USA:\n- Catálogo com 1300+ estações organizadas por estado, cidade e gênero\n- Sistema de fallback de streams: quando uma URL falha, o player tenta automaticamente o próximo stream disponível da mesma estação\n- Classificação de estações por popularidade e confiabilidade do stream\n- Mesma infraestrutura de monorepo: core compartilhado, overrides por país, build unificado\n\nA arquitetura MV3 com Offscreen Document permite que o áudio continue tocando mesmo quando o popup está fechado, um desafio técnico comum em extensões de mídia pós-MV2."
         }
       },
       {
@@ -129,7 +117,7 @@ export const extensionsData = {
         "slug": "canada-radios-lite",
         "name": "Canada Radios Lite",
         "icon": "/images/extensions/canada-radios-lite-icon.webp",
-        "description": "Ouça mais de 500 estações de rádio canadenses diretamente do Chrome. Interface leve, reprodução em segundo plano e filtros por gênero para encontrar música, notícias e talk radio.",
+        "description": "Variante do monorepo Radios Lite para o Canadá. Compartilha core técnico com 500+ estações canadenses.",
         "link": "https://chromewebstore.google.com/detail/canada-radios-lite/",
         "downloads": "9",
         "releaseDate": "2026-03-13",
@@ -144,24 +132,20 @@ export const extensionsData = {
           "technologies": [
             {
               "code": "javascript",
-              "role": "Lógica principal e reprodução de áudio"
+              "role": "Lógica principal, state management e comunicação entre contexts"
             },
             {
               "code": "chrome",
-              "role": "APIs de extensão e reprodução em segundo plano"
+              "role": "MV3 APIs: offscreen, alarms, storage e action popup"
             }
           ],
           "impact": [
             {
               "value": "500+",
               "label": "Rádios"
-            },
-            {
-              "value": "9",
-              "label": "Usuários"
             }
           ],
-          "details": "Ouça estações de rádio canadenses diretamente do Chrome.\n\nO Canada Radios Lite permite descobrir e transmitir mais de 500 estações de rádio de todo o Canadá. Com uma interface leve e carregamento rápido, é projetado para pessoas que querem ouvir música, notícias e talk radio todos os dias sem distrações.\n\nNavegue por um catálogo crescente de estações FM e online canadenses, organizado para ajudar você a encontrar o que deseja em segundos.\n\n- Reprodução em segundo plano – continue ouvindo enquanto navega em outras abas\n- Busca fácil de estações – encontre rádios por nome, cidade ou rede\n- Filtros por gênero – música, talk radio, notícias, esportes e mais\n- Aba de favoritos – salve e acesse suas estações mais ouvidas rapidamente\n- Controles simples do player – play, pause, volume e timer de reprodução\n- Reporte estações offline – ajude a manter o catálogo preciso\n- Solicite novas estações – sugira rádios que gostaria de ver adicionadas\n\n- Sem conta necessária\n- Sem anúncios\n- Design rápido e minimalista\n\nSe você procura por rádio FM canadense local, estações de música, talk shows ou notícias, o Canada Radios Lite mantém tudo a um clique de distância."
+          "details": "Variante canadense do monorepo Radios Lite. Demonstra como a arquitetura de core compartilhado permite lançar novos produtos rapidamente com mínimo esforço de desenvolvimento.\n\nO tempo de implementação da variante Canadá foi reduzido drasticamente em comparação com a primeira versão (Brasil), pois o trabalho se resumiu a:\n- Curadoria do catálogo de 500+ estações canadenses\n- Configuração de textos em inglês e francês (idiomas oficiais do Canadá)\n- Ajustes de timezone e comportamento regional via app-config.js\n\nToda a complexidade técnica (player offscreen, gerenciamento de estado, comunicação entre contexts, i18n framework) foi herdada do core sem modificação. Isso demonstra o valor prático da arquitetura de monorepo para produtos com múltiplas variantes de mercado."
         }
       },
       {
@@ -169,7 +153,7 @@ export const extensionsData = {
         "slug": "your-qr-code-generator",
         "name": "Your QR Code Generator",
         "icon": "/images/extensions/your-qr-code-generator-icon.webp",
-        "description": "Gere QR codes instantaneamente diretamente do navegador. 100% offline, sem rastreamento. Suporta URLs, texto, e-mails, telefones, contatos e WhatsApp.",
+        "description": "Extensão Chrome MV3 para geração offline de QR codes. Arquitetura 100% client-side com canvas/SVG rendering, context menus e sistema de licenciamento PRO.",
         "link": "https://chromewebstore.google.com/detail/your-qr-code-generator/",
         "downloads": "4",
         "releaseDate": "2025-12-29",
@@ -184,24 +168,20 @@ export const extensionsData = {
           "technologies": [
             {
               "code": "javascript",
-              "role": "Geração e renderização de QR codes"
+              "role": "Geração de QR codes, renderização canvas/SVG e lógica PRO"
             },
             {
               "code": "chrome",
-              "role": "APIs de extensão e menu de contexto"
+              "role": "MV3 APIs: contextMenus, storage, scripting e i18n"
             }
           ],
           "impact": [
             {
               "value": "100%",
               "label": "Offline"
-            },
-            {
-              "value": "4",
-              "label": "Usuários"
             }
           ],
-          "details": "Your QR Code Generator - Privado, Offline e Recursos PRO\n\nGere QR codes instantaneamente diretamente do seu navegador. Your QR Code Generator e a ferramenta definitiva para usuários conscientes da privacidade que precisam de QR codes confiáveis, rápidos e personalizáveis sem que os dados saiam do dispositivo.\n\nRecursos Principais (Gratuitos)\n\n- Geração Instantânea: Crie QR codes para URLs da pagina atual, texto selecionado, e-mails, números de telefone, contatos (vCard) e mensagens WhatsApp.\n- Privacidade Primeiro: Operação totalmente offline. Sem rastreamento, sem analytics, sem comunicação com servidor.\n- Personalização: Altere as cores de primeiro plano e fundo para combinar com seu estilo.\n- Histórico Inteligente: Salva automaticamente seus códigos gerados para acesso rápido posterior.\n- Menu de Contexto: Clique com o botão direito em qualquer link ou texto para gerar um QR code instantaneamente.\n- Modo WhatsApp: Interface dedicada para criar QR codes 'Clique para Conversar' facilmente.\n- Correção de Erros: Níveis ajustáveis (Baixo a Alto) para garantir a legibilidade mesmo quando danificado.\n\nRecursos PRO\n\nDesbloqueie capacidades profissionais para sua marca pessoal ou empresa:\n\n- (PRO) Exportação Vetorial (SVG): Baixe gráficos vetoriais escaláveis perfeitos para grandes impressões, outdoors e trabalhos de design profissional sem perda de qualidade.\n- (PRO) PNG de Alta Resolução: Obtenha imagens PNG ultra-nítidas adequadas para materiais de impressão de alta qualidade.\n- (PRO) QR Codes com Marca: Incorpore seu próprio logo ou imagem diretamente no centro do QR code. Perfeito para reconhecimento de marca.\n\nPerfeito Para\n- Cartões de Visita: Compartilhe dados de contato instantaneamente com QR codes vCard.\n- Materiais de Marketing: Adicione QR codes com marca a flyers e pôsteres.\n- Compartilhamento Rápido: Transfira links do desktop para o mobile em segundos.\n\nYour QR Code Generator - Simples, Rápido, Privado."
+          "details": "Extensão Chrome Manifest V3 para geração de QR codes 100% offline. Nenhum dado é enviado a servidores — toda a geração, renderização e exportação acontecem no cliente.\n\nArquitetura técnica:\n- Algoritmo de QR code implementado em JavaScript puro, sem dependências externas\n- Renderização dual: Canvas para preview rápido e SVG para exportação vetorial escalável\n- Chrome Context Menus API: geração instantânea via clique direito em links, textos selecionados e imagens\n- Sistema de licenciamento PRO com validação local via chrome.storage\n- Correção de erros Reed-Solomon com 4 níveis configuráveis (L, M, Q, H)\n- Suporte a múltiplos modos de dados: URL, texto, e-mail, telefone, SMS, WhatsApp (Click to Chat), Wi-Fi e vCard\n- i18n nativa do Chrome com suporte a 6 idiomas\n- Histórico local com persistência em chrome.storage\n\nA arquitetura PRO utiliza detecção de features baseada em licença local, desbloqueando exportação SVG, PNG de alta resolução e QR codes com logo central sem necessidade de backend."
         }
       },
       {
@@ -209,7 +189,7 @@ export const extensionsData = {
         "slug": "your-system-monitor",
         "name": "Your System Monitor",
         "icon": "/images/extensions/your-system-monitor-icon.webp",
-        "description": "Monitoramento leve e focado em privacidade para CPU e memória diretamente na barra de ferramentas do Chrome. Dados salvos localmente, sem conta necessária.",
+        "description": "Extensão Chrome MV3 para monitoramento de CPU e memória. Usa APIs system.cpu e system.memory com visualização via badge dinâmico, popup e gráficos históricos.",
         "link": "https://chromewebstore.google.com/detail/your-system-monitor/",
         "downloads": "29",
         "releaseDate": "2025-12-12",
@@ -224,64 +204,20 @@ export const extensionsData = {
           "technologies": [
             {
               "code": "javascript",
-              "role": "Monitoramento em tempo real e gráficos"
+              "role": "Coleta de dados, cálculos de média/pico e renderização de gráficos"
             },
             {
               "code": "chrome",
-              "role": "APIs de sistema e extensão"
+              "role": "MV3 APIs: system.cpu, system.memory, storage, alarms, notifications e offscreen"
             }
           ],
           "impact": [
-            {
-              "value": "29",
-              "label": "Usuários"
-            },
             {
               "value": "4",
               "label": "Idiomas"
             }
           ],
-          "details": "Your System Monitor e uma extensão leve de monitoramento de sistema, focada em privacidade, que oferece insights em tempo real sobre o desempenho do seu computador diretamente da barra de ferramentas do navegador.\n\nRecursos Principais\nMonitoramento em Tempo Real\n- Uso de CPU e memória ao vivo exibido em popup intuitivo\n- Ícone de badge dinâmico mostrando a porcentagem de uso atual com indicadores de cores (verde/amarelo/vermelho)\n- Informações do sistema incluindo detalhes do processador, contagem de núcleos e arquitetura\n\nSuporte Multi-Idioma\n- Inglês, Português (Brasil e Portugal), Espanhol, Francês\n- Detecção automática de idioma baseada nas configurações do navegador\n\nPersonalização\n- Escolha qual métrica exibir no badge da extensão (CPU ou Memória)\n- Todos os dados armazenados localmente para privacidade\n- Interface limpa e moderna\n\nGráficos Avançados (PRO)\n- Gráficos históricos de uso de CPU e memória (24h, 7 dias, 15 dias, 30 dias ou todo o tempo)\n- Tooltips interativos mostrando valores exatos em qualquer ponto no tempo\n- Modal em tela cheia para análise detalhada de gráficos\n- Tabela dos 10 maiores momentos de uso\n\nExportação de Dados (PRO)\n- Exporte seu histórico de uso como imagens PNG\n- Exporte dados brutos para CSV para análise externa\n- Perfeito para auditorias de sistema e resolução de problemas\n\nNotificações Inteligentes (PRO)\n- Alertas personalizáveis quando CPU ou memória permanecem altos por períodos prolongados\n- Limites ajustáveis (50-95%)\n- Duração configurável (1, 3, 5, 10, 15 ou 30 minutos)"
-        }
-      },
-      {
-        "id": 7,
-        "slug": "focus-patrol",
-        "name": "Focus Patrol",
-        "icon": "/images/extensions/focus-patrol-icon.webp",
-        "description": "Extensão de foco e produtividade que usa IA on-device para classificar sites em Foco, Neutro e Distração. 100% privacy-first, sem dados na nuvem.",
-        "link": "https://focuspatrol.bayer.ooo/",
-        "downloads": "7",
-        "releaseDate": "2025-10-14",
-        "frameworks": [
-          "javascript",
-          "chrome"
-        ],
-        "modal": {
-          "images": [
-            "/images/extensions/focus-patrol-1.png"
-          ],
-          "technologies": [
-            {
-              "code": "javascript",
-              "role": "Lógica principal e classificação por IA"
-            },
-            {
-              "code": "chrome",
-              "role": "APIs de extensão e navegação"
-            }
-          ],
-          "impact": [
-            {
-              "value": "5.0 ★",
-              "label": "Web Store"
-            },
-            {
-              "value": "7",
-              "label": "Usuários"
-            }
-          ],
-          "details": "Cansado de se perder em um mar de abas e vídeos de gatos quando deveria estar trabalhando? As distrações digitais são reais, mas sua força de vontade não precisa lutar sozinha.\n\nApresentamos o Focus Patrol, a extensão inteligente que age como seu guardião pessoal de foco.\n\nComo Funciona a Magia?\n\nO Focus Patrol usa IA on-device de ponta (Gemini Nano) diretamente no seu navegador para entender seus hábitos de navegação. Ele classifica os sites que você visita como 'Foco', 'Neutro' ou 'Distração', dando feedback claro sobre onde seu tempo está realmente indo.\n\nO melhor de tudo? Sua privacidade é nossa prioridade máxima. Todo o processo acontece localmente no seu computador. Seus dados de navegação nunca saem do dispositivo, garantindo 100% de confidencialidade.\n\nRecursos para Potencializar Sua Produtividade:\n\n- Análise Inteligente com IA: Deixe a IA identificar padrões de distração que você pode nem notar.\n- Notificações Personalizadas: Prefere um toque suave? Ative o Modo Silencioso para alertas discretos no ícone da extensão. Quer um lembrete mais direto? Configure notificações para trazer você de volta aos trilhos.\n- Gamifique Seu Foco: Acompanhe sua Sequência de Foco e desafie-se a manter a concentração por mais tempo. Veja sua sequência crescer dia após dia!\n- Você no Comando: Você manda. Ajuste com que frequência as análises são executadas e defina seu próprio limite de distração. O Focus Patrol se adapta ao seu fluxo de trabalho.\n\nPrivacidade Primeiro, Sempre.\n\nAcreditamos que privacidade não é um luxo. O Focus Patrol foi construído desde o início com essa filosofia. Não precisa de conexão com a internet para funcionar e não envia nenhuma informação para a nuvem.\n\nCompatibilidade e Requisitos\n\nO Focus Patrol é construído para Google Chrome. Os recursos principais, alimentados pelo nosso filtro local confiável, funcionam para todos imediatamente.\n\nPronto para dominar seu foco e aumentar sua produtividade?\n\nInstale o Focus Patrol hoje e transforme seu navegador em um espaço de trabalho mais inteligente e focado. Recupere seu tempo, uma aba de cada vez."
+          "details": "Extensão Chrome Manifest V3 para monitoramento de hardware via APIs privadas do Chrome (system.cpu e system.memory). A arquitetura foi projetada para ser leve, privada e extensível.\n\nComponentes técnicos:\n- Service Worker como orquestrador de coleta: utiliza chrome.alarms para agendamento periódico de amostragem de CPU e memória\n- Badge dinâmico: atualiza em tempo real com porcentagem de uso, usando código de cores (verde/amarelo/vermelho) para indicar carga\n- Popup com informações detalhadas: uso atual, média móvel, pico histórico e especificações do processador\n- Offscreen Document para gráficos históricos: isolamento de renderização Canvas em documento separado (padrão MV3 para trabalho pesado)\n- Sistema de armazenamento local com limitação circular: mantém apenas os últimos N registros para evitar crescimento indefinido do storage\n\nFeatures PRO:\n- Gráficos históricos interativos com zoom e pan\n- Exportação para PNG (captura de gráfico) e CSV (dados brutos para análise externa)\n- Notificações inteligentes com thresholds configuráveis (50-95%) e duração mínima de disparo\n\nPrivacidade: todos os dados ficam no dispositivo. Nenhuma telemetria, analytics ou comunicação externa."
         }
       }
     ]
@@ -293,7 +229,7 @@ export const extensionsData = {
         "slug": "brasil-radios-lite",
         "name": "Brasil Radios Lite",
         "icon": "/images/extensions/brasil-radios-lite-icon.webp",
-        "description": "Turn your Chrome into a full FM radio. Over 250 Brazilian stations with background playback, search by city or genre, and locally saved favorites.",
+        "description": "Chrome MV3 extension for radio streaming. Architecture based on service worker, offscreen document for persistent audio, and monorepo with shared core across country variants.",
         "link": "https://chromewebstore.google.com/detail/brasil-radios-lite/",
         "downloads": "32",
         "releaseDate": "2026-03-06",
@@ -308,24 +244,20 @@ export const extensionsData = {
           "technologies": [
             {
               "code": "javascript",
-              "role": "Core logic and audio playback"
+              "role": "Core logic, state management and cross-context communication"
             },
             {
               "code": "chrome",
-              "role": "Extension APIs and background playback"
+              "role": "MV3 APIs: offscreen, alarms, storage and action popup"
             }
           ],
           "impact": [
             {
               "value": "250+",
               "label": "Stations"
-            },
-            {
-              "value": "32",
-              "label": "Users"
             }
           ],
-          "details": "Turn your Chrome into a full FM radio.\n\nWith Brasil Radios Lite, you find and listen to Brazilian stations in seconds, with a simple, fast experience built for daily use. Over 250 radios in a complete catalog, focused on stability and practicality.\n\n- Continuous background playback\n- Search by name, city, or network\n- Genre filter to find the right style faster\n- Favorites tab to return to your most listened stations\n- Player controls with play/pause, volume, and playback timer\n- Direct channel to report offline radios and request new stations\n\nPrivacy and simplicity:\n- No mandatory login\n- Favorites and preferences saved locally in the browser\n- No ads!"
+          "details": "Chrome Manifest V3 extension architecture with continuous audio playback via Offscreen Document, a necessary solution since MV3 removed audio support from background pages.\n\nThe structure is organized as a monorepo (pnpm workspaces) with a shared core package across country variants. The core contains the service worker, popup, settings, offscreen player and common utilities. Each variant (Brazil, Mexico, USA, Canada) applies only configuration, station catalog and i18n overrides.\n\nTechnologies and patterns:\n- Offscreen Document API for persistent audio without background page\n- Service Worker as state orchestrator and cross-context communication hub\n- Build-time override system for per-country customization without code duplication\n- Hot reload in development with automatic core → app sync\n- Native Chrome i18n (_locales) with language fallback\n- Local storage (chrome.storage) for favorites, volume and preferences\n- Station catalog in JSON with metadata and multiple streams per radio\n\nThe release pipeline generates individual bundles per country with automatic versioning and workspace validation."
         }
       },
       {
@@ -333,7 +265,7 @@ export const extensionsData = {
         "slug": "mexico-radios-lite",
         "name": "Mexico Radios Lite",
         "icon": "/images/extensions/mexico-radios-lite-icon.webp",
-        "description": "Turn your Chrome into a full FM radio. Over 150 Mexican stations with background playback, search by city or genre, and locally saved favorites.",
+        "description": "Radios Lite monorepo variant for Mexico. Shares 100% of the technical core, differentiating only by 151-station catalog and locale.",
         "link": "https://chromewebstore.google.com/detail/mexico-radios-lite/",
         "downloads": "7",
         "releaseDate": "2026-03-11",
@@ -348,24 +280,20 @@ export const extensionsData = {
           "technologies": [
             {
               "code": "javascript",
-              "role": "Core logic and audio playback"
+              "role": "Core logic, state management and cross-context communication"
             },
             {
               "code": "chrome",
-              "role": "Extension APIs and background playback"
+              "role": "MV3 APIs: offscreen, alarms, storage and action popup"
             }
           ],
           "impact": [
             {
-              "value": "150+",
+              "value": "151",
               "label": "Stations"
-            },
-            {
-              "value": "7",
-              "label": "Users"
             }
           ],
-          "details": "Turn your Chrome into a full FM radio.\n\nWith Mexico Radios Lite, you find and listen to Mexican stations in seconds, with a simple, fast experience built for daily use. 151 radios in a curated catalog, focused on stability and practicality.\n\n- Continuous background playback\n- Search by name, city, or network\n- Genre filter to find the right style faster\n- Favorites tab to return to your most listened stations\n- Player controls with play/pause, volume, and playback timer\n- Direct channel to report offline radios and request new stations\n\nPrivacy and simplicity:\n- No mandatory login\n- Favorites and preferences saved locally in the browser\n- No ads!"
+          "details": "Variant of the Radios Lite monorepo, sharing the same technical core as the other radio extensions. The architecture allows multiple countries to reuse the same base code, applying only configuration overrides.\n\nFor Mexico, the override includes:\n- Curated catalog of 151 Mexican radio stations\n- Spanish texts and labels via unified configuration system\n- Search and filter behavior adapted to the local market\n\nAll technical features (offscreen player, service worker, i18n, storage) are identical to other variants, demonstrating the scalability of the monorepo architecture with shared core."
         }
       },
       {
@@ -373,7 +301,7 @@ export const extensionsData = {
         "slug": "usa-radios-lite",
         "name": "USA Radios Lite",
         "icon": "/images/extensions/usa-radios-lite-icon.webp",
-        "description": "Listen to over 1300 American radio stations directly from Chrome. Lightweight interface, background playback, and genre filters to find music, news, and talk radio.",
+        "description": "Radios Lite monorepo variant for the USA. MV3 architecture with offscreen audio, service worker and catalog of 1300+ American stations.",
         "link": "https://chromewebstore.google.com/detail/usa-radios-lite/",
         "downloads": "50",
         "releaseDate": "2026-03-26",
@@ -388,24 +316,20 @@ export const extensionsData = {
           "technologies": [
             {
               "code": "javascript",
-              "role": "Core logic and audio playback"
+              "role": "Core logic, state management and cross-context communication"
             },
             {
               "code": "chrome",
-              "role": "Extension APIs and background playback"
+              "role": "MV3 APIs: offscreen, alarms, storage and action popup"
             }
           ],
           "impact": [
             {
               "value": "1300+",
               "label": "Stations"
-            },
-            {
-              "value": "50",
-              "label": "Users"
             }
           ],
-          "details": "Listen to American radio stations directly from Chrome.\n\nUSA Radios Lite lets you quickly discover and stream over 1300 radio stations from across America. With a lightweight interface and fast loading, it's designed for people who want to listen to music, news, and talk radio every day without distractions.\n\nBrowse a growing catalog of American FM and online radio stations, organized to help you find what you want in seconds.\n\n- Background playback – keep listening while browsing other tabs\n- Search stations easily – find radios by name, city, or network\n- Genre filters – music, talk radio, news, sports, and more\n- Favorites tab – save and access your most-listened stations quickly\n- Simple player controls – play, pause, volume, and playback timer\n- Report offline stations – help keep the catalog accurate\n- Request new stations – suggest radios you'd like to see added\n\n- No account required\n- No ads\n- Fast and minimal design\n\nWhether you're looking for local American FM radio, music stations, talk shows, or news, USA Radios Lite keeps everything just one click away."
+          "details": "Largest variant of the Radios Lite monorepo, with a catalog of over 1300 radio stations from the United States. The technical architecture is identical to other variants, proving the scalability of the shared core even with large data volumes.\n\nTechnical highlights of the USA variant:\n- Catalog with 1300+ stations organized by state, city and genre\n- Stream fallback system: when a URL fails, the player automatically tries the next available stream from the same station\n- Station ranking by popularity and stream reliability\n- Same monorepo infrastructure: shared core, country overrides, unified build\n\nThe MV3 architecture with Offscreen Document allows audio to keep playing even when the popup is closed, a common technical challenge in media extensions post-MV2."
         }
       },
       {
@@ -413,7 +337,7 @@ export const extensionsData = {
         "slug": "canada-radios-lite",
         "name": "Canada Radios Lite",
         "icon": "/images/extensions/canada-radios-lite-icon.webp",
-        "description": "Listen to over 500 Canadian radio stations directly from Chrome. Lightweight interface, background playback, and genre filters to find music, news, and talk radio.",
+        "description": "Radios Lite monorepo variant for Canada. Shares technical core with 500+ Canadian stations.",
         "link": "https://chromewebstore.google.com/detail/canada-radios-lite/",
         "downloads": "9",
         "releaseDate": "2026-03-13",
@@ -428,24 +352,20 @@ export const extensionsData = {
           "technologies": [
             {
               "code": "javascript",
-              "role": "Core logic and audio playback"
+              "role": "Core logic, state management and cross-context communication"
             },
             {
               "code": "chrome",
-              "role": "Extension APIs and background playback"
+              "role": "MV3 APIs: offscreen, alarms, storage and action popup"
             }
           ],
           "impact": [
             {
               "value": "500+",
               "label": "Stations"
-            },
-            {
-              "value": "9",
-              "label": "Users"
             }
           ],
-          "details": "Listen to Canadian radio stations directly from Chrome.\n\nCanada Radios Lite lets you quickly discover and stream over 500 radio stations from across Canada. With a lightweight interface and fast loading, it's designed for people who want to listen to music, news, and talk radio every day without distractions.\n\nBrowse a growing catalog of Canadian FM and online radio stations, organized to help you find what you want in seconds.\n\n- Background playback – keep listening while browsing other tabs\n- Search stations easily – find radios by name, city, or network\n- Genre filters – music, talk radio, news, sports, and more\n- Favorites tab – save and access your most-listened stations quickly\n- Simple player controls – play, pause, volume, and playback timer\n- Report offline stations – help keep the catalog accurate\n- Request new stations – suggest radios you'd like to see added\n\n- No account required\n- No ads\n- Fast and minimal design\n\nWhether you're looking for local Canadian FM radio, music stations, talk shows, or news, Canada Radios Lite keeps everything just one click away."
+          "details": "Canadian variant of the Radios Lite monorepo. Demonstrates how the shared core architecture allows launching new products quickly with minimal development effort.\n\nThe implementation time for the Canada variant was drastically reduced compared to the first version (Brazil), as the work was limited to:\n- Curating the catalog of 500+ Canadian stations\n- Configuring texts in English and French (Canada's official languages)\n- Regional timezone and behavior adjustments via app-config.js\n\nAll technical complexity (offscreen player, state management, cross-context communication, i18n framework) was inherited from the core without modification. This demonstrates the practical value of monorepo architecture for products with multiple market variants."
         }
       },
       {
@@ -453,7 +373,7 @@ export const extensionsData = {
         "slug": "your-qr-code-generator",
         "name": "Your QR Code Generator",
         "icon": "/images/extensions/your-qr-code-generator-icon.webp",
-        "description": "Generate QR codes instantly directly from your browser. 100% offline, no tracking. Supports URLs, text, emails, phones, contacts, and WhatsApp.",
+        "description": "Chrome MV3 extension for offline QR code generation. 100% client-side architecture with canvas/SVG rendering, context menus and PRO licensing system.",
         "link": "https://chromewebstore.google.com/detail/your-qr-code-generator/",
         "downloads": "4",
         "releaseDate": "2025-12-29",
@@ -468,24 +388,20 @@ export const extensionsData = {
           "technologies": [
             {
               "code": "javascript",
-              "role": "QR code generation and rendering"
+              "role": "QR code generation, canvas/SVG rendering and PRO logic"
             },
             {
               "code": "chrome",
-              "role": "Extension APIs and context menu"
+              "role": "MV3 APIs: contextMenus, storage, scripting and i18n"
             }
           ],
           "impact": [
             {
               "value": "100%",
               "label": "Offline"
-            },
-            {
-              "value": "4",
-              "label": "Users"
             }
           ],
-          "details": "Your QR Code Generator - Private, Offline and Pro Features\n\nGenerate QR codes instantly directly from your browser. Your QR Code Generator is the ultimate tool for privacy-conscious users who need reliable, fast, and customizable QR codes without data leaving their device.\n\nKey Features (Free)\n\n- Instant Generation: Create QR codes for current page URLs, selected text, emails, phone numbers, contacts (vCard), and WhatsApp messages.\n- Privacy First: Fully offline operation. No tracking, no analytics, no server communication.\n- Customization: Change foreground and background colors to match your style.\n- Smart History: Automatically saves your generated codes for quick access later.\n- Context Menu: Right-click on any link or text to generate a QR code instantly.\n- WhatsApp Mode: Dedicated interface to create 'Click to Chat' QR codes easily.\n- Error Correction: Adjustable levels (Low to High) to ensure scannability even when damaged.\n\nPRO Features\n\nUnlock professional capabilities for your business or personal brand:\n\n- (PRO) Vector Export (SVG): Download scalable vector graphics perfect for large prints, billboards, and professional design work without losing quality.\n- (PRO) High-Resolution PNG: Get ultra-sharp PNG images suitable for high-quality printing materials.\n- (PRO) Branded QR Codes: Embed your own logo or image directly into the center of the QR code. Perfect for brand recognition.\n\nPerfect For\n- Business Cards: Share contact details instantly with vCard QR codes.\n- Marketing Materials: Add branded QR codes to flyers and posters.\n- Quick Sharing: Transfer links from desktop to mobile in seconds.\n\nYour QR Code Generator - Simple, Fast, Private."
+          "details": "Chrome Manifest V3 extension for 100% offline QR code generation. No data is sent to servers — all generation, rendering and export happens client-side.\n\nTechnical architecture:\n- QR code algorithm implemented in pure JavaScript, without external dependencies\n- Dual rendering: Canvas for fast preview and SVG for scalable vector export\n- Chrome Context Menus API: instant generation via right-click on links, selected text and images\n- PRO licensing system with local validation via chrome.storage\n- Reed-Solomon error correction with 4 configurable levels (L, M, Q, H)\n- Support for multiple data modes: URL, text, email, phone, SMS, WhatsApp (Click to Chat), Wi-Fi and vCard\n- Native Chrome i18n with support for 6 languages\n- Local history with persistence in chrome.storage\n\nThe PRO architecture uses local license-based feature detection, unlocking SVG export, high-resolution PNG and QR codes with centered logo without requiring a backend."
         }
       },
       {
@@ -493,7 +409,7 @@ export const extensionsData = {
         "slug": "your-system-monitor",
         "name": "Your System Monitor",
         "icon": "/images/extensions/your-system-monitor-icon.webp",
-        "description": "Lightweight, privacy-focused CPU and memory monitoring right in your Chrome toolbar. Data saved locally, no account required.",
+        "description": "Chrome MV3 extension for CPU and memory monitoring. Uses system.cpu and system.memory APIs with visualization via dynamic badge, popup and historical graphs.",
         "link": "https://chromewebstore.google.com/detail/your-system-monitor/",
         "downloads": "29",
         "releaseDate": "2025-12-12",
@@ -508,64 +424,20 @@ export const extensionsData = {
           "technologies": [
             {
               "code": "javascript",
-              "role": "Real-time monitoring and charts"
+              "role": "Data collection, average/peak calculations and graph rendering"
             },
             {
               "code": "chrome",
-              "role": "System and extension APIs"
+              "role": "MV3 APIs: system.cpu, system.memory, storage, alarms, notifications and offscreen"
             }
           ],
           "impact": [
-            {
-              "value": "29",
-              "label": "Users"
-            },
             {
               "value": "4",
               "label": "Languages"
             }
           ],
-          "details": "Your System Monitor is a lightweight, privacy-focused system monitoring extension that gives you real-time insights into your computer's performance directly from your browser toolbar.\n\nKey Features\nReal-Time Monitoring\n- Live CPU and memory usage displayed in an intuitive popup\n- Dynamic badge icon showing current usage percentage with color-coded indicators (green/yellow/red)\n- System information including processor details, core count, and architecture\n\nMulti-Language Support\n- English, Portuguese (Brazil and Portugal), Spanish, French\n- Automatic language detection based on browser settings\n\nCustomization\n- Choose which metric to display on the extension badge (CPU or Memory)\n- All data stored locally for privacy\n- Clean, modern interface\n\nAdvanced Charts (PRO)\n- Historical usage graphs for CPU and memory (24h, 7 days, 15 days, 30 days, or all time)\n- Interactive tooltips showing exact values at any point in time\n- Fullscreen modal for detailed graph analysis\n- Top 10 highest usage moments table\n\nData Export (PRO)\n- Export your usage history as PNG images\n- Export raw data to CSV for external analysis\n- Perfect for system audits and troubleshooting\n\nSmart Notifications (PRO)\n- Customizable alerts when CPU or memory stays high for extended periods\n- Adjustable thresholds (50-95%)\n- Configurable duration (1, 3, 5, 10, 15 or 30 minutes)"
-        }
-      },
-      {
-        "id": 7,
-        "slug": "focus-patrol",
-        "name": "Focus Patrol",
-        "icon": "/images/extensions/focus-patrol-icon.webp",
-        "description": "Focus and productivity extension using on-device AI to classify sites as Focus, Neutral, and Distraction. 100% privacy-first, no cloud data.",
-        "link": "https://focuspatrol.bayer.ooo/",
-        "downloads": "7",
-        "releaseDate": "2025-10-14",
-        "frameworks": [
-          "javascript",
-          "chrome"
-        ],
-        "modal": {
-          "images": [
-            "/images/extensions/focus-patrol-1.png"
-          ],
-          "technologies": [
-            {
-              "code": "javascript",
-              "role": "Core logic and AI classification"
-            },
-            {
-              "code": "chrome",
-              "role": "Extension and navigation APIs"
-            }
-          ],
-          "impact": [
-            {
-              "value": "5.0 ★",
-              "label": "Web Store"
-            },
-            {
-              "value": "7",
-              "label": "Users"
-            }
-          ],
-          "details": "Tired of getting lost in a sea of tabs and cat videos when you should be working? Digital distractions are real, but your willpower doesn't have to fight alone.\n\nIntroducing Focus Patrol, the smart extension that acts as your personal focus guardian.\n\nHow Does the Magic Work?\n\nFocus Patrol uses cutting-edge on-device AI (Gemini Nano) right inside your browser to understand your browsing habits. It classifies the sites you visit as 'Focus,' 'Neutral,' or 'Distraction,' giving you clear feedback on where your time is truly going.\n\nBest of all? Your privacy is our top priority. The entire process happens locally on your computer. Your browsing data never leaves your device, ensuring 100% confidentiality.\n\nFeatures to Supercharge Your Productivity:\n\n- Smart AI Analysis: Let the AI identify distraction patterns you might not even notice.\n- Custom-Tailored Notifications: Prefer a gentle nudge? Enable Quiet Mode for discreet alerts in the extension's icon. Want a more direct reminder? Set up notifications to bring you back on track.\n- Gamify Your Focus: Keep track of your Focus Streak and challenge yourself to stay concentrated longer. Watch your focus streak grow day by day!\n- You're in Full Control: You call the shots. Adjust how often analyses run and set your own distraction threshold. Focus Patrol adapts to your workflow.\n\nPrivacy First, Always.\n\nWe believe privacy isn't a luxury. Focus Patrol was built from the ground up with this philosophy. It doesn't need an internet connection to work and sends zero information to the cloud.\n\nCompatibility and Requirements\n\nFocus Patrol is built for Google Chrome. The core features, powered by our reliable local filter, work for everyone right out of the box.\n\nReady to master your focus and boost your productivity?\n\nInstall Focus Patrol today and turn your browser into a smarter, more focused workspace. Reclaim your time, one tab at a time."
+          "details": "Chrome Manifest V3 extension for hardware monitoring via Chrome's private APIs (system.cpu and system.memory). The architecture was designed to be lightweight, private and extensible.\n\nTechnical components:\n- Service Worker as collection orchestrator: uses chrome.alarms for periodic sampling scheduling of CPU and memory\n- Dynamic badge: updates in real-time with usage percentage, using color codes (green/yellow/red) to indicate load\n- Popup with detailed information: current usage, moving average, historical peak and processor specifications\n- Offscreen Document for historical graphs: Canvas rendering isolation in separate document (MV3 pattern for heavy work)\n- Local storage system with circular limitation: keeps only the last N records to prevent indefinite storage growth\n\nPRO features:\n- Interactive historical graphs with zoom and pan\n- Export to PNG (graph capture) and CSV (raw data for external analysis)\n- Smart notifications with configurable thresholds (50-95%) and minimum trigger duration\n\nPrivacy: all data stays on the device. No telemetry, analytics or external communication."
         }
       }
     ]
@@ -577,7 +449,7 @@ export const extensionsData = {
         "slug": "brasil-radios-lite",
         "name": "Brasil Radios Lite",
         "icon": "/images/extensions/brasil-radios-lite-icon.webp",
-        "description": "Transformez votre Chrome en une radio FM complète. Plus de 250 stations brésiliennes avec lecture en arrière-plan, recherche par ville ou genre et favoris sauvegardés localement.",
+        "description": "Extension Chrome MV3 pour le streaming radio. Architecture basée sur service worker, document offscreen pour audio persistant, et monorepo avec core partagé entre variantes par pays.",
         "link": "https://chromewebstore.google.com/detail/brasil-radios-lite/",
         "downloads": "32",
         "releaseDate": "2026-03-06",
@@ -592,24 +464,20 @@ export const extensionsData = {
           "technologies": [
             {
               "code": "javascript",
-              "role": "Logique principale et lecture audio"
+              "role": "Logique principale, state management et communication entre contexts"
             },
             {
               "code": "chrome",
-              "role": "APIs d'extension et lecture en arrière-plan"
+              "role": "APIs MV3 : offscreen, alarms, storage et action popup"
             }
           ],
           "impact": [
             {
               "value": "250+",
               "label": "Stations"
-            },
-            {
-              "value": "32",
-              "label": "Utilisateurs"
             }
           ],
-          "details": "Transformez votre Chrome en une radio FM complète.\n\nAvec Brasil Radios Lite, trouvez et écoutez des stations brésiliennes en quelques secondes, avec une expérience simple, rapide et conçue pour un usage quotidien. Plus de 250 radios dans un catalogue complet, axé sur la stabilité et la praticité.\n\n- Lecture continue en arrière-plan\n- Recherche par nom, ville ou réseau\n- Filtre par genre pour trouver le bon style plus vite\n- Onglet favoris pour retrouver vos radios les plus écoutées\n- Contrôles du lecteur avec lecture/pause, volume et minuteur\n- Canal direct pour signaler des radios hors ligne et demander de nouvelles stations\n\nConfidentialité et simplicité :\n- Pas de connexion obligatoire\n- Favoris et préférences sauvegardés localement dans le navigateur\n- Sans publicité !"
+          "details": "Architecture d'extension Chrome Manifest V3 avec lecture audio continue via Offscreen Document, une solution nécessaire car le MV3 a supprimé le support audio des background pages.\n\nLa structure est organisée en monorepo (pnpm workspaces) avec un package core partagé entre variantes par pays. Le core contient le service worker, popup, settings, offscreen player et utilitaires communs. Chaque variante (Brésil, Mexique, USA, Canada) applique uniquement des overrides de configuration, catalogue de stations et i18n.\n\nTechnologies et patterns :\n- Offscreen Document API pour audio persistant sans background page\n- Service Worker comme orchestrateur d'état et hub de communication entre contexts\n- Système d'override au build time pour customisation par pays sans duplication de code\n- Hot reload en développement avec sync automatique core → app\n- i18n native Chrome (_locales) avec fallback par langue\n- Stockage local (chrome.storage) pour favoris, volume et préférences\n- Catalogue de stations en JSON avec métadonnées et multiples streams par radio\n\nLe pipeline de release génère des bundles individuels par pays avec versionnement automatique et validation de workspace."
         }
       },
       {
@@ -617,7 +485,7 @@ export const extensionsData = {
         "slug": "mexico-radios-lite",
         "name": "Mexico Radios Lite",
         "icon": "/images/extensions/mexico-radios-lite-icon.webp",
-        "description": "Transformez votre Chrome en une radio FM complète. Plus de 150 stations mexicaines avec lecture en arrière-plan, recherche par ville ou genre et favoris sauvegardés localement.",
+        "description": "Variante du monorepo Radios Lite pour le Mexique. Partage 100% du core technique, se différenciant uniquement par le catalogue de 151 stations et la locale.",
         "link": "https://chromewebstore.google.com/detail/mexico-radios-lite/",
         "downloads": "7",
         "releaseDate": "2026-03-11",
@@ -632,24 +500,20 @@ export const extensionsData = {
           "technologies": [
             {
               "code": "javascript",
-              "role": "Logique principale et lecture audio"
+              "role": "Logique principale, state management et communication entre contexts"
             },
             {
               "code": "chrome",
-              "role": "APIs d'extension et lecture en arrière-plan"
+              "role": "APIs MV3 : offscreen, alarms, storage et action popup"
             }
           ],
           "impact": [
             {
-              "value": "150+",
+              "value": "151",
               "label": "Stations"
-            },
-            {
-              "value": "7",
-              "label": "Utilisateurs"
             }
           ],
-          "details": "Transformez votre Chrome en une radio FM complète.\n\nAvec Mexico Radios Lite, trouvez et écoutez des stations mexicaines en quelques secondes, avec une expérience simple, rapide et conçue pour un usage quotidien. 151 radios dans un catalogue curé, axé sur la stabilité et la praticité.\n\n- Lecture continue en arrière-plan\n- Recherche par nom, ville ou réseau\n- Filtre par genre pour trouver le bon style plus vite\n- Onglet favoris pour retrouver vos radios les plus écoutées\n- Contrôles du lecteur avec lecture/pause, volume et minuteur\n- Canal direct pour signaler des radios hors ligne et demander de nouvelles stations\n\nConfidentialité et simplicité :\n- Pas de connexion obligatoire\n- Favoris et préférences sauvegardés localement dans le navigateur\n- Sans publicité !"
+          "details": "Variante du monorepo Radios Lite, partageant le même core technique que les autres extensions radio. L'architecture permet à plusieurs pays de réutiliser le même code de base, appliquant uniquement des overrides de configuration.\n\nPour le Mexique, l'override inclut :\n- Catalogue curé de 151 stations de radio mexicaines\n- Textes et labels en espagnol via système de configuration unifié\n- Comportement de recherche et filtres adaptés au marché local\n\nToutes les fonctionnalités techniques (player offscreen, service worker, i18n, storage) sont identiques aux autres variantes, démontrant l'évolutivité de l'architecture monorepo avec core partagé."
         }
       },
       {
@@ -657,7 +521,7 @@ export const extensionsData = {
         "slug": "usa-radios-lite",
         "name": "USA Radios Lite",
         "icon": "/images/extensions/usa-radios-lite-icon.webp",
-        "description": "Écoutez plus de 1300 stations de radio américaines directement depuis Chrome. Interface légère, lecture en arrière-plan et filtres par genre pour trouver musique, infos et talk radio.",
+        "description": "Variante du monorepo Radios Lite pour les USA. Architecture MV3 avec audio offscreen, service worker et catalogue de 1300+ stations américaines.",
         "link": "https://chromewebstore.google.com/detail/usa-radios-lite/",
         "downloads": "50",
         "releaseDate": "2026-03-26",
@@ -672,24 +536,20 @@ export const extensionsData = {
           "technologies": [
             {
               "code": "javascript",
-              "role": "Logique principale et lecture audio"
+              "role": "Logique principale, state management et communication entre contexts"
             },
             {
               "code": "chrome",
-              "role": "APIs d'extension et lecture en arrière-plan"
+              "role": "APIs MV3 : offscreen, alarms, storage et action popup"
             }
           ],
           "impact": [
             {
               "value": "1300+",
               "label": "Stations"
-            },
-            {
-              "value": "50",
-              "label": "Utilisateurs"
             }
           ],
-          "details": "Écoutez des stations de radio américaines directement depuis Chrome.\n\nUSA Radios Lite vous permet de découvrir et diffuser plus de 1300 stations de radio de tout les États-Unis. Avec une interface légère et un chargement rapide, il est conçu pour les personnes qui veulent écouter de la musique, des infos et des talk radios tous les jours sans distractions.\n\nParcourez un catalogue croissant de stations FM et en ligne américaines, organisé pour vous aider à trouver ce que vous voulez en quelques secondes.\n\n- Lecture en arrière-plan – continuez à écouter tout en naviguant sur d'autres onglets\n- Recherche facile de stations – trouvez des radios par nom, ville ou réseau\n- Filtres par genre – musique, talk radio, infos, sports et plus\n- Onglet favoris – sauvegardez et accédez rapidement à vos stations les plus écoutées\n- Contrôles simples du lecteur – lecture, pause, volume et minuteur\n- Signalez les stations hors ligne – aidez à maintenir le catalogue précis\n- Demandez de nouvelles stations – suggérez des radios que vous aimeriez voir ajoutées\n\n- Aucun compte requis\n- Sans publicité\n- Design rapide et minimal\n\nQue vous cherchiez une radio FM américaine locale, des stations de musique, des talk shows ou des infos, USA Radios Lite garde tout à un clic de distance."
+          "details": "Plus grande variante du monorepo Radios Lite, avec un catalogue de plus de 1300 stations de radio des États-Unis. L'architecture technique est identique aux autres variantes, prouvant l'évolutivité du core partagé même avec de grands volumes de données.\n\nPoints forts techniques de la variante USA :\n- Catalogue avec 1300+ stations organisées par état, ville et genre\n- Système de fallback de streams : quand une URL échoue, le player essaie automatiquement le prochain stream disponible de la même station\n- Classement des stations par popularité et fiabilité du stream\n- Même infrastructure monorepo : core partagé, overrides par pays, build unifié\n\nL'architecture MV3 avec Offscreen Document permet à l'audio de continuer à jouer même quand le popup est fermé, un défi technique commun dans les extensions média post-MV2."
         }
       },
       {
@@ -697,7 +557,7 @@ export const extensionsData = {
         "slug": "canada-radios-lite",
         "name": "Canada Radios Lite",
         "icon": "/images/extensions/canada-radios-lite-icon.webp",
-        "description": "Écoutez plus de 500 stations de radio canadiennes directement depuis Chrome. Interface légère, lecture en arrière-plan et filtres par genre pour trouver musique, infos et talk radio.",
+        "description": "Variante du monorepo Radios Lite pour le Canada. Partage le core technique avec 500+ stations canadiennes.",
         "link": "https://chromewebstore.google.com/detail/canada-radios-lite/",
         "downloads": "9",
         "releaseDate": "2026-03-13",
@@ -712,24 +572,20 @@ export const extensionsData = {
           "technologies": [
             {
               "code": "javascript",
-              "role": "Logique principale et lecture audio"
+              "role": "Logique principale, state management et communication entre contexts"
             },
             {
               "code": "chrome",
-              "role": "APIs d'extension et lecture en arrière-plan"
+              "role": "APIs MV3 : offscreen, alarms, storage et action popup"
             }
           ],
           "impact": [
             {
               "value": "500+",
               "label": "Stations"
-            },
-            {
-              "value": "9",
-              "label": "Utilisateurs"
             }
           ],
-          "details": "Écoutez des stations de radio canadiennes directement depuis Chrome.\n\nCanada Radios Lite vous permet de découvrir et diffuser plus de 500 stations de radio de tout le Canada. Avec une interface légère et un chargement rapide, il est conçu pour les personnes qui veulent écouter de la musique, des infos et des talk radios tous les jours sans distractions.\n\nParcourez un catalogue croissant de stations FM et en ligne canadiennes, organisé pour vous aider à trouver ce que vous voulez en quelques secondes.\n\n- Lecture en arrière-plan – continuez à écouter tout en naviguant sur d'autres onglets\n- Recherche facile de stations – trouvez des radios par nom, ville ou réseau\n- Filtres par genre – musique, talk radio, infos, sports et plus\n- Onglet favoris – sauvegardez et accédez rapidement à vos stations les plus écoutées\n- Contrôles simples du lecteur – lecture, pause, volume et minuteur\n- Signalez les stations hors ligne – aidez à maintenir le catalogue précis\n- Demandez de nouvelles stations – suggérez des radios que vous aimeriez voir ajoutées\n\n- Aucun compte requis\n- Sans publicité\n- Design rapide et minimal\n\nQue vous cherchiez une radio FM canadienne locale, des stations de musique, des talk shows ou des infos, Canada Radios Lite garde tout à un clic de distance."
+          "details": "Variante canadienne du monorepo Radios Lite. Démonstre comment l'architecture de core partagé permet de lancer rapidement de nouveaux produits avec un minimum d'effort de développement.\n\nLe temps d'implémentation de la variante Canada a été drastiquement réduit par rapport à la première version (Brésil), car le travail s'est limité à :\n- Curation du catalogue de 500+ stations canadiennes\n- Configuration des textes en anglais et français (langues officielles du Canada)\n- Ajustements de timezone et comportement régional via app-config.js\n\nToute la complexité technique (player offscreen, gestion d'état, communication entre contexts, framework i18n) a été héritée du core sans modification. Cela démontre la valeur pratique de l'architecture monorepo pour les produits avec multiples variantes de marché."
         }
       },
       {
@@ -737,7 +593,7 @@ export const extensionsData = {
         "slug": "your-qr-code-generator",
         "name": "Your QR Code Generator",
         "icon": "/images/extensions/your-qr-code-generator-icon.webp",
-        "description": "Générez des QR codes instantanément directement depuis votre navigateur. 100% hors ligne, sans suivi. Prend en charge les URLs, textes, e-mails, téléphones, contacts et WhatsApp.",
+        "description": "Extension Chrome MV3 pour génération hors ligne de QR codes. Architecture 100% client-side avec rendu canvas/SVG, menus contextuels et système de licence PRO.",
         "link": "https://chromewebstore.google.com/detail/your-qr-code-generator/",
         "downloads": "4",
         "releaseDate": "2025-12-29",
@@ -752,24 +608,20 @@ export const extensionsData = {
           "technologies": [
             {
               "code": "javascript",
-              "role": "Génération et rendu de QR codes"
+              "role": "Génération de QR codes, rendu canvas/SVG et logique PRO"
             },
             {
               "code": "chrome",
-              "role": "APIs d'extension et menu contextuel"
+              "role": "APIs MV3 : contextMenus, storage, scripting et i18n"
             }
           ],
           "impact": [
             {
               "value": "100%",
               "label": "Hors ligne"
-            },
-            {
-              "value": "4",
-              "label": "Utilisateurs"
             }
           ],
-          "details": "Your QR Code Generator - Privé, Hors Ligne et Fonctionnalités PRO\n\nGénérez des QR codes instantanément directement depuis votre navigateur. Your QR Code Generator est l'outil ultime pour les utilisateurs soucieux de la confidentialité qui ont besoin de QR codes fiables, rapides et personnalisables sans que les données ne quittent leur appareil.\n\nFonctionnalités Clés (Gratuites)\n\n- Génération Instantanée : Créez des QR codes pour les URLs de page actuelles, textes sélectionnés, e-mails, numéros de téléphone, contacts (vCard) et messages WhatsApp.\n- Confidentialité d'abord : Fonctionnement totalement hors ligne. Pas de suivi, pas d'analytics, pas de communication avec serveur.\n- Personnalisation : Changez les couleurs de premier plan et d'arrière-plan pour correspondre à votre style.\n- Historique Intelligent : Sauvegarde automatiquement vos codes générés pour un accès rapide ultérieur.\n- Menu Contextuel : Clic droit sur n'importe quel lien ou texte pour générer un QR code instantanément.\n- Mode WhatsApp : Interface dédiée pour créer facilement des QR codes 'Cliquez pour Discuter'.\n- Correction d'Erreurs : Niveaux ajustables (Faible à Élevé) pour garantir la lisibilité même lorsqu'endommagé.\n\nFonctionnalités PRO\n\nDébloquez des capacités professionnelles pour votre entreprise ou marque personnelle :\n\n- (PRO) Exportation Vectorielle (SVG) : Téléchargez des graphiques vectoriels scalables parfaits pour grandes impressions, panneaux publicitaires et travaux de design professionnel sans perte de qualité.\n- (PRO) PNG Haute Résolution : Obtenez des images PNG ultra-nettes adaptées aux matériaux d'impression de haute qualité.\n- (PRO) QR Codes avec Marque : Intégrez votre propre logo ou image directement au centre du QR code. Parfait pour la reconnaissance de marque.\n\nParfait Pour\n- Cartes de Visite : Partagez vos coordonnées instantanément avec des QR codes vCard.\n- Matériaux de Marketing : Ajoutez des QR codes avec marque à vos flyers et affiches.\n- Partage Rapide : Transférez des liens du desktop vers le mobile en quelques secondes.\n\nYour QR Code Generator - Simple, Rapide, Privé."
+          "details": "Extension Chrome Manifest V3 pour génération de QR codes 100% hors ligne. Aucune donnée n'est envoyée à des serveurs — toute la génération, le rendu et l'exportation se font côté client.\n\nArchitecture technique :\n- Algorithme de QR code implémenté en JavaScript pur, sans dépendances externes\n- Rendu dual : Canvas pour preview rapide et SVG pour exportation vectorielle scalable\n- Chrome Context Menus API : génération instantanée via clic droit sur liens, textes sélectionnés et images\n- Système de licence PRO avec validation locale via chrome.storage\n- Correction d'erreurs Reed-Solomon avec 4 niveaux configurables (L, M, Q, H)\n- Support de multiples modes de données : URL, texte, e-mail, téléphone, SMS, WhatsApp (Click to Chat), Wi-Fi et vCard\n- i18n native Chrome avec support de 6 langues\n- Historique local avec persistance dans chrome.storage\n\nL'architecture PRO utilise une détection de features basée sur licence locale, débloquant l'exportation SVG, PNG haute résolution et QR codes avec logo centré sans nécessiter de backend."
         }
       },
       {
@@ -777,7 +629,7 @@ export const extensionsData = {
         "slug": "your-system-monitor",
         "name": "Your System Monitor",
         "icon": "/images/extensions/your-system-monitor-icon.webp",
-        "description": "Surveillance légère et axée sur la confidentialité du CPU et de la mémoire directement dans votre barre d'outils Chrome. Données sauvegardées localement, aucun compte requis.",
+        "description": "Extension Chrome MV3 pour surveillance du CPU et de la mémoire. Utilise les APIs system.cpu et system.memory avec visualisation via badge dynamique, popup et graphiques historiques.",
         "link": "https://chromewebstore.google.com/detail/your-system-monitor/",
         "downloads": "29",
         "releaseDate": "2025-12-12",
@@ -792,64 +644,20 @@ export const extensionsData = {
           "technologies": [
             {
               "code": "javascript",
-              "role": "Surveillance en temps réel et graphiques"
+              "role": "Collecte de données, calculs moyenne/pic et rendu de graphiques"
             },
             {
               "code": "chrome",
-              "role": "APIs système et d'extension"
+              "role": "APIs MV3 : system.cpu, system.memory, storage, alarms, notifications et offscreen"
             }
           ],
           "impact": [
-            {
-              "value": "29",
-              "label": "Utilisateurs"
-            },
             {
               "value": "4",
               "label": "Langues"
             }
           ],
-          "details": "Your System Monitor est une extension de surveillance système légère et axée sur la confidentialité qui vous offre des informations en temps réel sur les performances de votre ordinateur directement depuis votre barre d'outils de navigateur.\n\nFonctionnalités Clés\nSurveillance en Temps Réel\n- Utilisation CPU et mémoire en direct affichée dans un popup intuitif\n- Icône de badge dynamique montrant le pourcentage d'utilisation actuel avec des indicateurs de couleur (vert/jaune/rouge)\n- Informations système incluant les détails du processeur, le nombre de cœurs et l'architecture\n\nSupport Multi-Langues\n- Anglais, Portugais (Brésil et Portugal), Espagnol, Français\n- Détection automatique de la langue basée sur les paramètres du navigateur\n\nPersonnalisation\n- Choisissez quelle métrique afficher sur le badge de l'extension (CPU ou Mémoire)\n- Toutes les données stockées localement pour la confidentialité\n- Interface propre et moderne\n\nGraphiques Avancés (PRO)\n- Graphiques historiques d'utilisation CPU et mémoire (24h, 7 jours, 15 jours, 30 jours ou tout le temps)\n- Info-bulles interactives montrant les valeurs exactes à n'importe quel moment\n- Modal plein écran pour une analyse détaillée des graphiques\n- Tableau des 10 plus grands moments d'utilisation\n\nExportation de Données (PRO)\n- Exportez votre historique d'utilisation sous forme d'images PNG\n- Exportez les données brutes vers CSV pour analyse externe\n- Parfait pour les audits système et le dépannage\n\nNotifications Intelligentes (PRO)\n- Alertes personnalisables quand le CPU ou la mémoire restent élevés pendant des périodes prolongées\n- Seuils ajustables (50-95%)\n- Durée configurable (1, 3, 5, 10, 15 ou 30 minutes)"
-        }
-      },
-      {
-        "id": 7,
-        "slug": "focus-patrol",
-        "name": "Focus Patrol",
-        "icon": "/images/extensions/focus-patrol-icon.webp",
-        "description": "Extension de concentration et productivité utilisant l'IA embarquée pour classer les sites en Concentration, Neutre et Distraction. 100% privacy-first, aucune donnée dans le cloud.",
-        "link": "https://focuspatrol.bayer.ooo/",
-        "downloads": "7",
-        "releaseDate": "2025-10-14",
-        "frameworks": [
-          "javascript",
-          "chrome"
-        ],
-        "modal": {
-          "images": [
-            "/images/extensions/focus-patrol-1.png"
-          ],
-          "technologies": [
-            {
-              "code": "javascript",
-              "role": "Logique principale et classification IA"
-            },
-            {
-              "code": "chrome",
-              "role": "APIs d'extension et de navigation"
-            }
-          ],
-          "impact": [
-            {
-              "value": "5.0 ★",
-              "label": "Web Store"
-            },
-            {
-              "value": "7",
-              "label": "Utilisateurs"
-            }
-          ],
-          "details": "Fatigué de vous perdre dans un océan d'onglets et de vidéos de chats alors que vous devriez travailler ? Les distractions numériques sont réelles, mais votre volonté n'a pas à se battre seule.\n\nDécouvrez Focus Patrol, l'extension intelligente qui agit comme votre gardien personnel de concentration.\n\nComment fonctionne la magie ?\n\nFocus Patrol utilise une IA embarquée de pointe (Gemini Nano) directement dans votre navigateur pour comprendre vos habitudes de navigation. Elle classe les sites que vous visitez en 'Concentration', 'Neutre' ou 'Distraction', vous donnant un retour clair sur où votre temps va vraiment.\n\nLe meilleur dans tout ça ? Votre confidentialité est notre priorité absolue. L'ensemble du processus se déroule localement sur votre ordinateur. Vos données de navigation ne quittent jamais votre appareil, garantissant 100% de confidentialité.\n\nFonctionnalités pour booster votre productivité :\n\n- Analyse IA Intelligente : Laissez l'IA identifier les schémas de distraction que vous ne remarquez peut-être même pas.\n- Notifications Personnalisées : Vous préférez une suggestion douce ? Activez le Mode Silencieux pour des alertes discrètes dans l'icône de l'extension. Vous voulez un rappel plus direct ? Configurez des notifications pour vous remettre sur les rails.\n- Gamifiez Votre Concentration : Suivez votre Série de Concentration et défiez-vous de rester concentré plus longtemps. Regardez votre série croître jour après jour !\n- Vous Maîtrisez Tout : Vous êtes aux commandes. Ajustez la fréquence des analyses et définissez votre propre seuil de distraction. Focus Patrol s'adapte à votre flux de travail.\n\nConfidentialité d'abord, toujours.\n\nNous croyons que la confidentialité n'est pas un luxe. Focus Patrol a été construit dès le départ avec cette philosophie. Elle n'a pas besoin de connexion Internet pour fonctionner et n'envoie aucune information vers le cloud.\n\nCompatibilité et Prérequis\n\nFocus Patrol est conçu pour Google Chrome. Les fonctionnalités de base, alimentées par notre filtre local fiable, fonctionnent pour tout le monde immédiatement.\n\nPrêt à maîtriser votre concentration et augmenter votre productivité ?\n\nInstallez Focus Patrol dès aujourd'hui et transformez votre navigateur en un espace de travail plus intelligent et plus concentré. Reconquérez votre temps, un onglet à la fois."
+          "details": "Extension Chrome Manifest V3 pour surveillance matérielle via les APIs privées de Chrome (system.cpu et system.memory). L'architecture a été conçue pour être légère, privée et extensible.\n\nComposants techniques :\n- Service Worker comme orchestrateur de collecte : utilise chrome.alarms pour planification d'échantillonnage périodique du CPU et de la mémoire\n- Badge dynamique : met à jour en temps réel avec le pourcentage d'utilisation, utilisant des codes couleur (vert/jaune/rouge) pour indiquer la charge\n- Popup avec informations détaillées : utilisation actuelle, moyenne mobile, pic historique et spécifications du processeur\n- Offscreen Document pour graphiques historiques : isolation de rendu Canvas dans document séparé (pattern MV3 pour travail lourd)\n- Système de stockage local avec limitation circulaire : conserve uniquement les N derniers enregistrements pour éviter la croissance indéfinie du storage\n\nFonctionnalités PRO :\n- Graphiques historiques interactifs avec zoom et pan\n- Exportation vers PNG (capture de graphique) et CSV (données brutes pour analyse externe)\n- Notifications intelligentes avec seuils configurables (50-95%) et durée minimale de déclenchement\n\nConfidentialité : toutes les données restent sur l'appareil. Pas de télémétrie, analytics ou communication externe."
         }
       }
     ]
