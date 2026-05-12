@@ -15,6 +15,12 @@ export const Header = () => {
           >
             Blog
           </Link>
+          <Link
+            href="/extensions"
+            className="text-sm text-muted hover:text-base-content transition-colors hidden sm:block"
+          >
+            Extensions
+          </Link>
         </div>
         <div className="flex items-center gap-1">
           <ThemeToggle />
