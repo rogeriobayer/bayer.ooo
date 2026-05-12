@@ -108,13 +108,13 @@ export const Projects = ({ type = "projects" }) => {
                   whileHover="hover"
                   whileTap="tap"
                   >
-                    <figure className="w-24 md:w-32 flex-shrink-0 bg-base-200/50 p-3 flex items-center justify-center">
+                    <figure className="w-20 md:w-24 flex-shrink-0 bg-base-200/50 p-3 flex items-center justify-center">
                     <Image
                       src={project.image || project.icon}
                       alt={`${project.name} logo`}
                       className="object-contain rounded-lg"
-                      width={80}
-                      height={80}
+                      width={56}
+                      height={56}
                     />
                   </figure>
 
@@ -123,16 +123,18 @@ export const Projects = ({ type = "projects" }) => {
                       {project.name}
                     </h3>
 
-                    <div className="flex flex-wrap gap-1.5 my-1">
-                      {project.frameworks.map((framework, fIndex) => (
-                        <div
-                          key={fIndex}
-                          className="badge badge-sm badge-ghost gap-1 px-2 py-2.5"
-                        >
-                          <IconWithText value={framework} type="technology" showText={false} showTooltip />
-                        </div>
-                      ))}
-                    </div>
+                    {type !== "extensions" && (
+                      <div className="flex flex-wrap gap-1.5 my-1">
+                        {project.frameworks.map((framework, fIndex) => (
+                          <div
+                            key={fIndex}
+                            className="badge badge-sm badge-ghost gap-1 px-2 py-2.5"
+                          >
+                            <IconWithText value={framework} type="technology" showText={false} showTooltip />
+                          </div>
+                        ))}
+                      </div>
+                    )}
 
                     <p className="text-sm text-secondary leading-relaxed font-light line-clamp-3">
                       {project.description}
