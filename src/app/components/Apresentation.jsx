@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useTranslation } from "../hooks/useTranslation";
+import TypewriterText from "./TypewriterText";
 import {
   floatingVariant,
   floatingSlowVariant,
@@ -12,6 +13,13 @@ import {
 
 export const Apresentation = () => {
   const { t } = useTranslation();
+
+  const typewriterPhrases = [
+    t("typewriter.greeting"),
+    t("typewriter.role"),
+    t("typewriter.builder"),
+    t("typewriter.passion"),
+  ];
 
   const scrollToProjects = () => {
     document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
@@ -65,8 +73,13 @@ export const Apresentation = () => {
         animate="visible"
       >
         <div className="flex justify-center flex-col lg:ml-10 max-w-full lg:max-w-[55%]">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-base-content tracking-tight font-heading">
-            {t("apresentation.greeting")}
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-base-content tracking-tight font-heading min-h-[1.2em]">
+            <TypewriterText
+              phrases={typewriterPhrases}
+              typingSpeed={95}
+              deletingSpeed={55}
+              pauseTime={2400}
+            />
           </h1>
 
           <p className="text-lg md:text-xl font-light leading-relaxed mt-6 text-secondary max-w-lg">
