@@ -1,11 +1,14 @@
 import { test, expect } from '@playwright/test';
 import { translations } from '../../src/app/data/translations.js';
-import { careerSummary } from '../../src/app/data/career.server.js';
+import { careerData } from '../../src/app/lib/career-data.js';
 import { companiesList } from '../../src/app/data/companies.server.js';
-import { projectsData } from '../../src/app/data/projects.server.js';
+import { projectsData as rawProjectsData } from '../../src/app/lib/projects-data.js';
 import { technologiesList } from '../../src/app/data/technologies.server.js';
 
 const defaultLanguage = 'pt';
+
+const careerSummary = careerData[defaultLanguage];
+const projectsList = rawProjectsData[defaultLanguage].projects;
 
 const t = (lang: keyof typeof translations, key: string) =>
     translations[lang]?.[key] ?? key;
@@ -32,12 +35,12 @@ test.describe('Home Page', () => {
     test('should render the presentation section correctly', async ({ page }) => {
         // Apresentation Component
         await expect(page).toHaveTitle(/Rogério Bayer/);
-        await expect(page.getByRole('heading', { name: t(defaultLanguage, 'apresentation.greeting'), level: 1 })).toBeVisible();
+        await expect(page.getByRole('heading', { name: t(defaultLanguage, 'typewriter.greeting'), level: 1 })).toBeVisible();
 
         // Scope to presentation section to avoid finding "Full-Stack" in Education or History
         // Traverses up to the immediate parent div containing H1 and P
         const presentationContainer = page
-            .getByRole('heading', { name: t(defaultLanguage, 'apresentation.greeting'), level: 1 })
+            .getByRole('heading', { name: t(defaultLanguage, 'typewriter.greeting'), level: 1 })
             .locator('xpath=..');
 
         // Now check for "Full-Stack" strictly within this container
@@ -129,8 +132,8 @@ test.describe('Home Page', () => {
         const historySection = historyHeading.locator('xpath=..');
 
         for (const experience of careerSummary.history) {
-            const positionText = t(defaultLanguage, experience.positionKey);
-            const descriptionText = t(defaultLanguage, experience.descriptionKey);
+            const positionText = experience.position;
+            const descriptionText = experience.description;
             const companyName = getCompanyName(experience.companyCode);
             const endText = experience.endDate ?? t(defaultLanguage, 'history.current');
             const dateText = `${experience.startDate} - ${endText}`;
@@ -152,12 +155,12 @@ test.describe('Home Page', () => {
         // Projects Component
         await expect(page.getByRole('heading', { name: t(defaultLanguage, 'projects.title'), level: 2 })).toBeVisible();
 
-        for (const project of projectsData.projects) {
-            await expect(page.getByText(t(defaultLanguage, project.nameKey))).toBeVisible();
-            await expect(page.getByText(t(defaultLanguage, project.descriptionKey))).toBeVisible();
+        for (const project of projectsList) {
+            await expect(page.getByText(project.name)).toBeVisible();
+            await expect(page.getByText(project.description)).toBeVisible();
         }
 
-        const expectedLinks = projectsData.projects.filter(
+        const expectedLinks = projectsList.filter(
             (project) => project.link && project.link !== '#'
         ).length;
         const projectLinks = page.getByRole('link', { name: t(defaultLanguage, 'projects.access') });
@@ -187,7 +190,7 @@ test.describe('Home Page', () => {
         await expect(page.getByText(footerText)).toBeVisible();
 
         // Check social links and icons
-        const socialLinksContainer = page.locator('footer .flex.justify-center.gap-4');
+        const socialLinksContainer = page.locator('footer .flex.justify-center.gap-4.mb-10');
         await expect(socialLinksContainer).toBeVisible();
 
         const expectedLinks = ['github', 'linkedin', 'behance', 'email'];
@@ -209,13 +212,13 @@ test.describe('Language Switching', () => {
 
         // Verify change
         await expect(
-            page.getByRole('heading', { name: t('en', 'apresentation.greeting'), level: 1 })
+            page.getByRole('heading', { name: t('en', 'typewriter.greeting'), level: 1 })
         ).toBeVisible();
 
         // Switch to French
         await page.getByRole('button', { name: 'FR' }).click();
         await expect(
-            page.getByRole('heading', { name: t('fr', 'apresentation.greeting'), level: 1 })
+            page.getByRole('heading', { name: t('fr', 'typewriter.greeting'), level: 1 })
         ).toBeVisible();
     });
 });

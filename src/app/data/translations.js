@@ -7,6 +7,10 @@ export const translations = {
     "apresentation.highlight.vue": "Vue 2 → 3",
     "apresentation.highlight.designSystems": "Design Systems",
     "apresentation.highlight.performance": "Performance",
+    "typewriter.greeting": "Olá, sou o Rogério!",
+    "typewriter.role": "Desenvolvedor Full-Stack",
+    "typewriter.builder": "Criador de experiências digitais",
+    "typewriter.passion": "Apaixonado por código limpo",
 
     "summary.title": "Sobre mim",
     "summary.daysIn": "Há {days} dias em",
@@ -80,6 +84,10 @@ export const translations = {
     "apresentation.highlight.vue": "Vue 2 → 3",
     "apresentation.highlight.designSystems": "Design Systems",
     "apresentation.highlight.performance": "Performance",
+    "typewriter.greeting": "Hello, I'm Rogério!",
+    "typewriter.role": "Full-Stack Developer",
+    "typewriter.builder": "Builder of digital experiences",
+    "typewriter.passion": "Passionate about clean code",
 
     "summary.title": "About me",
     "summary.daysIn": "{days} days at",
@@ -153,6 +161,10 @@ export const translations = {
     "apresentation.highlight.vue": "Vue 2 → 3",
     "apresentation.highlight.designSystems": "Design Systems",
     "apresentation.highlight.performance": "Performance",
+    "typewriter.greeting": "Bonjour, je suis Rogério!",
+    "typewriter.role": "Développeur Full-Stack",
+    "typewriter.builder": "Créateur d'expériences numériques",
+    "typewriter.passion": "Passionné par le code propre",
 
     "summary.title": "Sur moi",
     "summary.daysIn": "{days} jours chez",
