@@ -57,7 +57,7 @@ export const technologiesList = [
     code: "javascript",
     color: "#F7DF1E",
   },
-  { name: "PHP", logo: "/php.svg", code: "php", color: "#777BB4" },
+  { name: "PHP", logo: "/php.svg", code: "php", color: "#777BB4", darkInvert: true },
   {
     name: "Typescript",
     logo: "/typescript.svg",
