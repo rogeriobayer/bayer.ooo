@@ -55,6 +55,7 @@ export const companiesList = [
       "Universidade Federal do Paraná - Federal University of Paraná.",
     code: "ufpr",
     color: "#0066CC",
+    darkInvert: true,
   },
   {
     name: "Unyleya",
