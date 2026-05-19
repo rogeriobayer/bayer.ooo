@@ -57,6 +57,7 @@
   },
   "overrides": {
     "flatted": "3.4.2",
-    "postcss": "^8.5.13"
+    "postcss": "^8.5.13",
+    "ws": "^8.20.1"
   }
 }
