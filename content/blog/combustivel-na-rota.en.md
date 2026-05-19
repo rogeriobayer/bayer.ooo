@@ -13,7 +13,7 @@ cover: /blog/combustivel.png
 author: Rogério Bayer
 ---
 
-Trip planning is usually the fun part — until reality knocks on the door. I had my bags packed and was about to leave Curitiba for Foz do Iguaçu when I noticed the gauge: a quarter tank. Over 630 kilometers of highway ahead, and I had no idea where I'd stop to refuel or how much it would cost.
+Trip planning is usually the fun part, until reality knocks on the door. I had my bags packed and was about to leave Curitiba for Foz do Iguaçu when I noticed the gauge: a quarter tank. Over 630 kilometers of highway ahead, and I had no idea where I'd stop to refuel or how much it would cost.
 
 Paraná state has an excellent tool called Menor Preço, powered by real-time data from the Nota Paraná program. The problem is the design premise: the official app works like a radar. It grabs your current location, draws a 20 km radius, and shows what's around.
 
@@ -25,7 +25,7 @@ That annoyed me enough to stop planning the trip and start planning a tool. The 
 
 The State Revenue Department provides the data, but the official interface restricts searches to a single point. If you want to drive the entire BR 277 highway, you'd have to open the app every 40 km to check if the next station is cheaper. If you're in Curitiba, it won't show stations in Ponta Grossa; if you're in Ponta Grossa, it won't show Guarapuava.
 
-The challenge wasn't lack of information — it was **spatial context**. A route isn't a point; it's a line crossing dozens of municipalities. The right question to ask the system wasn't "where is cheap fuel right now?", but rather "where is cheap fuel along this route?"
+The challenge wasn't lack of information, but **spatial context**. A route isn't a point; it's a line crossing dozens of municipalities. The right question to ask the system wasn't "where is cheap fuel right now?", but rather "where is cheap fuel along this route?"
 
 ## The Solution: Sampling the Road
 
@@ -104,14 +104,14 @@ curl "https://menorpreco.notaparana.pr.gov.br/api/v1/produtos?local=6gkzwgjzn820
 
 ## What the tool delivers
 
-You can try it now at [combustivel.bayer.ooo](https://combustivel.bayer.ooo). When you plot a route on the screen, the app draws the path and lists stations by price, proximity, or last update. Each entry shows the price per liter, the address, the timestamp of the last issued receipt, and direct buttons to open in Google Maps or Waze.
+When you plot a route on the screen, the app draws the path and lists stations by price, proximity, or last update. Each entry shows the price per liter, the address, the timestamp of the last issued receipt, and direct buttons to open in Google Maps or Waze.
 
 If the route goes outside Paraná or Pernambuco — the only states that currently open this data — the app displays a friendly reduced-coverage notice, preventing users from thinking the system is broken.
 
 ## Result and Lessons Learned
 
-The biggest lesson from this project wasn't about code — it was about **UX**. Sometimes the value of a product isn't in creating new data, but in changing how the user interacts with data that already exists. The technology was there; what was missing was the right context for someone on the road.
+The biggest lesson from this project wasn't about code, but about **UX**. Sometimes the value of a product isn't in creating new data, but in changing how the user interacts with data that already exists. The technology was there; what was missing was the right context for someone on the road.
 
 I got to test the tool in practice on a trip to Foz do Iguaçu during Carnival. The peace of mind of knowing exactly which city to stop at to take advantage of a R$ 0.30 per liter difference paid for every hour of development.
 
-The project proved that with the right APIs and the right question, you can transform the anxiety of an empty tank into a clean, fast, and extremely useful interface.
+Try it yourself at [combustivel.bayer.ooo](https://combustivel.bayer.ooo). The project proved that with the right APIs and the right question, you can transform the anxiety of an empty tank into a clean, fast, and extremely useful interface.

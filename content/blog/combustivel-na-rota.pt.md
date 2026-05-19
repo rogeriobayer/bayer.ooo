@@ -104,7 +104,7 @@ curl "https://menorpreco.notaparana.pr.gov.br/api/v1/produtos?local=6gkzwgjzn820
 
 ## O que a ferramenta entrega
 
-Você pode testar agora em [combustivel.bayer.ooo](https://combustivel.bayer.ooo). Quando você joga o trajeto na tela, o app desenha a rota e lista os postos em ordem de preço, proximidade ou atualização. Cada item traz o valor do litro, o endereço, o horário da última nota emitida e botões diretos para abrir no Google Maps ou Waze.
+Quando você joga o trajeto na tela, o app desenha a rota e lista os postos em ordem de preço, proximidade ou atualização. Cada item traz o valor do litro, o endereço, o horário da última nota emitida e botões diretos para abrir no Google Maps ou Waze.
 
 Se a rota passar fora do Paraná ou de Pernambuco — os únicos estados que abrem esses dados atualmente —, o app exibe um aviso amigável de cobertura reduzida, evitando que o usuário ache que o sistema quebrou.
 
@@ -114,4 +114,4 @@ A maior lição desse projeto não foi sobre código, mas sobre **UX**. Às veze
 
 Consegui testar a ferramenta na prática em uma viagem para Foz do Iguaçu durante o Carnaval. A paz de espírito de saber exatamente em qual cidade parar para aproveitar uma diferença de R$ 0,30 por litro pagou cada hora de desenvolvimento.
 
-O projeto provou que, com as APIs certas e a pergunta correta, dá para transformar a ansiedade de um tanque vazio em uma interface limpa, rápida e extremamente útil.
+Experimente você mesmo em [combustivel.bayer.ooo](https://combustivel.bayer.ooo). O projeto provou que, com as APIs certas e a pergunta correta, dá para transformar a ansiedade de um tanque vazio em uma interface limpa, rápida e extremamente útil.
