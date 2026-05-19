@@ -19,7 +19,7 @@ O Paraná tem uma ferramenta excelente chamada Menor Preço, alimentada pelos da
 
 Para quem está sentado no sofá planejando uma travessia pelo estado, isso é inútil. Você não quer saber o preço no posto da esquina; você quer saber o preço em Guarapuava ou Cascavel antes mesmo de dar a partida.
 
-A situação me incomodou o suficiente para eu parar de planejar a viagem e começar a planejar uma ferramenta.
+A situação me incomodou o suficiente para eu parar de planejar a viagem e começar a planejar uma ferramenta. O resultado está em [combustivel.bayer.ooo](https://combustivel.bayer.ooo).
 
 ## O Problema: Dados Certos, Pergunta Errada
 
@@ -114,4 +114,4 @@ A maior lição desse projeto não foi sobre código, mas sobre **UX**. Às veze
 
 Consegui testar a ferramenta na prática em uma viagem para Foz do Iguaçu durante o Carnaval. A paz de espírito de saber exatamente em qual cidade parar para aproveitar uma diferença de R$ 0,30 por litro pagou cada hora de desenvolvimento.
 
-O projeto provou que, com as APIs certas e a pergunta correta, dá para transformar a ansiedade de um tanque vazio em uma interface limpa, rápida e extremamente útil.
+Experimente você mesmo em [combustivel.bayer.ooo](https://combustivel.bayer.ooo). O projeto provou que, com as APIs certas e a pergunta correta, dá para transformar a ansiedade de um tanque vazio em uma interface limpa, rápida e extremamente útil.

@@ -13,19 +13,19 @@ cover: /blog/combustivel.png
 author: Rogério Bayer
 ---
 
-La planification d'un voyage est généralement la partie amusante — jusqu'à ce que la réalité frappe à la porte. J'avais mes bagages prêts et je m'apprêtais à quitter Curitiba pour Foz do Iguaçu quand j'ai remarqué l'aiguille : un quart de réservoir. Plus de 630 kilomètres de route devant moi, et je n'avais aucune idée d'où je m'arrêterais pour faire le plein ni combien cela me coûterait.
+La planification d'un voyage est généralement la partie amusante, jusqu'à ce que la réalité frappe à la porte. J'avais mes bagages prêts et je m'apprêtais à quitter Curitiba pour Foz do Iguaçu quand j'ai remarqué l'aiguille : un quart de réservoir. Plus de 630 kilomètres de route devant moi, et je n'avais aucune idée d'où je m'arrêterais pour faire le plein ni combien cela me coûterait.
 
 Le Paraná dispose d'un excellent outil appelé Menor Preço, alimenté par les données en temps réel du programme Nota Paraná. Le problème réside dans le postulat de conception : l'application officielle fonctionne comme un radar. Elle capte votre position actuelle, trace un rayon de 20 km et affiche ce qui se trouve autour.
 
 Pour quelqu'un qui planifie une traversée de l'État depuis son canapé, c'est inutile. Vous ne voulez pas connaître le prix à la station-service du coin ; vous voulez connaître le prix à Guarapuava ou Cascavel avant même de démarrer le moteur.
 
-Cette situation m'a suffisamment agacé pour que j'arrête de planifier le voyage et que je commence à planifier un outil.
+Cette situation m'a suffisamment agacé pour que j'arrête de planifier le voyage et que je commence à planifier un outil. Le résultat est disponible sur [combustivel.bayer.ooo](https://combustivel.bayer.ooo).
 
 ## Le Problème : Bonnes Données, Mauvaise Question
 
 La Recette de l'État fournit les données, mais l'interface officielle limite la recherche à un point fixe. Si vous voulez parcourir toute la BR 277, vous devriez ouvrir l'application tous les 40 km pour vérifier si la prochaine station est moins chère. Si vous êtes à Curitiba, elle n'affiche pas les stations à Ponta Grossa ; si vous êtes à Ponta Grossa, elle n'affiche pas Guarapuava.
 
-Le défi n'était pas le manque d'information — c'était le **contexte spatial**. Un itinéraire n'est pas un point ; c'est une ligne qui traverse des dizaines de municipalités. La bonne question à poser au système n'était pas « où est le carburant pas cher maintenant ? », mais plutôt « où est le carburant pas cher le long de ce trajet ? ».
+Le défi n'était pas le manque d'information, mais le **contexte spatial**. Un itinéraire n'est pas un point ; c'est une ligne qui traverse des dizaines de municipalités. La bonne question à poser au système n'était pas « où est le carburant pas cher maintenant ? », mais plutôt « où est le carburant pas cher le long de ce trajet ? ».
 
 ## La Solution : Échantillonner la Route
 
@@ -110,8 +110,8 @@ Si l'itinéraire passe en dehors du Paraná ou du Pernambouc — les seuls État
 
 ## Résultat et Leçons Apprises
 
-La plus grande leçon de ce projet n'était pas sur le code — c'était sur l'**UX**. Parfois, la valeur d'un produit ne réside pas dans la création de nouvelles données, mais dans la façon de changer l'interaction de l'utilisateur avec des données qui existent déjà. La technologie était là ; ce qui manquait, c'était le contexte approprié pour quelqu'un sur la route.
+La plus grande leçon de ce projet n'était pas sur le code, mais sur l'**UX**. Parfois, la valeur d'un produit ne réside pas dans la création de nouvelles données, mais dans la façon de changer l'interaction de l'utilisateur avec des données qui existent déjà. La technologie était là ; ce qui manquait, c'était le contexte approprié pour quelqu'un sur la route.
 
 J'ai pu tester l'outil en pratique lors d'un voyage à Foz do Iguaçu pendant le Carnaval. La tranquillité d'esprit de savoir exactement dans quelle ville s'arrêter pour profiter d'une différence de R$ 0,30 par litre a payé chaque heure de développement.
 
-Le projet a prouvé qu'avec les bonnes API et la bonne question, on peut transformer l'anxiété d'un réservoir vide en une interface propre, rapide et extrêmement utile.
+Essayez-le vous-même sur [combustivel.bayer.ooo](https://combustivel.bayer.ooo). Le projet a prouvé qu'avec les bonnes API et la bonne question, on peut transformer l'anxiété d'un réservoir vide en une interface propre, rapide et extrêmement utile.
