@@ -19,7 +19,7 @@ Paraná state has an excellent tool called Menor Preço, powered by real-time da
 
 For someone sitting on the couch planning a trip across the state, this is useless. You don't want to know the price at the corner gas station; you want to know the price in Guarapuava or Cascavel before you even start the engine.
 
-That annoyed me enough to stop planning the trip and start planning a tool.
+That annoyed me enough to stop planning the trip and start planning a tool. The result is live at [combustivel.bayer.ooo](https://combustivel.bayer.ooo).
 
 ## The Problem: Right Data, Wrong Question
 
@@ -104,7 +104,7 @@ curl "https://menorpreco.notaparana.pr.gov.br/api/v1/produtos?local=6gkzwgjzn820
 
 ## What the tool delivers
 
-When you plot a route on the screen, the app draws the path and lists stations by price, proximity, or last update. Each entry shows the price per liter, the address, the timestamp of the last issued receipt, and direct buttons to open in Google Maps or Waze.
+You can try it now at [combustivel.bayer.ooo](https://combustivel.bayer.ooo). When you plot a route on the screen, the app draws the path and lists stations by price, proximity, or last update. Each entry shows the price per liter, the address, the timestamp of the last issued receipt, and direct buttons to open in Google Maps or Waze.
 
 If the route goes outside Paraná or Pernambuco — the only states that currently open this data — the app displays a friendly reduced-coverage notice, preventing users from thinking the system is broken.
 

@@ -19,7 +19,7 @@ Le Paraná dispose d'un excellent outil appelé Menor Preço, alimenté par les 
 
 Pour quelqu'un qui planifie une traversée de l'État depuis son canapé, c'est inutile. Vous ne voulez pas connaître le prix à la station-service du coin ; vous voulez connaître le prix à Guarapuava ou Cascavel avant même de démarrer le moteur.
 
-Cette situation m'a suffisamment agacé pour que j'arrête de planifier le voyage et que je commence à planifier un outil.
+Cette situation m'a suffisamment agacé pour que j'arrête de planifier le voyage et que je commence à planifier un outil. Le résultat est disponible sur [combustivel.bayer.ooo](https://combustivel.bayer.ooo).
 
 ## Le Problème : Bonnes Données, Mauvaise Question
 
@@ -104,7 +104,7 @@ curl "https://menorpreco.notaparana.pr.gov.br/api/v1/produtos?local=6gkzwgjzn820
 
 ## Ce que l'outil apporte
 
-Lorsque vous tracez un itinéraire sur l'écran, l'application dessine le chemin et liste les stations par prix, proximité ou date de mise à jour. Chaque entrée affiche le prix au litre, l'adresse, l'horodatage du dernier reçu émis et des boutons directs pour ouvrir dans Google Maps ou Waze.
+Vous pouvez l'essayer dès maintenant sur [combustivel.bayer.ooo](https://combustivel.bayer.ooo). Lorsque vous tracez un itinéraire sur l'écran, l'application dessine le chemin et liste les stations par prix, proximité ou date de mise à jour. Chaque entrée affiche le prix au litre, l'adresse, l'horodatage du dernier reçu émis et des boutons directs pour ouvrir dans Google Maps ou Waze.
 
 Si l'itinéraire passe en dehors du Paraná ou du Pernambouc — les seuls États qui ouvrent actuellement ces données —, l'application affiche un avis de couverture réduite, évitant à l'utilisateur de penser que le système est en panne.
 

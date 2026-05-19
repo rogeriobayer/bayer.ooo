@@ -19,7 +19,7 @@ O Paraná tem uma ferramenta excelente chamada Menor Preço, alimentada pelos da
 
 Para quem está sentado no sofá planejando uma travessia pelo estado, isso é inútil. Você não quer saber o preço no posto da esquina; você quer saber o preço em Guarapuava ou Cascavel antes mesmo de dar a partida.
 
-A situação me incomodou o suficiente para eu parar de planejar a viagem e começar a planejar uma ferramenta.
+A situação me incomodou o suficiente para eu parar de planejar a viagem e começar a planejar uma ferramenta. O resultado está em [combustivel.bayer.ooo](https://combustivel.bayer.ooo).
 
 ## O Problema: Dados Certos, Pergunta Errada
 
@@ -104,7 +104,7 @@ curl "https://menorpreco.notaparana.pr.gov.br/api/v1/produtos?local=6gkzwgjzn820
 
 ## O que a ferramenta entrega
 
-Quando você joga o trajeto na tela, o app desenha a rota e lista os postos em ordem de preço, proximidade ou atualização. Cada item traz o valor do litro, o endereço, o horário da última nota emitida e botões diretos para abrir no Google Maps ou Waze.
+Você pode testar agora em [combustivel.bayer.ooo](https://combustivel.bayer.ooo). Quando você joga o trajeto na tela, o app desenha a rota e lista os postos em ordem de preço, proximidade ou atualização. Cada item traz o valor do litro, o endereço, o horário da última nota emitida e botões diretos para abrir no Google Maps ou Waze.
 
 Se a rota passar fora do Paraná ou de Pernambuco — os únicos estados que abrem esses dados atualmente —, o app exibe um aviso amigável de cobertura reduzida, evitando que o usuário ache que o sistema quebrou.
 
