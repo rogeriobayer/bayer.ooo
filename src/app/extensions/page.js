@@ -49,15 +49,6 @@ export default function ExtensionsPage() {
       <Header />
       <main className="flex-1 pt-20 pb-20">
         <div className="max-w-4xl mx-auto px-6">
-          <div className="mb-12 text-center">
-            <h1 className="text-4xl md:text-5xl font-heading font-bold text-base-content mb-4">
-              Extensões
-            </h1>
-            <p className="text-lg text-secondary max-w-lg mx-auto">
-              Extensões de navegador que desenvolvi para produtividade e foco.
-            </p>
-          </div>
-
           <Projects type="extensions" />
         </div>
       </main>

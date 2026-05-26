@@ -115,7 +115,7 @@ The opposite of logarithmic. Here, for each new element added to your input, the
 
 ## The Golden Tip from the Big O Cheat Sheet
 
-If you want a quick cheat sheet for reference or to stick next to your monitor while studying for technical interviews, the folks at **bigocheatsheet.com** summarize algorithm performance in a universal color ranking:
+If you want a quick cheat sheet for reference or to stick next to your monitor while studying for technical interviews, the folks at [**bigocheatsheet.com**](https://bigocheatsheet.com) summarize algorithm performance in a universal color ranking:
 
 * 🟢 **Excellent:** `O(1)` and `O(log n)`
 * 🟡 **Good / Fair:** `O(n)`
