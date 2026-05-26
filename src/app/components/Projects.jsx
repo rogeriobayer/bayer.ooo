@@ -44,49 +44,53 @@ export const Projects = ({ type = "projects" }) => {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
       >
-        <div className="absolute -left-20 top-0 h-full w-full pointer-events-none hidden lg:block">
-          <motion.img
-            alt=""
-            src="/circle1.svg"
-            className="absolute top-32 -left-16 glass-ornament"
-            width="90"
-            height="90"
-            variants={floatingFastVariant}
-            animate="float"
-          />
-          <motion.img
-            alt=""
-            src="/circle3.svg"
-            className="absolute top-16 -right-20 glass-ornament"
-            width="140"
-            height="140"
-            variants={floatingSlowVariant}
-            animate="float"
-          />
-          <motion.img
-            alt=""
-            src="/circle2.svg"
-            className="absolute top-96 -left-28 glass-ornament"
-            width="160"
-            height="160"
-            variants={floatingVariant}
-            animate="float"
-          />
-          <motion.img
-            alt=""
-            src="/circle1.svg"
-            className="absolute bottom-20 -right-12 glass-ornament"
-            width="70"
-            height="70"
-            variants={floatingFastVariant}
-            animate="float"
-          />
-        </div>
+        {type !== "extensions" && (
+          <div className="absolute -left-20 top-0 h-full w-full pointer-events-none hidden lg:block">
+            <motion.img
+              alt=""
+              src="/circle1.svg"
+              className="absolute top-32 -left-16 glass-ornament"
+              width="90"
+              height="90"
+              variants={floatingFastVariant}
+              animate="float"
+            />
+            <motion.img
+              alt=""
+              src="/circle3.svg"
+              className="absolute top-16 -right-20 glass-ornament"
+              width="140"
+              height="140"
+              variants={floatingSlowVariant}
+              animate="float"
+            />
+            <motion.img
+              alt=""
+              src="/circle2.svg"
+              className="absolute top-96 -left-28 glass-ornament"
+              width="160"
+              height="160"
+              variants={floatingVariant}
+              animate="float"
+            />
+            <motion.img
+              alt=""
+              src="/circle1.svg"
+              className="absolute bottom-20 -right-12 glass-ornament"
+              width="70"
+              height="70"
+              variants={floatingFastVariant}
+              animate="float"
+            />
+          </div>
+        )}
 
         <div className="flex flex-col justify-center items-center relative z-10">
-          <h2 className="text-2xl md:text-3xl font-medium leading-7 text-center my-10 text-base-content tracking-tight font-heading">
-            {t(`${type}.title`)}
-          </h2>
+          {type !== "extensions" && (
+            <h2 className="text-2xl md:text-3xl font-medium leading-7 text-center my-10 text-base-content tracking-tight font-heading">
+              {t(`${type}.title`)}
+            </h2>
+          )}
 
           <motion.div
             className="flex flex-col items-center w-full space-y-6"
@@ -95,7 +99,7 @@ export const Projects = ({ type = "projects" }) => {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            {projects.map((project) => (
+            {(type === "extensions" ? [...projects].reverse() : projects).map((project) => (
               <motion.div
                 key={project.id}
                 className="w-full"

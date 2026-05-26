@@ -115,7 +115,7 @@ L'opposé du logarithmique. Ici, à chaque nouvel élément ajouté à votre ent
 
 ## L'Astuce en Or de la Big O Cheat Sheet
 
-Si vous voulez une antisèche rapide pour référence ou à coller à côté de votre écran pendant que vous étudiez pour des entretiens techniques, les gens de **bigocheatsheet.com** résument la performance des algorithmes dans un classement universel de couleurs :
+Si vous voulez une antisèche rapide pour référence ou à coller à côté de votre écran pendant que vous étudiez pour des entretiens techniques, les gens de [**bigocheatsheet.com**](https://bigocheatsheet.com) résument la performance des algorithmes dans un classement universel de couleurs :
 
 * 🟢 **Excellent :** `O(1)` et `O(log n)`
 * 🟡 **Bon / Juste :** `O(n)`

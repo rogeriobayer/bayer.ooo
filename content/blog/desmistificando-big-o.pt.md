@@ -115,7 +115,7 @@ O oposto do logarítmico. Aqui, a cada novo elemento adicionado ao seu input, o 
 
 ## A Dica de Ouro da Big O Cheat Sheet
 
-Se você quer uma cola rápida para consultas ou para colar do lado do seu monitor enquanto estuda para entrevistas técnicas, o pessoal do **bigocheatsheet.com** resume o desempenho dos algoritmos em um ranking de cores universal:
+Se você quer uma cola rápida para consultas ou para colar do lado do seu monitor enquanto estuda para entrevistas técnicas, o pessoal do [**bigocheatsheet.com**](https://bigocheatsheet.com) resume o desempenho dos algoritmos em um ranking de cores universal:
 
 * 🟢 **Excelente:** `O(1)` e `O(log n)`
 * 🟡 **Bom / Justo:** `O(n)`
