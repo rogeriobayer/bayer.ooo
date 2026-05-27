@@ -1,6 +1,7 @@
 import Projects from "@/app/components/Projects";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
+import PageHeader from "@/app/components/PageHeader";
 
 export const dynamic = "force-static";
 
@@ -49,6 +50,7 @@ export default function ExtensionsPage() {
       <Header />
       <main className="flex-1 pt-20 pb-20">
         <div className="max-w-4xl mx-auto px-6">
+          <PageHeader titleKey="extensions.title" descriptionKey="extensions.description" />
           <Projects type="extensions" />
         </div>
       </main>
