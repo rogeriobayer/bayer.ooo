@@ -79,21 +79,20 @@ test.describe('Extensions Page', () => {
 
     const firstExtension = extensions[0];
 
-    // Click on the first "Mais informações" button
-    const moreInfoButton = page.getByRole('button', {
+    const cardHeading = page.getByRole('heading', { name: firstExtension.name });
+    await cardHeading.click();
+
+    const moreInfoButton = cardHeading.locator('xpath=ancestor::*[contains(@class, "card")]').getByRole('button', {
       name: t(defaultLanguage, 'extensions.moreInfo'),
-    }).first();
+    });
     await moreInfoButton.click();
 
-    // Modal should appear
     const modal = page.locator('[role="dialog"], .modal, .modal-box').first();
     await expect(modal).toBeVisible();
 
-    // Modal should contain extension name
     await expect(modal.getByText(firstExtension.name)).toBeVisible();
 
-    // Close modal
-    const closeButton = modal.getByText(t(defaultLanguage, 'projects.modal.close'));
+    const closeButton = modal.locator('button.btn-ghost:not(.btn-circle)').filter({ hasText: t(defaultLanguage, 'projects.modal.close') });
     await closeButton.click();
 
     await expect(modal).not.toBeVisible();
