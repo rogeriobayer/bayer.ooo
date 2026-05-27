@@ -55,6 +55,7 @@ export const translations = {
     "projects.modal.close": "Fechar",
 
     "blog.title": "Blog",
+    "blog.description": "Artigos, tutoriais e reflexões sobre desenvolvimento de software, tecnologia e design.",
     "blog.readMore": "Ler mais",
     "blog.publishedOn": "Publicado em",
     "blog.minRead": "min de leitura",
@@ -132,6 +133,7 @@ export const translations = {
     "projects.modal.close": "Close",
 
     "blog.title": "Blog",
+    "blog.description": "Articles, tutorials, and reflections on software development, technology, and design.",
     "blog.readMore": "Read more",
     "blog.publishedOn": "Published on",
     "blog.minRead": "min read",
@@ -209,6 +211,7 @@ export const translations = {
     "projects.modal.close": "Fermer",
 
     "blog.title": "Blog",
+    "blog.description": "Articles, tutoriels et réflexions sur le développement de logiciels, la technologie et le design.",
     "blog.readMore": "Lire la suite",
     "blog.publishedOn": "Publié le",
     "blog.minRead": "min de lecture",
