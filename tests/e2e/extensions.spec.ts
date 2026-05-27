@@ -17,12 +17,10 @@ test.describe('Extensions Page', () => {
   test('should render the extensions page title and heading', async ({ page }) => {
     await expect(page).toHaveTitle(/Extensões | Rogério Bayer/);
 
-    const heading = page.getByRole('heading', { name: 'Extensões', level: 1 });
+    const heading = page.getByRole('heading', { name: t(defaultLanguage, 'extensions.title'), level: 1 });
     await expect(heading).toBeVisible();
 
-    await expect(
-      page.getByText('Extensões de navegador que desenvolvi para produtividade e foco.')
-    ).toBeVisible();
+    await expect(page.getByText(t(defaultLanguage, 'extensions.description'))).toBeVisible();
   });
 
   test('should render all extensions with correct names and descriptions', async ({ page }) => {
@@ -129,13 +127,19 @@ test.describe('Extensions Page Language Switching', () => {
   test('should switch extensions page language correctly', async ({ page }) => {
     await page.goto('/extensions');
 
-    // Switch to English
+    await expect(page.getByRole('heading', { name: t('pt', 'extensions.title'), level: 1 })).toBeVisible();
+    await expect(page.getByText(t('pt', 'extensions.description'))).toBeVisible();
+
     await page.getByRole('button', { name: 'EN' }).click();
+    await expect(page.getByRole('heading', { name: t('en', 'extensions.title'), level: 1 })).toBeVisible();
+    await expect(page.getByText(t('en', 'extensions.description'))).toBeVisible();
 
-    await expect(page.getByRole('heading', { name: 'Extensões', level: 1 })).toBeVisible();
-
-    // Switch to French
     await page.getByRole('button', { name: 'FR' }).click();
-    await expect(page.getByRole('heading', { name: 'Extensões', level: 1 })).toBeVisible();
+    await expect(page.getByRole('heading', { name: t('fr', 'extensions.title'), level: 1 })).toBeVisible();
+    await expect(page.getByText(t('fr', 'extensions.description'))).toBeVisible();
+
+    await page.getByRole('button', { name: 'PT' }).click();
+    await expect(page.getByRole('heading', { name: t('pt', 'extensions.title'), level: 1 })).toBeVisible();
+    await expect(page.getByText(t('pt', 'extensions.description'))).toBeVisible();
   });
 });
