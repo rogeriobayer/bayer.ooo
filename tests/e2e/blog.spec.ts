@@ -17,14 +17,10 @@ test.describe('Blog List Page', () => {
   test('should render the blog page title and description', async ({ page }) => {
     await expect(page).toHaveTitle(/Blog | Rogério Bayer/);
 
-    const heading = page.getByRole('heading', { name: 'Blog', level: 1 });
+    const heading = page.getByRole('heading', { name: t(defaultLanguage, 'blog.title'), level: 1 });
     await expect(heading).toBeVisible();
 
-    await expect(
-      page.getByText(
-        'Artigos, tutoriais e reflexões sobre desenvolvimento de software, tecnologia e design.'
-      )
-    ).toBeVisible();
+    await expect(page.getByText(t(defaultLanguage, 'blog.description'))).toBeVisible();
   });
 
   test('should render blog post cards', async ({ page }) => {
@@ -142,14 +138,19 @@ test.describe('Blog Language Switching', () => {
   test('should switch blog page language correctly', async ({ page }) => {
     await page.goto('/blog');
 
-    // Switch to English
+    await expect(page.getByRole('heading', { name: t('pt', 'blog.title'), level: 1 })).toBeVisible();
+    await expect(page.getByText(t('pt', 'blog.description'))).toBeVisible();
+
     await page.getByRole('button', { name: 'EN' }).click();
+    await expect(page.getByRole('heading', { name: t('en', 'blog.title'), level: 1 })).toBeVisible();
+    await expect(page.getByText(t('en', 'blog.description'))).toBeVisible();
 
-    // Verify page still loads with English content if available
-    await expect(page.getByRole('heading', { name: 'Blog', level: 1 })).toBeVisible();
+    await page.getByRole('button', { name: 'FR' }).click();
+    await expect(page.getByRole('heading', { name: t('fr', 'blog.title'), level: 1 })).toBeVisible();
+    await expect(page.getByText(t('fr', 'blog.description'))).toBeVisible();
 
-    // Switch back to Portuguese
     await page.getByRole('button', { name: 'PT' }).click();
-    await expect(page.getByRole('heading', { name: 'Blog', level: 1 })).toBeVisible();
+    await expect(page.getByRole('heading', { name: t('pt', 'blog.title'), level: 1 })).toBeVisible();
+    await expect(page.getByText(t('pt', 'blog.description'))).toBeVisible();
   });
 });

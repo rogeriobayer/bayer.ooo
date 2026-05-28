@@ -17,12 +17,10 @@ test.describe('Extensions Page', () => {
   test('should render the extensions page title and heading', async ({ page }) => {
     await expect(page).toHaveTitle(/Extensões | Rogério Bayer/);
 
-    const heading = page.getByRole('heading', { name: 'Extensões', level: 1 });
+    const heading = page.getByRole('heading', { name: t(defaultLanguage, 'extensions.title'), level: 1 });
     await expect(heading).toBeVisible();
 
-    await expect(
-      page.getByText('Extensões de navegador que desenvolvi para produtividade e foco.')
-    ).toBeVisible();
+    await expect(page.getByText(t(defaultLanguage, 'extensions.description'))).toBeVisible();
   });
 
   test('should render all extensions with correct names and descriptions', async ({ page }) => {
@@ -81,21 +79,20 @@ test.describe('Extensions Page', () => {
 
     const firstExtension = extensions[0];
 
-    // Click on the first "Mais informações" button
-    const moreInfoButton = page.getByRole('button', {
+    const cardHeading = page.getByRole('heading', { name: firstExtension.name });
+    await cardHeading.click();
+
+    const moreInfoButton = cardHeading.locator('xpath=ancestor::*[contains(@class, "card")]').getByRole('button', {
       name: t(defaultLanguage, 'extensions.moreInfo'),
-    }).first();
+    });
     await moreInfoButton.click();
 
-    // Modal should appear
     const modal = page.locator('[role="dialog"], .modal, .modal-box').first();
     await expect(modal).toBeVisible();
 
-    // Modal should contain extension name
     await expect(modal.getByText(firstExtension.name)).toBeVisible();
 
-    // Close modal
-    const closeButton = modal.getByText(t(defaultLanguage, 'projects.modal.close'));
+    const closeButton = modal.locator('button.btn-ghost:not(.btn-circle)').filter({ hasText: t(defaultLanguage, 'projects.modal.close') });
     await closeButton.click();
 
     await expect(modal).not.toBeVisible();
@@ -129,13 +126,19 @@ test.describe('Extensions Page Language Switching', () => {
   test('should switch extensions page language correctly', async ({ page }) => {
     await page.goto('/extensions');
 
-    // Switch to English
+    await expect(page.getByRole('heading', { name: t('pt', 'extensions.title'), level: 1 })).toBeVisible();
+    await expect(page.getByText(t('pt', 'extensions.description'))).toBeVisible();
+
     await page.getByRole('button', { name: 'EN' }).click();
+    await expect(page.getByRole('heading', { name: t('en', 'extensions.title'), level: 1 })).toBeVisible();
+    await expect(page.getByText(t('en', 'extensions.description'))).toBeVisible();
 
-    await expect(page.getByRole('heading', { name: 'Extensões', level: 1 })).toBeVisible();
-
-    // Switch to French
     await page.getByRole('button', { name: 'FR' }).click();
-    await expect(page.getByRole('heading', { name: 'Extensões', level: 1 })).toBeVisible();
+    await expect(page.getByRole('heading', { name: t('fr', 'extensions.title'), level: 1 })).toBeVisible();
+    await expect(page.getByText(t('fr', 'extensions.description'))).toBeVisible();
+
+    await page.getByRole('button', { name: 'PT' }).click();
+    await expect(page.getByRole('heading', { name: t('pt', 'extensions.title'), level: 1 })).toBeVisible();
+    await expect(page.getByText(t('pt', 'extensions.description'))).toBeVisible();
   });
 });

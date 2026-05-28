@@ -2,6 +2,7 @@ import { getAllPosts } from "@/app/lib/blog";
 import BlogList from "@/app/components/Blog/BlogList";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
+import PageHeader from "@/app/components/PageHeader";
 
 export const dynamic = "force-static";
 
@@ -52,14 +53,7 @@ export default function BlogPage() {
       <Header />
       <main className="flex-1 pt-20 pb-20">
         <div className="max-w-2xl mx-auto px-6">
-          <div className="mb-12 text-center">
-            <h1 className="text-4xl md:text-5xl font-heading font-bold text-base-content mb-4">
-              Blog
-            </h1>
-            <p className="text-lg text-secondary max-w-lg mx-auto">
-              Artigos, tutoriais e reflexões sobre desenvolvimento de software, tecnologia e design.
-            </p>
-          </div>
+          <PageHeader titleKey="blog.title" descriptionKey="blog.description" />
 
           <BlogList posts={posts} />
         </div>
