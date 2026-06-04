@@ -23,6 +23,7 @@ export const translations = {
     "skills.languages": "com experiência profissional em linguagens",
     "skills.frameworks": "frameworks",
     "skills.tools": "e ferramentas",
+    "skills.aiHarnesses": "e AI harnesses",
     "skills.showMore": "Ver mais",
     "skills.showLess": "Ver menos",
 
@@ -101,6 +102,7 @@ export const translations = {
     "skills.languages": "with professional experience in languages",
     "skills.frameworks": "frameworks",
     "skills.tools": "and tools",
+    "skills.aiHarnesses": "and AI harnesses",
     "skills.showMore": "Show more",
     "skills.showLess": "Show less",
 
@@ -179,6 +181,7 @@ export const translations = {
     "skills.languages": "avec une expérience professionnelle dans les langages",
     "skills.frameworks": "frameworks",
     "skills.tools": "et outils",
+    "skills.aiHarnesses": "et AI harnesses",
     "skills.showMore": "Voir plus",
     "skills.showLess": "Voir moins",
 

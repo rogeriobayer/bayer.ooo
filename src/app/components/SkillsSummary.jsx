@@ -72,6 +72,16 @@ export const SkillsSummary = () => {
           </h3>
           {renderSkillBadges(career.skills.tools)}
         </motion.div>
+
+        <motion.div
+          className="flex flex-col justify-center items-center"
+          variants={staggerItemVariant}
+        >
+          <h3 className="text-lg font-normal leading-7 text-center mb-6 text-base-content tracking-tight font-heading">
+            {t("skills.aiHarnesses")}
+          </h3>
+          {renderSkillBadges(career.skills.aiHarnesses)}
+        </motion.div>
       </motion.div>
     </motion.section>
   );
