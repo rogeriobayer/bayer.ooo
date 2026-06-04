@@ -158,4 +158,9 @@ export const technologiesList = [
   { name: "Cloudflare", logo: "/cloudflare.svg", code: "cloudflare", color: "#F38020" },
   { name: "Chrome", logo: "/chrome.svg", code: "chrome", color: "#4285F4" },
   { name: "Nx", logo: "/nx.svg", code: "nx", color: "#012F55", darkInvert: true },
+  { name: "Anthropic Claude", logo: "/anthropic.svg", code: "anthropic", color: "#D97757" },
+  { name: "OpenAI Codex", logo: "/codex.svg", code: "codex", color: "#000000" },
+  { name: "OpenCode", logo: "/opencode.svg", code: "opencode", color: "#211E1E", darkInvert: true },
+  { name: "DeepSeek", logo: "/deepseek.svg", code: "deepseek", color: "#4D6BFE" },
+  { name: "Open-source AI", logo: "/open-source-ai.svg", code: "open-source-ai", color: "#8B5CF6" },
 ];

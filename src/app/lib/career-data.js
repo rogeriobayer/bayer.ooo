@@ -36,6 +36,13 @@ export const careerData = {
         "tailwind",
         "vuetify",
         "mui"
+      ],
+      "aiHarnesses": [
+        "anthropic",
+        "codex",
+        "opencode",
+        "deepseek",
+        "open-source-ai"
       ]
     },
     "history": [
@@ -151,6 +158,13 @@ export const careerData = {
         "tailwind",
         "vuetify",
         "mui"
+      ],
+      "aiHarnesses": [
+        "anthropic",
+        "codex",
+        "opencode",
+        "deepseek",
+        "open-source-ai"
       ]
     },
     "history": [
@@ -266,6 +280,13 @@ export const careerData = {
         "tailwind",
         "vuetify",
         "mui"
+      ],
+      "aiHarnesses": [
+        "anthropic",
+        "codex",
+        "opencode",
+        "deepseek",
+        "open-source-ai"
       ]
     },
     "history": [
