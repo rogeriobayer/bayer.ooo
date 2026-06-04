@@ -23,8 +23,8 @@ export default function BlogList({ posts }) {
       viewport={{ once: true, margin: "-50px" }}
       className="grid gap-6"
     >
-      {posts.map((post) => (
-        <BlogCard key={post.slug} post={post} />
+      {posts.map((post, index) => (
+        <BlogCard key={post.slug} post={post} priority={index === 0} />
       ))}
     </motion.div>
   );

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Link from "next/link";
@@ -80,12 +81,16 @@ const MarkdownComponents = {
     );
   },
   img: ({ src, alt }) => (
-    <img
-      src={src}
-      alt={alt || ''}
-      className="rounded-lg w-full my-6 border border-base-300/30"
-      loading="lazy"
-    />
+    <span className="block relative w-full aspect-[1200/630] my-6">
+      <Image
+        src={src}
+        alt={alt || ''}
+        fill
+        className="rounded-lg border border-base-300/30 object-cover"
+        sizes="(max-width: 672px) 100vw, 672px"
+        unoptimized
+      />
+    </span>
   ),
   table: ({ children }) => (
     <div className="overflow-x-auto mb-5">
@@ -174,11 +179,16 @@ export default function BlogPost({ post }) {
         )}
 
         {translation.cover && (
-          <img
-            src={translation.cover}
-            alt={translation.title}
-            className="rounded-xl w-full mt-8 border border-base-300/30"
-          />
+          <div className="relative w-full aspect-[1200/630] mt-8">
+            <Image
+              src={translation.cover}
+              alt={translation.title}
+              fill
+              priority
+              sizes="(max-width: 672px) 100vw, 672px"
+              className="rounded-xl border border-base-300/30 object-cover"
+            />
+          </div>
         )}
       </header>
 

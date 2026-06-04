@@ -99,32 +99,53 @@ export default function BlogPostPage({ params }) {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: defaultPost.title,
-    description: defaultPost.excerpt,
-    image: defaultPost.cover || "https://bayer.ooo/rogeriobayer.png",
-    datePublished: defaultPost.date,
-    dateModified: defaultPost.date,
-    author: {
-      "@type": "Person",
-      name: defaultPost.author,
-      url: "https://bayer.ooo",
-    },
-    publisher: {
-      "@type": "Person",
-      name: "Rogério Bayer",
-      url: "https://bayer.ooo",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://bayer.ooo/rogeriobayer.png",
+    "@graph": [
+      {
+        "@type": "Article",
+        headline: defaultPost.title,
+        description: defaultPost.excerpt,
+        image: defaultPost.cover || "https://bayer.ooo/rogeriobayer.png",
+        datePublished: defaultPost.date,
+        dateModified: defaultPost.date,
+        author: {
+          "@type": "Person",
+          name: defaultPost.author,
+          url: "https://bayer.ooo",
+        },
+        publisher: {
+          "@type": "Person",
+          name: "Rogério Bayer",
+          url: "https://bayer.ooo",
+          logo: {
+            "@type": "ImageObject",
+            url: "https://bayer.ooo/rogeriobayer.png",
+          },
+        },
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": canonicalUrl,
+        },
+        keywords: defaultPost.tags?.join(", "),
+        inLanguage: defaultPost.lang === "pt" ? "pt-BR" : defaultPost.lang === "en" ? "en-US" : "fr-FR",
       },
-    },
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": canonicalUrl,
-    },
-    keywords: defaultPost.tags?.join(", "),
-    inLanguage: defaultPost.lang === "pt" ? "pt-BR" : defaultPost.lang === "en" ? "en-US" : "fr-FR",
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Blog",
+            item: "https://bayer.ooo/blog",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: defaultPost.title,
+            item: canonicalUrl,
+          },
+        ],
+      },
+    ],
   };
 
   return (

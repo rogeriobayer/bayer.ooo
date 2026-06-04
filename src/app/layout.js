@@ -1,14 +1,57 @@
-import "@fontsource/stack-sans-notch";
-import "@fontsource/stack-sans-notch/500.css";
-import "@fontsource/stack-sans-text";
-import "@fontsource/stack-sans-text/200.css";
-import "@fontsource/stack-sans-text/500.css";
-import "@fontsource/stack-sans-text/600.css";
-import "@fontsource/stack-sans-text/700.css";
 import "./globals.css";
+import localFont from "next/font/local";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Script from "next/script";
+
+const stackSansNotch = localFont({
+  src: [
+    {
+      path: "./fonts/stack-sans-notch-latin-400-normal.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/stack-sans-notch-latin-500-normal.woff2",
+      weight: "500",
+      style: "normal",
+    },
+  ],
+  variable: "--font-heading",
+  display: "swap",
+});
+
+const stackSansText = localFont({
+  src: [
+    {
+      path: "./fonts/stack-sans-text-latin-200-normal.woff2",
+      weight: "200",
+      style: "normal",
+    },
+    {
+      path: "./fonts/stack-sans-text-latin-400-normal.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/stack-sans-text-latin-500-normal.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./fonts/stack-sans-text-latin-600-normal.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "./fonts/stack-sans-text-latin-700-normal.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-sans",
+  display: "swap",
+});
 
 export const metadata = {
   metadataBase: new URL('https://bayer.ooo'),
@@ -71,7 +114,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="pt" suppressHydrationWarning={true}>
+    <html lang="pt" suppressHydrationWarning={true} className={`${stackSansNotch.variable} ${stackSansText.variable}`}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/rogeriobayer.png" />
@@ -98,44 +141,64 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Person",
-              "name": "Rogério Bayer",
-              "jobTitle": "Full-Stack Developer",
-              "url": "https://bayer.ooo",
-              "image": "https://bayer.ooo/rogeriobayer.png",
-              "sameAs": [
-                "https://linkedin.com/in/rogeriobayer",
-                "https://github.com/rogeriobayer"
-              ],
-              "knowsAbout": [
-                "JavaScript",
-                "TypeScript",
-                "React",
-                "Vue.js",
-                "Node.js",
-                "Full-Stack Development",
-                "Frontend Development",
-                "Backend Development",
-                "Mobile Development"
-              ],
-              "alumniOf": {
-                "@type": "CollegeOrUniversity",
-                "name": "Universidade Federal do Paraná"
-              },
-              "address": {
-                "@type": "PostalAddress",
-                "addressCountry": "BR"
-              }
+              "@graph": [
+                {
+                  "@type": "Person",
+                  "name": "Rogério Bayer",
+                  "jobTitle": "Full-Stack Developer",
+                  "url": "https://bayer.ooo",
+                  "image": "https://bayer.ooo/rogeriobayer.png",
+                  "sameAs": [
+                    "https://linkedin.com/in/rogeriobayer",
+                    "https://github.com/rogeriobayer"
+                  ],
+                  "knowsAbout": [
+                    "JavaScript",
+                    "TypeScript",
+                    "React",
+                    "Vue.js",
+                    "Node.js",
+                    "Full-Stack Development",
+                    "Frontend Development",
+                    "Backend Development",
+                    "Mobile Development"
+                  ],
+                  "alumniOf": {
+                    "@type": "CollegeOrUniversity",
+                    "name": "Universidade Federal do Paraná"
+                  },
+                  "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "BR"
+                  }
+                },
+                {
+                  "@type": "WebSite",
+                  "name": "Rogério Bayer - Full-Stack Developer",
+                  "url": "https://bayer.ooo",
+                  "description": "Portfolio of Rogério Bayer, experienced Full-Stack Developer specialized in React, Vue.js, Node.js, and modern web technologies.",
+                  "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": {
+                      "@type": "EntryPoint",
+                      "urlTemplate": "https://bayer.ooo/blog?q={search_term_string}"
+                    },
+                    "query-input": "required name=search_term_string"
+                  }
+                }
+              ]
             })
           }}
         />
       </head>
       <body className="">
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-3JP1FZFB56"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
