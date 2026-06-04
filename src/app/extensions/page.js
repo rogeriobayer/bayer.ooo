@@ -2,47 +2,54 @@ import Projects from "@/app/components/Projects";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import PageHeader from "@/app/components/PageHeader";
+import { detectLocale, getTranslation, localeToOG } from "@/app/lib/locale";
+import { headers } from "next/headers";
 
 export const dynamic = "force-static";
 
-export const metadata = {
-  title: "Extensões | Rogério Bayer",
-  description: "Extensões de navegador que desenvolvi para produtividade e foco.",
-  keywords: ["extensões", "browser extensions", "chrome", "produtividade", "focus"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
+export async function generateMetadata() {
+  const acceptLanguage = (await headers()).get("accept-language") ?? "";
+  const locale = detectLocale(acceptLanguage);
+
+  return {
+    title: `${getTranslation(locale, "extensions.title")} | Rogério Bayer`,
+    description: getTranslation(locale, "extensions.description"),
+    keywords: ["extensões", "browser extensions", "chrome", "produtividade", "focus"],
+    robots: {
       index: true,
       follow: true,
-    },
-  },
-  alternates: {
-    canonical: "https://bayer.ooo/extensions",
-  },
-  openGraph: {
-    title: "Extensões | Rogério Bayer",
-    description: "Extensões de navegador que desenvolvi para produtividade e foco.",
-    url: "https://bayer.ooo/extensions",
-    type: "website",
-    siteName: "Rogério Bayer",
-    locale: "pt_BR",
-    images: [
-      {
-        url: "https://bayer.ooo/rogeriobayer.png",
-        width: 1200,
-        height: 630,
-        alt: "Extensões | Rogério Bayer",
+      googleBot: {
+        index: true,
+        follow: true,
       },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Extensões | Rogério Bayer",
-    description: "Extensões de navegador que desenvolvi para produtividade e foco.",
-    images: ["https://bayer.ooo/rogeriobayer.png"],
-  },
-};
+    },
+    alternates: {
+      canonical: "https://bayer.ooo/extensions",
+    },
+    openGraph: {
+      title: `${getTranslation(locale, "extensions.title")} | Rogério Bayer`,
+      description: getTranslation(locale, "extensions.description"),
+      url: "https://bayer.ooo/extensions",
+      type: "website",
+      siteName: "Rogério Bayer",
+      locale: localeToOG(locale),
+      images: [
+        {
+          url: "https://bayer.ooo/rogeriobayer.png",
+          width: 1200,
+          height: 630,
+          alt: "Extensões | Rogério Bayer",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${getTranslation(locale, "extensions.title")} | Rogério Bayer`,
+      description: getTranslation(locale, "extensions.description"),
+      images: ["https://bayer.ooo/rogeriobayer.png"],
+    },
+  };
+}
 
 export default function ExtensionsPage() {
   return (

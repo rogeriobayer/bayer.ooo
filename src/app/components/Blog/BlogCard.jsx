@@ -1,12 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { staggerItemVariant, cardHoverVariant } from "@/app/utils/animationConfig";
 import { formatDate } from "@/app/lib/date";
 import { useLanguage } from "@/app/contexts/LanguageContext";
 
-export default function BlogCard({ post }) {
+export default function BlogCard({ post, priority = false }) {
   const { currentLanguage } = useLanguage();
   const translation = post.translations[currentLanguage] || post.translations.pt || Object.values(post.translations)[0];
 
@@ -27,11 +28,13 @@ export default function BlogCard({ post }) {
         >
           {translation.cover && (
             <div className="relative w-full h-48 overflow-hidden">
-              <img
+              <Image
                 src={translation.cover}
                 alt={translation.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                loading="lazy"
+                fill
+                sizes="(max-width: 768px) 100vw, 672px"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                priority={priority}
               />
             </div>
           )}
