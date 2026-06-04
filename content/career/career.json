@@ -12,7 +12,8 @@
   "skills": {
     "languages": ["javascript", "typescript", "html", "css", "sass"],
     "frameworks": ["vue", "nuxt", "react", "react-native", "nest", "next", "expo", "nx"],
-    "tools": ["powerbi", "cloudflare", "gcp", "git", "docker", "tailwind", "vuetify", "mui"]
+    "tools": ["powerbi", "cloudflare", "gcp", "git", "docker", "tailwind", "vuetify", "mui"],
+    "aiHarnesses": ["anthropic", "codex", "opencode", "deepseek", "open-source-ai"]
   },
   "history": [
     {

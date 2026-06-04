@@ -1,3 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-  <path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-5.5 4 2-7L3 9h7l2-7z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+  <!-- OpenAI-inspired diamond for Codex -->
+  <path d="M12 2L15.5 8.5L22 12L15.5 15.5L12 22L8.5 15.5L2 12L8.5 8.5L12 2Z" fill="#10A37F"/>
+  <path d="M12 5.5L14 10L18.5 12L14 14L12 18.5L10 14L5.5 12L10 10L12 5.5Z" fill="white" opacity="0.3"/>
 </svg>
