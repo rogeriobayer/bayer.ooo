@@ -47,5 +47,8 @@ node_modules/
 /.wrangler/tmp/
 /.wrangler/state/
 
+# opencode session state
+.omo/
+
 # auto-generated blog data
 /src/app/lib/blog-data.js
