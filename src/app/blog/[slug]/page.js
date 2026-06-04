@@ -3,6 +3,8 @@ import { getPostBySlug, getAllPostSlugs } from "@/app/lib/blog";
 import BlogPost from "@/app/components/Blog/BlogPost";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
+import { detectLocale, localeToOG } from "@/app/lib/locale";
+import { headers } from "next/headers";
 
 export async function generateStaticParams() {
   return getAllPostSlugs();
@@ -18,14 +20,16 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  const defaultPost = post.translations.pt || Object.values(post.translations)[0];
+  const acceptLanguage = (await headers()).get("accept-language") ?? "";
+  const locale = detectLocale(acceptLanguage);
+  const translation = post.translations[locale] ?? post.translations.pt ?? Object.values(post.translations)[0];
   const canonicalUrl = `https://bayer.ooo/blog/${slug}`;
 
   return {
-    title: `${defaultPost.title} | Rogério Bayer`,
-    description: defaultPost.excerpt,
-    keywords: defaultPost.tags,
-    authors: [{ name: defaultPost.author, url: "https://bayer.ooo" }],
+    title: `${translation.title} | Rogério Bayer`,
+    description: translation.excerpt,
+    keywords: translation.tags,
+    authors: [{ name: translation.author, url: "https://bayer.ooo" }],
     robots: {
       index: true,
       follow: true,
@@ -40,24 +44,26 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical: canonicalUrl,
       languages: {
-        'pt-BR': canonicalUrl,
-        'en-US': canonicalUrl,
-        'fr-FR': canonicalUrl,
+        'pt': canonicalUrl,
+        'en': canonicalUrl,
+        'fr': canonicalUrl,
       },
     },
     openGraph: {
-      title: `${defaultPost.title} | Rogério Bayer`,
-      description: defaultPost.excerpt,
+      title: `${translation.title} | Rogério Bayer`,
+      description: translation.excerpt,
       url: canonicalUrl,
       type: "article",
-      publishedTime: defaultPost.date,
-      modifiedTime: defaultPost.date,
-      authors: [defaultPost.author],
-      tags: defaultPost.tags,
+      publishedTime: translation.date,
+      modifiedTime: translation.date,
+      authors: [translation.author],
+      tags: translation.tags,
       siteName: "Rogério Bayer",
-      locale: "pt_BR",
-      alternateLocale: ["en_US", "fr_FR"],
-      images: defaultPost.cover
+      locale: localeToOG(locale),
+      alternateLocale: Object.values(post.translations)
+        .filter((t) => t.lang !== locale)
+        .map((t) => localeToOG(t.lang)),
+      images: translation.cover
         ? [
             {
               url: defaultPost.cover,
