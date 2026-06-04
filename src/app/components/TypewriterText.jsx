@@ -54,7 +54,7 @@ export const TypewriterText = ({
   }, [handleTyping, isDeleting, deletingSpeed, typingSpeed]);
 
   return (
-    <span className={`inline-flex items-baseline ${className}`}>
+    <span className={className}>
       <span aria-label={phrases.join(", ")}>{currentText}</span>
       <motion.span
         className={`inline-block ml-0.5 text-primary ${cursorClassName}`}
