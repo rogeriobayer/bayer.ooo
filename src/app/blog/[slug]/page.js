@@ -11,7 +11,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
   const post = getPostBySlug(slug);
 
   if (!post) {
@@ -66,10 +66,10 @@ export async function generateMetadata({ params }) {
       images: translation.cover
         ? [
             {
-              url: defaultPost.cover,
+              url: translation.cover,
               width: 1200,
               height: 630,
-              alt: defaultPost.title,
+              alt: translation.title,
             },
           ]
         : [
@@ -77,23 +77,23 @@ export async function generateMetadata({ params }) {
               url: "https://bayer.ooo/rogeriobayer.png",
               width: 1200,
               height: 630,
-              alt: defaultPost.title,
+              alt: translation.title,
             },
           ],
     },
     twitter: {
       card: "summary_large_image",
-      title: defaultPost.title,
-      description: defaultPost.excerpt,
-      images: defaultPost.cover
-        ? [defaultPost.cover]
+      title: translation.title,
+      description: translation.excerpt,
+      images: translation.cover
+        ? [translation.cover]
         : ["https://bayer.ooo/rogeriobayer.png"],
     },
   };
 }
 
-export default function BlogPostPage({ params }) {
-  const { slug } = params;
+export default async function BlogPostPage({ params }) {
+  const { slug } = await params;
   const post = getPostBySlug(slug);
 
   if (!post) {
