@@ -43,11 +43,6 @@ export async function generateMetadata({ params }) {
     },
     alternates: {
       canonical: canonicalUrl,
-      languages: {
-        'pt': canonicalUrl,
-        'en': canonicalUrl,
-        'fr': canonicalUrl,
-      },
     },
     openGraph: {
       title: `${translation.title} | Rogério Bayer`,

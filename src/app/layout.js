@@ -83,11 +83,6 @@ export async function generateMetadata() {
     },
     alternates: {
       canonical: "https://bayer.ooo",
-      languages: {
-        'pt': 'https://bayer.ooo',
-        'en': 'https://bayer.ooo',
-        'fr': 'https://bayer.ooo',
-      },
     },
     openGraph: {
       type: "website",
