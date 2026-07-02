@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const matter = require('gray-matter');
+const matter = require('@11ty/gray-matter');
 
 const BLOG_DIR = path.join(process.cwd(), 'content', 'blog');
 const OUTPUT_FILE = path.join(process.cwd(), 'src', 'app', 'lib', 'blog-data.js');
