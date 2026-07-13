@@ -152,6 +152,53 @@ export const projectsData = {
             }
           ]
         }
+      },
+      {
+        "id": 5,
+        "slug": "stadiumtozero",
+        "name": "Stadium To Zero",
+        "image": "/images/projects/stadiumtozero-project.png",
+        "frameworks": [
+          "react",
+          "typescript",
+          "tailwind",
+          "cloudflare"
+        ],
+        "description": "Jogo interativo de duelos entre estádios de Copa do Mundo. O jogador monta um trio fixo de estádios e enfrenta 7 rodadas de confrontos por atributo (capacidade, tradição, arquitetura, etc.), com uma progressão de dificuldade inspirada no formato de mata-mata. Cada partida gera uma campanha única e compartilhável.",
+        "link": "https://stadiumtozero.bayer.ooo/",
+        "modal": {
+          "images": [
+            "/images/projects/stadiumtozero-project.png"
+          ],
+          "technologies": [
+            {
+              "code": "react",
+              "role": "Interface de jogo com estado reativo e animações"
+            },
+            {
+              "code": "typescript",
+              "role": "Tipagem estática para lógica de jogo e dados"
+            },
+            {
+              "code": "tailwind",
+              "role": "Design responsivo e estilização de componentes"
+            },
+            {
+              "code": "cloudflare",
+              "role": "Deploy e distribuição global via Cloudflare Pages"
+            }
+          ],
+          "impact": [
+            {
+              "value": "7",
+              "label": "Rodadas por campanha"
+            },
+            {
+              "value": "3",
+              "label": "Estádios no trio"
+            }
+          ]
+        }
       }
     ]
   },
@@ -305,6 +352,53 @@ export const projectsData = {
             }
           ]
         }
+      },
+      {
+        "id": 5,
+        "slug": "stadiumtozero",
+        "name": "Stadium To Zero",
+        "image": "/images/projects/stadiumtozero-project.png",
+        "frameworks": [
+          "react",
+          "typescript",
+          "tailwind",
+          "cloudflare"
+        ],
+        "description": "Interactive World Cup stadium duel game. Players assemble a fixed trio of stadiums and face 7 rounds of attribute-based matchups (capacity, tradition, architecture, etc.), with a difficulty curve inspired by knockout tournament formats. Each match generates a unique shareable campaign.",
+        "link": "https://stadiumtozero.bayer.ooo/",
+        "modal": {
+          "images": [
+            "/images/projects/stadiumtozero-project.png"
+          ],
+          "technologies": [
+            {
+              "code": "react",
+              "role": "Game UI with reactive state and animations"
+            },
+            {
+              "code": "typescript",
+              "role": "Static typing for game logic and data"
+            },
+            {
+              "code": "tailwind",
+              "role": "Responsive design and component styling"
+            },
+            {
+              "code": "cloudflare",
+              "role": "Deploy and global distribution via Cloudflare Pages"
+            }
+          ],
+          "impact": [
+            {
+              "value": "7",
+              "label": "Rounds per campaign"
+            },
+            {
+              "value": "3",
+              "label": "Stadiums in trio"
+            }
+          ]
+        }
       }
     ]
   },
@@ -455,6 +549,53 @@ export const projectsData = {
             {
               "value": "20 km",
               "label": "Rayon de recherche"
+            }
+          ]
+        }
+      },
+      {
+        "id": 5,
+        "slug": "stadiumtozero",
+        "name": "Stadium To Zero",
+        "image": "/images/projects/stadiumtozero-project.png",
+        "frameworks": [
+          "react",
+          "typescript",
+          "tailwind",
+          "cloudflare"
+        ],
+        "description": "Jeu interactif de duels entre stades de Coupe du Monde. Le joueur constitue un trio fixe de stades et affronte 7 rounds de confrontations par attribut (capacité, tradition, architecture, etc.), avec une progression de difficulté inspirée du format à élimination directe. Chaque partie génère une campagne unique et partageable.",
+        "link": "https://stadiumtozero.bayer.ooo/",
+        "modal": {
+          "images": [
+            "/images/projects/stadiumtozero-project.png"
+          ],
+          "technologies": [
+            {
+              "code": "react",
+              "role": "Interface de jeu avec état réactif et animations"
+            },
+            {
+              "code": "typescript",
+              "role": "Typage statique pour la logique de jeu et les données"
+            },
+            {
+              "code": "tailwind",
+              "role": "Design responsive et stylisation des composants"
+            },
+            {
+              "code": "cloudflare",
+              "role": "Déploiement et distribution globale via Cloudflare Pages"
+            }
+          ],
+          "impact": [
+            {
+              "value": "7",
+              "label": "Rounds par campagne"
+            },
+            {
+              "value": "3",
+              "label": "Stades dans le trio"
             }
           ]
         }
