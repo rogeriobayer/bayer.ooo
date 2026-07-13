@@ -20,11 +20,24 @@ import {
   buttonHoverVariant
 } from "@/app/utils/animationConfig";
 
+const parseDownloads = (value) => {
+  if (!value) return 0;
+  const cleaned = value.replace(/\./g, "").replace(/\D/g, "");
+  return parseInt(cleaned, 10) || 0;
+};
+
 export const Projects = ({ type = "projects" }) => {
   const { t, currentLanguage } = useTranslation();
   const data = type === "extensions" ? extensionsData : projectsData;
   const projects = data[currentLanguage]?.[type === "extensions" ? "extensions" : "projects"] || data.pt[type === "extensions" ? "extensions" : "projects"];
   const [selectedProject, setSelectedProject] = useState(null);
+
+  const mostDownloaded =
+    type === "extensions"
+      ? [...projects].reduce((max, ext) =>
+          parseDownloads(ext.downloads) > parseDownloads(max?.downloads) ? ext : max
+        )
+      : null;
 
   const openModal = (project) => {
     setSelectedProject(project);
@@ -144,18 +157,26 @@ export const Projects = ({ type = "projects" }) => {
                       {project.description}
                     </p>
 
-                    {project.releaseDate && (
-                      <div className="flex items-center gap-3 text-xs text-muted mt-2">
-                        {project.slug === "usa-radios-lite" && (
-                          <span className="badge badge-xs badge-primary">
-                            {t("extensions.mostDownloaded")}
-                          </span>
-                        )}
+                    <div className="flex items-center gap-3 text-xs text-muted mt-2 flex-wrap">
+                      {mostDownloaded && project.slug === mostDownloaded.slug && (
+                        <span className="badge badge-xs badge-primary">
+                          {t("extensions.mostDownloaded")}
+                        </span>
+                      )}
+                      {project.downloads && (
+                        <span className="flex items-center gap-1">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-3.5 h-3.5">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                          </svg>
+                          {project.downloads} {t("extensions.downloads")}
+                        </span>
+                      )}
+                      {project.releaseDate && (
                         <span>
                           {t("extensions.releaseDate")} {formatDate(project.releaseDate, currentLanguage)}
                         </span>
-                      </div>
-                    )}
+                      )}
+                    </div>
 
                     <div className="card-actions justify-end mt-3">
                       {project.link && (

@@ -189,9 +189,9 @@ export const extensionsData = {
         "slug": "your-system-monitor",
         "name": "Your System Monitor",
         "icon": "/images/extensions/your-system-monitor-icon.webp",
-        "description": "Extensão Chrome MV3 para monitoramento de CPU e memória. Usa APIs system.cpu e system.memory com visualização via badge dinâmico, popup e gráficos históricos.",
+        "description": "Extensão Chrome MV3 para monitoramento de CPU e memória — mais de 1.000 downloads na Chrome Web Store. Usa APIs system.cpu e system.memory com visualização via badge dinâmico, popup e gráficos históricos.",
         "link": "https://chromewebstore.google.com/detail/your-system-monitor/",
-        "downloads": "29",
+        "downloads": "1.000+",
         "releaseDate": "2025-12-12",
         "frameworks": [
           "javascript",
@@ -212,6 +212,10 @@ export const extensionsData = {
             }
           ],
           "impact": [
+            {
+              "value": "1.000+",
+              "label": "Downloads"
+            },
             {
               "value": "4",
               "label": "Idiomas"
@@ -445,9 +449,9 @@ export const extensionsData = {
         "slug": "your-system-monitor",
         "name": "Your System Monitor",
         "icon": "/images/extensions/your-system-monitor-icon.webp",
-        "description": "Chrome MV3 extension for CPU and memory monitoring. Uses system.cpu and system.memory APIs with visualization via dynamic badge, popup and historical graphs.",
+        "description": "Chrome MV3 extension for CPU and memory monitoring — over 1,000 downloads on the Chrome Web Store. Uses system.cpu and system.memory APIs with visualization via dynamic badge, popup and historical graphs.",
         "link": "https://chromewebstore.google.com/detail/your-system-monitor/",
-        "downloads": "29",
+        "downloads": "1.000+",
         "releaseDate": "2025-12-12",
         "frameworks": [
           "javascript",
@@ -468,6 +472,10 @@ export const extensionsData = {
             }
           ],
           "impact": [
+            {
+              "value": "1.000+",
+              "label": "Downloads"
+            },
             {
               "value": "4",
               "label": "Languages"
@@ -701,9 +709,9 @@ export const extensionsData = {
         "slug": "your-system-monitor",
         "name": "Your System Monitor",
         "icon": "/images/extensions/your-system-monitor-icon.webp",
-        "description": "Extension Chrome MV3 pour surveillance du CPU et de la mémoire. Utilise les APIs system.cpu et system.memory avec visualisation via badge dynamique, popup et graphiques historiques.",
+        "description": "Extension Chrome MV3 pour surveillance du CPU et de la mémoire — plus de 1.000 téléchargements sur le Chrome Web Store. Utilise les APIs system.cpu et system.memory avec visualisation via badge dynamique, popup et graphiques historiques.",
         "link": "https://chromewebstore.google.com/detail/your-system-monitor/",
-        "downloads": "29",
+        "downloads": "1.000+",
         "releaseDate": "2025-12-12",
         "frameworks": [
           "javascript",
@@ -724,6 +732,10 @@ export const extensionsData = {
             }
           ],
           "impact": [
+            {
+              "value": "1.000+",
+              "label": "Téléchargements"
+            },
             {
               "value": "4",
               "label": "Langues"
