@@ -3,7 +3,10 @@ const FRAME_INTERVAL = 33;
 const STATIC_FRAME = "/favicon-original.png";
 
 function getFrameSource(index) {
-  return `/favicon-frames-webp/loop-${String(index).padStart(3, "0")}.webp`;
+  const sourceIndex =
+    index === 30 ? 29 : index === 150 ? 149 : index >= 179 ? 0 : index;
+
+  return `/favicon-frames-webp/loop-${String(sourceIndex).padStart(3, "0")}.webp`;
 }
 
 export function startFaviconAnimation() {
@@ -18,9 +21,14 @@ export function startFaviconAnimation() {
   let animationTimer;
   let frameIndex = 0;
   let lastStartedAt = Number.NEGATIVE_INFINITY;
+  let publishedSource;
   favicon.setAttribute("data-animation-state", "initialized");
 
   const publishSource = (source) => {
+    if (source === publishedSource) {
+      return;
+    }
+
     favicon.remove();
     favicon.setAttribute(
       "type",
@@ -28,6 +36,7 @@ export function startFaviconAnimation() {
     );
     favicon.setAttribute("href", source);
     document.head.appendChild(favicon);
+    publishedSource = source;
   };
 
   const playAnimation = () => {
