@@ -3,7 +3,7 @@ title: "O Que Exatamente É um Artifact?"
 slug: artifact
 date: 2026-07-30T10:00:00.000Z
 lang: pt
-excerpt: "Uma pergunta que não para de surgir de pessoas não técnicas ultimamente, principalmente por causa do Claude: o que exatamente é um artifact?"
+excerpt: "Artifacts parecem produtos prontos — clicáveis, estilizados, instantâneos. Mas código autocontido que roda no navegador não é o mesmo que um site publicado, e essa diferença importa."
 tags:
   - claude
   - ai
