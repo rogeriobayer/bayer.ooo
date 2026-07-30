@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build:data": "node scripts/build-cms-data.js && node scripts/build-blog-data.js",
+    "build:data": "node scripts/build-cms-data.js && node scripts/build-blog-data.js && node scripts/build-agent-content.js",
     "predev": "npm run build:data",
     "dev": "next dev -p 3001",
     "prebuild": "npm run build:data",

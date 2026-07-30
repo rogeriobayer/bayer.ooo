@@ -1,0 +1,47 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://bayer.ooo/",
+      "service-desc": [
+        {
+          "href": "https://bayer.ooo/.well-known/api-catalog",
+          "type": "application/linkset+json"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://bayer.ooo/llms.txt",
+          "type": "text/plain"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://bayer.ooo/",
+          "type": "text/html"
+        }
+      ]
+    },
+    {
+      "anchor": "https://bayer.ooo/blog",
+      "service-doc": [
+        {
+          "href": "https://bayer.ooo/llms.txt",
+          "type": "text/plain"
+        },
+        {
+          "href": "https://bayer.ooo/sitemap.xml",
+          "type": "application/xml"
+        }
+      ]
+    },
+    {
+      "anchor": "https://bayer.ooo/sitemap.xml",
+      "service-desc": [
+        {
+          "href": "https://bayer.ooo/sitemap.xml",
+          "type": "application/xml"
+        }
+      ]
+    }
+  ]
+}
