@@ -9,7 +9,7 @@ Posts are available in Portuguese, English, and French.
 
 ### [What Exactly Is an Artifact?](https://bayer.ooo/blog/artifact)
 
-One question I keep getting from non-technical people lately, mostly because of Claude: what exactly is an artifact?
+Artifacts look like finished products — clickable, styled, instant. But self-contained code that runs in your browser is not the same as a deployed website, and the difference matters.
 
 Tags: claude, ai, artifacts, prototyping
 
