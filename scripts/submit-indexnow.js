@@ -139,8 +139,8 @@ async function main() {
 
       try {
         const result = await submitToIndexNow(endpoint.url, SITE_URL, key, batch);
-        if (result.status === 200) {
-          console.log(`   ✅ ${endpoint.name} accepted batch ${i + 1}`);
+        if (result.status === 200 || result.status === 202) {
+          console.log(`   ✅ ${endpoint.name} accepted batch ${i + 1} (${result.status})`);
         } else {
           console.log(`   ⚠️  ${endpoint.name} responded with ${result.status}: ${result.body}`);
         }
