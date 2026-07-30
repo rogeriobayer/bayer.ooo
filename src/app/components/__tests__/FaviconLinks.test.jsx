@@ -8,7 +8,7 @@ describe("FaviconLinks", () => {
     const icons = [...document.head.querySelectorAll('link[rel="icon"]')];
 
     expect(icons).toHaveLength(1);
-    expect(icons[0]).toHaveAttribute("href", "/favicon-frames/loop-000.png");
+    expect(icons[0]).toHaveAttribute("href", "/favicon-original.png");
     expect(icons[0]).toHaveAttribute("type", "image/png");
     expect(icons[0]).toHaveAttribute("data-animated-favicon");
   });

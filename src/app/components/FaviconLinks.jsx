@@ -1,6 +1,6 @@
 const faviconLinks = [
   {
-    href: "/favicon-frames/loop-000.png",
+    href: "/favicon-original.png",
     type: "image/png",
     "data-animated-favicon": "",
   },
