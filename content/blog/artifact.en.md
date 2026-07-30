@@ -3,7 +3,7 @@ title: "What Exactly Is an Artifact?"
 slug: artifact
 date: 2026-07-30T10:00:00.000Z
 lang: en
-excerpt: "One question I keep getting from non-technical people lately, mostly because of Claude: what exactly is an artifact?"
+excerpt: "Artifacts look like finished products — clickable, styled, instant. But self-contained code that runs in your browser is not the same as a deployed website, and the difference matters."
 tags:
   - claude
   - ai
