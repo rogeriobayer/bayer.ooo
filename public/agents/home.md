@@ -21,7 +21,7 @@ Content language is negotiated via Accept-Language.
 
 ## Recent blog posts
 
-- [What Exactly Is an Artifact?](https://bayer.ooo/blog/artifact) — One question I keep getting from non-technical people lately, mostly because of Claude: what exactly is an artifact?
+- [What Exactly Is an Artifact?](https://bayer.ooo/blog/artifact) — Artifacts look like finished products — clickable, styled, instant. But self-contained code that runs in your browser is not the same as a deployed website, and the difference matters.
 - [Wiki LLM: how to create a permanent memory for AI inside your project](https://bayer.ooo/blog/wiki-llm) — Tools like Claude Code, Cursor, and Codex can analyze code, build features, and explain complex architectures. But the context built during a conversation disappears when the session ends. A Wiki LLM solves this by creating a permanent knowledge base for AI.
 - [Hash Tables in JavaScript: the structure that can save you in a technical interview](https://bayer.ooo/blog/hash-tables) — Understand how hash tables work, when to use them over other data structures, and how they turn O(n²) interview problems into clean O(n) solutions with JavaScript's Map, Set, and plain objects.
 - [React <Activity>: When Hiding Is Not the Same as Unmounting](https://bayer.ooo/blog/react-activity) — React 19.2 introduced the <Activity> component, which lets you hide and restore UI and internal child state without unmounting them. Learn when to use it, when to avoid it, and why it changes how we think about visibility in React.

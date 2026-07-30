@@ -4,7 +4,7 @@
 - URL: https://bayer.ooo/blog/artifact
 - Languages: en, fr, pt
 - Tags: claude, ai, artifacts, prototyping
-- Excerpt: One question I keep getting from non-technical people lately, mostly because of Claude: what exactly is an artifact?
+- Excerpt: Artifacts look like finished products — clickable, styled, instant. But self-contained code that runs in your browser is not the same as a deployed website, and the difference matters.
 ---
 One question I keep getting from non-technical people lately, mostly because of Claude: what exactly is an artifact?
 
