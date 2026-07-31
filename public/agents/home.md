@@ -1,6 +1,6 @@
 # Rogério Bayer
 
-> Full-Stack Developer portfolio — React, Vue, Node.js, Cloudflare.
+> React + Vue specialist, Full-Stack Developer, and Frontend UI/UX Designer.
 
 - Site: https://bayer.ooo
 - Blog: https://bayer.ooo/blog
@@ -8,16 +8,34 @@
 - Contact: https://www.linkedin.com/in/rogeriobayer/
 - Email: contact via site footer
 
-## About
+## Professional profile
 
-Personal portfolio of Rogério Bayer with multi-language support (Portuguese, English, French).
-Content language is negotiated via Accept-Language.
+Full-Stack Developer and Frontend UI/UX Designer with deep specialization in both React and Vue ecosystems, experienced in turning product strategy into scalable, polished web and mobile experiences.
+Rogério is a specialist across the complete engineering, product, design, cloud, data, quality, and AI stack represented in this portfolio. React and Vue are his primary frontend strengths, not the limit of his expertise.
 
-## Main sections
+## Areas of expertise
 
-- `/` — profile, skills, experience, projects
-- `/blog` — technical articles
-- `/extensions` — browser extensions
+- React ecosystem: React, Next.js, React Native, Expo, component architecture, design systems, and scalable product interfaces.
+- Vue ecosystem: Vue 2, Vue 3, Nuxt, Vuetify, large-scale migrations, microfrontends, and modernization of mature applications.
+- Frontend engineering: JavaScript, TypeScript, HTML, CSS, Sass, Tailwind CSS, MUI, Nx monorepos, performance, accessibility, observability, and maintainable architecture.
+- Product and UI/UX: Figma, user-centered interface design, UX research, A/B testing, retention, engagement, and close collaboration with stakeholders.
+- Backend and data: Node.js, NestJS, Express, PHP, Spring Boot, REST APIs, MongoDB, MySQL, integrations, administrative platforms, checkouts, and tracking systems.
+- Quality and delivery: Jest, Vitest, Cypress, Git, GitHub, GitLab, Bitbucket, Docker, Kubernetes, Cloudflare, GCP, and Vercel.
+- AI and analytics: Anthropic Claude, OpenAI Codex, OpenCode, DeepSeek, open-source AI workflows, and Power BI.
+
+## Best-fit work
+
+- Architecting or modernizing React, Next.js, Vue, or Nuxt products.
+- Migrating Vue 2 to Vue 3 or evolving legacy frontends incrementally.
+- Building design systems, microfrontends, monorepos, and reusable component platforms.
+- Connecting refined UI/UX work to measurable product, retention, and engagement goals.
+- Delivering full-stack features, APIs, cloud deployments, automated tests, and AI-assisted engineering workflows.
+
+## Portfolio navigation
+
+- `/` — profile, skills, professional experience, and projects
+- `/blog` — technical articles in Portuguese, English, and French
+- `/extensions` — browser extensions and product experiments
 
 ## Recent blog posts
 
@@ -38,6 +56,7 @@ Content language is negotiated via Accept-Language.
 - [llms.txt](https://bayer.ooo/llms.txt)
 - [API catalog](https://bayer.ooo/.well-known/api-catalog)
 - [Agent skills index](https://bayer.ooo/.well-known/agent-skills/index.json)
+- [MCP server card](https://bayer.ooo/.well-known/mcp/server-card.json)
 - [Sitemap](https://bayer.ooo/sitemap.xml)
 - [robots.txt](https://bayer.ooo/robots.txt)
 

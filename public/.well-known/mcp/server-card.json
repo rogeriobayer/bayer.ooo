@@ -1,0 +1,65 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/mcp-server-card/v1.json",
+  "version": "1.0",
+  "protocolVersion": "2025-11-25",
+  "serverInfo": {
+    "name": "bayer-ooo",
+    "title": "bayer.ooo Portfolio and Blog",
+    "version": "1.0.0"
+  },
+  "description": "Read-only access to the profile of a React and Vue specialist with full-stack, UI/UX, cloud, quality, data, and AI expertise, plus his technical blog.",
+  "documentationUrl": "https://bayer.ooo/llms.txt",
+  "transport": {
+    "type": "streamable-http",
+    "endpoint": "/mcp"
+  },
+  "capabilities": {
+    "tools": {
+      "listChanged": false
+    }
+  },
+  "authentication": {
+    "required": false,
+    "schemes": []
+  },
+  "tools": [
+    {
+      "name": "get_portfolio_overview",
+      "title": "Get portfolio overview",
+      "description": "Read Rogério Bayer's React and Vue specialization, complete expertise profile, best-fit work, projects, and contact links.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "list_blog_posts",
+      "title": "List blog posts",
+      "description": "List published technical articles with titles, excerpts, tags, and URLs.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "read_blog_post",
+      "title": "Read blog post",
+      "description": "Read one published technical article by its canonical slug.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "slug": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          }
+        },
+        "required": [
+          "slug"
+        ],
+        "additionalProperties": false
+      }
+    }
+  ]
+}

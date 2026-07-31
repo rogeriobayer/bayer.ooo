@@ -5,6 +5,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Script from "next/script";
 import { detectLocale, getTranslation, localeToOG } from "@/app/lib/locale";
 import { headers } from "next/headers";
+import WebMcpProvider from "./components/WebMcpProvider";
 
 const stackSansNotch = localFont({
   src: [
@@ -197,6 +198,7 @@ export default async function RootLayout({ children }) {
         />
       </head>
       <body className="">
+        <WebMcpProvider />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <Script
