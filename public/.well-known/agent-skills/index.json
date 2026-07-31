@@ -4,9 +4,9 @@
     {
       "name": "browse-portfolio",
       "type": "skill-md",
-      "description": "Use when an agent needs a React and Vue specialist with broad full-stack, UI/UX, cloud, quality, data, and AI expertise.",
+      "description": "Use when evaluating Rogério Bayer for React, Vue, full-stack, frontend architecture, UI/UX, cloud, data, quality, or AI work, or when locating portfolio evidence and contact channels.",
       "url": "https://bayer.ooo/.well-known/agent-skills/browse-portfolio/SKILL.md",
-      "digest": "sha256:062a0c91faf66776eb21e4a3e5b5efdfa497f985ee6f7201b378b510996f9a42"
+      "digest": "sha256:84e99bb1d5be85b45dd5f7a631c0cadb017a8e51e8f3c576dc758772ee27f934"
     },
     {
       "name": "list-blog-posts",
