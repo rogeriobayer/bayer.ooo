@@ -1,28 +1,26 @@
 {
-  "$schema": "https://agentskills.io/schema/agent-skills-index-v0.2.0.json",
-  "name": "bayer.ooo agent skills",
-  "description": "Discovery index for public content skills on bayer.ooo",
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
   "skills": [
     {
       "name": "browse-portfolio",
-      "type": "http",
-      "description": "Read portfolio profile, projects, and contact pointers as Markdown.",
-      "url": "https://bayer.ooo/",
-      "sha256": "60d981e949955e3a9f5e5f8941a569be96bfbcbd828110003c780f22cd9867ca"
+      "type": "skill-md",
+      "description": "Use when an agent needs a React and Vue specialist with broad full-stack, UI/UX, cloud, quality, data, and AI expertise.",
+      "url": "https://bayer.ooo/.well-known/agent-skills/browse-portfolio/SKILL.md",
+      "digest": "sha256:062a0c91faf66776eb21e4a3e5b5efdfa497f985ee6f7201b378b510996f9a42"
     },
     {
       "name": "list-blog-posts",
-      "type": "http",
-      "description": "List technical blog posts with titles, excerpts, and URLs.",
-      "url": "https://bayer.ooo/blog",
-      "sha256": "3b3b4521ce7b016025da129d1203f4b0874291fdebb62ba80978cc6d23175767"
+      "type": "skill-md",
+      "description": "Use when an agent needs to discover technical articles published on bayer.ooo.",
+      "url": "https://bayer.ooo/.well-known/agent-skills/list-blog-posts/SKILL.md",
+      "digest": "sha256:58efae1974113e78b4cedc89623d46939a9947c3ca57f831d23c70f3f4fb1ad6"
     },
     {
       "name": "read-blog-post",
-      "type": "http",
-      "description": "Read a blog post in Markdown via Accept: text/markdown on /blog/{slug}.",
-      "url": "https://bayer.ooo/blog/{slug}",
-      "sha256": "4906fdf3c4cf76735db37e02862cfc3162234c4429735fd1c5397903519d8b83"
+      "type": "skill-md",
+      "description": "Use when an agent needs the full text of a specific bayer.ooo blog article.",
+      "url": "https://bayer.ooo/.well-known/agent-skills/read-blog-post/SKILL.md",
+      "digest": "sha256:cc2c625d7185cbb7a20aaf28a52ef29c5e8ac48d3587444e35b9fbd973098ddb"
     }
   ]
 }

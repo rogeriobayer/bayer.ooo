@@ -13,7 +13,8 @@ const nextConfig = {
     const agentLinkHeader = [
       '</.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json"',
       '</llms.txt>; rel="describedby"; type="text/plain"',
-      '</.well-known/agent-skills/index.json>; rel="https://agentskills.io/rel/skills-index"; type="application/json"',
+      '</.well-known/agent-skills/index.json>; rel="agent-skills"; type="application/json"',
+      '</.well-known/mcp/server-card.json>; rel="service-desc"; type="application/json"',
       '</sitemap.xml>; rel="sitemap"; type="application/xml"',
       '</auth.md>; rel="https://authmd.org/rel/auth"; type="text/markdown"',
       '</agents/home.md>; rel="alternate"; type="text/markdown"',
@@ -91,6 +92,32 @@ const nextConfig = {
           {
             key: 'Content-Type',
             value: 'application/json; charset=utf-8',
+          },
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: '*',
+          },
+        ],
+      },
+      {
+        source: '/.well-known/agent-skills/:path*',
+        headers: [
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: '*',
+          },
+        ],
+      },
+      {
+        source: '/.well-known/mcp/server-card.json',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'application/json; charset=utf-8',
+          },
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: '*',
           },
         ],
       },
