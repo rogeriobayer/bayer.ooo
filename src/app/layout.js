@@ -5,6 +5,8 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Script from "next/script";
 import { detectLocale, getTranslation, localeToOG } from "@/app/lib/locale";
 import { headers } from "next/headers";
+import FaviconLinks from "./components/FaviconLinks";
+import FaviconAnimator from "./components/FaviconAnimator";
 
 const stackSansNotch = localFont({
   src: [
@@ -121,7 +123,7 @@ export default async function RootLayout({ children }) {
   return (
     <html lang={locale} suppressHydrationWarning={true} className={`${stackSansNotch.variable} ${stackSansText.variable}`}>
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <FaviconLinks />
         <link rel="apple-touch-icon" href="/rogeriobayer.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#fafaf9" media="(prefers-color-scheme: light)" />
@@ -197,6 +199,7 @@ export default async function RootLayout({ children }) {
         />
       </head>
       <body className="">
+        <FaviconAnimator />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <Script

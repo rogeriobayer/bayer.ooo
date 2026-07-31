@@ -26,7 +26,7 @@ export async function generateMetadata({ params }) {
   const canonicalUrl = `https://bayer.ooo/blog/${slug}`;
 
   return {
-    title: `${translation.title} | Rogério Bayer`,
+    title: translation.title,
     description: translation.excerpt,
     keywords: translation.tags,
     authors: [{ name: translation.author, url: "https://bayer.ooo" }],
