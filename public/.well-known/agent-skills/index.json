@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "browse-portfolio",
+      "type": "skill-md",
+      "description": "Use when evaluating Rogério Bayer for React, Vue, full-stack, frontend architecture, UI/UX, cloud, data, quality, or AI work, or when locating portfolio evidence and contact channels.",
+      "url": "https://bayer.ooo/.well-known/agent-skills/browse-portfolio/SKILL.md",
+      "digest": "sha256:84e99bb1d5be85b45dd5f7a631c0cadb017a8e51e8f3c576dc758772ee27f934"
+    },
+    {
+      "name": "list-blog-posts",
+      "type": "skill-md",
+      "description": "Use when an agent needs to discover technical articles published on bayer.ooo.",
+      "url": "https://bayer.ooo/.well-known/agent-skills/list-blog-posts/SKILL.md",
+      "digest": "sha256:58efae1974113e78b4cedc89623d46939a9947c3ca57f831d23c70f3f4fb1ad6"
+    },
+    {
+      "name": "read-blog-post",
+      "type": "skill-md",
+      "description": "Use when an agent needs the full text of a specific bayer.ooo blog article.",
+      "url": "https://bayer.ooo/.well-known/agent-skills/read-blog-post/SKILL.md",
+      "digest": "sha256:cc2c625d7185cbb7a20aaf28a52ef29c5e8ac48d3587444e35b9fbd973098ddb"
+    }
+  ]
+}

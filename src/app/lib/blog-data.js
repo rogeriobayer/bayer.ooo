@@ -10,7 +10,7 @@ export const blogPosts = [
         "title": "What Exactly Is an Artifact?",
         "date": "2026-07-30T10:00:00.000Z",
         "lang": "en",
-        "excerpt": "One question I keep getting from non-technical people lately, mostly because of Claude: what exactly is an artifact?",
+        "excerpt": "Artifacts look like finished products — clickable, styled, instant. But self-contained code that runs in your browser is not the same as a deployed website, and the difference matters.",
         "tags": [
           "claude",
           "ai",
@@ -27,7 +27,7 @@ export const blogPosts = [
         "title": "Qu'est-Ce Qu'un Artifact Exactement ?",
         "date": "2026-07-30T10:00:00.000Z",
         "lang": "fr",
-        "excerpt": "Une question que je reçois sans cesse des personnes non techniques ces derniers temps, surtout à cause de Claude : qu'est-ce qu'un artifact exactement ?",
+        "excerpt": "Les artifacts ressemblent à des produits finis — cliquables, stylisés, instantanés. Mais un code autonome qui s'exécute dans le navigateur n'est pas la même chose qu'un site déployé, et cette différence compte.",
         "tags": [
           "claude",
           "ia",
@@ -44,7 +44,7 @@ export const blogPosts = [
         "title": "O Que Exatamente É um Artifact?",
         "date": "2026-07-30T10:00:00.000Z",
         "lang": "pt",
-        "excerpt": "Uma pergunta que não para de surgir de pessoas não técnicas ultimamente, principalmente por causa do Claude: o que exatamente é um artifact?",
+        "excerpt": "Artifacts parecem produtos prontos — clicáveis, estilizados, instantâneos. Mas código autocontido que roda no navegador não é o mesmo que um site publicado, e essa diferença importa.",
         "tags": [
           "claude",
           "ai",

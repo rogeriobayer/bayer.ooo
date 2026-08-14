@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useTranslation } from "../hooks/useTranslation";
 import {
@@ -99,7 +100,13 @@ const Footer = () => {
                             whileHover="hover"
                             whileTap="tap"
                         >
-                            <img src={`/${link.icon}.svg`} alt={link.label} className={`w-5 h-5 opacity-70 hover:opacity-100 transition-opacity ${['github', 'behance', 'email', 'linkedin'].includes(link.icon) ? 'icon-dark-invert' : ''}`} />
+                            <Image
+                                src={`/${link.icon}.svg`}
+                                alt={link.label}
+                                width={20}
+                                height={20}
+                                className={`w-5 h-5 opacity-70 hover:opacity-100 transition-opacity ${['github', 'behance', 'email', 'linkedin'].includes(link.icon) ? 'icon-dark-invert' : ''}`}
+                            />
                         </motion.a>
                     ))}
                 </div>

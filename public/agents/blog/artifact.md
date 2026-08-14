@@ -1,18 +1,11 @@
+# What Exactly Is an Artifact?
+- Author: Rogério Bayer
+- Date: Thu Jul 30 2026 07:00:00 GMT-0300 (Brasilia Standard Time)
+- URL: https://bayer.ooo/blog/artifact
+- Languages: en, fr, pt
+- Tags: claude, ai, artifacts, prototyping
+- Excerpt: Artifacts look like finished products — clickable, styled, instant. But self-contained code that runs in your browser is not the same as a deployed website, and the difference matters.
 ---
-title: "What Exactly Is an Artifact?"
-slug: artifact
-date: 2026-07-30T10:00:00.000Z
-lang: en
-excerpt: "Artifacts look like finished products — clickable, styled, instant. But self-contained code that runs in your browser is not the same as a deployed website, and the difference matters."
-tags:
-  - claude
-  - ai
-  - artifacts
-  - prototyping
-cover: /blog/artifact.png
-author: Rogério Bayer
----
-
 One question I keep getting from non-technical people lately, mostly because of Claude: what exactly is an artifact?
 
 It comes up because Claude can generate something that looks exactly like a working product. You type a prompt, and seconds later there is a fully styled interface on your screen. You can click buttons, fill forms, see data update in real time. It feels real because visually it is.

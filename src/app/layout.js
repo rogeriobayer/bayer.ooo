@@ -7,6 +7,7 @@ import { detectLocale, getTranslation, localeToOG } from "@/app/lib/locale";
 import { headers } from "next/headers";
 import FaviconLinks from "./components/FaviconLinks";
 import FaviconAnimator from "./components/FaviconAnimator";
+import WebMcpProvider from "./components/WebMcpProvider";
 
 const stackSansNotch = localFont({
   src: [
@@ -200,6 +201,7 @@ export default async function RootLayout({ children }) {
       </head>
       <body className="">
         <FaviconAnimator />
+        <WebMcpProvider />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <Script
