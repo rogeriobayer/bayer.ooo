@@ -85,7 +85,7 @@ export const CurrentLocation = () => {
                 >
                   {index === 0 && (
                     <span aria-hidden="true" className="mr-2 text-lg md:text-xl leading-none">
-                      🇧🇷
+                      🇨🇦
                     </span>
                   )}
                   {part}
