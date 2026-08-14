@@ -12,7 +12,7 @@ export async function generateMetadata() {
   const locale = detectLocale(acceptLanguage);
 
   return {
-    title: `${getTranslation(locale, "extensions.title")} | Rogério Bayer`,
+    title: getTranslation(locale, "extensions.title"),
     description: getTranslation(locale, "extensions.description"),
     keywords: ["extensões", "browser extensions", "chrome", "produtividade", "focus"],
     robots: {
