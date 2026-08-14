@@ -32,8 +32,8 @@ export const translations = {
 
     "location.eyebrow": "Onde estou agora?",
     "location.title": "Atualmente localizado em",
-    "location.description": "Uma base criativa no sul do Brasil para desenhar, testar e construir experiências digitais com atenção a detalhe, performance e produto.",
-    "location.city": "Curitiba, Parana, Brazil",
+    "location.description": "Uma base criativa em Toronto para desenhar, testar e construir experiências digitais com atenção a detalhe, performance e produto.",
+    "location.city": "Toronto, Ontario, Canada",
 
     "projects.title": "Principais Projetos",
     "projects.access": "Acessar",
@@ -111,8 +111,8 @@ export const translations = {
 
     "location.eyebrow": "Where am I now?",
     "location.title": "Currently located in",
-    "location.description": "A creative base in southern Brazil for designing, testing, and building digital experiences with a strong focus on detail, performance, and product thinking.",
-    "location.city": "Curitiba, Parana, Brazil",
+    "location.description": "A creative base in Toronto for designing, testing, and building digital experiences with a strong focus on detail, performance, and product thinking.",
+    "location.city": "Toronto, Ontario, Canada",
 
     "projects.title": "Main Projects",
     "projects.access": "Access",
@@ -190,8 +190,8 @@ export const translations = {
 
     "location.eyebrow": "Ou suis-je en ce moment ?",
     "location.title": "Actuellement situé à",
-    "location.description": "Une base créative dans le sud du Brésil pour concevoir, tester et construire des expériences numériques avec un fort souci du détail, de la performance et du produit.",
-    "location.city": "Curitiba, Parana, Brazil",
+    "location.description": "Une base créative à Toronto pour concevoir, tester et construire des expériences numériques avec un fort souci du détail, de la performance et du produit.",
+    "location.city": "Toronto, Ontario, Canada",
 
     "projects.title": "Projets Principaux",
     "projects.access": "Accéder",
