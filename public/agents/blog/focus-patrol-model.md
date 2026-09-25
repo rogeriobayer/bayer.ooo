@@ -1,6 +1,6 @@
 # Training an AI Model for Focus: How I Hit 90% Accuracy with 156 Examples
 - Author: Rogério Bayer
-- Date: Mon Jun 15 2026 07:00:00 GMT-0300 (Brasilia Standard Time)
+- Date: 2026-06-15
 - URL: https://bayer.ooo/blog/focus-patrol-model
 - Languages: en, fr, pt
 - Tags: ai, machine-learning, llm, fine-tuning, chrome-extension, on-device, privacy

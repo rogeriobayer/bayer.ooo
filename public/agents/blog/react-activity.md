@@ -1,6 +1,6 @@
 # React <Activity>: When Hiding Is Not the Same as Unmounting
 - Author: Rogério Bayer
-- Date: Thu Jul 02 2026 07:00:00 GMT-0300 (Brasilia Standard Time)
+- Date: 2026-07-02
 - URL: https://bayer.ooo/blog/react-activity
 - Languages: en, fr, pt
 - Tags: react, javascript, activity

@@ -1,6 +1,6 @@
 # Hash Tables in JavaScript: the structure that can save you in a technical interview
 - Author: Rogério Bayer
-- Date: Fri Jul 10 2026 07:00:00 GMT-0300 (Brasilia Standard Time)
+- Date: 2026-07-10
 - URL: https://bayer.ooo/blog/hash-tables
 - Languages: en, fr, pt
 - Tags: javascript, algorithms, data-structures, hash-tables, computer-science, performance

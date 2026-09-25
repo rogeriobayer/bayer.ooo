@@ -1,6 +1,6 @@
 # How I Ended Up in Foz do Iguaçu with a Quarter Tank and Built a Fuel Price Finder
 - Author: Rogério Bayer
-- Date: Tue May 19 2026 07:00:00 GMT-0300 (Brasilia Standard Time)
+- Date: 2026-05-19
 - URL: https://bayer.ooo/blog/combustivel-na-rota
 - Languages: en, fr, pt
 - Tags: react, cloudflare, ux, open-source

@@ -1,6 +1,6 @@
 # Wiki LLM: how to create a permanent memory for AI inside your project
 - Author: Rogério Bayer
-- Date: Fri Jul 17 2026 07:00:00 GMT-0300 (Brasilia Standard Time)
+- Date: 2026-07-17
 - URL: https://bayer.ooo/blog/wiki-llm
 - Languages: en, fr, pt
 - Tags: llm, ai, architecture, documentation, best-practices

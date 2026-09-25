@@ -7,7 +7,7 @@ describe('Build Validation Tests', () => {
     expect(packageJson.dependencies).toHaveProperty('next');
     expect(packageJson.dependencies).toHaveProperty('react');
     expect(packageJson.dependencies).toHaveProperty('react-dom');
-    expect(packageJson.dependencies).toHaveProperty('framer-motion');
+    expect(packageJson.dependencies).toHaveProperty('motion');
   });
 
   it('should have required dev dependencies for testing', async () => {

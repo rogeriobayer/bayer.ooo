@@ -10,7 +10,6 @@
   "commitMessageAction": "update",
   "commitMessageTopic": "{{depName}}",
   "commitMessageExtra": "to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}}",
-  "prTitle": "{{commitMessagePrefix}} {{commitMessageAction}} {{commitMessageTopic}} {{commitMessageExtra}}",
   "packageRules": [
     {
       "description": "Automerge non-major updates",
@@ -61,11 +60,19 @@
       "groupName": "CSS/Styling"
     },
     {
-      "description": "Pin major versions for major frameworks",
+      "description": "Defer major framework and build-tool migrations",
       "matchPackageNames": [
         "react",
         "react-dom",
-        "next"
+        "next",
+        "eslint-config-next",
+        "eslint",
+        "vite",
+        "@vitejs/plugin-react",
+        "@babel/core",
+        "js-yaml",
+        "jsdom",
+        "@types/node"
       ],
       "matchUpdateTypes": [
         "major"
@@ -73,7 +80,7 @@
       "enabled": false
     }
   ],
-  "prConcurrentLimit": 10,
+  "prConcurrentLimit": 20,
   "rebaseWhen": "conflicted",
   "labels": [
     "dependencies"
