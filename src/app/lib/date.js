@@ -4,7 +4,7 @@
  * @param {string} lang
  * @returns {string}
  */
-export function formatDate(dateString, lang = 'pt') {
+export function formatDate(dateString, lang = 'en') {
   const date = new Date(dateString);
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
   
@@ -14,5 +14,5 @@ export function formatDate(dateString, lang = 'pt') {
     fr: 'fr-FR',
   };
 
-  return date.toLocaleDateString(localeMap[lang] || 'pt-BR', options);
+  return date.toLocaleDateString(localeMap[lang] || 'en-US', options);
 }

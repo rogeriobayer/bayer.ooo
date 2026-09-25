@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { extensionsData } from '../../src/app/lib/extensions-data.js';
 import { translations } from '../../src/app/data/translations.js';
 
-const defaultLanguage = 'pt';
+const defaultLanguage = 'en';
 
 const t = (lang: keyof typeof translations, key: string) =>
   translations[lang]?.[key] ?? key;
@@ -15,7 +15,7 @@ test.describe('Extensions Page', () => {
   });
 
   test('should render the extensions page title and heading', async ({ page }) => {
-    await expect(page).toHaveTitle(/Extensões | Rogério Bayer/);
+    await expect(page).toHaveTitle(/Extensions | Rogério Bayer/);
 
     const heading = page.getByRole('heading', { name: t(defaultLanguage, 'extensions.title'), level: 1 });
     await expect(heading).toBeVisible();
@@ -126,19 +126,19 @@ test.describe('Extensions Page Language Switching', () => {
   test('should switch extensions page language correctly', async ({ page }) => {
     await page.goto('/extensions');
 
-    await expect(page.getByRole('heading', { name: t('pt', 'extensions.title'), level: 1 })).toBeVisible();
-    await expect(page.getByText(t('pt', 'extensions.description'))).toBeVisible();
-
-    await page.getByRole('button', { name: 'EN' }).click();
     await expect(page.getByRole('heading', { name: t('en', 'extensions.title'), level: 1 })).toBeVisible();
     await expect(page.getByText(t('en', 'extensions.description'))).toBeVisible();
 
-    await page.getByRole('button', { name: 'FR' }).click();
+    await page.getByRole('button', { name: /change language to pt/i }).click();
+    await expect(page.getByRole('heading', { name: t('pt', 'extensions.title'), level: 1 })).toBeVisible();
+    await expect(page.getByText(t('pt', 'extensions.description'))).toBeVisible();
+
+    await page.getByRole('button', { name: /change language to fr/i }).click();
     await expect(page.getByRole('heading', { name: t('fr', 'extensions.title'), level: 1 })).toBeVisible();
     await expect(page.getByText(t('fr', 'extensions.description'))).toBeVisible();
 
-    await page.getByRole('button', { name: 'PT' }).click();
-    await expect(page.getByRole('heading', { name: t('pt', 'extensions.title'), level: 1 })).toBeVisible();
-    await expect(page.getByText(t('pt', 'extensions.description'))).toBeVisible();
+    await page.getByRole('button', { name: /change language to en/i }).click();
+    await expect(page.getByRole('heading', { name: t('en', 'extensions.title'), level: 1 })).toBeVisible();
+    await expect(page.getByText(t('en', 'extensions.description'))).toBeVisible();
   });
 });

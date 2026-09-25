@@ -12,7 +12,7 @@ import {
 
 export const SkillsSummary = () => {
   const { t, currentLanguage } = useTranslation();
-  const career = careerData[currentLanguage] || careerData.pt;
+  const career = careerData[currentLanguage] || careerData.en;
 
   const renderSkillBadges = (skills) => (
     <div className="flex flex-wrap gap-3 justify-center items-center">

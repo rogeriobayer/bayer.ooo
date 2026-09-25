@@ -5,7 +5,7 @@ import { companiesList } from '../../src/app/data/companies.server.js';
 import { projectsData as rawProjectsData } from '../../src/app/lib/projects-data.js';
 import { technologiesList } from '../../src/app/data/technologies.server.js';
 
-const defaultLanguage = 'pt';
+const defaultLanguage = 'en';
 
 const careerSummary = careerData[defaultLanguage];
 const projectsList = rawProjectsData[defaultLanguage].projects;
@@ -205,18 +205,18 @@ test.describe('Language Switching', () => {
     test('should switch languages correctly', async ({ page }) => {
         await page.goto('/');
 
-        // Switch to English
-        /* Since we're using "button" locator with text, and the button contains both Flag and Name, 
-           we match by the visible text "EN" */
-        await page.getByRole('button', { name: 'EN' }).click();
-
-        // Verify change
         await expect(
             page.getByRole('heading', { name: t('en', 'typewriter.greeting'), level: 1 })
         ).toBeVisible();
 
+        // Switch to Portuguese
+        await page.getByRole('button', { name: /change language to pt/i }).click();
+        await expect(
+            page.getByRole('heading', { name: t('pt', 'typewriter.greeting'), level: 1 })
+        ).toBeVisible();
+
         // Switch to French
-        await page.getByRole('button', { name: 'FR' }).click();
+        await page.getByRole('button', { name: /change language to fr/i }).click();
         await expect(
             page.getByRole('heading', { name: t('fr', 'typewriter.greeting'), level: 1 })
         ).toBeVisible();

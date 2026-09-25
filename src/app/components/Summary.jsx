@@ -13,7 +13,7 @@ import {
 
 export const Summary = () => {
   const { t, currentLanguage } = useTranslation();
-  const career = careerData[currentLanguage] || careerData.pt;
+  const career = careerData[currentLanguage] || careerData.en;
 
   function calcDaysInCompany() {
     const oneDay = 24 * 60 * 60 * 1000;

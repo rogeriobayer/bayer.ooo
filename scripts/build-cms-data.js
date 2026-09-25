@@ -5,7 +5,7 @@ const CONTENT_DIR = path.join(__dirname, '..', 'content');
 const LIB_DIR = path.join(__dirname, '..', 'src', 'app', 'lib');
 
 const LOCALES = ['pt', 'en', 'fr'];
-const DEFAULT_LOCALE = 'pt';
+const DEFAULT_LOCALE = 'en';
 
 /**
  * Recursively resolves i18n inline objects into a single locale.

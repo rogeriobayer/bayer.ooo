@@ -13,11 +13,11 @@ describe('LanguageSelector Component', () => {
   });
 
   it('highlights current language', () => {
-    // PT is default in our mock
+    // English is the site default in our mock
     render(<LanguageSelector />);
 
-    const ptButton = screen.getByRole('button', { name: /change language to pt/i });
-    expect(ptButton).toHaveClass('bg-blue-100');
+    const enButton = screen.getByRole('button', { name: /change language to en/i });
+    expect(enButton).toHaveClass('bg-blue-100');
   });
 
   it('calls changeLanguage when language button is clicked', () => {
@@ -57,4 +57,4 @@ describe('LanguageSelector Component', () => {
     expect(screen.queryByText('EN')).not.toBeInTheDocument();
     expect(screen.queryByText('FR')).not.toBeInTheDocument();
   });
-}); 
+});

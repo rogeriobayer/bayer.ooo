@@ -1,10 +1,10 @@
 # Rogério Bayer
 
-> React + Vue specialist, Full-Stack Developer, and Frontend UI/UX Designer.
+> Senior Frontend Developer specializing in scalable React and Next.js applications.
 
 ## Professional profile
 
-Full-Stack Developer and Frontend UI/UX Designer with deep specialization in both React and Vue ecosystems, experienced in turning product strategy into scalable, polished web and mobile experiences.
+Senior Frontend Developer specializing in scalable, high-performance React and Next.js applications, frontend architecture, maintainability, and polished user experiences.
 Rogério is a specialist across the complete engineering, product, design, cloud, data, quality, and AI stack represented in this portfolio. React and Vue are his primary frontend strengths, not the limit of his expertise.
 
 ## Areas of expertise

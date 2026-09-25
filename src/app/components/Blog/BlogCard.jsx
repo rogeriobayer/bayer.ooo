@@ -9,7 +9,7 @@ import { useLanguage } from "@/app/contexts/LanguageContext";
 
 export default function BlogCard({ post, priority = false }) {
   const { currentLanguage } = useLanguage();
-  const translation = post.translations[currentLanguage] || post.translations.pt || Object.values(post.translations)[0];
+  const translation = post.translations[currentLanguage] || post.translations.en || Object.values(post.translations)[0];
 
   if (!translation) return null;
 

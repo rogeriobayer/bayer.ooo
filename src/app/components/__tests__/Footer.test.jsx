@@ -8,13 +8,13 @@ describe('Footer Component', () => {
     it('renders footer with copyright and quote', () => {
         render(<Footer />);
 
-        expect(screen.getByText(translations.pt['footer.quote'])).toBeInTheDocument();
+        expect(screen.getByText(translations.en['footer.quote'])).toBeInTheDocument();
 
         const currentYear = new Date().getFullYear();
-        const copyrightText = translations.pt['footer.copyright'].replace('{year}', currentYear);
+        const copyrightText = translations.en['footer.copyright'].replace('{year}', currentYear);
         expect(screen.getByText(copyrightText)).toBeInTheDocument();
 
-        expect(screen.getByText(translations.pt['footer.madeWith'])).toBeInTheDocument();
+        expect(screen.getByText(translations.en['footer.madeWith'])).toBeInTheDocument();
     });
 
     it('renders all social links from real data', () => {
