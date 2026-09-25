@@ -1,7 +1,7 @@
 import { test, expect, devices } from '@playwright/test';
 import { translations } from '../../src/app/data/translations.js';
 
-const defaultLanguage = 'pt';
+const defaultLanguage = 'en';
 
 const t = (lang: keyof typeof translations, key: string) =>
   translations[lang]?.[key] ?? key;

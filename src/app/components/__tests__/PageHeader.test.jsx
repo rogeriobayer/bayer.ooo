@@ -7,14 +7,14 @@ describe('PageHeader Component', () => {
   it('renders title using translation key', () => {
     render(<PageHeader titleKey="blog.title" />);
     
-    expect(screen.getByText(translations.pt['blog.title'])).toBeInTheDocument();
+    expect(screen.getByText(translations.en['blog.title'])).toBeInTheDocument();
   });
 
   it('renders title and description when descriptionKey is provided', () => {
     render(<PageHeader titleKey="extensions.title" descriptionKey="extensions.description" />);
     
-    expect(screen.getByText(translations.pt['extensions.title'])).toBeInTheDocument();
-    expect(screen.getByText(translations.pt['extensions.description'])).toBeInTheDocument();
+    expect(screen.getByText(translations.en['extensions.title'])).toBeInTheDocument();
+    expect(screen.getByText(translations.en['extensions.description'])).toBeInTheDocument();
   });
 
   it('renders h1 element with correct styling', () => {
@@ -36,7 +36,7 @@ describe('PageHeader Component', () => {
   it('renders description with correct styling when provided', () => {
     render(<PageHeader titleKey="blog.title" descriptionKey="blog.description" />);
     
-    const description = screen.getByText(translations.pt['blog.description']);
+    const description = screen.getByText(translations.en['blog.description']);
     expect(description.tagName).toBe('P');
     expect(description).toHaveClass('text-lg', 'text-secondary');
   });

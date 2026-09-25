@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { blogPosts } from '../../src/app/lib/blog-data.js';
 import { translations } from '../../src/app/data/translations.js';
 
-const defaultLanguage = 'pt';
+const defaultLanguage = 'en';
 
 const t = (lang: keyof typeof translations, key: string) =>
   translations[lang]?.[key] ?? key;
@@ -28,7 +28,7 @@ test.describe('Blog List Page', () => {
     test.skip(posts.length === 0, 'No blog posts to test');
 
     for (const post of posts) {
-      const translation = post.translations[defaultLanguage] || post.translations.pt || Object.values(post.translations)[0];
+      const translation = post.translations[defaultLanguage] || post.translations.en || Object.values(post.translations)[0];
       if (!translation) continue;
 
       const card = page.locator('article').filter({ hasText: translation.title });
@@ -50,7 +50,7 @@ test.describe('Blog List Page', () => {
     test.skip(posts.length === 0, 'No blog posts to test');
 
     for (const post of posts) {
-      const translation = post.translations[defaultLanguage] || post.translations.pt || Object.values(post.translations)[0];
+      const translation = post.translations[defaultLanguage] || post.translations.en || Object.values(post.translations)[0];
       if (!translation) continue;
 
       const link = page.locator('article').filter({ hasText: translation.title }).locator('a');
@@ -70,7 +70,7 @@ test.describe('Blog Post Page', () => {
   const firstPost = blogPosts[0];
   test.skip(!firstPost, 'No blog posts to test individual page');
 
-  const translation = firstPost?.translations[defaultLanguage] || firstPost?.translations.pt || Object.values(firstPost?.translations || {})[0];
+  const translation = firstPost?.translations[defaultLanguage] || firstPost?.translations.en || Object.values(firstPost?.translations || {})[0];
 
   test.beforeEach(async ({ page }) => {
     if (firstPost) {
@@ -138,19 +138,19 @@ test.describe('Blog Language Switching', () => {
   test('should switch blog page language correctly', async ({ page }) => {
     await page.goto('/blog');
 
-    await expect(page.getByRole('heading', { name: t('pt', 'blog.title'), level: 1 })).toBeVisible();
-    await expect(page.getByText(t('pt', 'blog.description'))).toBeVisible();
-
-    await page.getByRole('button', { name: 'EN' }).click();
     await expect(page.getByRole('heading', { name: t('en', 'blog.title'), level: 1 })).toBeVisible();
     await expect(page.getByText(t('en', 'blog.description'))).toBeVisible();
 
-    await page.getByRole('button', { name: 'FR' }).click();
+    await page.getByRole('button', { name: /change language to pt/i }).click();
+    await expect(page.getByRole('heading', { name: t('pt', 'blog.title'), level: 1 })).toBeVisible();
+    await expect(page.getByText(t('pt', 'blog.description'))).toBeVisible();
+
+    await page.getByRole('button', { name: /change language to fr/i }).click();
     await expect(page.getByRole('heading', { name: t('fr', 'blog.title'), level: 1 })).toBeVisible();
     await expect(page.getByText(t('fr', 'blog.description'))).toBeVisible();
 
-    await page.getByRole('button', { name: 'PT' }).click();
-    await expect(page.getByRole('heading', { name: t('pt', 'blog.title'), level: 1 })).toBeVisible();
-    await expect(page.getByText(t('pt', 'blog.description'))).toBeVisible();
+    await page.getByRole('button', { name: /change language to en/i }).click();
+    await expect(page.getByRole('heading', { name: t('en', 'blog.title'), level: 1 })).toBeVisible();
+    await expect(page.getByText(t('en', 'blog.description'))).toBeVisible();
   });
 });

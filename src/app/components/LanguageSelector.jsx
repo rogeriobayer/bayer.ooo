@@ -3,8 +3,8 @@
 import { useLanguage } from '../contexts/LanguageContext';
 
 const languages = [
-  { code: 'pt', flag: '🇧🇷' },
   { code: 'en', flag: '🇺🇸' },
+  { code: 'pt', flag: '🇧🇷' },
   { code: 'fr', flag: '🇫🇷' }
 ];
 
@@ -31,4 +31,4 @@ export const LanguageSelector = () => {
   );
 };
 
-export default LanguageSelector; 
+export default LanguageSelector;

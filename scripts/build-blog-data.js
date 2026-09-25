@@ -18,7 +18,7 @@ function readPostFile(filePath) {
     slug: data.slug || path.basename(filePath).replace(/\.\w+\.md$/, ''),
     title: data.title || '',
     date: data.date || '',
-    lang: data.lang || 'pt',
+    lang: data.lang || 'en',
     excerpt: data.excerpt || '',
     tags: data.tags || [],
     cover: data.cover || null,
@@ -55,8 +55,8 @@ function buildBlogData() {
   }
 
   const posts = Object.values(postsBySlug).sort((a, b) => {
-    const dateA = new Date(a.translations.pt?.date || 0);
-    const dateB = new Date(b.translations.pt?.date || 0);
+    const dateA = new Date(a.translations.en?.date || a.translations.pt?.date || 0);
+    const dateB = new Date(b.translations.en?.date || b.translations.pt?.date || 0);
     return dateB - dateA;
   });
 

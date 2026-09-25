@@ -29,7 +29,7 @@ const parseDownloads = (value) => {
 export const Projects = ({ type = "projects" }) => {
   const { t, currentLanguage } = useTranslation();
   const data = type === "extensions" ? extensionsData : projectsData;
-  const projects = data[currentLanguage]?.[type === "extensions" ? "extensions" : "projects"] || data.pt[type === "extensions" ? "extensions" : "projects"];
+  const projects = data[currentLanguage]?.[type === "extensions" ? "extensions" : "projects"] || data.en[type === "extensions" ? "extensions" : "projects"];
   const [selectedProject, setSelectedProject] = useState(null);
 
   const mostDownloaded =

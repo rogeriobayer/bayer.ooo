@@ -12,8 +12,8 @@ export const useLanguage = () => {
   return context;
 };
 
-export const LanguageProvider = ({ children }) => {
-  const [currentLanguage, setCurrentLanguage] = useState('pt');
+export const LanguageProvider = ({ children, initialLanguage = 'en' }) => {
+  const [currentLanguage, setCurrentLanguage] = useState(initialLanguage);
 
   useEffect(() => {
     try {

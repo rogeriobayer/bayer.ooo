@@ -4,7 +4,7 @@
 export const careerData = {
   "pt": {
     "position": {
-      "name": "Frontend UI/UX Designer",
+      "name": "Desenvolvedor Frontend Sênior",
       "companyCode": "rubylabs",
       "startDate": "2026-03-03",
       "framework": "next"
@@ -47,7 +47,7 @@ export const careerData = {
     },
     "history": [
       {
-        "position": "Frontend UI/UX Designer",
+        "position": "Desenvolvedor Frontend Sênior",
         "companyCode": "rubylabs",
         "startDate": "03/2026",
         "endDate": null,
@@ -55,10 +55,12 @@ export const careerData = {
           "react",
           "typescript",
           "next",
+          "tailwind",
           "vercel",
-          "figma"
+          "figma",
+          "anthropic"
         ],
-        "description": "Atuo no projeto Sagabox, uma plataforma de assinatura de livros. Projeto e desenvolvo interfaces escaláveis e de alta qualidade usando Next.js, React, TypeScript e Tailwind CSS. Crio e mantenho design systems, utilizando Figma para transformar ideias em experiências refinadas e centradas no usuário. Atuo em colaboração próxima com stakeholders para alinhar requisitos e converter estratégia de produto em soluções intuitivas, usando dados, pesquisa de UX e testes A/B para melhorar retenção e engajamento."
+        "description": "Desenvolvo aplicações web escaláveis e de alta performance usando Next.js, React, TypeScript e Tailwind CSS, com forte foco em arquitetura frontend, manutenibilidade e experiência do usuário. Trabalho extensivamente com Next.js, desenvolvendo componentes reutilizáveis, páginas dinâmicas e orientadas a conteúdo, integrações com APIs e estratégias modernas de renderização. Também integro e mantenho o Sanity CMS, criando estruturas de conteúdo flexíveis que permitem às equipes de produto e conteúdo gerenciar páginas, coleções e experiências digitais com eficiência. Crio e mantenho design systems e transformo designs do Figma em interfaces responsivas, acessíveis e refinadas. Também priorizo performance frontend, qualidade de código, testes e arquitetura escalável de componentes. Uso ferramentas de IA, como Claude, para acelerar desenvolvimento, prototipação, depuração e exploração técnica. Em colaboração próxima com stakeholders de produto, design e engenharia, ajudo a transformar requisitos de produto em soluções intuitivas e uso analytics, pesquisa de UX, experimentação e testes A/B para melhorar engajamento e retenção."
       },
       {
         "position": "Software Engineer",
@@ -126,7 +128,7 @@ export const careerData = {
   },
   "en": {
     "position": {
-      "name": "Frontend UI/UX Designer",
+      "name": "Senior Frontend Developer",
       "companyCode": "rubylabs",
       "startDate": "2026-03-03",
       "framework": "next"
@@ -169,7 +171,7 @@ export const careerData = {
     },
     "history": [
       {
-        "position": "Frontend UI/UX Designer",
+        "position": "Senior Frontend Developer",
         "companyCode": "rubylabs",
         "startDate": "03/2026",
         "endDate": null,
@@ -177,10 +179,12 @@ export const careerData = {
           "react",
           "typescript",
           "next",
+          "tailwind",
           "vercel",
-          "figma"
+          "figma",
+          "anthropic"
         ],
-        "description": "Working at Sagabox, a subscription-based books platform. I design and build scalable, high-quality interfaces using Next.js, React, TypeScript, and Tailwind CSS. I create and maintain design systems, leveraging Figma to translate ideas into polished, user-centered experiences. I work closely with stakeholders to align requirements, turning product strategy into intuitive solutions, while using data, UX research, and A/B testing to improve retention and engagement."
+        "description": "I build scalable, high-performance web applications using Next.js, React, TypeScript, and Tailwind CSS, with a strong focus on frontend architecture, maintainability, and user experience. I work extensively with Next.js, developing reusable components, dynamic and content-driven pages, API integrations, and modern rendering strategies. I also integrate and maintain Sanity CMS, building flexible content structures that allow product and content teams to manage pages, collections, and digital experiences efficiently. I create and maintain design systems and translate Figma designs into responsive, accessible, and polished interfaces. I also focus on frontend performance, code quality, testing, and scalable component architecture. I use AI tools such as Claude to accelerate development, prototyping, debugging, and technical exploration. Working closely with product, design, and engineering stakeholders, I help translate product requirements into intuitive solutions and use analytics, UX research, experimentation, and A/B testing to improve engagement and retention."
       },
       {
         "position": "Software Engineer",
@@ -248,7 +252,7 @@ export const careerData = {
   },
   "fr": {
     "position": {
-      "name": "Frontend UI/UX Designer",
+      "name": "Développeur Frontend Senior",
       "companyCode": "rubylabs",
       "startDate": "2026-03-03",
       "framework": "next"
@@ -291,7 +295,7 @@ export const careerData = {
     },
     "history": [
       {
-        "position": "Frontend UI/UX Designer",
+        "position": "Développeur Frontend Senior",
         "companyCode": "rubylabs",
         "startDate": "03/2026",
         "endDate": null,
@@ -299,10 +303,12 @@ export const careerData = {
           "react",
           "typescript",
           "next",
+          "tailwind",
           "vercel",
-          "figma"
+          "figma",
+          "anthropic"
         ],
-        "description": "Je travaille sur Sagabox, une plateforme de livres par abonnement. Je conçois et développe des interfaces scalables et de haute qualité avec Next.js, React, TypeScript et Tailwind CSS. Je crée et maintiens des design systems, en utilisant Figma pour transformer des idées en expériences soignées et centrées sur l'utilisateur. Je collabore étroitement avec les parties prenantes pour aligner les besoins et transformer la stratégie produit en solutions intuitives, tout en m'appuyant sur les données, la recherche UX et les tests A/B pour améliorer la rétention et l'engagement."
+        "description": "Je développe des applications web scalables et performantes avec Next.js, React, TypeScript et Tailwind CSS, en mettant l'accent sur l'architecture frontend, la maintenabilité et l'expérience utilisateur. Je travaille intensivement avec Next.js pour développer des composants réutilisables, des pages dynamiques pilotées par le contenu, des intégrations d'API et des stratégies de rendu modernes. J'intègre et maintiens également Sanity CMS, en créant des structures de contenu flexibles qui permettent aux équipes produit et contenu de gérer efficacement les pages, les collections et les expériences numériques. Je crée et maintiens des design systems et transforme les designs Figma en interfaces responsives, accessibles et soignées. Je me concentre également sur la performance frontend, la qualité du code, les tests et une architecture de composants scalable. J'utilise des outils d'IA tels que Claude pour accélérer le développement, le prototypage, le débogage et l'exploration technique. En étroite collaboration avec les parties prenantes du produit, du design et de l'ingénierie, je contribue à transformer les exigences produit en solutions intuitives et j'utilise l'analytics, la recherche UX, l'expérimentation et les tests A/B pour améliorer l'engagement et la rétention."
       },
       {
         "position": "Ingénieur Logiciel",

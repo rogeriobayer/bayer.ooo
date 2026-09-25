@@ -14,7 +14,7 @@ import {
 
 export const History = () => {
   const { t, currentLanguage } = useTranslation();
-  const career = careerData[currentLanguage] || careerData.pt;
+  const career = careerData[currentLanguage] || careerData.en;
 
   const getDateText = (startDate, endDate) => {
     const endText = endDate ? `${endDate}` : t("history.current");

@@ -47,7 +47,7 @@ export default function sitemap() {
 
   const posts = getAllPosts();
   const postEntries = posts.map((post) => {
-    const defaultPost = post.translations.pt || Object.values(post.translations)[0];
+    const defaultPost = post.translations.en || post.translations.pt || Object.values(post.translations)[0];
     const url = `${BASE_URL}/blog/${post.slug}`;
 
     return {

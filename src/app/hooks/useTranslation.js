@@ -5,7 +5,7 @@ export const useTranslation = () => {
   const { currentLanguage } = useLanguage();
 
   const t = (key, variables = {}) => {
-    let translation = translations[currentLanguage]?.[key] || translations['pt']?.[key] || key;
+    let translation = translations[currentLanguage]?.[key] || translations.en?.[key] || key;
     
     if (typeof translation === 'string' && Object.keys(variables).length > 0) {
       Object.keys(variables).forEach(variable => {
@@ -19,4 +19,4 @@ export const useTranslation = () => {
   return { t, currentLanguage };
 };
 
-export default useTranslation; 
+export default useTranslation;

@@ -22,7 +22,7 @@ export async function generateMetadata({ params }) {
 
   const acceptLanguage = (await headers()).get("accept-language") ?? "";
   const locale = detectLocale(acceptLanguage);
-  const translation = post.translations[locale] ?? post.translations.pt ?? Object.values(post.translations)[0];
+  const translation = post.translations[locale] ?? post.translations.en ?? post.translations.pt ?? Object.values(post.translations)[0];
   const canonicalUrl = `https://bayer.ooo/blog/${slug}`;
 
   return {
@@ -95,7 +95,7 @@ export default async function BlogPostPage({ params }) {
     notFound();
   }
 
-  const defaultPost = post.translations.pt || Object.values(post.translations)[0];
+  const defaultPost = post.translations.en || post.translations.pt || Object.values(post.translations)[0];
   const canonicalUrl = `https://bayer.ooo/blog/${slug}`;
 
   const jsonLd = {

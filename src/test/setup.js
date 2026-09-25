@@ -17,7 +17,7 @@ vi.mock('motion/react', () => ({
 const mockChangeLanguage = vi.fn();
 vi.mock('@/app/contexts/LanguageContext', () => ({
   useLanguage: () => ({
-    currentLanguage: 'pt',
+    currentLanguage: 'en',
     changeLanguage: mockChangeLanguage,
   }),
 }));

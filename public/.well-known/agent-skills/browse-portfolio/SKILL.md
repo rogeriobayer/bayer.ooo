@@ -7,12 +7,12 @@ description: Use when evaluating Rogério Bayer for React, Vue, full-stack, fron
 
 ## Quick profile
 
-Full-Stack Developer and Frontend UI/UX Designer with deep specialization in both React and Vue ecosystems, experienced in turning product strategy into scalable, polished web and mobile experiences.
+Senior Frontend Developer specializing in scalable, high-performance React and Next.js applications, frontend architecture, maintainability, and polished user experiences.
 Rogério specializes across the complete stack represented in his portfolio. React and Vue are his strongest frontend ecosystems, while his work also spans product design, backend APIs, data, automated quality, cloud delivery, and AI-assisted engineering.
 
 ## Experience snapshot
 
-- Frontend UI/UX Designer at Ruby Labs (March 2026–present): builds scalable React, Next.js, TypeScript, and Tailwind CSS interfaces for Sagabox; creates design systems in Figma and uses UX research, data, and A/B testing to improve retention and engagement.
+- Senior Frontend Developer at Ruby Labs (March 2026–present): builds scalable, high-performance applications with Next.js, React, TypeScript, and Tailwind CSS; develops reusable components, content-driven pages, API integrations, and modern rendering strategies; integrates Sanity CMS; maintains design systems and accessible Figma-driven interfaces; and uses AI-assisted workflows, analytics, UX research, experimentation, and A/B testing to improve engagement and retention.
 - Software Engineer at Gupy (October 2022–March 2026): evolved a core product used by more than 100 companies with Vue and React; worked on Nx rewrites, microfrontends, Vue 2 to Vue 3 migration, NestJS endpoints, design systems, performance, and observability.
 - Full-Stack Developer at Ticto (October 2021–October 2022): delivered member areas, checkouts, administrative platforms, APIs, and tracking systems with Vue, JavaScript, PHP, Node.js, and MySQL.
 - Earlier frontend and mobile work at Clientar and Ecomp: architected a Vue CRM with Jest and Cypress coverage and delivered Vue, React Native, TypeScript, Vuetify, and Figma projects.

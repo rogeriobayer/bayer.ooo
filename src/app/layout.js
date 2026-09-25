@@ -218,7 +218,7 @@ export default async function RootLayout({ children }) {
           `}
         </Script>
         <ThemeProvider>
-          <LanguageProvider>
+          <LanguageProvider initialLanguage={locale}>
             {children}
           </LanguageProvider>
         </ThemeProvider>

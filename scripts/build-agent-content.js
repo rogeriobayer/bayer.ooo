@@ -11,7 +11,7 @@ const GENERATED_DIR = path.join(ROOT, "src", "generated");
 const SITE = "https://bayer.ooo";
 const AUTHOR = "Rogério Bayer";
 const AGENT_PROFILE_SUMMARY =
-  "Full-Stack Developer and Frontend UI/UX Designer with deep specialization in both React and Vue ecosystems, experienced in turning product strategy into scalable, polished web and mobile experiences.";
+  "Senior Frontend Developer specializing in scalable, high-performance React and Next.js applications, frontend architecture, maintainability, and polished user experiences.";
 const AGENT_EXPERTISE = [
   "React ecosystem: React, Next.js, React Native, Expo, component architecture, design systems, and scalable product interfaces.",
   "Vue ecosystem: Vue 2, Vue 3, Nuxt, Vuetify, large-scale migrations, microfrontends, and modernization of mature applications.",
@@ -29,7 +29,7 @@ const AGENT_FIT = [
   "Delivering full-stack features, APIs, cloud deployments, automated tests, and AI-assisted engineering workflows.",
 ];
 const AGENT_EXPERIENCE = [
-  "Frontend UI/UX Designer at Ruby Labs (March 2026–present): builds scalable React, Next.js, TypeScript, and Tailwind CSS interfaces for Sagabox; creates design systems in Figma and uses UX research, data, and A/B testing to improve retention and engagement.",
+  "Senior Frontend Developer at Ruby Labs (March 2026–present): builds scalable, high-performance applications with Next.js, React, TypeScript, and Tailwind CSS; develops reusable components, content-driven pages, API integrations, and modern rendering strategies; integrates Sanity CMS; maintains design systems and accessible Figma-driven interfaces; and uses AI-assisted workflows, analytics, UX research, experimentation, and A/B testing to improve engagement and retention.",
   "Software Engineer at Gupy (October 2022–March 2026): evolved a core product used by more than 100 companies with Vue and React; worked on Nx rewrites, microfrontends, Vue 2 to Vue 3 migration, NestJS endpoints, design systems, performance, and observability.",
   "Full-Stack Developer at Ticto (October 2021–October 2022): delivered member areas, checkouts, administrative platforms, APIs, and tracking systems with Vue, JavaScript, PHP, Node.js, and MySQL.",
   "Earlier frontend and mobile work at Clientar and Ecomp: architected a Vue CRM with Jest and Cypress coverage and delivered Vue, React Native, TypeScript, Vuetify, and Figma projects.",
@@ -93,8 +93,8 @@ function readBlogPosts() {
   }
 
   return Object.values(postsBySlug).sort((a, b) => {
-    const dateA = new Date(a.translations.pt?.date || a.translations.en?.date || 0);
-    const dateB = new Date(b.translations.pt?.date || b.translations.en?.date || 0);
+    const dateA = new Date(a.translations.en?.date || a.translations.pt?.date || 0);
+    const dateB = new Date(b.translations.en?.date || b.translations.pt?.date || 0);
     return dateB - dateA;
   });
 }
@@ -103,7 +103,7 @@ function buildHomeMarkdown(posts) {
   const lines = [
     `# ${AUTHOR}`,
     "",
-    "> React + Vue specialist, Full-Stack Developer, and Frontend UI/UX Designer.",
+    "> Senior Frontend Developer specializing in scalable React and Next.js applications.",
     "",
     `- Site: ${SITE}`,
     `- Blog: ${SITE}/blog`,
@@ -175,7 +175,7 @@ function buildLlmsTxt(posts) {
   const lines = [
     `# ${AUTHOR}`,
     "",
-    "> React + Vue specialist, Full-Stack Developer, and Frontend UI/UX Designer.",
+    "> Senior Frontend Developer specializing in scalable React and Next.js applications.",
     "",
   ];
 
