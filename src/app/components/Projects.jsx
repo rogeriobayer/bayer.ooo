@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { projectsData } from "@/app/lib/projects-data";
 import { extensionsData } from "@/app/lib/extensions-data";
 import { formatDate } from "@/app/lib/date";

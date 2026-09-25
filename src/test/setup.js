@@ -2,7 +2,7 @@ import '@testing-library/jest-dom'
 import React from 'react'
 import { vi } from 'vitest'
 
-vi.mock('framer-motion', () => ({
+vi.mock('motion/react', () => ({
   motion: {
     div: ({ children, ...props }) => React.createElement('div', props, children),
     header: ({ children, ...props }) => React.createElement('header', props, children),

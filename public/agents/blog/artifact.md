@@ -1,6 +1,6 @@
 # What Exactly Is an Artifact?
 - Author: Rogério Bayer
-- Date: Thu Jul 30 2026 07:00:00 GMT-0300 (Brasilia Standard Time)
+- Date: 2026-07-30
 - URL: https://bayer.ooo/blog/artifact
 - Languages: en, fr, pt
 - Tags: claude, ai, artifacts, prototyping
