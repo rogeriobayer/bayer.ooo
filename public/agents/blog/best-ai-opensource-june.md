@@ -1,6 +1,6 @@
 # The best AI model right now has a first and last name
 - Author: Rogério Bayer
-- Date: Thu Jun 04 2026 07:00:00 GMT-0300 (Brasilia Standard Time)
+- Date: 2026-06-04
 - URL: https://bayer.ooo/blog/best-ai-opensource-june
 - Languages: en, fr, pt
 - Tags: ai, open-source, deepseek, opencode, review

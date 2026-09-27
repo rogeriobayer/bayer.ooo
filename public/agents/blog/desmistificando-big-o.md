@@ -1,6 +1,6 @@
 # What You Need to Know by Heart About Big O
 - Author: Rogério Bayer
-- Date: Tue May 26 2026 07:00:00 GMT-0300 (Brasilia Standard Time)
+- Date: 2026-05-26
 - URL: https://bayer.ooo/blog/desmistificando-big-o
 - Languages: en, fr, pt
 - Tags: algorithms, big-o, computer-science, javascript, performance

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { careerData } from "@/app/lib/career-data";
 import IconWithText from "@/app/components/IconWithText";
 import { useTranslation } from "../hooks/useTranslation";

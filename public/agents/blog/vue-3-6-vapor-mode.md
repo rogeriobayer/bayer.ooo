@@ -1,6 +1,6 @@
 # Vue 3.6 and Vapor Mode: The Big Change Coming to Vue
 - Author: Rogério Bayer
-- Date: Wed Jun 24 2026 07:00:00 GMT-0300 (Brasilia Standard Time)
+- Date: 2026-06-24
 - URL: https://bayer.ooo/blog/vue-3-6-vapor-mode
 - Languages: en, fr, pt
 - Tags: vue, javascript, vapor-mode

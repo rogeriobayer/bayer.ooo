@@ -4,7 +4,7 @@ import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { fadeInVariant } from "@/app/utils/animationConfig";
 import { formatDate } from "@/app/lib/date";
 import { useLanguage } from "@/app/contexts/LanguageContext";

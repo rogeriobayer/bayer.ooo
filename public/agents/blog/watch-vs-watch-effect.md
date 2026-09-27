@@ -1,6 +1,6 @@
 # Vue 3: watch vs watchEffect — Which One to Use in the Composition API?
 - Author: Rogério Bayer
-- Date: Thu May 07 2026 07:00:00 GMT-0300 (Brasilia Standard Time)
+- Date: 2026-05-07
 - URL: https://bayer.ooo/blog/watch-vs-watch-effect
 - Languages: en, fr, pt
 - Tags: vue, javascript, composition-api

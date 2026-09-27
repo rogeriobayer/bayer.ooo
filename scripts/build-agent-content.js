@@ -57,6 +57,16 @@ function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });
 }
 
+function formatDate(value) {
+  if (!value) return "";
+
+  if (value instanceof Date && !Number.isNaN(value.getTime())) {
+    return value.toISOString().slice(0, 10);
+  }
+
+  return String(value);
+}
+
 function readBlogPosts() {
   if (!fs.existsSync(BLOG_DIR)) return [];
 
@@ -72,7 +82,7 @@ function readBlogPosts() {
     if (!postsBySlug[slug]) postsBySlug[slug] = { slug, translations: {} };
     postsBySlug[slug].translations[lang] = {
       title: data.title || slug,
-      date: data.date || "",
+      date: formatDate(data.date),
       excerpt: data.excerpt || "",
       tags: data.tags || [],
       cover: data.cover || null,

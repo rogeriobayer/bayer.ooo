@@ -1,6 +1,6 @@
 # Taste Skill: An Anti-Slop Frontend Framework Worth Trying With Your Agent Stack
 - Author: Rogério Bayer
-- Date: Mon Jun 29 2026 07:00:00 GMT-0300 (Brasilia Standard Time)
+- Date: 2026-06-29
 - URL: https://bayer.ooo/blog/taste-skill
 - Languages: en, fr, pt
 - Tags: ai, frontend, design, taste-skill, review
