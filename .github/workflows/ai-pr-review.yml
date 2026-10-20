@@ -69,8 +69,9 @@ jobs:
                 signal: AbortSignal.timeout(180000),
                 body: JSON.stringify({
                   model: 'z-ai/glm-4.7-flash',
-                  max_tokens: 1800,
-                  reasoning: { effort: 'low' },
+                  max_tokens: 4000,
+                  // Reserve the small output budget for the review itself.
+                  reasoning: { enabled: false },
                   provider: { data_collection: 'deny' },
                   messages: [
                     {
@@ -83,11 +84,23 @@ jobs:
               });
               if (!response.ok) throw new Error(`OpenRouter request failed (HTTP ${response.status}).`);
               const result = await response.json();
-              review = result.choices?.[0]?.message?.content;
-              if (typeof review !== 'string' || !review.trim()) {
-                throw new Error('OpenRouter returned no review content.');
+              const choice = result.choices?.[0];
+              const finishReason = choice?.finish_reason;
+              core.info(JSON.stringify({
+                finish_reason: finishReason,
+                completion_tokens: result.usage?.completion_tokens,
+                reasoning_tokens: result.usage?.completion_tokens_details?.reasoning_tokens
+              }));
+              if (result.error || finishReason === 'error') {
+                throw new Error('OpenRouter returned a provider error despite HTTP success.');
               }
-              if (result.choices[0].finish_reason === 'length') {
+              review = choice?.message?.content;
+              if (typeof review !== 'string' || !review.trim()) {
+                throw new Error(finishReason === 'length'
+                  ? 'OpenRouter exhausted the output token budget before returning review text.'
+                  : 'OpenRouter returned no review text; inspect token usage and finish_reason above.');
+              }
+              if (finishReason === 'length') {
                 review += '\n\n_Output limit reached; this review may be incomplete._';
               }
             }
