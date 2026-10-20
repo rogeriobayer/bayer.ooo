@@ -81,11 +81,26 @@
     }
   ],
   "prConcurrentLimit": 20,
-  "rebaseWhen": "conflicted",
+  "rebaseWhen": "behind-base-branch",
   "labels": [
     "dependencies"
   ],
   "reviewersFromCodeOwners": true,
   "semanticCommits": "enabled",
-  "separateMinorPatch": true
+  "separateMinorPatch": true,
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": [
+      "before 6am on monday"
+    ]
+  },
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "schedule": [
+      "at any time"
+    ],
+    "minimumReleaseAge": null,
+    "prCreation": "immediate",
+    "automerge": false
+  }
 }

@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const matter = require("gray-matter");
+const matter = require('./front-matter');
 
 const ROOT = process.cwd();
 const BLOG_DIR = path.join(ROOT, "content", "blog");
