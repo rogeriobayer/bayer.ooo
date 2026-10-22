@@ -7,7 +7,7 @@ import { staggerItemVariant, cardHoverVariant } from "@/app/utils/animationConfi
 import { formatDate } from "@/app/lib/date";
 import { useLanguage } from "@/app/contexts/LanguageContext";
 
-export default function BlogCard({ post, priority = false }) {
+export default function BlogCard({ post, preload = false }) {
   const { currentLanguage } = useLanguage();
   const translation = post.translations[currentLanguage] || post.translations.en || Object.values(post.translations)[0];
 
@@ -34,7 +34,7 @@ export default function BlogCard({ post, priority = false }) {
                 fill
                 sizes="(max-width: 768px) 100vw, 672px"
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
-                priority={priority}
+                preload={preload}
               />
             </div>
           )}
