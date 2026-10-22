@@ -184,7 +184,7 @@ export default function BlogPost({ post }) {
               src={translation.cover}
               alt={translation.title}
               fill
-              priority
+              preload
               sizes="(max-width: 672px) 100vw, 672px"
               className="rounded-xl border border-base-300/30 object-cover"
             />
