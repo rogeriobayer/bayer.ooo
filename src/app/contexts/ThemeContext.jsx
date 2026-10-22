@@ -14,6 +14,7 @@ export const ThemeProvider = ({ children }) => {
     const root = document.documentElement;
     const current = root.getAttribute("data-theme");
     if (current) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- Synchronize once with the theme applied by the pre-hydration document script.
       setTheme(current);
     }
   }, []);

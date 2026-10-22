@@ -19,6 +19,7 @@ export const LanguageProvider = ({ children, initialLanguage = 'en' }) => {
     try {
       const savedLanguage = localStorage.getItem('language');
       if (savedLanguage) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect -- Restore browser-only preferences after hydration, preserving the server language initially.
         setCurrentLanguage(savedLanguage);
         document.documentElement.lang = savedLanguage;
       }
