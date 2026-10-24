@@ -22,7 +22,7 @@ jobs:
     steps:
       # No checkout: never execute code from the pull request.
       - name: Review changed code with OpenRouter
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         with:
