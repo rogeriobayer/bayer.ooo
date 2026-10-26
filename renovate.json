@@ -1,8 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended",
-    "schedule:weekends"
+    "config:recommended"
   ],
   "dependencyDashboard": true,
   "dependencyDashboardTitle": "📋 Dependency Dashboard",
@@ -12,10 +11,11 @@
   "commitMessageExtra": "to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}}",
   "packageRules": [
     {
-      "description": "Automerge non-major updates",
+      "description": "Automerge non-major updates and lockfile maintenance after successful checks",
       "matchUpdateTypes": [
         "minor",
-        "patch"
+        "patch",
+        "lockFileMaintenance"
       ],
       "automerge": true,
       "automergeType": "pr",
@@ -91,7 +91,7 @@
   "lockFileMaintenance": {
     "enabled": true,
     "schedule": [
-      "before 6am on monday"
+      "before 6am"
     ]
   },
   "vulnerabilityAlerts": {
@@ -102,5 +102,9 @@
     "minimumReleaseAge": null,
     "prCreation": "immediate",
     "automerge": false
-  }
+  },
+  "timezone": "America/Toronto",
+  "schedule": [
+    "before 6am"
+  ]
 }
