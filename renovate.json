@@ -58,26 +58,6 @@
         "postcss"
       ],
       "groupName": "CSS/Styling"
-    },
-    {
-      "description": "Defer major framework and build-tool migrations",
-      "matchPackageNames": [
-        "react",
-        "react-dom",
-        "next",
-        "eslint-config-next",
-        "eslint",
-        "vite",
-        "@vitejs/plugin-react",
-        "@babel/core",
-        "js-yaml",
-        "jsdom",
-        "@types/node"
-      ],
-      "matchUpdateTypes": [
-        "major"
-      ],
-      "enabled": false
     }
   ],
   "prConcurrentLimit": 20,
@@ -100,11 +80,10 @@
       "at any time"
     ],
     "minimumReleaseAge": null,
-    "prCreation": "immediate",
-    "automerge": false
+    "prCreation": "immediate"
   },
   "timezone": "America/Toronto",
   "schedule": [
-    "before 6am"
+    "at any time"
   ]
 }
